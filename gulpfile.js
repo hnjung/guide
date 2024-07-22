@@ -6,6 +6,7 @@ import newer from 'gulp-newer';
 import { deleteSync } from 'del';
 import gulpSass from 'gulp-sass';
 import * as sass from 'sass';
+import sourcemaps from 'gulp-sourcemaps';
 import imagemin from 'gulp-imagemin';
 import mozjpeg from 'imagemin-mozjpeg';
 import optipng from 'imagemin-optipng';
@@ -21,50 +22,57 @@ import browserSync from 'browser-sync';
 const bs = browserSync.create();
 
 // 경로 설정
+const pathSRC = './src/';
+const pathDIST = './dist/';
 const paths = {
-	html: {
-		src: ['src/html/**/*.html', '!src/html/include/**'],
-		dest: 'dist/html',
+	src: {
+		html: [`${pathSRC}html/**/*.html`, `!${pathSRC}html/include/**`],
+		include: `${pathSRC}html/include`,
+		js: `${pathSRC}js/**/*.js`,
+		css: `${pathSRC}scss/**/*.scss`,
+		image: `${pathSRC}image/**/*`
 	},
-	js: {
-		src: 'src/js/**/*.js',
-		dest: 'dist/js/bundle.js',
-	},
-	css: {
-		src: 'src/scss/**/*.scss',
-		dest: 'dist/css',
-	},
-	image: {
-		src: 'src/image/**/*',
-		dest: 'dist/image',
-	},
+	dist: {
+		root: pathDIST,
+		html: `${pathDIST}html`,
+		js: `${pathDIST}js/main.js`,
+		css: `${pathDIST}css`,
+		image: `${pathDIST}image`
+	}
 };
 
 // 'dist' 디렉토리를 삭제하는 함수
 export async function clean() {
-	deleteSync(['dist']);
+	deleteSync(paths.dist.root);
 }
+clean.displayName = `🌟 CleanAll`;
+
+// 'dist/html' 디렉토리를 삭제하는 함수
+export async function cleanHtml() {
+	deleteSync(paths.dist.html);
+}
+cleanHtml.displayName = `🌟 CleanHTML`;
 
 // EJS 템플릿을 컴파일하는 함수
 export function buildHtml() {
-	return gulp.src(paths.html.src)
-		.pipe(newer(paths.html.dest))
+	return gulp.src(paths.src.html)
+		.pipe(newer(paths.dist.html))
 		.pipe(using({ prefix: '🌟 Processing', path: 'relative', color: 'yellow' }))
-		.pipe(ejs({}, { views: 'src/html/include' }).on('error', console.error))
+		.pipe(ejs({}, { views: paths.src.include }).on('error', console.error))
 		.pipe(prettier({
 			printWidth: 200,
 			tabWidth: 4,
 			useTabs: true,
 			bracketSameLine: true,
 		}))
-		.pipe(gulp.dest(paths.html.dest))
+		.pipe(gulp.dest(paths.dist.html))
 		.pipe(bs.stream());
 }
 
 // JavaScript 파일을 번들링하는 함수
 export function buildJS() {
 	return rollup({
-		input: glob.sync('src/js/**/*.js'),
+		input: glob.sync(paths.src.js),
 		plugins: [
 			resolve(),
 			commonjs(),
@@ -91,7 +99,7 @@ export function buildJS() {
 	})
 	.then(bundle => {
 		return bundle.write({
-			file: paths.js.dest,
+			file: paths.dist.js,
 			format: 'iife',
 			name: 'UI',
 			sourcemap: true,
@@ -104,22 +112,24 @@ export function buildJS() {
 
 // Sass 파일을 컴파일하는 함수
 export function compileSass() {
-	return gulp.src(paths.css.src)
+	return gulp.src(paths.src.css)
+		.pipe(sourcemaps.init())
 		.pipe(gulpSass(sass)().on('error', gulpSass(sass).logError))
-		.pipe(gulp.dest(paths.css.dest))
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest(paths.dist.css))
 		.pipe(bs.stream());
 }
 
 // 이미지 파일을 최적화하고 복사하는 함수
 export function optimizeImage() {
-	return gulp.src(paths.image.src)
-		.pipe(newer(paths.image.dest))
+	return gulp.src(paths.src.image)
+		.pipe(newer(paths.dist.image))
 		.pipe(imagemin([
 			mozjpeg({ quality: 75, progressive: true }),
 			optipng({ optimizationLevel: 5 }),
 			giflossy({ optimizationLevel: 3 })
 		]))
-		.pipe(gulp.dest(paths.image.dest))
+		.pipe(gulp.dest(paths.dist.image))
 		.pipe(bs.stream());
 }
 
@@ -128,7 +138,7 @@ export function serve(done) {
 	bs.init({
 		startPath: "html/index.html",
 		server: {
-			baseDir: './dist'
+			baseDir: paths.dist.root
 		},
 		notify: false
 	});
@@ -137,10 +147,11 @@ export function serve(done) {
 
 // 파일 변경을 감시하고 관련 작업을 수행하는 함수
 export function watchFiles() {
-	gulp.watch(paths.html.src, buildHtml);
-	gulp.watch(paths.css.src, compileSass);
-	gulp.watch(paths.js.src, buildJS);
-	gulp.watch(paths.image.src, optimizeImage);
+	gulp.watch(paths.src.html, buildHtml);
+	gulp.watch(paths.src.include, gulp.series(cleanHtml, buildHtml));
+	gulp.watch(paths.src.css, compileSass);
+	gulp.watch(paths.src.js, buildJS);
+	gulp.watch(paths.src.image, optimizeImage);
 }
 
 // 기본 작업으로 'clean' 작업 후 'buildJS', 'compileSass', 'buildHtml', 'optimizeImage' 작업을 실행

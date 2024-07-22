@@ -21,6 +21,7 @@
 		"gulp-newer": "^1.4.0",
 		"gulp-prettier": "^6.0.0",
 		"gulp-sass": "^5.1.0",
+		"gulp-sourcemaps": "^3.0.0",
 		"gulp-using": "^0.1.1",
 		"imagemin": "^9.0.0",
 		"imagemin-giflossy": "^5.1.10",
