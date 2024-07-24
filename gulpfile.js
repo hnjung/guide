@@ -6,6 +6,7 @@ import newer from 'gulp-newer';
 import { deleteSync } from 'del';
 import gulpSass from 'gulp-sass';
 import * as sass from 'sass';
+import cleanCSS from 'gulp-clean-css';
 import sourcemaps from 'gulp-sourcemaps';
 import imagemin from 'gulp-imagemin';
 import mozjpeg from 'imagemin-mozjpeg';
@@ -30,6 +31,7 @@ const paths = {
 		include: `${pathSRC}html/include`,
 		js: `${pathSRC}js/**/*.js`,
 		css: `${pathSRC}scss/**/*.scss`,
+		cssFile: `${pathSRC}scss/main.scss`,
 		image: `${pathSRC}image/**/*`
 	},
 	dist: {
@@ -112,10 +114,11 @@ export function buildJS() {
 
 // Sass 파일을 컴파일하는 함수
 export function compileSass() {
-	return gulp.src(paths.src.css)
+	return gulp.src(paths.src.cssFile)
 		.pipe(sourcemaps.init())
 		.pipe(gulpSass(sass)().on('error', gulpSass(sass).logError))
 		.pipe(sourcemaps.write())
+		.pipe(cleanCSS({ compatibility: 'ie8' }))
 		.pipe(gulp.dest(paths.dist.css))
 		.pipe(bs.stream());
 }
