@@ -1,0 +1,13 @@
+/*
+	파일정보 : 환경설정 > 함수선언(@mixin, @function)
+	업데이트 : 2024-08-01
+*/
+
+@function tint-color($color, $weight) {
+	@return mix(#fff, $color, $weight);
+}
+
+@mixin padding-block($padding) {
+	padding-top: $padding;
+	padding-bottom: $padding;
+}

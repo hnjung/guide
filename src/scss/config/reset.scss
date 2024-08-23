@@ -1,0 +1,64 @@
+/*
+	파일정보 : 환경설정 > 초기화
+	업데이트 : 2024-08-01
+*/
+
+*, ::before, ::after {box-sizing: border-box;}
+
+html, body, header, main, footer, aside, article, section,
+nav, menu, dialog, search,
+hgroup, h1, h2, h3, h4, h5, h6,
+div, span,
+dl, dt, dd, ul, li, ol,
+table, thead, tbody, thead, caption, tr, th, td,
+form, fieldset, legend, label, input, output, select, datalist, textarea, button, progress, meter,
+iframe, applet, object, details, summary,
+p, blockquote, pre, code, abbr, address, cite, dfn, kbd, q, samp, var, ruby, data, time,
+canvas, figure, figcaption, embed, video, audio, picture, img,
+em, s, small, strong, sub, sup, b, u, i, mark, del, ins,
+a, map {margin: 0; padding: 0; font: inherit;}
+
+html {background-color: var(--color-light); font-size: 62.5%; text-size-adjust: none; -webkit-text-size-adjust: none; -webkit-tap-highlight-color: transparent;}
+body {line-height: 1.5; font-family: 'Pretendard', Pretendard, sans-serif; font-size: var(--font-md); font-weight: var(--font-regular); color: var(--color-txt-body); text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased;}
+
+ol, ul {list-style-type: none;}
+table {border-collapse: collapse; border-spacing: 0;}
+fieldset, button {border: 0;}
+input, textarea, select, button {appearance: none; max-width: 100%; background-color: transparent; box-shadow: none; font: inherit;}
+input::-ms-clear,
+input::-ms-reveal,
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {display: none;}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:active {box-shadow: 0 0 0 1000px white inset !important; transition: background-color 5000s ease 0s;}
+
+canvas, video, picture, svg, img {display: block; max-width: 100%; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none;}
+strong {font-weight: var(--font-semibold);}
+em {font-style: normal;}
+a, a:hover, a:focus, a:active, a:visited {text-decoration: none;}
+
+::selection {background-color: var(--color-primary); color: var(--color-light);}
+
+/* 초기화 - (태블릿) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* 초기화 - (태블릿+PC) */
+@media screen and (min-width: 768px) {
+}
+
+/* 초기화 - (PC) */
+@media screen and (min-width: 1025px) {
+}

@@ -1,0 +1,25 @@
+/*
+	파일정보 : 환경설정 > 변수선언(:root)
+	업데이트 : 2024-08-01
+*/
+
+$color-light: #fff;
+$color-dark: #000;
+
+
+
+
+
+
+:root {
+	--color-light: $color-light;
+	--color-dark: $color-dark;
+
+	--color-bg-light: tint-color($color-dark, 50%);
+	--color-bg-base: #edeff2;
+	--color-bg-dark: #e2e4e9;
+
+	--color-line-light: #a8aebd;
+	--color-line-base: #a8a8a8;
+	--color-line-dark: #a8a8a8;
+}
