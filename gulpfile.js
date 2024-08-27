@@ -6,7 +6,6 @@ import newer from 'gulp-newer';
 import { deleteSync } from 'del';
 import gulpSass from 'gulp-sass';
 import * as sass from 'sass';
-import cleanCSS from 'gulp-clean-css';
 import sourcemaps from 'gulp-sourcemaps';
 import imagemin from 'gulp-imagemin';
 import mozjpeg from 'imagemin-mozjpeg';
@@ -24,32 +23,37 @@ const bs = browserSync.create();
 
 // 경로 설정
 const pathSRC = './src/';
+const pathSRCResource = `${pathSRC}resource/`;
 const pathDIST = './dist/';
+const pathDISTResource = `${pathDIST}resource/`;
+
 const paths = {
 	src: {
-		html: [`${pathSRC}html/**/*.html`, `!${pathSRC}html/include/**`],
-		include: `${pathSRC}html/include`,
-		js: `${pathSRC}js/**/*.js`,
-		css: `${pathSRC}scss/**/*.scss`,
-		cssFile: `${pathSRC}scss/main.scss`,
-		image: `${pathSRC}image/**/*`
+		html: [`${pathSRC}page/**/*.html`, `!${pathSRC}page/include/**`],
+		include: `${pathSRC}page/include`,
+		js: `${pathSRCResource}js/**/*.js`,
+		css: `${pathSRCResource}sass/**/*.scss`,
+		image: `${pathSRCResource}image/**/*`,
+		font: `${pathSRCResource}font/**/*`
 	},
 	dist: {
 		root: pathDIST,
-		html: `${pathDIST}html`,
-		js: `${pathDIST}js/main.js`,
-		css: `${pathDIST}css`,
-		image: `${pathDIST}image`
+		html: `${pathDIST}page`,
+		js: `${pathDISTResource}js`,
+		css: `${pathDISTResource}css`,
+		sass: `${pathDISTResource}sass`,
+		image: `${pathDISTResource}image`,
+		font: `${pathDISTResource}font`
 	}
 };
 
 // 'dist' 디렉토리를 삭제하는 함수
 export async function clean() {
-	deleteSync(paths.dist.root);
+	deleteSync([paths.dist.html, `${pathDIST}resource`]);
 }
 clean.displayName = `🌟 CleanAll`;
 
-// 'dist/html' 디렉토리를 삭제하는 함수
+// 'dist/page' 디렉토리를 삭제하는 함수
 export async function cleanHtml() {
 	deleteSync(paths.dist.html);
 }
@@ -101,7 +105,7 @@ export function buildJS() {
 	})
 	.then(bundle => {
 		return bundle.write({
-			file: paths.dist.js,
+			file: `${paths.dist.js}/main.js`,
 			format: 'iife',
 			name: 'UI',
 			sourcemap: true,
@@ -114,17 +118,19 @@ export function buildJS() {
 
 // Sass 파일을 컴파일하는 함수
 export function compileSass() {
-	return gulp.src(paths.src.cssFile)
+	return gulp.src(paths.src.css)
 		.pipe(sourcemaps.init())
-		.pipe(gulpSass(sass)().on('error', gulpSass(sass).logError))
-		.pipe(sourcemaps.write())
-		.pipe(cleanCSS({ compatibility: 'ie8' }))
+		.pipe(gulpSass(sass)({
+			outputStyle: 'compressed' /* expanded:확장, compressed:압축 */
+		}).on('error', gulpSass(sass).logError))
+		.pipe(sourcemaps.write('../scss'))
 		.pipe(gulp.dest(paths.dist.css))
 		.pipe(bs.stream());
 }
 
 // 이미지 파일을 최적화하고 복사하는 함수
 export function optimizeImage() {
+	deleteSync(paths.dist.image);
 	return gulp.src(paths.src.image)
 		.pipe(newer(paths.dist.image))
 		.pipe(imagemin([
@@ -136,10 +142,19 @@ export function optimizeImage() {
 		.pipe(bs.stream());
 }
 
+// 폰트 파일을 초기화하고 복사하는 함수
+export function copyFont() {
+	deleteSync(paths.dist.font);
+	return gulp.src(paths.src.font)
+		.pipe(newer(paths.dist.font))
+		.pipe(gulp.dest(paths.dist.font))
+		.pipe(bs.stream());
+}
+
 // 브라우저 동기화를 위한 서버 시작 함수
 export function serve(done) {
 	bs.init({
-		startPath: "html/index.html",
+		startPath: 'page/main/index.html',
 		server: {
 			baseDir: paths.dist.root
 		},
@@ -155,12 +170,13 @@ export function watchFiles() {
 	gulp.watch(paths.src.css, compileSass);
 	gulp.watch(paths.src.js, buildJS);
 	gulp.watch(paths.src.image, optimizeImage);
+	gulp.watch(paths.src.font, copyFont);
 }
 
 // 기본 작업으로 'clean' 작업 후 'buildJS', 'compileSass', 'buildHtml', 'optimizeImage' 작업을 실행
 export default gulp.series(
 	clean,
-	gulp.parallel(buildJS, compileSass, buildHtml, optimizeImage),
+	gulp.parallel(buildJS, compileSass, buildHtml, optimizeImage, copyFont),
 	serve,
 	watchFiles
 );

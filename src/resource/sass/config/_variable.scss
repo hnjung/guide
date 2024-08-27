@@ -3,13 +3,22 @@
 	업데이트 : 2024-08-01
 */
 
+/* 분기점 */
+$breakpoint: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+
+	mobile: 0,
+	tablet: 768px,
+	pc: 1200px
+);
+
+/* 색상 */
 $color-light: #fff;
 $color-dark: #000;
-
-
-
-
-
 
 :root {
 	--color-light: $color-light;
