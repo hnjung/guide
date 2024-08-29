@@ -5,15 +5,26 @@
 
 /* 분기점 */
 $breakpoint: (
-	xs: 0,
-	sm: 576px,
-	md: 768px,
-	lg: 992px,
-	xl: 1200px,
+	mobile: 0px, /* 0 ~ 599 : 4columns(designLayout) */
+	tablet: 600px, /* 600 ~ 1023 : 8columns */
+	laptop: 1024px, /* 1024 ~ 1443 : 12columns */
+	desktop: 1440px /* 1440 ~ : 12columns */
+	/*
+		* 참고 자료
+			https://gs.statcounter.com/screen-resolution-stats/all/south-korea#monthly-202307-202407-bar
+			https://m2.material.io/design/layout/responsive-layout-grid.html#breakpoints
 
-	mobile: 0,
-	tablet: 768px,
-	pc: 1200px
+			- 아이폰SE, 갤럭시Fold앞면 : 320px
+			- 갤럭시탭A7 : 600px
+
+		* 참고 자료 적고 나니 보이는 최신 자료
+			https://m3.material.io/foundations/layout/applying-layout/window-size-classes
+			- Compact(모바일세로) : 0 ~ 599
+			- Medium(태블릿세로, 폴더블세로) : 600 ~ 839
+			- Expanded(모바일가로, 태블릿가로, 폴더블가로, 데스크탑) : 840 ~ 1199
+			- Large(데스크탑) : 1200 ~ 1599
+			- Extra-large(데스크탑) : 1600 ~
+	*/
 );
 
 /* 색상 */

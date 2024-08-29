@@ -3,48 +3,50 @@
 	업데이트 : 2024-08-01
 */
 
-/* 분기점 */
-@function breakpoint-min($name) { /* 최소값 */
-	@return map-get($breakpoint, $name);
+/* 분기점 : 시작 */
+/** 특정 분기점의 최소 너비 */
+@function breakpoint-min($name) {
+	$min: map-get($breakpoint, $name);
+	@return if($min != 0, $min, null);
 }
+/** 특정 분기점의 최대 너비 */
+@function breakpoint-max($name) {
+	$breakpoint-name: map-keys($breakpoint);
+	$index: index($breakpoint-name, $name);
+	$next-breakpoint: nth($breakpoint-name, $index + 1);
 
-@function breakpoint-max($name) { /* 최대값 */
-	$next-breakpoint: breakpoint-min(breakpoint-next($name));
-	@return if($next-breakpoint, $next-breakpoint - 0.02px, null);
+	/* 다음 분기점의 최소값에서 0.02px을 뺀 값을 최대값으로 반환 */
+	$max: map-get($breakpoint, $next-breakpoint) - 0.02;
+	@return if($max > 0, $max, null);
 }
-
-@function breakpoint-next($name) { /* 다음 분기점 */
-	$breakpoint-names: map-keys($breakpoint);
-	$index: index($breakpoint-names, $name);
-	@return nth($breakpoint-names, $index + 1);
-}
-
-@mixin media-up($name) { /* 값 이상 */
+/** 특정 분기점 이상 적용 */
+@mixin media-up($name) {
 	@media (min-width: breakpoint-min($name)) {
 		@content;
 	}
 }
-
-@mixin media-down($name) { /* 값 이하 */
+/** 특정 분기점 이하 적용 */
+@mixin media-down($name) {
 	@media (max-width: breakpoint-max($name)) {
 		@content;
 	}
 }
-
-@mixin media-between($lower, $upper) { /* 범위 */
-	@media (min-width: breakpoint-min($lower)) and (max-width: breakpoint-max($upper)) {
+/** 분기점과 분기점 내에서 적용 */
+@mixin media-between($name-min, $name-max) {
+	@media (min-width: breakpoint-min($name-min)) and (max-width: breakpoint-max($name-max)) {
 		@content;
 	}
 }
-
-@mixin media-only($name) { /* 단일 기기 */
+/** 특정 분기점 에서만 적용 */
+@mixin media-only($name) {
 	$min: breakpoint-min($name);
 	$max: breakpoint-max($name);
-	
+
 	@media (min-width: $min) and (max-width: $max) {
 		@content;
 	}
 }
+/* //분기점 : 끝 */
 
 @function tint-color($color, $weight) {
 	@return mix(#fff, $color, $weight);

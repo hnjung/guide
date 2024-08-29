@@ -17,26 +17,45 @@
 /* 분기점 미디어쿼리 참고 */
 
 
+/* 초기화 - (태블릿) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* 초기화 - (태블릿+PC) */
+@media screen and (min-width: 768px) {
+}
+
+/* 초기화 - (PC) */
+@media screen and (min-width: 1025px) {
+}
+
+.test {
+	&::after {
+		content: '기본 : 모바일 퍼스트 스타일 작성';
+
+		@include media-down(mobile) {
+			content: '모바일 이하(media-down) 반영';
+		}
+
+		@include media-only(tablet) {
+			content: '태블릿 에만(media-only) 반영';
+		}
+
+		@include media-up(desktop) {
+			content: 'PC 이상(media-up) 반영';
+		}
+
+		@include media-between(tablet, laptop) {
+			content: '태블릿 과(media-between) 노트북에 반영';
+		}
+
+	}
+}
+
 .group {
 	color: tint-color(blue, 10%);
 
-	&::after {
-		content: '반응형 테스트-모바일';
-		@include media-up(mobile) {
-			// 태블릿 전용 스타일
-			content: '반응형 테스트-태블릿 전용';
-		}
-		
-		@include media-only(tablet) {
-			// 태블릿 및 PC 공통 스타일
-			content: '반응형 테스트-태블릿 이상';
-		}
-		
-		@include media-between(mobile, tablet) {
-			// PC 전용 스타일
-			content: '반응형 테스트-PC이상';
-		}
-	}
+	
 }
 
 

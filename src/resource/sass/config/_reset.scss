@@ -50,15 +50,3 @@ em {font-style: normal;}
 a, a:hover, a:focus, a:active, a:visited {text-decoration: none;}
 
 ::selection {background-color: var(--color-primary); color: var(--color-light);}
-
-/* 초기화 - (태블릿) */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-}
-
-/* 초기화 - (태블릿+PC) */
-@media screen and (min-width: 768px) {
-}
-
-/* 초기화 - (PC) */
-@media screen and (min-width: 1025px) {
-}
