@@ -4,8 +4,9 @@
 */
 
 /* 환경설정 */
-@import './config/variable';
 @import './config/function';
+@import './config/variable';
+@import './config/font';
 @import './config/reset';
 
 /* 레이아웃 */
@@ -48,14 +49,11 @@
 		@include media-between(tablet, laptop) {
 			content: '태블릿 과(media-between) 노트북에 반영';
 		}
-
 	}
 }
 
 .group {
 	color: tint-color(blue, 10%);
-
-	
 }
 
 

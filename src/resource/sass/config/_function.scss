@@ -3,7 +3,7 @@
 	업데이트 : 2024-08-01
 */
 
-/* 분기점 : 시작 */
+/* 분기점 */
 /** 특정 분기점의 최소 너비 */
 @function breakpoint-min($name) {
 	$min: map-get($breakpoint, $name);
@@ -46,13 +46,52 @@
 		@content;
 	}
 }
-/* //분기점 : 끝 */
 
+/* 색상 */
 @function tint-color($color, $weight) {
-	@return mix(#fff, $color, $weight);
+	@return mix(white, $color, $weight);
+}
+@function shade-color($color, $weight) {
+	@return mix(black, $color, $weight);
 }
 
-@mixin padding-block($padding) {
-	padding-top: $padding;
-	padding-bottom: $padding;
+/* 아이콘 - $size = $icon-group */
+@mixin icon($size, $x, $y) {
+	$var: var(--#{$prefix}icon-#{$size});
+	$name: $size;
+
+	width: $var;
+	height: $var;
+	background-image: url("#{$path-image}/common/icon-#{$name}.svg");
+	background-repeat: no-repeat;
+	background-position: calc($var * -#{$x}) calc($var * -#{$y});
+	background-size: calc($var * 10) auto;
+}
+
+
+
+
+
+/* 임시 */
+@mixin size($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+@mixin square($size) {
+	@include size($size, $size);
+}
+
+@mixin ellipsis($max-width, $line: 1) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: $max-width;
+	@if ($line == 1) {
+		display: inline-block;
+		white-space: nowrap;
+	} @else {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: $line;
+	}
 }

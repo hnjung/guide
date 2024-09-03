@@ -131,7 +131,7 @@ export function compileSass() {
 // 이미지 파일을 최적화하고 복사하는 함수
 export function optimizeImage() {
 	deleteSync(paths.dist.image);
-	return gulp.src(paths.src.image)
+	return gulp.src(paths.src.image, { buffer: true, encoding: false })
 		.pipe(newer(paths.dist.image))
 		.pipe(imagemin([
 			mozjpeg({ quality: 75, progressive: true }),
@@ -145,7 +145,7 @@ export function optimizeImage() {
 // 폰트 파일을 초기화하고 복사하는 함수
 export function copyFont() {
 	deleteSync(paths.dist.font);
-	return gulp.src(paths.src.font)
+	return gulp.src(paths.src.font, { buffer: true, encoding: false })
 		.pipe(newer(paths.dist.font))
 		.pipe(gulp.dest(paths.dist.font))
 		.pipe(bs.stream());

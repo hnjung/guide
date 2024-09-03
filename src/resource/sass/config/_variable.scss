@@ -3,43 +3,301 @@
 	업데이트 : 2024-08-01
 */
 
-/* 분기점 */
+/* 경로 */
+$path-image: "/resource/image" !default;
+$path-font:  "/resource/font" !default;
+
+/* 접두사 - [gd: guide] */
+$prefix: "gd-" !default;
+
+/* 분기점 
+	* 참고) 자료
+		https://gs.statcounter.com/screen-resolution-stats/all/south-korea#monthly-202307-202407-bar
+		https://m2.material.io/design/layout/responsive-layout-grid.html#breakpoints
+
+		- 아이폰SE, 갤럭시Fold앞면 : 320px
+		- 갤럭시탭A7 : 600px
+
+	* 참고) 자료 적고 나니 보이는 최신 자료
+		https://m3.material.io/foundations/layout/applying-layout/window-size-classes
+		- Compact(모바일세로) : 0 ~ 599
+		- Medium(태블릿세로, 폴더블세로) : 600 ~ 839
+		- Expanded(모바일가로, 태블릿가로, 폴더블가로, 데스크탑) : 840 ~ 1199
+		- Large(데스크탑) : 1200 ~ 1599
+		- Extra-large(데스크탑) : 1600 ~
+*/
 $breakpoint: (
-	mobile: 0px, /* 0 ~ 599 : 4columns(designLayout) */
-	tablet: 600px, /* 600 ~ 1023 : 8columns */
-	laptop: 1024px, /* 1024 ~ 1443 : 12columns */
+	mobile:  0px, /* 0 ~ 599 : 4columns(designLayout) */
+	tablet:  600px, /* 600 ~ 1023 : 8columns */
+	laptop:  1024px, /* 1024 ~ 1443 : 12columns */
 	desktop: 1440px /* 1440 ~ : 12columns */
-	/*
-		* 참고 자료
-			https://gs.statcounter.com/screen-resolution-stats/all/south-korea#monthly-202307-202407-bar
-			https://m2.material.io/design/layout/responsive-layout-grid.html#breakpoints
-
-			- 아이폰SE, 갤럭시Fold앞면 : 320px
-			- 갤럭시탭A7 : 600px
-
-		* 참고 자료 적고 나니 보이는 최신 자료
-			https://m3.material.io/foundations/layout/applying-layout/window-size-classes
-			- Compact(모바일세로) : 0 ~ 599
-			- Medium(태블릿세로, 폴더블세로) : 600 ~ 839
-			- Expanded(모바일가로, 태블릿가로, 폴더블가로, 데스크탑) : 840 ~ 1199
-			- Large(데스크탑) : 1200 ~ 1599
-			- Extra-large(데스크탑) : 1600 ~
-	*/
-);
+) !default;
 
 /* 색상 */
-$color-light: #fff;
-$color-dark: #000;
+$white:  #fff !default;
+$black:  #000 !default;
+$blue:   #0d6efd !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink:   #d63384 !default;
+$red:    #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green:  #198754 !default;
+$teal:   #20c997 !default;
+$cyan:   #0dcaf0 !default;
 
-:root {
-	--color-light: $color-light;
-	--color-dark: $color-dark;
+$gray-10: #f8f9fa !default;
+$gray-20: #e9ecef !default;
+$gray-30: #dee2e6 !default;
+$gray-40: #ced4da !default;
+$gray-50: #adb5bd !default;
+$gray-60: #6c757d !default;
+$gray-70: #495057 !default;
+$gray-80: #343a40 !default;
+$gray-90: #212529 !default;
 
-	--color-bg-light: tint-color($color-dark, 50%);
-	--color-bg-base: #edeff2;
-	--color-bg-dark: #e2e4e9;
+$gray-group: (
+	"10": $gray-10,
+	"20": $gray-20,
+	"30": $gray-30,
+	"40": $gray-40,
+	"50": $gray-50,
+	"60": $gray-60,
+	"70": $gray-70,
+	"80": $gray-80,
+	"90": $gray-90
+) !default;
 
-	--color-line-light: #a8aebd;
-	--color-line-base: #a8a8a8;
-	--color-line-dark: #a8a8a8;
+$primary:    $blue !default;
+$primary-10: tint-color($primary, 80%) !default;
+$primary-20: tint-color($primary, 60%) !default;
+$primary-30: tint-color($primary, 40%) !default;
+$primary-40: tint-color($primary, 20%) !default;
+$primary-50: $primary !default;
+$primary-60: shade-color($primary, 20%) !default;
+$primary-70: shade-color($primary, 40%) !default;
+$primary-80: shade-color($primary, 60%) !default;
+$primary-90: shade-color($primary, 80%) !default;
+
+$primary-group: (
+	"10": $primary-10,
+	"20": $primary-20,
+	"30": $primary-30,
+	"40": $primary-40,
+	"50": $primary-50,
+	"60": $primary-60,
+	"70": $primary-70,
+	"80": $primary-80,
+	"90": $primary-90
+) !default;
+
+$secondary: $gray-60 !default;
+$success:   $green !default;
+$info:      $cyan !default;
+$warning:   $yellow !default;
+$danger:    $red !default;
+
+$system-group: (
+	"primary":   $primary,
+	"secondary": $secondary,
+	"success":   $success,
+	"info":      $info,
+	"warning":   $warning,
+	"danger":    $danger,
+) !default;
+
+/* 폰트 */
+$font-base-family: "Pretendard" !default;
+$font-base-style: normal !default;
+
+$font-light:    300 !default;
+$font-regular:  400 !default;
+$font-medium:   500 !default;
+$font-semibold: 600 !default;
+$font-bold:     700 !default;
+
+$font-weight: (
+	"light":    $font-light,
+	"regular":  $font-regular,
+	"medium":   $font-medium,
+	"semibold": $font-semibold,
+	"bold":     $font-bold
+) !default;
+
+$font-min:  1.2rem !default;
+$font-xxs:  1.4rem !default;
+$font-xs:   1.6rem !default;
+$font-sm:   1.8rem !default;
+$font-md:   2.0rem !default;
+$font-lg:   2.4rem !default;
+$font-xl:   2.8rem !default;
+$font-xxl:  3.2rem !default;
+$font-max:  4.0rem !default;
+$font-huge: 5.2rem !default;
+
+$font-size: (
+	type: (
+		display: (
+			"lg": $font-huge,
+			"md": $font-max,
+			"sm": $font-xxl
+		),
+		headline: (
+			"lg": $font-max,
+			"md": $font-xxl,
+			"sm": $font-xl
+		),
+		title: (
+			"xxl": $font-xxl,
+			"xl":  $font-xl,
+			"lg":  $font-lg,
+			"md":  $font-md,
+			"sm":  $font-sm,
+			"xs":  $font-xs
+		),
+		body: (
+			"xl": $font-sm,
+			"lg": $font-xs,
+			"md": $font-xxs,
+			"sm": $font-min
+		)
+	)
+) !default;
+
+/* 사이즈
+	참고) 단계별 표기 가이드
+		- 14단계: nano, min, xxs, xs, sm, md, lg, xl, xxl, max, huge, mega, giga, tera
+		- 12단계: nano, min, xxs, xs, sm, md, lg, xl, xxl, max, huge, mega
+		- 11단계: min, xxs, xs, sm, md, lg, xl, xxl, max, huge, mega
+		- 10단계: min, xxs, xs, sm, md, lg, xl, xxl, max, huge
+		- 9단계:  min, xxs, xs, sm, md, lg, xl, xxl, max
+		- 8단계:  xxs, xs, sm, md, lg, xl, xxl, max
+		- 7단계:  xxs, xs, sm, md, lg, xl, xxl
+		- 6단계:  xs, sm, md, lg, xl, xxl
+		- 5단계:  xs, sm, md, lg, xl
+		- 4단계:  sm, md, lg, xl
+		- 3단계:  sm, md, lg
+		- 2단계:  sm, lg
+*/
+$nano: .1rem !default;
+$min:  .2rem !default;
+$xxs:  .4rem !default;
+$xs:   .6rem !default;
+$sm:   .8rem !default;
+
+$md:   1.2rem !default;
+$lg:   1.6rem !default;
+$xl:   2.0rem !default;
+$xxl:  2.4rem !default;
+$max:  3.2rem !default;
+
+$huge: 4.0rem !default;
+$mega: 4.8rem !default;
+$giga: 6.4rem !default;
+
+$space-group: (
+	"min":  $min,
+	"xxs":  $xxs,
+	"xs":   $sm,
+	"sm":   $md,
+	"md":   $lg,
+	"lg":   $xl,
+	"xl":   $xxl,
+	"xxl":  $max,
+	"max":  $huge,
+	"huge": $mega,
+	"mega": $giga
+);
+
+$icon-group: (
+	"xs":  $md,
+	"sm":  $lg,
+	"md":  $xxl,
+	"lg":  $max,
+	"xl":  $mega,
+	"xxl": $giga
+);
+
+$border-group: (
+	"sm": $nano,
+	"md": $min,
+	"lg": $xxs
+);
+
+$radius-group: (
+	"xs":   $xxs,
+	"sm":   $xs,
+	"md":   $sm,
+	"lg":   $md,
+	"xl":   $lg,
+	"xxl":  $xxl,
+	"pill": 100%
+);
+
+:root,
+[data-#{$prefix}thema="light"] {
+	/* 색상 */
+	@each $color, $value in $gray-group {
+		--#{$prefix}color-base-#{$color}: #{$value};
+	}
+	@each $color, $value in $primary-group {
+		--#{$prefix}color-primary-#{$color}: #{$value};
+	}
+	@each $color, $value in $system-group {
+		--#{$prefix}color-#{$color}: #{$value};
+	}
+	
+	/* 폰트 */
+	@each $weight, $value in $font-weight {
+		--#{$prefix}font-#{$weight}: #{$value};
+	}
+	@each $type, $value in map-get($font-size, 'type') {
+		@each $size, $value2 in $value {
+			--#{$prefix}font-#{$type}-#{$size}: #{$value2};
+		}
+	}
+
+	/* 여백 */
+	@each $size, $value in $space-group {
+		--#{$prefix}space-#{$size}: #{$value};
+	}
+
+	/* 아이콘 */
+	@each $size, $value in $icon-group {
+		--#{$prefix}icon-#{$size}: #{$value};
+	}
+
+	/* 선두께 */
+	@each $size, $value in $border-group {
+		--#{$prefix}border-#{$size}: #{$value};
+	}
+
+	/* 모서리지름 */
+	@each $size, $value in $radius-group {
+		--#{$prefix}radius-#{$size}: #{$value};
+	}
+
+	/* 그림자 */
+	--#{$prefix}shadow-reset: 0 0 0 rgba(0, 0, 0, 0);
+	--#{$prefix}shadow-sm: 0 .1rem .4rem 0 rgba(18, 25, 43, .08);
+	--#{$prefix}shadow-md: 0 .2rem 1.2rem 0 rgba(18, 25, 43, .12);
+	--#{$prefix}shadow-lg: 0 .4rem 1.6rem 0 rgba(18, 25, 43, .16);
+
+	--#{$prefix}shadow-primary-sm: 0 .1rem .4rem 0 rgba(87, 132, 255, .08);
+	--#{$prefix}shadow-primary-md: 0 .2rem 1.2rem 0 rgba(87, 132, 255, .12);
+	--#{$prefix}shadow-primary-lg: 0 .4rem 1.6rem 0 rgba(87, 132, 255, .16);
+
+	/* 애니메이션 */
+	--#{$prefix}animation-speed-fast: .15s;
+	--#{$prefix}animation-speed: .3s;
+	--#{$prefix}animation-timing-base: cubic-bezier(.4, 0, .7, 1);
+	--#{$prefix}animation-timing-outback: cubic-bezier(.4, 0, .3, 1.8);
+	--#{$prefix}animation-timing-outback-sm: cubic-bezier(.4, 0, .1, 1.4);
+	--#{$prefix}animation-timing-ease: ease;
+	--#{$prefix}animation-timing-linear: linear;
+}
+
+[data-#{$prefix}thema="dark"] {
+	color-scheme: dark;
 }

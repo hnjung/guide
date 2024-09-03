@@ -1,0 +1,45 @@
+/*
+	파일정보 : 환경설정 > 폰트
+	업데이트 : 2024-08-01
+*/
+
+@font-face {
+	font-family: $font-base-family;
+	font-weight: $font-light;
+	font-style: $font-base-style;
+	font-display: block;
+	src: url("#{$path-font}/Pretendard-Light.subset.woff2") format("woff2"),
+		url("#{$path-font}/Pretendard-Light.subset.woff") format("woff");
+}
+@font-face {
+	font-family: $font-base-family;
+	font-weight: $font-regular;
+	font-style: $font-base-style;
+	font-display: block;
+	src: url("#{$path-font}/Pretendard-Regular.subset.woff2") format("woff2"),
+		url("#{$path-font}/Pretendard-Regular.subset.woff") format("woff");
+}
+@font-face {
+	font-family: $font-base-family;
+	font-weight: $font-medium;
+	font-style: $font-base-style;
+	font-display: block;
+	src: url("#{$path-font}/Pretendard-Medium.subset.woff2") format("woff2"),
+		url("#{$path-font}/Pretendard-Medium.subset.woff") format("woff");
+}
+@font-face {
+	font-family: $font-base-family;
+	font-weight: $font-semibold;
+	font-style: $font-base-style;
+	font-display: block;
+	src: url("#{$path-font}/Pretendard-SemiBold.subset.woff2") format("woff2"),
+		url("#{$path-font}/Pretendard-SemiBold.subset.woff") format("woff");
+}
+@font-face {
+	font-family: $font-base-family;
+	font-weight: $font-bold;
+	font-style: $font-base-style;
+	font-display: block;
+	src: url("#{$path-font}/Pretendard-Bold.subset.woff2") format("woff2"),
+		url("#{$path-font}/Pretendard-Bold.subset.woff") format("woff");
+}

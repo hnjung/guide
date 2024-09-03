@@ -5,3 +5,7 @@
 
 .badge-group {display: inline-flex; flex-wrap: wrap;}
 .badge {display: inline-block;}
+
+.icon-close {
+	@include icon($size: "md", $x: 1, $y: 0);
+}
