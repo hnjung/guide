@@ -3,4 +3,7 @@
 	업데이트 : 2024-08-01
 */
 
-header {display: block;}
+#header {
+	position: sticky;
+	z-index: 11;
+}

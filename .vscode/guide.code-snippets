@@ -1,0 +1,389 @@
+{
+	// Place your guide 작업 영역 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"color-base-": {
+		"prefix": "color-base-",
+		"body": [
+			"var(--#{config.\\$prefix}color-base-)$0"
+		],
+		"description": "color-base-"
+	},
+	"color-primary-": {
+		"prefix": "color-primary-",
+		"body": [
+			"var(--#{config.\\$prefix}color-primary-)$0"
+		],
+		"description": "color-primary-"
+	},
+	"color-": {
+		"prefix": "color-",
+		"body": [
+			"var(--#{config.\\$prefix}color-)$0"
+		],
+		"description": "color-"
+	},
+	"font-300": {
+		"prefix": "font-300",
+		"body": [
+			"var(--#{config.\\$prefix}font-light)$0"
+		],
+		"description": "font-300"
+	},
+	"font-400": {
+		"prefix": "font-400",
+		"body": [
+			"var(--#{config.\\$prefix}font-regular)$0"
+		],
+		"description": "font-400"
+	},
+	"font-500": {
+		"prefix": "font-500",
+		"body": [
+			"var(--#{config.\\$prefix}font-medium)$0"
+		],
+		"description": "font-500"
+	},
+	"font-600": {
+		"prefix": "font-600",
+		"body": [
+			"var(--#{config.\\$prefix}font-semibold)$0"
+		],
+		"description": "font-600"
+	},
+	"font-700": {
+		"prefix": "font-700",
+		"body": [
+			"var(--#{config.\\$prefix}font-bold)$0"
+		],
+		"description": "font-700"
+	},
+	"font-display-52": {
+		"prefix": "font-display-52",
+		"body": [
+			"var(--#{config.\\$prefix}font-display-lg)$0"
+		],
+		"description": "font-display-52"
+	},
+	"font-display-40": {
+		"prefix": "font-display-40",
+		"body": [
+			"var(--#{config.\\$prefix}font-display-md)$0"
+		],
+		"description": "font-display-40"
+	},
+	"font-display-32": {
+		"prefix": "font-display-32",
+		"body": [
+			"var(--#{config.\\$prefix}font-display-sm)$0"
+		],
+		"description": "font-display-32"
+	},
+	"font-headline-40": {
+		"prefix": "font-headline-40",
+		"body": [
+			"var(--#{config.\\$prefix}font-headline-lg)$0"
+		],
+		"description": "font-headline-40"
+	},
+	"font-headline-32": {
+		"prefix": "font-headline-32",
+		"body": [
+			"var(--#{config.\\$prefix}font-headline-md)$0"
+		],
+		"description": "font-headline-32"
+	},
+	"font-headline-28": {
+		"prefix": "font-headline-28",
+		"body": [
+			"var(--#{config.\\$prefix}font-headline-sm)$0"
+		],
+		"description": "font-headline-28"
+	},
+	"font-title-32": {
+		"prefix": "font-title-32",
+		"body": [
+			"var(--#{config.\\$prefix}font-title-xxl)$0"
+		],
+		"description": "font-title-32"
+	},
+	"font-title-28": {
+		"prefix": "font-title-28",
+		"body": [
+			"var(--#{config.\\$prefix}font-title-xl)$0"
+		],
+		"description": "font-title-28"
+	},
+	"font-title-24": {
+		"prefix": "font-title-24",
+		"body": [
+			"var(--#{config.\\$prefix}font-title-lg)$0"
+		],
+		"description": "font-title-24"
+	},
+	"font-title-20": {
+		"prefix": "font-title-20",
+		"body": [
+			"var(--#{config.\\$prefix}font-title-md)$0"
+		],
+		"description": "font-title-20"
+	},
+	"font-title-18": {
+		"prefix": "font-title-18",
+		"body": [
+			"var(--#{config.\\$prefix}font-title-sm)$0"
+		],
+		"description": "font-title-18"
+	},
+	"font-title-16": {
+		"prefix": "font-title-16",
+		"body": [
+			"var(--#{config.\\$prefix}font-title-xs)$0"
+		],
+		"description": "font-title-16"
+	},
+	"font-body-18": {
+		"prefix": "font-body-18",
+		"body": [
+			"var(--#{config.\\$prefix}font-body-xl)$0"
+		],
+		"description": "font-body-18"
+	},
+	"font-body-16": {
+		"prefix": "font-body-16",
+		"body": [
+			"var(--#{config.\\$prefix}font-body-lg)$0"
+		],
+		"description": "font-body-16"
+	},
+	"font-body-14": {
+		"prefix": "font-body-14",
+		"body": [
+			"var(--#{config.\\$prefix}font-body-md)$0"
+		],
+		"description": "font-body-14"
+	},
+	"font-body-12": {
+		"prefix": "font-body-12",
+		"body": [
+			"var(--#{config.\\$prefix}font-body-sm)$0"
+		],
+		"description": "font-body-12"
+	},
+	"space-2": {
+		"prefix": "space-2",
+		"body": [
+			"var(--#{config.\\$prefix}space-min)$0"
+		],
+		"description": "space-2"
+	},
+	"space-4": {
+		"prefix": "space-4",
+		"body": [
+			"var(--#{config.\\$prefix}space-xxs)$0"
+		],
+		"description": "space-4"
+	},
+	"space-8": {
+		"prefix": "space-8",
+		"body": [
+			"var(--#{config.\\$prefix}space-xs)$0"
+		],
+		"description": "space-8"
+	},
+	"space-12": {
+		"prefix": "space-12",
+		"body": [
+			"var(--#{config.\\$prefix}space-sm)$0"
+		],
+		"description": "space-12"
+	},
+	"space-16": {
+		"prefix": "space-16",
+		"body": [
+			"var(--#{config.\\$prefix}space-md)$0"
+		],
+		"description": "space-16"
+	},
+	"space-20": {
+		"prefix": "space-20",
+		"body": [
+			"var(--#{config.\\$prefix}space-lg)$0"
+		],
+		"description": "space-20"
+	},
+	"space-24": {
+		"prefix": "space-24",
+		"body": [
+			"var(--#{config.\\$prefix}space-xl)$0"
+		],
+		"description": "space-24"
+	},
+	"space-32": {
+		"prefix": "space-32",
+		"body": [
+			"var(--#{config.\\$prefix}space-xxl)$0"
+		],
+		"description": "space-32"
+	},
+	"space-40": {
+		"prefix": "space-40",
+		"body": [
+			"var(--#{config.\\$prefix}space-max)$0"
+		],
+		"description": "space-40"
+	},
+	"space-48": {
+		"prefix": "space-48",
+		"body": [
+			"var(--#{config.\\$prefix}space-huge)$0"
+		],
+		"description": "space-48"
+	},
+	"space-64": {
+		"prefix": "space-64",
+		"body": [
+			"var(--#{config.\\$prefix}space-mega)$0"
+		],
+		"description": "space-64"
+	},
+	"icon-12": {
+		"prefix": "icon-12",
+		"body": [
+			"var(--#{config.\\$prefix}icon-xs)$0"
+		],
+		"description": "icon-12"
+	},
+	"icon-16": {
+		"prefix": "icon-16",
+		"body": [
+			"var(--#{config.\\$prefix}icon-sm)$0"
+		],
+		"description": "icon-16"
+	},
+	"icon-24": {
+		"prefix": "icon-24",
+		"body": [
+			"var(--#{config.\\$prefix}icon-md)$0"
+		],
+		"description": "icon-24"
+	},
+	"icon-32": {
+		"prefix": "icon-32",
+		"body": [
+			"var(--#{config.\\$prefix}icon-lg)$0"
+		],
+		"description": "icon-32"
+	},
+	"icon-48": {
+		"prefix": "icon-48",
+		"body": [
+			"var(--#{config.\\$prefix}icon-xl)$0"
+		],
+		"description": "icon-48"
+	},
+	"icon-64": {
+		"prefix": "icon-64",
+		"body": [
+			"var(--#{config.\\$prefix}icon-xxl)$0"
+		],
+		"description": "icon-64"
+	},
+	"border-1": {
+		"prefix": "border-1",
+		"body": [
+			"var(--#{config.\\$prefix}border-sm)$0"
+		],
+		"description": "border-1"
+	},
+	"border-2": {
+		"prefix": "border-2",
+		"body": [
+			"var(--#{config.\\$prefix}border-md)$0"
+		],
+		"description": "border-2"
+	},
+	"border-4": {
+		"prefix": "border-4",
+		"body": [
+			"var(--#{config.\\$prefix}border-lg)$0"
+		],
+		"description": "border-4"
+	},
+	"radius-4": {
+		"prefix": "radius-4",
+		"body": [
+			"var(--#{config.\\$prefix}radius-xs)$0"
+		],
+		"description": "radius-4"
+	},
+	"radius-6": {
+		"prefix": "radius-6",
+		"body": [
+			"var(--#{config.\\$prefix}radius-sm)$0"
+		],
+		"description": "radius-6"
+	},
+	"radius-8": {
+		"prefix": "radius-8",
+		"body": [
+			"var(--#{config.\\$prefix}radius-md)$0"
+		],
+		"description": "radius-8"
+	},
+	"radius-12": {
+		"prefix": "radius-12",
+		"body": [
+			"var(--#{config.\\$prefix}radius-lg)$0"
+		],
+		"description": "radius-12"
+	},
+	"radius-16": {
+		"prefix": "radius-16",
+		"body": [
+			"var(--#{config.\\$prefix}radius-xl)$0"
+		],
+		"description": "radius-16"
+	},
+	"radius-24": {
+		"prefix": "radius-24",
+		"body": [
+			"var(--#{config.\\$prefix}radius-xxl)$0"
+		],
+		"description": "radius-24"
+	},
+	"radius-100": {
+		"prefix": "radius-100",
+		"body": [
+			"var(--#{config.\\$prefix}radius-pill)$0"
+		],
+		"description": "radius-100"
+	},
+	// --gd-shadow-reset: 0 0 0 rgba(0, 0, 0, 0);
+	// --gd-shadow-sm: 0 .1rem .4rem 0 rgba(18, 25, 43, .08);
+	// --gd-shadow-md: 0 .2rem 1.2rem 0 rgba(18, 25, 43, .12);
+	// --gd-shadow-lg: 0 .4rem 1.6rem 0 rgba(18, 25, 43, .16);
+	// --gd-shadow-primary-sm: 0 .1rem .4rem 0 rgba(87, 132, 255, .08);
+	// --gd-shadow-primary-md: 0 .2rem 1.2rem 0 rgba(87, 132, 255, .12);
+	// --gd-shadow-primary-lg: 0 .4rem 1.6rem 0 rgba(87, 132, 255, .16);
+	// --gd-animation-speed-fast: .15s;
+	// --gd-animation-speed: .3s;
+	// --gd-animation-timing-base: cubic-bezier(.4, 0, .7, 1);
+	// --gd-animation-timing-outback: cubic-bezier(.4, 0, .3, 1.8);
+	// --gd-animation-timing-outback-sm: cubic-bezier(.4, 0, .1, 1.4);
+	// --gd-animation-timing-ease: ease;
+	// --gd-animation-timing-linear: linear;
+}

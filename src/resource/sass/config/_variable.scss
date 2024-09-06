@@ -99,6 +99,8 @@ $warning:   $yellow !default;
 $danger:    $red !default;
 
 $system-group: (
+	"white":     $white,
+	"black":     $black,
 	"primary":   $primary,
 	"secondary": $secondary,
 	"success":   $success,
@@ -300,4 +302,16 @@ $radius-group: (
 
 [data-#{$prefix}thema="dark"] {
 	color-scheme: dark;
+
+	/* 색상 */
+	@each $color, $value in $gray-group {
+		$dark: invert-color($value);
+		--#{$prefix}color-base-#{$color}: #{$dark};
+	}
+	@each $color, $value in $system-group {
+		@if $color == "white" or $color == "black" {
+			$dark: invert-color($value);
+			--#{$prefix}color-#{$color}: #{$dark};
+		}
+	}
 }

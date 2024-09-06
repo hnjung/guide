@@ -1,0 +1,20 @@
+/*
+	파일정보 : 탐색 > 메뉴
+	업데이트 : 2024-09-01
+*/
+
+@use "../config" as config;
+
+/* 건너뛰기 */
+.skip-menu {
+	> a {
+		position: fixed;
+		z-index: 11;
+		top: -100%;
+		border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-40);
+		background-color: var(--#{config.$prefix}color-white);
+		&:focus {
+			top: 0;
+		}
+	}
+}

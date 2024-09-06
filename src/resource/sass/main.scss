@@ -4,173 +4,39 @@
 */
 
 /* 환경설정 */
-@import './config/function';
-@import './config/variable';
-@import './config/font';
-@import './config/reset';
+@use "config" as config;
 
 /* 레이아웃 */
-@import './layout/header';
+@use "layout/page";
+@use "layout/header";
+@use "layout/footer";
+@use "layout/layout";
+
+/* 탐색 */
+@use "nav/menu";
+@use "nav/nav";
+
+/* 콘텐츠 */
+@use "content/typo";
+@use "content/list";
+@use "content/content";
+
+/* 폼 */
+@use "form/text";
+@use "form/select";
+@use "form/file";
+@use "form/check";
+@use "form/form";
 
 /* 컴포넌트 */
-@import './component/element';
+@use "component/button";
+@use "component/accordion";
+@use "component/tab";
+@use "component/note";
+@use "component/component";
 
-/* 분기점 미디어쿼리 참고 */
-
-
-/* 초기화 - (태블릿) */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-}
-
-/* 초기화 - (태블릿+PC) */
-@media screen and (min-width: 768px) {
-}
-
-/* 초기화 - (PC) */
-@media screen and (min-width: 1025px) {
-}
-
-.test {
-	&::after {
-		content: '기본 : 모바일 퍼스트 스타일 작성';
-
-		@include media-down(mobile) {
-			content: '모바일 이하(media-down) 반영';
-		}
-
-		@include media-only(tablet) {
-			content: '태블릿 에만(media-only) 반영';
-		}
-
-		@include media-up(desktop) {
-			content: 'PC 이상(media-up) 반영';
-		}
-
-		@include media-between(tablet, laptop) {
-			content: '태블릿 과(media-between) 노트북에 반영';
-		}
-	}
-}
-
-.group {
-	color: tint-color(blue, 10%);
-}
-
-
-
-.abc {color: var(--color-light);}
-.section {font-size: 14px; color: var(--color-bg-light);}
-
-.btn {border-bottom: 1px solid #000;}
-
-
-/*
-레이아웃
-	중단점(break point)
-	구조
-		헤더
-		메인
-			사이드
-			타이틀
-		푸터
-		예외구조
-			헤더가 없거나
-			푸터가 없거나 등
-	이메일
-	분할(flex, grid)
-		가로
-		세로
-		유동
-
-탐색(이동 및 플로우)
-	메인메뉴
-	서브메뉴
-	건너뛰기
-	브레드크럼
-	스텝
-	링크
-		텍스트
-		아이콘
-		버튼
-	페이징
-
-콘텐츠(단순 출력, 조회)
-	타이포그래피
-	목록
-		텍스트
-		테이블
-		카드
-	박스
-		요약
-		공지
-	이미지
-	캐러셀
-
-폼(데이타)
-	텍스트필드
-		일반
-		검색어 자동입력
-		검색창 호출
-		이메일
-		날짜
-		버튼혼합
-		텍스트혼합
-	셀렉트박스
-	텍스트에어리어
-	파일첨부
-		단일첨부
-		다중첨부
-		이미지첨부
-	라디오버튼
-		일반
-		스위치
-		칩
-		세그먼트
-	체크박스
-		일반
-		칩
-		세그먼트
-	범위
-	폼그룹
-		항목명
-		항목값
-		도움말
-		유효성검사
-
-컴포넌트(조작)
-	버튼
-	탭
-	아코디언
-	선택
-		테이블
-		카드
-	정보동의
-
-팝업
-	풀
-	바텀시트
-	모달
-	커스텀(얼럿)
-	팝오버
-	툴팁
-	토스트
-
-유틸리티(세부)
-	색상
-		테두리
-		배경
-	크기
-		가로
-		세로
-	간격
-		마진
-		패딩
-	정렬
-		텍스트
-		요소
-	폰트
-		색상
-		크기
-		굵기
-		스타일
-*/
+/* 팝업 */
+@use "popup/popover";
+@use "popup/tooltip";
+@use "popup/toast";
+@use "popup/popup";

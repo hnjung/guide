@@ -3,37 +3,39 @@
 	업데이트 : 2024-08-01
 */
 
+@use "variable" as config;
+
 /* 분기점 */
 /** 특정 분기점의 최소 너비 */
 @function breakpoint-min($name) {
-	$min: map-get($breakpoint, $name);
+	$min: map-get(config.$breakpoint, $name);
 	@return if($min != 0, $min, null);
 }
 /** 특정 분기점의 최대 너비 */
 @function breakpoint-max($name) {
-	$breakpoint-name: map-keys($breakpoint);
+	$breakpoint-name: map-keys(config.$breakpoint);
 	$index: index($breakpoint-name, $name);
 	$next-breakpoint: nth($breakpoint-name, $index + 1);
 
 	/* 다음 분기점의 최소값에서 0.02px을 뺀 값을 최대값으로 반환 */
-	$max: map-get($breakpoint, $next-breakpoint) - 0.02;
+	$max: map-get(config.$breakpoint, $next-breakpoint) - 0.02;
 	@return if($max > 0, $max, null);
 }
 /** 특정 분기점 이상 적용 */
 @mixin media-up($name) {
-	@media (min-width: breakpoint-min($name)) {
+	@media screen and (min-width: breakpoint-min($name)) {
 		@content;
 	}
 }
 /** 특정 분기점 이하 적용 */
 @mixin media-down($name) {
-	@media (max-width: breakpoint-max($name)) {
+	@media screen and (max-width: breakpoint-max($name)) {
 		@content;
 	}
 }
 /** 분기점과 분기점 내에서 적용 */
 @mixin media-between($name-min, $name-max) {
-	@media (min-width: breakpoint-min($name-min)) and (max-width: breakpoint-max($name-max)) {
+	@media screen and (min-width: breakpoint-min($name-min)) and (max-width: breakpoint-max($name-max)) {
 		@content;
 	}
 }
@@ -42,7 +44,7 @@
 	$min: breakpoint-min($name);
 	$max: breakpoint-max($name);
 
-	@media (min-width: $min) and (max-width: $max) {
+	@media screen and (min-width: $min) and (max-width: $max) {
 		@content;
 	}
 }
@@ -54,9 +56,12 @@
 @function shade-color($color, $weight) {
 	@return mix(black, $color, $weight);
 }
+@function invert-color($color) {
+	@return rgb(255 - red($color), 255 - green($color), 255 - blue($color));
+}
 
 /* 아이콘 - $size = $icon-group */
-@mixin icon($size, $x, $y) {
+@mixin icon-common($size, $x, $y) {
 	$var: var(--#{$prefix}icon-#{$size});
 	$name: $size;
 
@@ -72,8 +77,8 @@
 
 
 
-/* 임시 */
-@mixin size($width, $height) {
+/***** 임시 */
+/* @mixin size($width, $height) {
 	width: $width;
 	height: $height;
 }
@@ -94,4 +99,4 @@
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: $line;
 	}
-}
+} */

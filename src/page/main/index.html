@@ -23,6 +23,8 @@
 					<span class="test"></span>
 
 					<div class="icon-close"></div>
+
+					<button type="button" id="testDarkMode">다크모드</button>
 				</div>
 				<!--// .group -->
 			</section>
@@ -55,3 +57,9 @@
 <!--// #popup -->
 
 <%- include('../include/footer.html'); %>
+
+<script>
+	document.querySelector('#testDarkMode').addEventListener('click', function() {
+		document.querySelector('html').dataset.gdThema = 'dark';
+	});
+</script>
