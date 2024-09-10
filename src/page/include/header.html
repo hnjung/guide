@@ -1,6 +1,8 @@
 <%
-	let projectName = 'Guide';
-	let pageName = (typeof title === 'undefined') ? projectName : title + ' &gt; ' + projectName;
+	let projectName = "Guide";
+	let setPageName = (typeof title === "undefined") ? projectName : title + " &gt; " + projectName;
+	let setHeader = (typeof header === "undefined") ? false : header;
+	let setAside = (typeof aside === "undefined") ? false : aside;
 %>
 <!DOCTYPE html>
 <html lang="ko" data-gd-thema="light">
@@ -10,7 +12,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no">
 	<meta name="format-detection" content="telephone=no, address=no, email=no">
 	<meta name="theme-color" content="#0046FF">
-	<title><%=pageName%></title>
+	<title><%=setPageName%></title>
 	<link rel="shortcut icon" type="image/x-icon" href="/resource/image/favicon.ico">
 	<link rel="stylesheet" href="/resource/css/main.css">
 	<script src="/resource/js/main.js"></script>
@@ -19,10 +21,29 @@
 <!-- #wrap -->
 <div id="wrap">
 
+	<% if (setHeader || setAside) { %>
 	<!-- #skip -->
 	<div id="skip">
 		<div class="skip-menu">
-			<a href="#main">본문으로 건너뛰기</a>
+			<a href="#content">본문으로 건너뛰기</a>
 		</div>
 	</div>
 	<!--// #skip -->
+	<% } %>
+
+	<% if (setHeader) { %>
+	<!-- #header-->
+	<header id="header">
+		<%- include("./body-header.html"); %>
+	</header>
+	<!--// #header-->
+	<% } %>
+
+	<!-- #main -->
+	<main id="main">
+		<% if (setAside) { %>
+		<!-- #aside -->
+		<aside id="aside">
+		</aside>
+		<!--// #aside -->
+		<% } %>

@@ -3,7 +3,12 @@
 	업데이트 : 2024-08-01
 */
 
+@use "config" as config;
+
 #header {
 	position: sticky;
 	z-index: 11;
+	top: 0;
+	height: var(--#{config.$prefix}header-height);
+	background-color: var(--#{config.$prefix}color-white);
 }

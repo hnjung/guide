@@ -1,3 +1,17 @@
+<%
+	let setFooter = (typeof footer === "undefined") ? false : footer;
+%>
+	</main>
+	<!--// #main -->
+
+	<% if (setFooter) { %>
+	<!-- #footer -->
+	<footer id="footer">
+		<%- include("./body-footer.html"); %>
+	</footer>
+	<!--// #footer -->
+	<% } %>
+
 	<!-- #loading -->
 	<div id="loading"><!-- [D]활성화 .is-active 클래스 추가 -->
 		<div class="loading-bar"><span></span></div>
