@@ -4,11 +4,11 @@
 */
 
 /* 경로 */
-$path-image: "/resource/image" !default;
-$path-font:  "/resource/font" !default;
+$path-image: '/resource/image' !default;
+$path-font:  '/resource/font' !default;
 
 /* 접두사 - [gd: guide] */
-$prefix: "gd-" !default;
+$prefix: 'gd-' !default;
 
 /* 분기점 
 	* 참고) 자료
@@ -58,15 +58,15 @@ $gray-80: #343a40 !default;
 $gray-90: #212529 !default;
 
 $gray-group: (
-	"10": $gray-10,
-	"20": $gray-20,
-	"30": $gray-30,
-	"40": $gray-40,
-	"50": $gray-50,
-	"60": $gray-60,
-	"70": $gray-70,
-	"80": $gray-80,
-	"90": $gray-90
+	'10': $gray-10,
+	'20': $gray-20,
+	'30': $gray-30,
+	'40': $gray-40,
+	'50': $gray-50,
+	'60': $gray-60,
+	'70': $gray-70,
+	'80': $gray-80,
+	'90': $gray-90
 ) !default;
 
 $primary:    $blue !default;
@@ -81,15 +81,15 @@ $primary-80: shade-color($primary, 60%) !default;
 $primary-90: shade-color($primary, 80%) !default;
 
 $primary-group: (
-	"10": $primary-10,
-	"20": $primary-20,
-	"30": $primary-30,
-	"40": $primary-40,
-	"50": $primary-50,
-	"60": $primary-60,
-	"70": $primary-70,
-	"80": $primary-80,
-	"90": $primary-90
+	'10': $primary-10,
+	'20': $primary-20,
+	'30': $primary-30,
+	'40': $primary-40,
+	'50': $primary-50,
+	'60': $primary-60,
+	'70': $primary-70,
+	'80': $primary-80,
+	'90': $primary-90
 ) !default;
 
 $secondary: $gray-60 !default;
@@ -99,18 +99,18 @@ $warning:   $yellow !default;
 $danger:    $red !default;
 
 $system-group: (
-	"white":     $white,
-	"black":     $black,
-	"primary":   $primary,
-	"secondary": $secondary,
-	"success":   $success,
-	"info":      $info,
-	"warning":   $warning,
-	"danger":    $danger,
+	'white':     $white,
+	'black':     $black,
+	'primary':   $primary,
+	'secondary': $secondary,
+	'success':   $success,
+	'info':      $info,
+	'warning':   $warning,
+	'danger':    $danger,
 ) !default;
 
 /* 폰트 */
-$font-base-family: "Pretendard" !default;
+$font-base-family: 'Pretendard' !default;
 $font-base-style: normal !default;
 
 $font-light:    300 !default;
@@ -120,11 +120,11 @@ $font-semibold: 600 !default;
 $font-bold:     700 !default;
 
 $font-weight: (
-	"light":    $font-light,
-	"regular":  $font-regular,
-	"medium":   $font-medium,
-	"semibold": $font-semibold,
-	"bold":     $font-bold
+	'light':    $font-light,
+	'regular':  $font-regular,
+	'medium':   $font-medium,
+	'semibold': $font-semibold,
+	'bold':     $font-bold
 ) !default;
 
 $font-min:  1.2rem !default;
@@ -141,28 +141,28 @@ $font-huge: 5.2rem !default;
 $font-size: (
 	type: (
 		display: (
-			"lg": $font-huge,
-			"md": $font-max,
-			"sm": $font-xxl
+			'lg': $font-huge,
+			'md': $font-max,
+			'sm': $font-xxl
 		),
 		headline: (
-			"lg": $font-max,
-			"md": $font-xxl,
-			"sm": $font-xl
+			'lg': $font-max,
+			'md': $font-xxl,
+			'sm': $font-xl
 		),
 		title: (
-			"xxl": $font-xxl,
-			"xl":  $font-xl,
-			"lg":  $font-lg,
-			"md":  $font-md,
-			"sm":  $font-sm,
-			"xs":  $font-xs
+			'xxl': $font-xxl,
+			'xl':  $font-xl,
+			'lg':  $font-lg,
+			'md':  $font-md,
+			'sm':  $font-sm,
+			'xs':  $font-xs
 		),
 		body: (
-			"xl": $font-sm,
-			"lg": $font-xs,
-			"md": $font-xxs,
-			"sm": $font-min
+			'xl': $font-sm,
+			'lg': $font-xs,
+			'md': $font-xxs,
+			'sm': $font-min
 		)
 	)
 ) !default;
@@ -199,46 +199,46 @@ $mega: 4.8rem !default;
 $giga: 6.4rem !default;
 
 $space-group: (
-	"min":  $min,
-	"xxs":  $xxs,
-	"xs":   $sm,
-	"sm":   $md,
-	"md":   $lg,
-	"lg":   $xl,
-	"xl":   $xxl,
-	"xxl":  $max,
-	"max":  $huge,
-	"huge": $mega,
-	"mega": $giga
+	'min':  $min,
+	'xxs':  $xxs,
+	'xs':   $sm,
+	'sm':   $md,
+	'md':   $lg,
+	'lg':   $xl,
+	'xl':   $xxl,
+	'xxl':  $max,
+	'max':  $huge,
+	'huge': $mega,
+	'mega': $giga
 );
 
 $icon-group: (
-	"xs":  $md,
-	"sm":  $lg,
-	"md":  $xxl,
-	"lg":  $max,
-	"xl":  $mega,
-	"xxl": $giga
+	'xs':  $md,
+	'sm':  $lg,
+	'md':  $xxl,
+	'lg':  $max,
+	'xl':  $mega,
+	'xxl': $giga
 );
 
 $border-group: (
-	"sm": $nano,
-	"md": $min,
-	"lg": $xxs
+	'sm': $nano,
+	'md': $min,
+	'lg': $xxs
 );
 
 $radius-group: (
-	"xs":   $xxs,
-	"sm":   $xs,
-	"md":   $sm,
-	"lg":   $md,
-	"xl":   $lg,
-	"xxl":  $xxl,
-	"pill": 100%
+	'xs':   $xxs,
+	'sm':   $xs,
+	'md':   $sm,
+	'lg':   $md,
+	'xl':   $lg,
+	'xxl':  $xxl,
+	'pill': 100%
 );
 
 :root,
-[data-#{$prefix}thema="light"] {
+[data-#{$prefix}thema='light'] {
 	/* 색상 */
 	@each $color, $value in $gray-group {
 		--#{$prefix}color-base-#{$color}: #{$value};
@@ -300,7 +300,7 @@ $radius-group: (
 	--#{$prefix}animation-timing-linear: linear;
 }
 
-[data-#{$prefix}thema="dark"] {
+[data-#{$prefix}thema='dark'] {
 	color-scheme: dark;
 
 	/* 색상 */
@@ -309,7 +309,7 @@ $radius-group: (
 		--#{$prefix}color-base-#{$color}: #{$dark};
 	}
 	@each $color, $value in $system-group {
-		@if $color == "white" or $color == "black" {
+		@if $color == 'white' or $color == 'black' {
 			$dark: invert-color($value);
 			--#{$prefix}color-#{$color}: #{$dark};
 		}

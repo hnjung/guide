@@ -3,7 +3,7 @@
 	업데이트 : 2024-08-01
 */
 
-@use "variable" as config;
+@use 'variable' as config;
 
 /* 분기점 */
 /** 특정 분기점의 최소 너비 */
@@ -67,7 +67,7 @@
 
 	width: $var;
 	height: $var;
-	background-image: url("#{$path-image}/common/icon-#{$name}.svg");
+	background-image: url('#{$path-image}/common/icon-#{$name}.svg');
 	background-repeat: no-repeat;
 	background-position: calc($var * -#{$x}) calc($var * -#{$y});
 	background-size: calc($var * 10) auto;

@@ -3,41 +3,31 @@
 	업데이트 : 2024-08-01
 */
 
-@use "variable" as config;
+@use 'variable' as config;
 
-*, ::before, ::after {
+:where([class]) {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: inherit;
+}
+:where([class])::before,
+:where([class])::after {
 	box-sizing: border-box;
 }
 
-header, main, footer, aside, article, section,
-nav, menu, dialog, search,
-hgroup, h1, h2, h3, h4, h5, h6,
-div, span,
-dl, dt, dd, ul, li, ol,
-table, thead, tbody, thead, caption, tr, th, td,
-form, fieldset, legend, label, input, output, select, datalist, textarea, button, progress, meter,
-iframe, applet, object, details, summary,
-p, blockquote, pre, code, abbr, address, cite, dfn, kbd, q, samp, var, ruby, data, time,
-canvas, figure, figcaption, embed, video, audio, picture, img,
-em, s, small, strong, sub, sup, b, u, i, mark, del, ins,
-a, map {
+:where(html, body) {
 	margin: 0;
 	padding: 0;
-	font: inherit;
 }
-
-html {
-	margin: 0;
-	padding: 0;
+:where(html) {
 	background-color: var(--#{config.$prefix}color-white);
 	font-size: 62.5%;
 	text-size-adjust: none;
 	-webkit-text-size-adjust: none;
 	-webkit-tap-highlight-color: transparent;
 }
-body {
-	margin: 0;
-	padding: 0;
+:where(body) {
 	line-height: 1.5;
 	font-family: config.$font-base-family, sans-serif;
 	font-size: var(--#{config.$prefix}font-body-lg);
@@ -47,25 +37,22 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-ol, ul {
+:where(ol[class], ul[class]) {
 	list-style-type: none;
 }
-table {
+:where(table[class]) {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-fieldset, button {
+:where(button[class], fieldset[class], iframe[class]) {
 	border: 0;
 }
-input, textarea, select, button {
+:where(input[class], textarea[class], select[class], button[class]) {
 	appearance: none;
 	max-width: 100%;
 	background-color: transparent;
-	box-shadow: none;
-	font: inherit;
 }
-
-input {
+:where(input[class]) {
 	&::-ms-clear,
 	&::-ms-reveal,
 	&::-webkit-search-decoration,
@@ -82,7 +69,7 @@ input {
 		@extend %form-autofill;
 	}
 }
-textarea {
+:where(textarea[class]) {
 	&:-webkit-autofill,
 	&:-webkit-autofill:hover,
 	&:-webkit-autofill:focus,
@@ -90,7 +77,7 @@ textarea {
 		@extend %form-autofill;
 	}
 }
-select {
+:where(select[class]) {
 	&:-webkit-autofill,
 	&:-webkit-autofill:hover,
 	&:-webkit-autofill:focus,
@@ -99,24 +86,24 @@ select {
 	}
 }
 %form-autofill {
-	box-shadow: 0 0 0 1000px white inset !important;
+	box-shadow: 0 0 0 1000px var(--#{config.$prefix}color-white) inset !important;
 	transition: background-color 5000s ease 0s;
 }
 
-canvas, video, picture, svg, img {
+:where(canvas[class], video[class], picture[class], svg[class], img[class]) {
 	display: block;
 	max-width: 100%;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	user-select: none;
 }
-strong {
+:where(strong) {
 	font-weight: var(--#{config.$prefix}font-semibold);
 }
-em {
+:where(em) {
 	font-style: normal;
 }
-a {
+:where(a) {
 	&,
 	&:hover,
 	&:focus,

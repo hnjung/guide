@@ -4,39 +4,39 @@
 */
 
 /* 환경설정 */
-@use "config" as config;
+@use 'config' as config;
 
 /* 레이아웃 */
-@use "layout/page";
-@use "layout/header";
-@use "layout/footer";
-@use "layout/layout";
+@use 'layout/page';
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/layout';
 
 /* 탐색 */
-@use "nav/menu";
-@use "nav/nav";
+@use 'nav/menu';
+@use 'nav/nav';
 
 /* 콘텐츠 */
-@use "content/typo";
-@use "content/list";
-@use "content/content";
+@use 'content/typo';
+@use 'content/list';
+@use 'content/content';
 
 /* 폼 */
-@use "form/text";
-@use "form/select";
-@use "form/file";
-@use "form/check";
-@use "form/form";
+@use 'form/text';
+@use 'form/select';
+@use 'form/file';
+@use 'form/check';
+@use 'form/form';
 
 /* 컴포넌트 */
-@use "component/button";
-@use "component/accordion";
-@use "component/tab";
-@use "component/note";
-@use "component/component";
+@use 'component/button';
+@use 'component/accordion';
+@use 'component/tab';
+@use 'component/note';
+@use 'component/component';
 
 /* 팝업 */
-@use "popup/popover";
-@use "popup/tooltip";
-@use "popup/toast";
-@use "popup/popup";
+@use 'popup/popover';
+@use 'popup/tooltip';
+@use 'popup/toast';
+@use 'popup/popup';

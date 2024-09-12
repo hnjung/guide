@@ -1,8 +1,8 @@
 <%
-	let projectName = "Guide";
-	let setPageName = (typeof title === "undefined") ? projectName : title + " &gt; " + projectName;
-	let setHeader = (typeof header === "undefined") ? false : header;
-	let setAside = (typeof aside === "undefined") ? false : aside;
+	let projectName = 'Guide';
+	let setPageName = (typeof title === 'undefined') ? projectName : title + ' &gt; ' + projectName;
+	let setHeader = (typeof header === 'undefined') ? false : header;
+	let setAside = (typeof aside === 'undefined') ? false : aside;
 %>
 <!DOCTYPE html>
 <html lang="ko" data-gd-thema="light">
@@ -34,7 +34,7 @@
 	<% if (setHeader) { %>
 	<!-- #header-->
 	<header id="header">
-		<%- include("./body-header.html"); %>
+		<%- include('./body-header.html'); %>
 	</header>
 	<!--// #header-->
 	<% } %>

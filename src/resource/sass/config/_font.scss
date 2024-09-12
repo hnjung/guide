@@ -3,45 +3,45 @@
 	업데이트 : 2024-08-01
 */
 
-@use "variable" as config;
+@use 'variable' as config;
 
 @font-face {
 	font-family: config.$font-base-family;
 	font-weight: config.$font-light;
 	font-style: config.$font-base-style;
 	font-display: block;
-	src: url("#{config.$path-font}/Pretendard-Light.subset.woff2") format("woff2"),
-		url("#{config.$path-font}/Pretendard-Light.subset.woff") format("woff");
+	src: url('#{config.$path-font}/Pretendard-Light.subset.woff2') format('woff2'),
+		url('#{config.$path-font}/Pretendard-Light.subset.woff') format('woff');
 }
 @font-face {
 	font-family: config.$font-base-family;
 	font-weight: config.$font-regular;
 	font-style: config.$font-base-style;
 	font-display: block;
-	src: url("#{config.$path-font}/Pretendard-Regular.subset.woff2") format("woff2"),
-		url("#{config.$path-font}/Pretendard-Regular.subset.woff") format("woff");
+	src: url('#{config.$path-font}/Pretendard-Regular.subset.woff2') format('woff2'),
+		url('#{config.$path-font}/Pretendard-Regular.subset.woff') format('woff');
 }
 @font-face {
 	font-family: config.$font-base-family;
 	font-weight: config.$font-medium;
 	font-style: config.$font-base-style;
 	font-display: block;
-	src: url("#{config.$path-font}/Pretendard-Medium.subset.woff2") format("woff2"),
-		url("#{config.$path-font}/Pretendard-Medium.subset.woff") format("woff");
+	src: url('#{config.$path-font}/Pretendard-Medium.subset.woff2') format('woff2'),
+		url('#{config.$path-font}/Pretendard-Medium.subset.woff') format('woff');
 }
 @font-face {
 	font-family: config.$font-base-family;
 	font-weight: config.$font-semibold;
 	font-style: config.$font-base-style;
 	font-display: block;
-	src: url("#{config.$path-font}/Pretendard-SemiBold.subset.woff2") format("woff2"),
-		url("#{config.$path-font}/Pretendard-SemiBold.subset.woff") format("woff");
+	src: url('#{config.$path-font}/Pretendard-SemiBold.subset.woff2') format('woff2'),
+		url('#{config.$path-font}/Pretendard-SemiBold.subset.woff') format('woff');
 }
 @font-face {
 	font-family: config.$font-base-family;
 	font-weight: config.$font-bold;
 	font-style: config.$font-base-style;
 	font-display: block;
-	src: url("#{config.$path-font}/Pretendard-Bold.subset.woff2") format("woff2"),
-		url("#{config.$path-font}/Pretendard-Bold.subset.woff") format("woff");
+	src: url('#{config.$path-font}/Pretendard-Bold.subset.woff2') format('woff2'),
+		url('#{config.$path-font}/Pretendard-Bold.subset.woff') format('woff');
 }

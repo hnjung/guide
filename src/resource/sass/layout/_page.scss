@@ -3,7 +3,7 @@
 	업데이트 : 2024-09-01
 */
 
-@use "config" as config;
+@use 'config' as config;
 
 #wrap {
 	--#{config.$prefix}body-min-width: 320px;
@@ -17,12 +17,8 @@
 		--#{config.$prefix}header-height: 6.4rem;
 	}
 }
-#main {
-	position: relative;
-}
-#content {
-	position: relative;
-}
+#main {position: relative;}
+#content {position: relative;}
 
 .section {
 	padding: var(--#{config.$prefix}space-xl) var(--#{config.$prefix}space-lg) var(--#{config.$prefix}space-max);
@@ -42,22 +38,22 @@
 /* 분기점 미디어쿼리 참고 */
 .xxxx {
 	&::after {
-		content: "기본 : 모바일 퍼스트 스타일 작성";
+		content: '기본 : 모바일 퍼스트 스타일 작성';
 
 		@include config.media-down(mobile) {
-			content: "모바일 이하(media-down) 반영";
+			content: '모바일 이하(media-down) 반영';
 		}
 
 		@include config.media-only(tablet) {
-			content: "태블릿 에만(media-only) 반영";
+			content: '태블릿 에만(media-only) 반영';
 		}
 
 		@include config.media-up(desktop) {
-			content: "PC 이상(media-up) 반영";
+			content: 'PC 이상(media-up) 반영';
 		}
 
 		@include config.media-between(tablet, laptop) {
-			content: "태블릿 과(media-between) 노트북에 반영";
+			content: '태블릿 과(media-between) 노트북에 반영';
 		}
 	}
 }
