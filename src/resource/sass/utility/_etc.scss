@@ -1,0 +1,49 @@
+/*
+	파일정보 : 유틸리티
+	업데이트 : 2024-08-01
+*/
+
+@use 'config' as config;
+
+.sr-only {
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	clip: rect(0,0,0,0);
+	clip-path: polygon(0 0,0 0,0 0);
+}
+.read-only { /* 초점없이 읽기만 세팅 */
+	overflow: hidden;
+	position: absolute;
+	z-index: 0;
+	top: -9999px;
+	left: -9999px;
+	width: 1px;
+	height: 1px;
+}
+
+.is-show {display: block;}
+.is-hide {display: none;}
+
+.br-mo {
+	display: block;
+	@include config.media-up(tablet) {
+		display: none;
+	}
+}
+.br-ta {
+	display: none;
+	@include config.media-up(tablet) {
+		display: block;
+	}
+}
+.br-pc {
+	display: none;
+	@include config.media-up(desktop) {
+		display: block;
+	}
+}

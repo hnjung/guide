@@ -1,0 +1,52 @@
+<%
+	let setGnb = (typeof gnb === 'undefined') ? false : gnb;
+	let setGnb2nd = (typeof gnb2nd === 'undefined') ? false : gnb2nd;
+%>
+<div class="aside-wrap">
+	<% if (menu.gnb) { %>
+	<div class="space-mb-xxs">
+		<!-- .checkbox* -->
+		<label for="checkSideControl" class="checkbox-item option-single">
+			<input type="checkbox" name="" id="checkSideControl" class="control" checked>
+			<span class="label fs-caption">메뉴 전체 닫기</span>
+		</label>
+		<!--// .checkbox* -->
+	</div>
+	<% } %>
+
+	<% menu.gnb.forEach(function(_this) { %>
+	<!-- .accordion -->
+	<div class="accordion fn-fold-wrap<% if (setGnb === _this.code) { %> is-open<% } %>" data-fold-slide="true">
+		<div class="accordion-head">
+			<div class="inner fn-fold-link">
+				<span><%= _this.name %></span>
+			</div>
+			<% if (_this.gnb2nd) { %>
+			<button type="button" class="btn-fold fn-fold-btn"><span class="sr-only">열기</span></button>
+			<% } %>
+		</div>
+		<div class="accordion-body fn-fold-item">
+			<div class="inner">
+				<% if (_this.gnb2nd) { %>
+				<!-- .list -->
+				<ul class="list depth-u1">
+					<% _this.gnb2nd.forEach(function(_this2nd) { %>
+					<li><a class="fn-guide-link<% if (setGnb === _this.code && setGnb2nd === _this2nd.code) { %> is-active<% } %>" href="<%= _this2nd.path %>"><%= _this2nd.name %></a>
+						<% if (_this2nd.gnb3rd) { %>
+						<ul class="list depth-u2">
+							<% _this2nd.gnb3rd.forEach(function(_this3rd) { %>
+							<li><a class="fn-guide-link" href="<%= _this2nd.path %>#<%= _this3rd.code %>"><%= _this3rd.name %></a></li>
+							<% }); %>
+						</ul>
+						<% } %>
+					</li>
+					<% }); %>
+				</ul>
+				<!--// .list -->
+				<% } %>
+			</div>
+		</div>
+	</div>
+	<!--// .accordion -->
+	<% }); %>
+</div>

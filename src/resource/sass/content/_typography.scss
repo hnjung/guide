@@ -1,0 +1,74 @@
+/*
+	파일정보 : 콘텐츠 > 타이포그래피(헤드라인, 타이틀, 문단)
+	업데이트 : 2024-08-01
+*/
+
+@use 'config' as config;
+
+/* 타이포그래피 */
+/** 타이포그래피 - 헤드라인 */
+[class^="headline-h"] {overflow: hidden; font-weight: var(--#{config.$prefix}font-semibold); color: var(--#{config.$prefix}color-black);}
+[class^="headline-h"] > .txt {display: inline-block; vertical-align: middle;}
+.headline-h1 > .txt {font-size: var(--font-headline-md); line-height: 1.35; letter-spacing: -.028rem;}
+
+[class^="headline-h"][class*="option-item"] {display: flex; flex-direction: row; align-items: center;}
+[class^="headline-h"].option-item-left {justify-content: flex-start;}
+[class^="headline-h"].option-item-right {justify-content: space-between;}
+[class^="headline-h"][class*="option-item"] .txt {flex-basis: content; flex-shrink: 0;}
+[class^="headline-h"][class*="option-item"] .item {margin-left: var(--#{config.$prefix}space-md); line-height: 1.5; font-size: var(--#{config.$prefix}font-body-lg);}
+[class^="headline-h"][class*="option-item"] .item > span {font-weight: var(--#{config.$prefix}font-regular);}
+[class^="headline-h"].option-mixed {font-weight: var(--#{config.$prefix}font-regular);}
+[class^="headline-h"].option-mixed .txt > strong {font-weight: var(--#{config.$prefix}font-semibold);}
+
+/** 타이포그래피 - 타이틀 */
+[class^="title-h"] {overflow: hidden; font-weight: var(--#{config.$prefix}font-semibold); color: var(--#{config.$prefix}color-black);}
+[class^="title-h"] > .txt {display: inline-block; vertical-align: middle;}
+.title-h2 > .txt {font-size: var(--font-title-lg); line-height: 1.35; letter-spacing: -.024rem;}
+.title-h3 > .txt {font-size: var(--font-title-md); line-height: 1.35; letter-spacing: -.02rem;}
+.title-h4 > .txt {font-size: var(--font-title-sm); line-height: 1.35;}
+.title-h5 > .txt {font-size: var(--font-title-xs); line-height: 1.35;}
+
+[class^="title-h"][class*="option-item"] {display: flex; flex-direction: row; align-items: center;}
+[class^="title-h"].option-item-left {justify-content: flex-start;}
+[class^="title-h"].option-item-right {justify-content: space-between;}
+[class^="title-h"][class*="option-item"] .txt {flex-basis: content; flex-shrink: 0;}
+[class^="title-h"][class*="option-item"] .item {margin-left: var(--#{config.$prefix}space-md); font-size: var(--#{config.$prefix}font-body-lg);}
+[class^="title-h"][class*="option-item"] .item > span {font-weight: var(--#{config.$prefix}font-regular);}
+[class^="title-h"].option-mixed {font-weight: var(--#{config.$prefix}font-regular);}
+[class^="title-h"].option-mixed .txt > strong {font-weight: var(--#{config.$prefix}font-semibold);}
+
+.title-copy {font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-70);}
+.title-copy > strong {color: var(--#{config.$prefix}color-black);}
+
+/** 타이포그래피 - 텍스트 */
+.text {font-size: var(--#{config.$prefix}font-body-lg); word-break: break-all;}
+.text-price {letter-spacing: -.02rem; font-weight: var(--#{config.$prefix}font-semibold); font-size: var(--font-title-md);}
+.text-price > em {color:var(--#{config.$prefix}color-primary-50);}
+.text-price2 {font-weight: var(--#{config.$prefix}font-medium);}
+.text-price2 > em {color:var(--#{config.$prefix}color-primary-50);}
+.txt-subject {vertical-align: middle; font-weight: var(--#{config.$prefix}font-semibold);}
+.txt-line {font-weight: 100; color: var(--#{config.$prefix}color-base-20);}
+.txt-line::before {content: '\00a0';}
+.txt-line::after {content: '\00a0';}
+
+.fix-data {display: inline-block; margin-left: var(--#{config.$prefix}space-xxs); margin-right: var(--#{config.$prefix}space-xxs); vertical-align: middle;}
+.unit .fix-data {margin-left: 0; margin-right: 0; font-size: var(--#{config.$prefix}font-body-lg);}
+.fix-timer {display: inline-block; margin-right: var(--#{config.$prefix}space-xs); vertical-align: middle; font-size: var(--#{config.$prefix}font-body-sm);}
+
+/* 타이포그래피 - (PC) */
+@media screen and (min-width: 1025px) {
+	.section.option-bg > [class^="title-h"] {width: 920px; margin-left: auto; margin-right: auto;}
+}
+
+.main-copy {overflow: hidden; padding: 2.4rem 0 3.2rem; line-height: 1; font-weight: var(--#{config.$prefix}font-semibold); color: var(--#{config.$prefix}color-black);}
+.main-copy > .step {line-height: 1.5;}
+.main-copy > .txt {display: block; font-size: var(--font-title-lg); line-height: 1.35; letter-spacing: -.024rem;}
+.main-copy > .sub {display: block; padding: .6rem 0 .4rem; line-height: 1.35; font-weight: var(--#{config.$prefix}font-regular); font-size: var(--#{config.$prefix}font-body-sm); color: var(--#{config.$prefix}color-base-50);}
+.main-copy > strong.sub {padding: 0 0 .2rem; line-height: 1.5; font-weight: var(--#{config.$prefix}font-medium); font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-black);}
+.main-copy > .copy {display: block; padding-top: .8rem; line-height: 1.5; font-weight: var(--#{config.$prefix}font-regular); font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
+.main-copy > .step + .txt,
+.main-copy > .step + strong.sub,
+.main-copy > .txt + .btn-txt-link,
+.main-copy > .copy + .btn-txt-link,
+.main-copy > .txt + .btn-bullet-link,
+.main-copy > .copy + .btn-bullet-link {margin-top: 1.6rem;}

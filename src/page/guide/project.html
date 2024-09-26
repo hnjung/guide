@@ -1,0 +1,361 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'guide',
+	gnb2nd: 'project',
+	title: '프로젝트 환경'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section - 기준 - 프로젝트 환경 -->
+	<section class="section" id="standard-set">
+		<h1 class="headline-h1"><span class="txt">기준</span></h1>
+		<h2 class="title-h2"><span class="txt">프로젝트 환경</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li>사용 언어 : HTML5, CSS3, Javascript(ES6), JQuery</li>
+					<li>인코딩 : UTF-8</li>
+					<li>서비스 기기 : 태블릿, 모바일 (반응형 + 적응형)</li>
+					<li>크로스 브라우징 : Chrome, Edge, Firefox, Safari</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 기준 - 프로젝트 환경 -->
+	<!-- .section - 기준 - 기기별 해상도 기준 -->
+	<section class="section" id="standard-device">
+		<h2 class="title-h2"><span class="txt">기기별 해상도 기준</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li>모바일 : 미디어 쿼리 없이 디폴트로 작성(모바일 퍼스트)</li>
+					<li>태블릿 : <code>@media screen and (min-width: 768px) and (max-width: 1024px) {}</code></li>
+					<li>태블릿 ~ PC : <code>@media screen and (min-width: 768px) {}</code></li>
+					<li>PC : <code>@media screen and (min-width: 1025px) {}</code></li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 기준 - 기기별 해상도 기준 -->
+	<!-- .section - 기준 - 스타일시트 분기 -->
+	<section class="section" id="standard-stylesheet">
+		<h2 class="title-h2"><span class="txt">스타일시트 분기</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li><code>src/css/common.font.css</code> : 웹폰트</li>
+					<li><code>src/css/common.reset.css</code> : 전역변수, 초기화</li>
+					<li><code>src/css/common.layout.css</code> : 전체레이아웃, 브레드크럼</li>
+					<li><code>src/css/common.popup.css</code> : 팝업 스타일 정의 - 모달, 바텀시트, 팝오버, 툴팁</li>
+					<li><code>src/css/common.form.css</code> : 데이터 관련 요소 스타일 정의 - 버튼, 텍스트필드, 캘린더, 셀렉트박스, 텍스트에어리어, 라디오버튼, 체크박스, 칩, 스위치, 토글라디오버튼</li>
+					<li><code>src/css/common.module.css</code> : 그룹화 된 구성 요소 스타일 정의 - 공지사항, 박스, 탭, 아코디언, 등록폼, 폼도움말, 검색, 게시판형목록, 카드형목록, 테이블, 요소분할</li>
+					<li><code>src/css/common.element.css</code> : 단일 요소 스타일 정의 - 스크롤바, 아이콘, 뱃지, 태그, 스텝, 링크, 헤드라인, 제목, 텍스트, 폰트, 정렬, 사이즈, 여백</li>
+					<li><code>src/css/content.css</code> : 공통 이외의 사용 빈도수가 상대적으로 낮은 콘텐츠 스타일 정의</li>
+					<li><code>dist/css/style.common.min.css</code> : 압축된 배포 파일</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 기준 - 스타일시트 분기 -->
+	<!-- .section - 기준 - 폴더 -->
+	<section class="section" id="standard-folder">
+		<h2 class="title-h2"><span class="txt">폴더</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li><code>/CSSPUB/<strong>view</strong>/</code> : 루트</li>
+					<li><code>/CSSPUB/view/<strong>css</strong>/</code> : 스타일시트</li>
+					<li><code>/CSSPUB/view/<strong>js</strong>/</code> : 스크립트</li>
+					<li><code>/CSSPUB/view/<strong>image</strong>/</code> : 이미지</li>
+					<li><code>/CSSPUB/view/<strong>html</strong>/</code> : HTML</li>
+					<li><code>/CSSPUB/view/<strong>xxx</strong>/com/</code> : 각 폴더의 공통 파일 (공통 스타일시트 예시 : <code>/CSSPUB/view/css/com/</code>)</li>
+					<li><code>/CSSPUB/view/<strong>xxx</strong>/xxx/</code> : 카테고리 별 파일 (상품 페이지 예시 : <code>/CSSPUB/view/html/prd/</code>)</li>
+					<li><code>/CSSPUB/view/<strong>doc</strong>/</code> : 산출물 목록 및 가이드(배포 대상 아님)</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 기준 - 폴더 -->
+	<!-- .section - 기준 - 파일명 -->
+	<section class="section" id="standard-file">
+		<h2 class="title-h2"><span class="txt">파일명</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li>스크립트 파일은 개발 파일과 구분을 위해 <code>_pub</code>를 파일명 맨 뒤에 추가 (예시 : <code>common<strong>_pub</strong>.js</code>)</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 기준 - 파일명 -->
+
+	<!-- .section - 규칙 - 예약어 -->
+	<section class="section" id="rule-naming">
+		<h1 class="headline-h1"><span class="txt">규칙</span></h1>
+		<h2 class="title-h2"><span class="txt">예약어</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">레이아웃</span></h3>
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li><code>#wrap</code> : 본 페이지와 팝업 페이지를 감싼 아이디</li>
+					<li><code>#page</code> : 본 페이지</li>
+					<li><code>#header</code> : 본 페이지 헤더</li>
+					<li><code>#main</code> : 본 페이지 바디</li>
+					<li><code>.section</code> : 콘텐츠 영역 대 그룹핑 {검색 / 등록폼}</li>
+					<li><code>.group</code> : 콘텐츠 영역 소 그룹핑 {검색 / 필수입력폼 / 추가입력폼}</li>
+					<li><code>#footer</code> : 본 페이지 푸터</li>
+					<li><code>#popup</code> : 팝업 페이지</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">구조</span></h3>
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li><code>.xx {.card}</code> : 최상위 클래스로 하나의 단어</li>
+					<li><code>.xx-wrap {.card-wrap}</code> : 한번 더 감싸야 할 때</li>
+					<li><code>.xx-head {.card-head}</code> : 영역의 상단</li>
+					<li><code>.xx-list {.card-list}</code> : 콘텐츠 목록 영역</li>
+					<li><code>.xx-item {.card-item}</code> : 콘텐츠 목록의 Row Data</li>
+					<li><code>.xx-body {.card-body}</code> : 콘텐츠 (목록 유형이 아닌 경우)</li>
+					<li><code>.xx-foot {.card-foot}</code> : 영역의 하단</li>
+					<li><code>.xx.option-yy {.card.option-fixed}</code> : xx에서 파생된 유형</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">이벤트</span></h3>
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li><code>.is-xx {.is-active}</code> : 스타일 변경을 스크립트로 조작하는 클래스</li>
+					<li><code>.fn-xx {.fn-popup-open}</code> : 스타일 변경 없이 함수를 실행하기 위한 클래스</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 규칙 - 예약어 -->
+
+	<!-- .section - 규칙 - HTML -->
+	<section class="section" id="rule-html">
+		<h2 class="title-h2"><span class="txt">HTML</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li>영역 주석 : <code>&lt;!-- #header --&gt;&lt;!--// #header --&gt;</code>, <code>&lt;!-- .group --&gt;&lt;!--// .group --&gt;</code></li>
+					<li>날짜 추가 주석 : <code>&lt;!-- 2023-05-18 : 탭 활성화 코드 수정(구체적으로 작성) --&gt;</code></li>
+					<li>개발 참고 주석 : <code>&lt;!-- [D]클릭 시 .is-active 클래스 추가 --&gt;</code></li>
+					<li>들여쓰기 : 1탭(공백 4칸)</li>
+					<li>특수기호 : Entity Code로 변환하여 작성</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 규칙 - HTML -->
+
+	<!-- .section - 규칙 - CSS -->
+	<section class="section" id="rule-css">
+		<h2 class="title-h2"><span class="txt">CSS</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li>미니마이징 시 주석은 모두 삭제되므로 자세하게 작성</li>
+					<li>파일 수정 시 상단의 수정 주석에 날짜와 내용, 작성자 업데이트</li>
+					<li>클래스명 : 하이픈{-}으로 구분하여 소문자로 작성</li>
+					<li>문법 규칙 : <code>.class {property: value; property2: url('./xxx/xxx.png');}</code></li>
+					<li>속성 선언 순서 : <code>display > visibility > position > z-index > top, right, bottom, left > overflow > float > width > height > margin > padding > background > border > align > font > color > cursor > transform > transition</code></li>
+					<li>단위 : 모바일 ~ 태블릿은 <code>{rem}</code>단위(브라우저 사용자 설정의 폰트 크기 변경 후 화면 테스트 필요), PC는 <code>{px}</code>단위로 작성</li>
+					<li>선택자 선언 시 3뎁스 이하로 종속하여 선언 : <code>.xx .yy > strong {}</code></li>
+					<li><code>html</code>에 인라인 스타일 금지, 가능한 모두 CSS 파일에 클래스 선언 후 작업 (가이드에 있는 인라인 스타일은 카피 후 삭제)</li>
+					<li><code>{*}</code>선택자와 <code>{!important}</code>속성은 가급적 사용 금지</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 규칙 - CSS -->
+
+	<!-- .section - 규칙 - JS -->
+	<section class="section" id="rule-js">
+		<h2 class="title-h2"><span class="txt">Javascript</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li>Javascript ES6 문법 사용 권고</li>
+					<li>중복되는 구문은 가능한 함수로 선언하여 작성</li>
+					<li>공통변수 : commUiVar 객체에 선언</li>
+					<li>함수명 : commUiFn으로 시작하고 단어 첫번째 글자는 대문자로 작성 - <code>const commUiFnPopupOpen = () => {};</code></li>
+					<li>매개변수명 : <code>(_)</code>으로 시작하여 작성 - <code>const commUiFnPopupOpen = (_element, _index) => {};</code></li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 규칙 - JS -->
+
+	<!-- .section - 가이드 - 변수사용 -->
+	<section class="section" id="guide-var">
+		<h1 class="headline-h1"><span class="txt">가이드</span></h1>
+		<h2 class="title-h2"><span class="txt">변수사용</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li>디자인 가이드에 공통으로 잡혀있는 스타일은 가능한 변수로 선언하여 사용</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 가이드 - 변수사용 -->
+
+	<!-- .section - 가이드 - 이미지 스프라이트 -->
+	<section class="section" id="guide-image">
+		<h2 class="title-h2"><span class="txt">이미지</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">64*64, -max</span></h3>
+			<!-- .note* -->
+			<div class="note">
+				<!-- .box -->
+				<div class="box item-row option-left space-mb-xxs">
+					<div class="unit" style="background-color: var(--gd-color-white);"></div>
+					<div class="unit" style="background-color: var(--gd-color-base-30);"></div>
+					<div class="unit" style="background-color: var(--gd-color-black);"></div>
+				</div>
+				<!--// .box -->
+
+				<ul class="note-list">
+					<li>아이콘 크기 : <code>--icon-max : 6.4rem</code></li>
+					<li>이미지 경로 : <code>--bg-url-max : url('../../image/com/ico-common-max.svg');</code></li>
+					<li>아이콘 사이즈 : <code>--bg-size-max : 64.0rem auto;</code></li>
+					<li>예시 : <code>width: var(--icon-max); height: var(--icon-max); background: var(--bg-url-max) no-repeat 0 calc(var(--icon-max) * -1); background-size: var(--bg-size-max);</code></li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">48*48, -xl</span></h3>
+			<!-- .note* -->
+			<div class="note">
+				<!-- .box -->
+				<div class="box item-row option-left space-mb-xxs">
+					<div class="unit" style="background-color: var(--gd-color-white);"></div>
+					<div class="unit" style="background-color: var(--gd-color-base-30);"></div>
+					<div class="unit" style="background-color: var(--gd-color-black);"></div>
+				</div>
+				<!--// .box -->
+
+				<ul class="note-list">
+					<li>아이콘 크기 : <code>--icon-xl : 4.8rem</code></li>
+					<li>이미지 경로 : <code>--bg-url-xl : url('../../image/com/ico-common-xl.svg');</code></li>
+					<li>아이콘 사이즈 : <code>--bg-size-xl : 48.0rem auto;</code></li>
+					<li>예시 : <code>width: var(--icon-xl); height: var(--icon-xl); background: var(--bg-url-xl) no-repeat 0 calc(var(--icon-xl) * -1); background-size: var(--bg-size-xl);</code></li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 가이드 - 이미지 스프라이트 -->
+
+	<!-- .section - 가이드 - 웹접근성 -->
+	<section class="section" id="guide-wa">
+		<h2 class="title-h2"><span class="txt">웹접근성</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">리더기</span></h3>
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li>리더기에서 연결/해제 제어가 필요한 경우 해당 함수 사용 : <code>commUiFnAriaHide();</code></li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">초점</span></h3>
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li>초점 연결/해제 제어가 필요한 경우 해당 함수 사용 : <code>commUiFnFocus();</code></li>
+					<li>스크립트 공통 전역변수의 초점 요소 <code>commUiVar.focusElements : 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"], [data-focus-on="true"]'</code></li>
+
+					<li>초점 요소가 아니고 숨기기/보이기 처리를 해야하는 항목의 경우 <code>tabindex="0" data-focus-on="true"</code> 코드 추가하여 제어 (예시 : 팝업 콘텐츠 DIV 요소 / iOS는 초점 하위의 첫번째 초점 요소에 초점이 잡힘)</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">숨기기/보이기 애니메이션</span></h3>
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li><code>transition</code>으로 처리 시 요소의 <code>display:none;</code>이 있는 경우 애니메이션 되지 않음<br>
+						<code>display:none;</code>을 사용하지 않고 <code>height, overflow, visibility</code> 등으로 처리할 경우 리더기와 초점 이동 관련 코드를 추가하여 액션 시 컨트롤 해야 하고, iOS의 경우 초점 대상이 아닌 요소의 제어가 어려움 (현재 가이드의 아코디언이 transition을 활용한 방법)</li>
+					<li><code>animation</code>을 사용하면 <code>display:none;</code>이 있어도 동작 가능. 단, 숨기기 애니메이션은 동작하지 않음 (현재 가이드의 파벙ㅂ이 animation을 활용한 방법)</li>
+					<li>위 두 가지 방법 중 요건에 따라 선택하여 작업이 필요</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 가이드 - 웹접근성 -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

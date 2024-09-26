@@ -1,5 +1,5 @@
 /*
-	파일정보 : 레이아웃 > 헤더
+	파일정보 : 레이아웃 > 페이지 구조 > 헤더
 	업데이트 : 2024-08-01
 */
 
@@ -7,8 +7,42 @@
 
 #header {
 	position: sticky;
-	z-index: 11;
+	z-index: 10;
 	top: 0;
+	display: flex;
 	height: var(--#{config.$prefix}header-height);
+	padding-inline: var(--#{config.$prefix}space-md);
+	gap: var(--#{config.$prefix}space-xs);
 	background-color: var(--#{config.$prefix}color-white);
+	flex-shrink: 0;
+	flex-direction: row;
+	align-items: center;
 }
+.btn-page-back {
+	display: block;
+	@include config.icon-common(md,0,1);
+	flex-shrink: 0;
+	order: 1;
+}
+.btn-menu {
+	display: block;
+	@include config.icon-common(md,0,0);
+	flex-shrink: 0;
+	order: 3;
+}
+.header-title {
+	width: 100%;
+	@include config.ellipsis(100%);
+	text-align: center;
+	font-size: var(--#{config.$prefix}font-title-sm);
+	order: 2;
+}
+
+.btn-page-home {position: absolute; overflow: hidden; bottom: 1.5rem; left: var(--#{config.$prefix}space-md); width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); background: var(--bg-url-md) no-repeat calc(var(--#{config.$prefix}icon-md) * -5) 0; background-size: var(--bg-size-md);}
+
+.header-util {position: absolute; bottom: 1.5rem; right: 5.6rem; display: flex; flex-direction: row;}
+.header-util > [class*="btn-"] {flex-shrink: 0; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); background-image: var(--bg-url-md); background-repeat: no-repeat; background-size: var(--bg-size-md); transform: scale3d(1,1,1); transition: transform var(--animation-speed-fast) var(--animation-timing-outback);}
+.header-util > [class*="btn-"]:active {transform: scale3d(.94,.94,1);}
+.header-util > .btn-alarm {background-position: calc(var(--#{config.$prefix}icon-md) * -8) 0;}
+.header-util > .btn-alarm .is-on {display: block; width: 100%; height: 100%; background: var(--bg-url-md) no-repeat calc(var(--#{config.$prefix}icon-md) * -9) 0; background-size: var(--bg-size-md);}
+.header-util > .btn-search {margin-left: 1.6rem; background-position: 0 0;}

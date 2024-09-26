@@ -1,4 +1,91 @@
 /*
-	파일정보 : 
+	파일정보 : 컴포넌트 > 아코디언
 	업데이트 : 2024-08-01
 */
+
+@use 'config' as config;
+
+.accordion {
+	$accordion : &;
+	position: relative;
+	background-color: var(--#{config.$prefix}color-white);
+	border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-30) {
+		radius: var(--#{config.$prefix}radius-xl);
+	}
+
+	&:nth-child(1n + 2) {margin-top: var(--#{config.$prefix}space-xs);}
+
+	&-head {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		min-height: 5.6rem;
+		padding: 1.9rem 5.1rem 1.9rem 1.9rem;
+
+		.inner {
+			width: 100%;
+			cursor: default;
+
+			[class^="title-h"] {line-height: 1;}
+
+			.title-h4 {
+				& > .txt {line-height: 1.334;}
+			}
+
+			& > span {
+				font-size: var(--#{config.$prefix}font-body-md);
+				color: var(--#{config.$prefix}color-black);
+			}
+
+		}
+
+		.btn-fold {
+			position: absolute;
+			top: 1.9rem;
+			right: 1.9rem;
+			@include config.icon-block(md);
+			padding: var(--#{config.$prefix}space-xxs);
+			transform: rotate(-180deg);
+			transition: transform var(--animation-speed) var(--animation-timing-base);
+
+			&::before {
+				content: '';
+				@include config.full-block;
+				@include config.icon-common(sm,3,1);
+			}
+			#{$accordion}.is-open & {transform: rotate(0deg);}
+		}
+
+		.checkbox-item .label {font-size: var(--#{config.$prefix}font-body-md);}
+	}
+
+	&-body {
+		position: relative;
+		overflow: hidden;
+		max-height: 0;
+		transition: max-height var(--animation-speed) var(--animation-timing-base);
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 1.9rem;
+			width: calc(100% - 3.8rem);
+			height: var(--#{config.$prefix}border-sm);
+			background-color: var(--#{config.$prefix}color-base-20);
+		}
+
+		.inner {
+			padding: 1.6rem 1.9rem 3.1rem;
+			word-break: break-all;
+		}
+	}
+
+	&-foot {
+		padding: 1.9rem 2.3rem;
+		border-top: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-10);
+
+		.checkbox-item .label {font-size: var(--#{config.$prefix}font-body-md);}
+	}
+}

@@ -1,0 +1,118 @@
+/*
+	파일정보 : 콘텐츠 > 박스
+	업데이트 : 2024-08-01
+*/
+
+@use 'config' as config;
+
+/* 공지사항 */
+.note {
+	$note : &;
+	background-color: var(--#{config.$prefix}color-base-10);
+	border-radius: var(--#{config.$prefix}radius-xl);
+
+	&-head {
+		position: relative;
+		padding: var(--#{config.$prefix}space-md) 4.3rem 1.65rem var(--#{config.$prefix}space-md);
+
+		.btn-fold {
+			position: absolute;
+			top: 50%;
+			right: var(--#{config.$prefix}space-md);
+			width: var(--icon-sm);
+			height: var(--icon-sm);
+			margin-top: calc(var(--icon-sm) / 2 * -1);
+			transform: rotate(-180deg);
+			transition: transform var(--animation-speed) var(--animation-timing-base);
+
+			&::before {
+				content: '';
+				@include config.full-fix(absolute);
+				background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -6) calc(var(--icon-sm) * -3);
+				background-size: var(--bg-size-sm);
+			}
+
+			#{$note}.is-open & {transform: rotate(0deg);}
+		}
+	}
+
+	&-body {
+		position: relative;
+		overflow: hidden;
+		max-height: 0;
+		transition: max-height var(--animation-speed) var(--animation-timing-base);
+	}
+
+	&-title {
+		display: block;
+		font-weight: var(--#{config.$prefix}font-medium);
+		font-size: var(--#{config.$prefix}font-body-md);
+		color: var(--#{config.$prefix}color-base-70);
+	}
+
+	&-txt {
+		font-size: var(--#{config.$prefix}font-body-md);
+		color: var(--#{config.$prefix}color-base-60);
+	}
+
+	&-list {
+		& > li {
+			padding-left: 1.6rem;
+			text-indent: -1.6rem;
+			font-weight: var(--#{config.$prefix}font-regular);
+			font-size: var(--#{config.$prefix}font-body-md);
+			color: var(--#{config.$prefix}color-base-60);
+
+			&:nth-child(1n + 2) {padding-top: var(--#{config.$prefix}space-xs);}
+
+			&::before {
+				content: '';
+				display: inline-block;
+				width: .3rem;
+				height: .3rem;
+				margin-right: .85rem;
+				margin-left: .45rem;
+				margin-top: -.2rem;
+				background-color: var(--#{config.$prefix}color-base-60);
+				border-radius: 100%;
+				vertical-align: middle;
+			}
+
+			& > strong {
+				font-weight: var(--#{config.$prefix}font-medium);
+				color: var(--#{config.$prefix}color-base-80);
+			}
+		}
+	}
+}
+.note-title + .note-list {margin-top: var(--#{config.$prefix}space-xs);}
+.note-list > li.primary {color:var(--#{config.$prefix}color-primary-50);}
+.note-list > li.primary::before {background-color:var(--#{config.$prefix}color-primary-50);}
+.note-list > li.highlight {color: var(--#{config.$prefix}color-danger);}
+.note-list > li.highlight::before {background-color: var(--#{config.$prefix}color-danger);}
+.note-list .list.depth-u2 {padding-top: .8rem;}
+.note-list .list.depth-u2 > li {font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
+.note-list .list.depth-u2 > li::before {background-color: var(--#{config.$prefix}color-base-60);}
+.note-list .list.depth-u2 > li.primary {color:var(--#{config.$prefix}color-primary-50);}
+.note-list .list.depth-u2 > li.primary::before {background-color:var(--#{config.$prefix}color-primary-50);}
+.note-list .list.depth-u2 > li.highlight {color: var(--#{config.$prefix}color-danger);}
+.note-list .list.depth-u2 > li.highlight::before {background-color: var(--#{config.$prefix}color-danger);}
+
+.note-sub-title {display: block; font-weight: var(--#{config.$prefix}font-medium); font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-70);}
+
+.note .note-txt,
+.note .note-list {padding: var(--#{config.$prefix}space-md);}
+.note .note-sub-title {padding-left: var(--#{config.$prefix}space-md); padding-right: var(--#{config.$prefix}space-md);}
+.note-body .note-txt,
+.note-body .note-list {padding-top: 0;}
+
+.note-info {position: relative; padding-left: 1.6rem; text-indent: -1.6rem; font-size: 0;}
+.note-info::before {content: ''; display: inline-block; width: .3rem; height: .3rem; margin-right: .85rem; margin-left: .45rem; margin-top: -.2rem; background-color: var(--#{config.$prefix}color-base-60); border-radius: 100%; vertical-align: middle;}
+.note-info > span {display: inline; vertical-align: middle; line-height: 1.5; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
+.data-body ~ .note-info,
+.data-body ~ .note-list {margin-top: var(--#{config.$prefix}space-md);}
+.note-list ~ .note-sub-title {margin-top: -.4rem;}
+.note-sub-title ~ .note-list {margin-top: .4rem; padding-top: 0;}
+
+.note-list > li .btn-txt-link {text-indent: 0;}
+.note-sub {padding-top: var(--#{config.$prefix}space-md); line-height: 1.35; font-size: var(--#{config.$prefix}font-body-sm); color: var(--#{config.$prefix}color-base-60);}

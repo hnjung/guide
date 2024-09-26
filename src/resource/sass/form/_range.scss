@@ -1,0 +1,45 @@
+/*
+	파일정보 : 폼 > 범위
+	업데이트 : 2024-08-01
+*/
+
+@use 'config' as config;
+
+/* 범위 */
+.input.option-range {font-size: 0;}
+.range-bar {position: absolute; overflow: hidden; top: .7rem; left: 0; width: 100%; height: .4rem; background-color: var(--#{config.$prefix}color-base-30); border-radius: .4rem;}
+
+.range-step3 .range-bar::before {content: ''; position: absolute; z-index: 1; top: 0; left: 50%; width: .4rem; height: 100%; margin-left: -.2rem; background-color: var(--#{config.$prefix}color-white);}
+.range-step4 .range-bar::before {content: ''; position: absolute; z-index: 1; top: 0; left: 50%; width: calc(33.33% + .4rem); height: 100%; margin-left: calc(-16.665% - .2rem); border-left: .4rem solid var(--#{config.$prefix}color-white); border-right: .4rem solid var(--#{config.$prefix}color-white);}
+.range-step5 .range-bar::before {content: ''; position: absolute; z-index: 1; top: 0; left: 50%; width: .4rem; height: 100%; margin-left: -.2rem; background-color: var(--#{config.$prefix}color-white);}
+.range-step5 .range-bar::after {content: ''; position: absolute; z-index: 1; top: 0; left: 50%; width: calc(50% + .4rem); height: 100%; margin-left: calc(-25% - .2rem); border-left: .4rem solid var(--#{config.$prefix}color-white); border-right: .4rem solid var(--#{config.$prefix}color-white);}
+
+.range-bar > em {position: absolute; top: 0; left: 0; width: 0; height: 100%; background-color:var(--#{config.$prefix}color-primary-50);}
+.input-range[type='range'] {position: relative; z-index: 2; width: 100%; height: 1.8rem; margin: 0; padding: 0;}
+.input-range[type='range'],
+.input-range[type='range']::-webkit-slider-runnable-track,
+.input-range[type='range']::-webkit-slider-thumb {-webkit-appearance: none;}
+.input-range[type='range']::-webkit-slider-thumb {width: 0; height: 0; border: 0;}
+
+.input-range[type='range']::after {content: ''; position: absolute; z-index: -1; left: 0; display: block; width: 1.8rem; height: 1.8rem; background-color: var(--#{config.$prefix}color-white); border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-40); border-radius: 50%; box-shadow: 0 .2rem 1.2rem rgba(18, 25, 43, .16);}
+.input-range[type='range'][value='1']::after {left: 0;}
+.range-step2 .input-range[type='range'][value='2']::after {left: 100%; margin-left: -1.8rem;}
+.range-step3 .input-range[type='range'][value='2']::after {left: 50%; margin-left: calc(-1.8rem / 2);}
+.range-step3 .input-range[type='range'][value='3']::after {left: 100%; margin-left: -1.8rem;}
+.range-step4 .input-range[type='range'][value='2']::after {left: 33.33%; margin-left: calc(-1.8rem / 2);}
+.range-step4 .input-range[type='range'][value='3']::after {left: 66.66%; margin-left: calc(-1.8rem / 2);}
+.range-step4 .input-range[type='range'][value='4']::after {left: 100%; margin-left: -1.8rem;}
+.range-step5 .input-range[type='range'][value='2']::after {left: 25%; margin-left: calc(-1.8rem / 2);}
+.range-step5 .input-range[type='range'][value='3']::after {left: 50%; margin-left: calc(-1.8rem / 2);}
+.range-step5 .input-range[type='range'][value='4']::after {left: 75%; margin-left: calc(-1.8rem / 2);}
+.range-step5 .input-range[type='range'][value='5']::after {left: 100%; margin-left: -1.8rem;}
+
+.slider-thumb[type='range'] {position: absolute; z-index: 3; top: 0; left: -.9rem; max-width: initial; width: calc(100% + 1.8rem); height: 1.8rem; margin: 0; padding: 0;}
+.slider-thumb[type='range'],
+.slider-thumb[type='range']::-webkit-slider-runnable-track,
+.slider-thumb[type='range']::-webkit-slider-thumb {-webkit-appearance: none;}
+.slider-thumb[type='range']::-webkit-slider-thumb {width: 2.8rem; height: 2.8rem; opacity: 0;}
+
+.range-free .input-range[type='range']::after {opacity: 0;}
+.range-free .slider-thumb[type='range'] {left: 0; max-width: 100%; width: 100%;}
+.range-free .slider-thumb[type='range']::-webkit-slider-thumb {width: 1.8rem; height: 1.8rem; background-color: var(--#{config.$prefix}color-white); border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-40); border-radius: 50%; box-shadow: 0 .2rem 1.2rem rgba(18, 25, 43, .16); opacity: 1;}

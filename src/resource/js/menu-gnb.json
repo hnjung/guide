@@ -1,0 +1,149 @@
+{ "gnb": [
+	{ "code": "guide", "name": "가이드", "path": "", "gnb2nd": [
+			{ "code": "project", "name": "프로젝트 환경", "path": "/page/guide/project.html" },
+			{ "code": "device", "name": "기기별 해상도 기준", "path": "/page/guide/device.html" },
+			{ "code": "folder", "name": "폴더 및 파일명", "path": "/page/guide/folder.html" },
+			{ "code": "rule", "name": "코딩 규칙", "path": "/page/guide/rule.html", "gnb3rd": [
+					{ "code": "word", "name": "예약어", "path": "" },
+					{ "code": "html", "name": "HTML", "path": "" },
+					{ "code": "scss", "name": "SCSS", "path": "" },
+					{ "code": "js", "name": "Javascript", "path": "" }
+			] },
+			{ "code": "setup", "name": "작업 환경 설정", "path": "/page/guide/setup.html", "gnb3rd": [
+					{ "code": "gulp", "name": "gulp", "path": "" },
+					{ "code": "scss", "name": "scss", "path": "" }
+			] },
+			{
+				"code": "performance", "name": "성능 최적화", "path": "/page/guide/performance.html", "gnb3rd": [
+					{ "code": "minify", "name": "파일 압축", "path": "" },
+					{ "code": "sprite", "name": "이미지 스프라이트", "path": "" }
+			] }
+	] },
+	{ "code": "layout", "name": "레이아웃", "path": "", "gnb2nd": [
+			{ "code": "breakpoint", "name": "반응형 중단점", "path": "/page/layout/breakpoint.html" },
+			{ "code": "page", "name": "페이지 구조", "path": "/page/layout/page.html", "gnb3rd": [
+					{ "code": "all", "name": "전체", "path": "" },
+					{ "code": "header", "name": "헤더", "path": "" },
+					{ "code": "main", "name": "메인", "path": "" },
+					{ "code": "footer", "name": "푸터", "path": "" }
+			] },
+			{ "code": "nav", "name": "탐색", "path": "/page/layout/nav.html", "gnb3rd": [
+					{ "code": "menu", "name": "메뉴", "path": "" },
+					{ "code": "breadcrumb", "name": "브레드크럼", "path": "" },
+					{ "code": "paging", "name": "페이징", "path": "" }
+			] },
+			{ "code": "popup", "name": "팝업", "path": "/page/layout/popup.html", "gnb3rd": [
+					{ "code": "full", "name": "풀", "path": "" },
+					{ "code": "bottom", "name": "바텀시트", "path": "" },
+					{ "code": "modal", "name": "모달", "path": "" }
+			] }
+	] },
+	{ "code": "content", "name": "콘텐츠", "path": "", "gnb2nd": [
+			{ "code": "typography", "name": "타이포그래피", "path": "/page/content/typography.html", "gnb3rd": [
+					{ "code": "headline", "name": "헤드라인", "path": "" },
+					{ "code": "title", "name": "타이틀", "path": "" },
+					{ "code": "body", "name": "본문", "path": "" }
+			] },
+			{ "code": "step", "name": "스텝", "path": "/page/content/step.html" },
+			{ "code": "badge", "name": "뱃지", "path": "/page/content/badge.html" },
+			{ "code": "help", "name": "도움말", "path": "/page/content/help.html" },
+			{ "code": "list", "name": "목록", "path": "/page/content/list.html", "gnb3rd": [
+					{ "code": "bullet", "name": "블릿형", "path": "" },
+					{ "code": "number", "name": "숫자형", "path": "" }
+			] },
+			{ "code": "box", "name": "박스", "path": "/page/content/box.html" },
+			{ "code": "notice", "name": "공지", "path": "/page/content/notice.html" },
+			{ "code": "table", "name": "테이블", "path": "/page/content/table.html", "gnb3rd": [
+					{ "code": "select", "name": "선택형", "path": "" },
+					{ "code": "row", "name": "가로형", "path": "" },
+					{ "code": "col", "name": "세로형", "path": "" },
+					{ "code": "scroll", "name": "스크롤형", "path": "" }
+			] },
+			{ "code": "card", "name": "카드", "path": "/page/content/card.html", "gnb3rd": [
+					{ "code": "summary", "name": "정보형", "path": "" },
+					{ "code": "print", "name": "출력형", "path": "" },
+					{ "code": "select", "name": "선택형", "path": "" }
+			] },
+			{ "code": "image", "name": "이미지", "path": "/page/content/image.html" },
+			{ "code": "carousel", "name": "캐러셀", "path": "/page/content/carousel.html" }
+	] },
+	{ "code": "form", "name": "폼", "path": "", "gnb2nd": [
+			{ "code": "text", "name": "텍스트필드", "path": "/page/form/text.html", "gnb3rd": [
+					{ "code": "default", "name": "기본", "path": "" },
+					{ "code": "auto", "name": "자동입력", "path": "" },
+					{ "code": "email", "name": "이메일", "path": "" },
+					{ "code": "date", "name": "날짜", "path": "" },
+					{ "code": "icon", "name": "아이콘", "path": "" },
+					{ "code": "button", "name": "버튼", "path": "" },
+					{ "code": "char", "name": "텍스트", "path": "" }
+			] },
+			{ "code": "select", "name": "셀렉트박스", "path": "/page/form/select.html" },
+			{ "code": "textarea", "name": "텍스트에어리어", "path": "/page/form/textarea.html" },
+			{ "code": "file", "name": "파일첨부", "path": "/page/form/file.html", "gnb3rd": [
+					{ "code": "single", "name": "단일첨부", "path": "" },
+					{ "code": "multi", "name": "다중첨부", "path": "" },
+					{ "code": "image", "name": "이미지첨부", "path": "" }
+			] },
+			{ "code": "radio", "name": "라디오버튼", "path": "/page/form/radio.html", "gnb3rd": [
+					{ "code": "default", "name": "기본", "path": "" },
+					{ "code": "switch", "name": "스위치", "path": "" },
+					{ "code": "chip", "name": "칩", "path": "" },
+					{ "code": "segment", "name": "세그먼트", "path": "" }
+			] },
+			{ "code": "check", "name": "체크박스", "path": "/page/form/check.html", "gnb3rd": [
+					{ "code": "default", "name": "기본", "path": "" },
+					{ "code": "chip", "name": "칩", "path": "" },
+					{ "code": "segment", "name": "세그먼트", "path": "" }
+			] },
+			{ "code": "range", "name": "범위", "path": "/page/form/range.html" },
+			{ "code": "group", "name": "폼그룹", "path": "/page/form/group.html" },
+			{ "code": "agreement", "name": "정보동의", "path": "/page/form/agreement.html" }
+	] },
+	{ "code": "component", "name": "컴포넌트", "path": "", "gnb2nd": [
+			{ "code": "buttonlink", "name": "버튼/링크", "path": "/page/component/buttonlink.html", "gnb3rd": [
+					{ "code": "button", "name": "버튼", "path": "" },
+					{ "code": "link", "name": "링크", "path": "" }
+			] },
+			{ "code": "tab", "name": "탭", "path": "/page/component/tab.html" },
+			{ "code": "accordion", "name": "아코디언", "path": "/page/component/accordion.html" },
+			{ "code": "popover", "name": "팝오버", "path": "/page/component/popover.html" },
+			{ "code": "tooltip", "name": "툴팁", "path": "/page/component/tooltip.html" },
+			{ "code": "toast", "name": "토스트", "path": "/page/component/toast.html" },
+			{ "code": "calendar", "name": "캘린더", "path": "/page/component/calendar.html" },
+			{ "code": "spinner", "name": "스피너", "path": "/page/component/spinner.html" },
+			{ "code": "skeleton", "name": "스켈레톤", "path": "/page/component/skeleton.html" },
+			{ "code": "scrollspy", "name": "스크롤스파이", "path": "/page/component/scrollspy.html" }
+	] },
+	{ "code": "utility", "name": "유틸리티", "path": "", "gnb2nd": [
+			{ "code": "display", "name": "디스플레이", "path": "/page/utility/display.html", "gnb3rd": [
+					{ "code": "align", "name": "정렬", "path": "" },
+					{ "code": "grid", "name": "그리드", "path": "" },
+					{ "code": "flex", "name": "플렉스", "path": "" }
+			] },
+			{ "code": "font", "name": "폰트", "path": "/page/utility/font.html", "gnb3rd": [
+					{ "code": "color", "name": "색상", "path": "" },
+					{ "code": "size", "name": "크기", "path": "" },
+					{ "code": "weight", "name": "두께", "path": "" },
+					{ "code": "style", "name": "스타일", "path": "" }
+			] },
+			{ "code": "color", "name": "색상", "path": "/page/utility/color.html", "gnb3rd": [
+					{ "code": "background", "name": "배경", "path": ""},
+					{ "code": "border", "name": "테두리", "path": ""}
+			] },
+			{ "code": "size", "name": "크기", "path": "/page/utility/size.html", "gnb3rd": [
+					{ "code": "width", "name": "넓이", "path": ""},
+					{ "code": "height", "name": "높이", "path": ""}
+			] },
+			{ "code": "space", "name": "여백", "path": "/page/utility/space.html", "gnb3rd": [
+					{ "code": "margin", "name": "마진", "path": ""},
+					{ "code": "padding", "name": "패딩", "path": ""}
+			] },
+			{ "code": "etc", "name": "기타", "path": "/page/utility/etc.html" }
+	] },
+	{ "code": "a11y", "name": "접근성", "path": "", "gnb2nd": [
+		{ "code": "aria", "name": "ARIA 속성", "path": "/page/a11y/aria.html" },
+		{ "code": "reader", "name": "리더기", "path": "/page/a11y/reader.html" },
+		{ "code": "focus", "name": "초점", "path": "/page/a11y/focus.html" },
+		{ "code": "animation", "name": "숨기기/보이기 애니메이션", "path": "/page/a11y/animation.html" }
+	] }
+] }

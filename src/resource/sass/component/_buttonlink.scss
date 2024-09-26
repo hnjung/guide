@@ -1,0 +1,226 @@
+/*
+	파일정보 : 컴포넌트 > 버튼 및 링크
+	업데이트 : 2024-08-01
+*/
+
+@use 'config' as config;
+
+/* 버튼 */
+.btn {display: inline-block; position: relative; padding: 1.1rem 1.5rem; background-color: transparent; border: var(--#{config.$prefix}border-sm) solid transparent; border-radius: var(--radius-md); vertical-align: middle; line-height: 1; font-size: var(--#{config.$prefix}font-body-lg); color: transparent; transform: scale3d(1, 1, 1); transition: all var(--animation-speed-fast) var(--animation-timing-base);}
+.btn > span {display: inline-block; vertical-align: middle; line-height: 1.5; font-weight: var(--#{config.$prefix}font-regular);}
+.btn + .btn {margin-left: var(--#{config.$prefix}space-xs);}
+
+.btn-group {display: flex; justify-content: space-between;}
+.btn-group > .btn {flex-basis: 0; flex-grow: 1;}
+.btn-group > .btn.filled.fixed,
+.btn-group > .btn.contained.fixed {flex-basis: max(96px, 30%); flex-grow: 0;}
+.btn-group > .btn + .btn {margin-left: var(--#{config.$prefix}space-xs);}
+
+.btn-group.option-main {position: fixed; z-index: 10; left: 0; right: 0; bottom: 0; padding: 0 var(--#{config.$prefix}space-md) var(--#{config.$prefix}space-md); padding-bottom: calc(var(--#{config.$prefix}space-md) + constant(safe-area-inset-bottom)); padding-bottom: calc(var(--#{config.$prefix}space-md) + env(safe-area-inset-bottom)); background-color: var(--#{config.$prefix}color-white);}
+.btn-group.option-main::before {content: ''; position: absolute; top: -1.2rem; left: 0; right: 0; height: 1.2rem; background: linear-gradient(360deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);}
+
+.btn-group.option-full {flex-direction: column;}
+.btn-group.option-full > .btn + .btn {margin: var(--#{config.$prefix}space-xs) 0 0;}
+
+.form ~ .btn-group {margin-top: var(--space-xl);}
+
+/* 버튼 - (태블릿+PC) */
+@media screen and (min-width: 768px) {
+	#content .btn-group:not(.option-main),
+	.popup-content .btn-group:not(.option-main) {justify-content: center;}
+	#content .btn-group:not(.option-main) > .btn,
+	.popup-content .btn-group:not(.option-main) > .btn {min-width: 156px; flex-basis: auto; flex-grow: 0;}
+	#content .btn-group:not(.option-main) > .btn.filled.fixed,
+	.popup-content .btn-group:not(.option-main) > .btn.filled.fixed {flex-basis: auto; flex-grow: 0;}
+
+	#content .content-foot .btn-group {justify-content: space-between;}
+	#content .content-foot .btn-group > .btn {min-width: auto; flex-basis: 0; flex-grow: 1;}
+
+	.btn-group.option-min {align-items: center; justify-content: center;}
+	.btn-group.option-min > .btn {min-width: 156px; flex-basis: auto; flex-grow: 0;}
+}
+
+/** 버튼 - 크기별 */
+.btn.option-cta,
+.btn-group.option-main > .btn,
+.content-foot > .btn-group > .btn,
+#popup > .popup-wrap.option-full .popup-foot .btn-group > .btn,
+#popup > .popup-wrap.option-bottom-sheet .popup-foot .btn-group > .btn {padding: 1.3rem 1.5rem 1.4rem; font-size: var(--font-lg);}
+
+.btn.option-md {padding: .9rem 1.1rem .8rem; border-radius: .6rem; font-size: var(--#{config.$prefix}font-body-md);}
+.btn.option-md + .btn.option-md {margin-left: var(--#{config.$prefix}space-xxs)}
+.btn.option-sm {padding: .5rem 1.1rem .4rem; border-radius: .6rem; font-size: var(--#{config.$prefix}font-body-md);}
+.btn.option-sm + .btn.option-sm {margin-left: var(--#{config.$prefix}space-xxs)}
+
+/** 버튼 - 유형별 */
+.btn.primary {background-color:var(--#{config.$prefix}color-primary-50); border-color:var(--#{config.$prefix}color-primary-50); color: var(--#{config.$prefix}color-white);}
+@media (hover: hover) and (pointer: fine) {
+	.btn.primary:hover {background-color:var(--#{config.$prefix}color-primary-60); border-color:var(--#{config.$prefix}color-primary-60);}
+}
+.btn.primary:active {background-color:var(--#{config.$prefix}color-primary-70); border-color:var(--#{config.$prefix}color-primary-70);}
+.btn.primary:disabled {background-color:var(--#{config.$prefix}color-primary-30); border-color:var(--#{config.$prefix}color-primary-30);}
+
+.btn.primary > span {font-weight: var(--#{config.$prefix}font-semibold);}
+.btn.primary.option-md > span,
+.btn.primary.option-sm > span {font-weight: var(--#{config.$prefix}font-regular);}
+
+.btn.filled {background-color: var(--#{config.$prefix}color-base-20); border-color: var(--#{config.$prefix}color-base-20); color: var(--#{config.$prefix}color-base-80);}
+@media (hover: hover) and (pointer: fine) {
+	.btn.filled:hover {background-color: var(--#{config.$prefix}color-base-30); border-color: var(--#{config.$prefix}color-base-30);}
+}
+.btn.filled:active {background-color: var(--#{config.$prefix}color-base-40); border-color: var(--#{config.$prefix}color-base-40);}
+.btn.filled:disabled {background-color: var(--#{config.$prefix}color-base-10); border-color: var(--#{config.$prefix}color-base-10); color: var(--#{config.$prefix}color-base-40);}
+
+.btn.contained {background-color:var(--#{config.$prefix}color-primary-20); border-color:var(--#{config.$prefix}color-primary-20); color:var(--#{config.$prefix}color-primary-50);}
+@media (hover: hover) and (pointer: fine) {
+	.btn.contained:hover {background-color:var(--#{config.$prefix}color-primary-30); border-color:var(--#{config.$prefix}color-primary-30);}
+}
+.btn.contained:active {background-color:var(--#{config.$prefix}color-primary-40); border-color:var(--#{config.$prefix}color-primary-40);}
+.btn.contained:disabled {background-color:var(--#{config.$prefix}color-primary-20); border-color:var(--#{config.$prefix}color-primary-20); color:var(--#{config.$prefix}color-primary-40);}
+
+.btn.outlined {background-color: var(--#{config.$prefix}color-white); border-color: var(--#{config.$prefix}color-base-40); color: var(--#{config.$prefix}color-base-80);}
+@media (hover: hover) and (pointer: fine) {
+	.btn.outlined:hover {border-color: var(--#{config.$prefix}color-base-60);}
+}
+.btn.outlined:active {border-color: var(--#{config.$prefix}color-base-70);}
+.btn.outlined:disabled {border-color: var(--#{config.$prefix}color-base-30); color: var(--#{config.$prefix}color-base-40);}
+
+.btn.pointed {background-color: var(--#{config.$prefix}color-white); border-color:var(--#{config.$prefix}color-primary-50); color:var(--#{config.$prefix}color-primary-50);}
+@media (hover: hover) and (pointer: fine) {
+	.btn.pointed:hover {border-color:var(--#{config.$prefix}color-primary-60); color:var(--#{config.$prefix}color-primary-60);}
+}
+.btn.pointed:active {border-color:var(--#{config.$prefix}color-primary-70); color:var(--#{config.$prefix}color-primary-70);}
+.btn.pointed:disabled {border-color:var(--#{config.$prefix}color-primary-30); color:var(--#{config.$prefix}color-primary-30);}
+
+/** 버튼 - 크기 & 유형별 혼합 */
+.btn.primary.option-cta,
+.btn.primary.option-cta:hover,
+.btn-group.option-main > .btn.primary,
+.btn-group.option-main > .btn.primary:hover,
+.content-foot > .btn-group > .btn.primary,
+.content-foot > .btn-group > .btn.primary:hover,
+#popup > .popup-wrap.option-full .popup-foot .btn-group > .btn.primary,
+#popup > .popup-wrap.option-full .popup-foot .btn-group > .btn.primary:hover,
+#popup > .popup-wrap.option-bottom-sheet .popup-foot .btn-group > .btn.primary,
+#popup > .popup-wrap.option-bottom-sheet .popup-foot .btn-group > .btn.primary:hover {box-shadow: var(--shadow-primary-lg);}
+
+.btn.primary.option-cta:active,
+.btn.primary.option-cta:disabled,
+.btn-group.option-main > .btn.primary:active,
+.btn-group.option-main > .btn.primary:disabled,
+.content-foot > .btn-group > .btn.primary:active,
+.content-foot > .btn-group > .btn.primary:disabled,
+#popup > .popup-wrap.option-full .popup-foot .btn-group > .btn.primary:active,
+#popup > .popup-wrap.option-full .popup-foot .btn-group > .btn.primary:disabled,
+#popup > .popup-wrap.option-bottom-sheet .popup-foot .btn-group > .btn.primary:active,
+#popup > .popup-wrap.option-bottom-sheet .popup-foot .btn-group > .btn.primary:disabled {box-shadow: none;}
+
+/** 버튼 - 밑줄형 */
+.btn.texted {padding: .15rem 0; border: none;}
+.btn.texted > span {position: relative; display: inline-block; vertical-align: middle; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
+.btn.texted > span::after {content: ''; position: absolute; bottom: .3rem; left: 0; width: 100%; height: var(--#{config.$prefix}border-sm); background-color: var(--#{config.$prefix}color-base-60);}
+.btn.texted:active > span {color: var(--#{config.$prefix}color-base-80);}
+.btn.texted:active > span::after {background-color: var(--#{config.$prefix}color-base-80);}
+.btn.texted:disabled > span {color: var(--#{config.$prefix}color-base-40);}
+.btn.texted:disabled > span::after {background-color: var(--#{config.$prefix}color-base-40);}
+
+.btn.texted.primary {background-color: transparent; color: initial;}
+.btn.texted.primary > span {font-weight: var(--#{config.$prefix}font-regular); color:var(--#{config.$prefix}color-primary-50);}
+.btn.texted.primary > span::after {background-color:var(--#{config.$prefix}color-primary-50);}
+.btn.texted.primary:active > span {color:var(--#{config.$prefix}color-primary-60);}
+.btn.texted.primary:active > span::after {background-color:var(--#{config.$prefix}color-primary-60);}
+.btn.texted.primary:disabled > span {color:var(--#{config.$prefix}color-primary-40);}
+.btn.texted.primary:disabled > span::after {background-color:var(--#{config.$prefix}color-primary-40);}
+
+/** 버튼 - 불릿형 */
+.btn.bulleted {padding: .15rem 0; border: none;}
+.btn.bulleted::after {content: ''; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); background: var(--bg-url-sm) no-repeat 0 calc(var(--icon-sm) * -2); background-size: var(--bg-size-sm); vertical-align: middle;}
+.btn.bulleted > span {position: relative; display: inline-block; vertical-align: middle; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-black);}
+.btn.bulleted > span {position: relative; display: inline-block; vertical-align: middle; line-height: 1.5; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
+.btn.bulleted:active::after {background-position: calc(var(--icon-sm) * -1) calc(var(--icon-sm) * -2);}
+.btn.bulleted:active > span {color: var(--#{config.$prefix}color-base-80);}
+.btn.bulleted:disabled::after {background-position: calc(var(--icon-sm) * -2) calc(var(--icon-sm) * -2);}
+.btn.bulleted:disabled > span {color: var(--#{config.$prefix}color-base-40);}
+
+.btn.bulleted.primary {background-color: transparent; color: initial;}
+.btn.bulleted.primary > span {font-weight: var(--#{config.$prefix}font-regular); color:var(--#{config.$prefix}color-primary-50);}
+.btn.bulleted.primary::after {background-position: calc(var(--icon-sm) * -3) calc(var(--icon-sm) * -2);}
+.btn.bulleted.primary:active > span {color:var(--#{config.$prefix}color-primary-60);}
+.btn.bulleted.primary:active::after {background-position: calc(var(--icon-sm) * -4) calc(var(--icon-sm) * -2);}
+.btn.bulleted.primary:disabled > span {color:var(--#{config.$prefix}color-primary-40);}
+.btn.bulleted.primary:disabled::after {background-position: calc(var(--icon-sm) * -5) calc(var(--icon-sm) * -2);}
+
+/** 버튼 - 아이콘형 */
+.btn.icon::after {content: ''; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); margin-left: var(--#{config.$prefix}space-xxs); background-image: var(--bg-url-sm); background-repeat: no-repeat; background-size: var(--bg-size-sm); vertical-align: middle;}
+.btn.icon.more::after {background-position: calc(var(--icon-sm) * -4) calc(var(--icon-sm) * -1);}
+.btn.icon.download::after {background-position: calc(var(--icon-sm) * -6) calc(var(--icon-sm) * -1);}
+
+.btn[class*="ico-"] {width: 3.2rem; height: 3.2rem; padding: .3rem; background-color: var(--#{config.$prefix}color-white); border-color: var(--#{config.$prefix}color-base-40); color: var(--#{config.$prefix}color-base-80);}
+.btn[class*="ico-"] + .btn[class*="ico-"] {margin-left: var(--#{config.$prefix}space-xxs);}
+@media (hover: hover) and (pointer: fine) {
+	.btn[class*="ico-"]:hover {border-color: var(--#{config.$prefix}color-base-60);}
+}
+.btn[class*="ico-"]:active {border-color: var(--#{config.$prefix}color-base-70);}
+.btn[class*="ico-"]:disabled {border-color: var(--#{config.$prefix}color-base-30); color: var(--#{config.$prefix}color-base-40);}
+.btn[class*="ico-"]::before {content: ''; display: block; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); background-image: var(--bg-url-md); background-repeat: no-repeat; background-size: var(--bg-size-md);}
+.btn.ico-download::before {background-position: calc(var(--#{config.$prefix}icon-md) * -1) calc(var(--#{config.$prefix}icon-md) * -3);}
+.btn.ico-download:disabled::before {background-position: calc(var(--#{config.$prefix}icon-md) * -2) calc(var(--#{config.$prefix}icon-md) * -3);}
+.btn.ico-send::before {background-position: calc(var(--#{config.$prefix}icon-md) * -3) calc(var(--#{config.$prefix}icon-md) * -3);}
+.btn.ico-send:disabled::before {background-position: calc(var(--#{config.$prefix}icon-md) * -4) calc(var(--#{config.$prefix}icon-md) * -3);}
+
+.btn.ico-filter {width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); border: 0; padding: 0; background-color: transparent;}
+.btn.ico-filter::before {background-position: calc(var(--#{config.$prefix}icon-md) * -1) calc(var(--#{config.$prefix}icon-md) * -5);}
+.btn.ico-filter:disabled::before {background-position: calc(var(--#{config.$prefix}icon-md) * -1) calc(var(--#{config.$prefix}icon-md) * -5);}
+
+/** 버튼 - 값선택형 */
+.btn.selected {padding: 1.5rem 4.3rem 1.5rem 1.5rem; border-color: var(--#{config.$prefix}color-base-30); transition: all 0s var(--animation-timing-base);}
+.btn.selected::after {content: ''; position: absolute; top: 50%; right: 1.1rem; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); margin: -1.2rem 0 0; background: var(--bg-url-md) no-repeat calc(var(--#{config.$prefix}icon-md) * -3) calc(var(--#{config.$prefix}icon-md) * -1); background-size: var(--bg-size-md);}
+.btn.selected > .txt {display: block; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left; color: var(--#{config.$prefix}color-black);}
+.btn.selected > .txt.is-placeholder {color: var(--#{config.$prefix}color-base-60);}
+
+.btn.selected.is-error {border-color: var(--#{config.$prefix}color-danger);}
+.btn.selected.is-readonly {background-color: var(--#{config.$prefix}color-base-10); border-color: var(--#{config.$prefix}color-base-30); pointer-events: none;}
+.btn.selected:active,
+.btn.selected:focus {border-color:var(--#{config.$prefix}color-primary-50); box-shadow: 0 .4rem 1.6rem 0 rgba(85, 141, 255, .2); transition-duration: var(--animation-speed-fast);}
+.btn.selected:disabled {background-color: var(--#{config.$prefix}color-base-10); border-color: var(--#{config.$prefix}color-base-20); pointer-events: none;}
+.btn.selected:disabled > .txt {color: var(--#{config.$prefix}color-base-40);}
+.btn.selected ~ .btn.selected {margin-left: 0;}
+.btn.selected:active {transform: scale3d(1, 1, 1);}
+
+.btn:active {transform: scale3d(.98, .98, 1);}
+.btn:not([disabled]):active {transition-duration: 0s;}
+.btn:disabled {pointer-events: none;}
+
+/* 링크 */
+.text-link {text-decoration: underline; color: inherit;}
+
+.btn-ico-link {position: relative; overflow: hidden; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); vertical-align: middle;}
+.btn-ico-link::after {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -1) calc(var(--icon-sm) * -1); background-size: var(--bg-size-sm);}
+
+.btn-txt-link {position: relative; display: inline-block; padding: .15rem 0; vertical-align: middle; line-height: 1; text-indent: 0;}
+.btn-txt-link > span {position: relative; display: inline-block; vertical-align: middle; line-height: 1.5; font-weight: var(--#{config.$prefix}font-regular); font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
+.btn-txt-link > span::after {content: ''; position: absolute; bottom: .3rem; left: 0; width: 100%; height: var(--#{config.$prefix}border-sm); background-color: var(--#{config.$prefix}color-base-60);}
+.btn-txt-link:hover > span {color: var(--#{config.$prefix}color-base-80);}
+.btn-txt-link:hover > span::after {background-color: var(--#{config.$prefix}color-base-80);}
+
+.btn-txt-link.primary > span {color:var(--#{config.$prefix}color-primary-50);}
+.btn-txt-link.primary > span::after {background-color:var(--#{config.$prefix}color-primary-50);}
+.btn-txt-link.primary:hover > span {color:var(--#{config.$prefix}color-primary-60);}
+.btn-txt-link.primary:hover > span::after {background-color:var(--#{config.$prefix}color-primary-60);}
+
+.btn-bullet-link {position: relative; display: inline-block; padding: .15rem 0; vertical-align: middle; line-height: 1; text-indent: 0;}
+.btn-bullet-link::after {content: ''; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); background: var(--bg-url-sm) no-repeat 0 calc(var(--icon-sm) * -2); background-size: var(--bg-size-sm); vertical-align: middle;}
+.btn-bullet-link > span {position: relative; display: inline-block; vertical-align: middle; line-height: 1.5; font-weight: var(--#{config.$prefix}font-regular); font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
+.btn-bullet-link:hover::after {background-position: calc(var(--icon-sm) * -1) calc(var(--icon-sm) * -2);}
+.btn-bullet-link:hover > span {color: var(--#{config.$prefix}color-base-80);}
+
+.btn-bullet-link.primary > span {color:var(--#{config.$prefix}color-primary-50);}
+.btn-bullet-link.primary::after {background-position: calc(var(--icon-sm) * -3) calc(var(--icon-sm) * -2);}
+.btn-bullet-link.primary:hover > span {color:var(--#{config.$prefix}color-primary-60);}
+.btn-bullet-link.primary:hover::after {background-position: calc(var(--icon-sm) * -4) calc(var(--icon-sm) * -2);}
+
+.link-group .btn-menu-link ~ .btn-menu-link {margin-top: var(--#{config.$prefix}space-xs);}
+.btn-menu-link {position: relative; display: inline-block; width: 100%; padding: 1.9rem 4.3rem 1.9rem 2.3rem; background-color: var(--#{config.$prefix}color-white); border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-20); border-radius: var(--#{config.$prefix}radius-xl); box-shadow: var(--shadow-sm);}
+.btn-menu-link::after {content: ''; position: absolute; top: 50%; right: 2.0rem; width: var(--icon-sm); height: var(--icon-sm); margin-top: -.8rem; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -1) calc(var(--icon-sm) * -1); background-size: var(--bg-size-sm);}
+.btn-menu-link > span {font-size: var(--#{config.$prefix}font-body-lg); color: var(--#{config.$prefix}color-base-80);}
+.btn-menu-link + .btn-menu-link {margin-top: var(--#{config.$prefix}space-xs);}

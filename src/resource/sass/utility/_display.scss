@@ -1,0 +1,114 @@
+/*
+	파일정보 : 콘텐츠 > 디스플레이(정렬, 그리드, 플렉스)
+	업데이트 : 2024-09-01
+*/
+
+@use 'config' as config;
+
+.item-col {
+	display: flex;
+	flex-direction: column;
+	> .unit {
+		width: 100%;
+	}
+}
+
+.item-row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	> .unit {
+		flex-shrink: 1;
+	}
+	&.option-top {
+		align-items: flex-start;
+	}
+	&.option-bottom {
+		align-items: flex-end;
+	}
+	&.option-left {
+		justify-content: left;
+	}
+	&.option-center {
+		justify-content: center;
+	}
+	&.option-right {
+		justify-content: right;
+	}
+}
+
+/* 정렬 */
+.align-left {text-align: left;}
+.align-center {text-align: center;}
+.align-right {text-align: right;}
+.align-top {vertical-align: top;}
+.align-middle {vertical-align: middle;}
+.align-bottom {vertical-align: bottom;}
+
+/* 요소분할 */
+.item-col {display: flex; flex-direction: column;}
+.item-col > .unit {width: 100%;}
+.item-col > .unit + .unit {margin-top: var(--#{config.$prefix}space-xs);}
+
+.item-row {display: flex; flex-direction: row; align-items: center; justify-content: space-between;}
+.item-row > .unit {flex-shrink: 1;}
+.item-row > .unit + .unit {margin-left: var(--#{config.$prefix}space-xs);}
+.item-row > .unit.fixed {flex-shrink: 0;}
+.item-row > .unit.filled {flex-shrink: 1; width: 100%;}
+
+.item-row.option-top {align-items: flex-start;}
+.item-row.option-bottom {align-items: flex-end;}
+.item-row.option-left {justify-content: left;}
+.item-row.option-center {justify-content: center;}
+.item-row.option-right {justify-content: right;}
+
+.item-row + .item-row,
+.item-row + .input {margin-top: var(--#{config.$prefix}space-xs);}
+
+.item-react {display: flex; flex-direction: column;}
+.item-react > .unit {flex-shrink: 1;}
+.item-react > .unit + .unit {margin-top: var(--#{config.$prefix}space-xs);}
+
+/* 요소분할 - (태블릿+PC) */
+@media screen and (min-width: 768px) {
+	.item-row.option-half > .unit + .unit {margin-left: var(--#{config.$prefix}space-md);}
+
+	.item-react {flex-direction: row; align-items: center;}
+	.item-react > .unit + .unit {margin-top: 0; margin-left: var(--#{config.$prefix}space-xs);}
+	.item-react > .unit.fixed {flex-shrink: 0;}
+	.item-react > .unit.filled {flex-shrink: 1; width: 100%;}
+	.item-react.option-top {align-items: flex-start;}
+	.item-react.option-bottom {align-items: flex-end;}
+	.item-react.option-left {justify-content: left;}
+	.item-react.option-center {justify-content: center;}
+	.item-react.option-right {justify-content: right;}
+}
+
+/* 요소분할 1:1 */
+.item-half {display: flex; flex-direction: column;}
+.item-half > .unit {flex-shrink: 1; width: 100%;}
+.item-half > .unit + .unit {margin-top: var(--#{config.$prefix}space-xs);}
+
+/* 요소분할 1:1 - (태블릿+PC) */
+@media screen and (min-width: 768px) {
+	.item-half {flex-direction: row; align-items: center;}
+	.item-half > .unit {width: 100%;}
+	.item-half > .unit + .unit {margin-top: 0; margin-left: var(--#{config.$prefix}space-md);}
+	.item-half.option-top {align-items: flex-start;}
+	.item-half.option-bottom {align-items: flex-end;}
+	.item-half.option-left {justify-content: left;}
+	.item-half.option-center {justify-content: center;}
+	.item-half.option-right {justify-content: right;}
+
+	.item-half > .unit > .form-value > .chip-group {padding-top: 1.2rem; padding-bottom: 1.2rem;}
+}
+
+/** 요소분할 1:1 - 등록폼 */
+.form-item.item-half > .unit {padding-top: var(--space-xl); margin-top: 0;}
+.form-item.item-half > .unit:first-child {padding-top: 0;}
+
+/** 요소분할 1:1 - 등록폼 - (태블릿+PC) */
+@media screen and (min-width: 768px) {
+	.form-item.item-half > .unit {padding-top: 0;}
+}

@@ -6,37 +6,59 @@
 /* 환경설정 */
 @use 'config' as config;
 
-/* 레이아웃 */
+/* 레이아웃 - 페이지 구조 */
 @use 'layout/page';
 @use 'layout/header';
 @use 'layout/footer';
-@use 'layout/layout';
 
-/* 탐색 */
-@use 'nav/menu';
-@use 'nav/nav';
+/* 레이아웃 - 탐색 */
+@use 'layout/menu';
+/* @use 'layout/breadcrumb'; */
+@use 'layout/pagination';
+
+/* 레이아웃 - 팝업 */
+@use 'layout/popup';
 
 /* 콘텐츠 */
-@use 'content/typo';
+@use 'content/typography';
+@use 'content/step';
+@use 'content/badge';
+@use 'content/help';
 @use 'content/list';
-@use 'content/content';
+@use 'content/box';
+@use 'content/notice';
+@use 'content/table';
+@use 'content/card';
+@use 'content/image';
+@use 'content/carousel';
 
 /* 폼 */
 @use 'form/text';
 @use 'form/select';
+@use 'form/textarea';
 @use 'form/file';
+@use 'form/radio';
 @use 'form/check';
-@use 'form/form';
+@use 'form/range';
+@use 'form/group';
+@use 'form/agreement';
 
 /* 컴포넌트 */
-@use 'component/button';
-@use 'component/accordion';
+@use 'component/buttonlink';
 @use 'component/tab';
-@use 'component/note';
-@use 'component/component';
+@use 'component/accordion';
+@use 'component/popover';
+@use 'component/tooltip';
+@use 'component/toast';
+@use 'component/calendar';
+/* @use 'component/spinner';
+@use 'component/skeleton';
+@use 'component/scrollspy'; */
 
-/* 팝업 */
-@use 'popup/popover';
-@use 'popup/tooltip';
-@use 'popup/toast';
-@use 'popup/popup';
+/* 유틸리티 */
+@use 'utility/display';
+@use 'utility/font';
+@use 'utility/color';
+@use 'utility/size';
+@use 'utility/space';
+@use 'utility/etc';

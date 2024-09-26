@@ -61,32 +61,24 @@
 }
 
 /* 아이콘 - $size = $icon-group */
-@mixin icon-common($size, $x, $y) {
-	$var: var(--#{$prefix}icon-#{$size});
-	$name: $size;
+@mixin icon-block($size) {
+	$var: var(--#{config.$prefix}icon-#{$size});
 
 	width: $var;
 	height: $var;
-	background-image: url('#{$path-image}/common/icon-#{$name}.svg');
+}
+
+@mixin icon-common($size, $x: 0, $y: 0) {
+	$var: var(--#{config.$prefix}icon-#{$size});
+
+	@include icon-block($size);
+	background-image: url('#{config.$path-image}/common/icon-#{$size}.svg');
 	background-repeat: no-repeat;
 	background-position: calc($var * -#{$x}) calc($var * -#{$y});
 	background-size: calc($var * 10) auto;
 }
 
-
-
-
-
-/***** 임시 */
-/* @mixin size($width, $height) {
-	width: $width;
-	height: $height;
-}
-
-@mixin square($size) {
-	@include size($size, $size);
-}
-
+/* 말줄임 */
 @mixin ellipsis($max-width, $line: 1) {
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -99,4 +91,18 @@
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: $line;
 	}
-} */
+}
+
+@mixin full-block {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+@mixin full-fix($position: fixed) {
+	position: $position;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}

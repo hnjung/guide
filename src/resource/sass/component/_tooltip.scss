@@ -1,0 +1,38 @@
+/*
+	파일정보 : 컴포넌트 > 툴팁
+	업데이트 : 2024-08-01
+*/
+
+@use 'config' as config;
+
+/* 툴팁 */
+.tooltip {position: relative; display: inline-flex; width: var(--icon-sm); height: var(--icon-sm); margin-top: -.2rem; vertical-align: middle;}
+.tooltip-btn {display: block; width: 100%; height: 100%; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -3) 0; background-size: var(--bg-size-sm);}
+.tooltip-btn > span {font-size: 0;}
+.tooltip-body {position: absolute; display: none; z-index: 10; width: max-content; padding: var(--#{config.$prefix}space-xs) var(--space-xs); background-color: var(--#{config.$prefix}color-base-70); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); line-height: 1.35; font-weight: var(--#{config.$prefix}font-regular); font-size: var(--#{config.$prefix}font-body-sm); color: var(--#{config.$prefix}color-white); transform: translate3d(0, -12%, 0); opacity: 0; transition-duration: 0s; transition-delay: 0s;}
+.tooltip-body::before {content: ''; position: absolute; width: .5rem; height: .8rem; background: var(--bg-url-etc) no-repeat 0 0; background-size: var(--bg-size-etc);}
+
+.tooltip.is-open .tooltip-body {display: block; animation: animation-tooltip var(--animation-speed) var(--animation-timing-outback) forwards;}
+
+.tooltip.bottom {align-items: end;}
+.tooltip.bottom.left .tooltip-body {margin-bottom: 2.4rem; margin-left: -1.0rem; margin-right: var(--#{config.$prefix}space-md);}
+.tooltip.bottom.left .tooltip-body::before {bottom: -.5rem; left: 1.6rem; transform: rotate3d(0, 0, 1, 270deg);}
+
+.tooltip.bottom.right {justify-content: flex-end;}
+.tooltip.bottom.right .tooltip-body {margin-bottom: 2.4rem; margin-right: -1.0rem; margin-left: var(--#{config.$prefix}space-md);}
+.tooltip.bottom.right .tooltip-body::before {bottom: -.5rem; right: 1.6rem; transform: rotate3d(0, 0, 1, 270deg);}
+
+.tooltip.top {align-items: start;}
+.tooltip.top.left .tooltip-body {margin-top: 2.4rem; margin-left: -1.0rem; margin-right: var(--#{config.$prefix}space-md);}
+.tooltip.top.left .tooltip-body::before {top: -.5rem; left: 1.6rem; transform: rotate3d(0, 0, 1, 90deg);}
+
+.tooltip.top.right {justify-content: flex-end;}
+.tooltip.top.right .tooltip-body {margin-top: 2.4rem; margin-right: -1.0rem; margin-left: var(--#{config.$prefix}space-md);}
+.tooltip.top.right .tooltip-body::before {top: -.5rem; right: 1.6rem; transform: rotate3d(0, 0, 1, 90deg);}
+
+@keyframes animation-tooltip {
+	100% {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}

@@ -1,0 +1,11 @@
+/*
+	파일정보 : 레이아웃 > 탐색 > 페이징
+	업데이트 : 2024-09-01
+*/
+
+@use 'config' as config;
+
+.page-current {display: inline-block; vertical-align: middle; font-size: 0;}
+.page-current > strong,
+.page-current > a {display: inline-block; min-width: 3.2rem; padding: .5rem .8rem .45rem; margin: 0 .4rem; background-color: var(--#{config.$prefix}color-base-10); border-radius: var(--radius-md); vertical-align: middle; text-align: center; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
+.page-current > strong {background-color: #1A57FF; font-weight: var(--#{config.$prefix}font-medium); color: var(--#{config.$prefix}color-white);}

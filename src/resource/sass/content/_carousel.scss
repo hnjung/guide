@@ -1,0 +1,31 @@
+/*
+	파일정보 : 콘텐츠 > 캐러셀
+	업데이트 : 2024-08-01
+*/
+
+@use 'config' as config;
+
+/* 비주얼 */
+.main-visual {margin-left: calc(var(--space-body) * -1); margin-right: calc(var(--space-body) * -1);}
+.visual-wrap {position: relative; padding-left: var(--space-body); padding-right: var(--space-body);}
+.visual-item > .link {display: block; overflow: hidden; border-radius: var(--#{config.$prefix}radius-xl);}
+.visual-item > .link > img {width: 100%;}
+.visual-control {position: absolute; z-index: 1; bottom: 1.3rem; left: 50%; display: flex; align-items: center; transform: translate3d(-50%, 0, 0);;}
+.visual-page {position: relative; bottom: auto; padding: .35rem .6rem; background-color: rgba(0, 22, 68, .6); border-radius: 9.9rem; line-height: 1; font-size: 1.1rem; color: rgba(255, 255, 255, .7);}
+.visual-page .swiper-pagination-current {font-weight: var(--#{config.$prefix}font-medium); color: var(--#{config.$prefix}color-white);}
+
+.visual-control .btn-pause {display: block; overflow: hidden; flex-shrink: 0; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); margin-left: .1rem; background: var(--bg-url-md) no-repeat calc(var(--#{config.$prefix}icon-md) * -8) calc(var(--#{config.$prefix}icon-md) * -3); background-size: var(--bg-size-md); transform: scale3d(1,1,1); transition: transform var(--animation-speed-fast) var(--animation-timing-outback);}
+.visual-control .btn-pause.is-stop {background-position: calc(var(--#{config.$prefix}icon-md) * -9) calc(var(--#{config.$prefix}icon-md) * -3);}
+.visual-control .btn-pause:active {transform: scale3d(.94,.94,1);}
+.swiper-pagination-lock ~ .btn-pause {display: none;}
+
+/* 이달의 추천 상품 */
+.main-monthly {margin-left: calc(var(--space-body) * -1); margin-right: calc(var(--space-body) * -1); padding-top: var(--#{config.$prefix}space-xs); padding-bottom: var(--space-lg); background-color: var(--#{config.$prefix}color-white);}
+.monthly-wrap {padding-left: var(--space-body); padding-right: var(--space-body);}
+.monthly-item {width: 88.89%;}
+.monthly-item > .link {display: block; overflow: hidden; border-radius: var(--#{config.$prefix}radius-xl);}
+.monthly-item > .link > img {width: 100%;}
+.monthly-control {position: absolute; z-index: 1; bottom: .8rem; left: var(--space-body); width: calc(100% - (var(--space-body) * 2)); display: flex; align-items: center;}
+.monthly-page.swiper-pagination {position: relative; bottom: auto; top: auto; padding: .35rem .4rem; font-size: 0;}
+.monthly-page .swiper-pagination-bullet {width: 8px; height: 8px; background-color: transparent; border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-white); opacity: 1;}
+.monthly-page .swiper-pagination-bullet.swiper-pagination-bullet-active {background-color: var(--#{config.$prefix}color-white); opacity: 1;}

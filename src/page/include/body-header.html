@@ -1,11 +1,13 @@
+<%
+	let setHeaderTitle = headertitle;
+%>
 <h1 class="header-title">
-	<span class="logo"><a href="javascript:;" title="메인 페이지"><span class="sr-only">Logo</span></a></span>
-	<span class="txt">Title</span>
+	<span class="logo"><a href="javascript:;" title="Main Page"><span class="sr-only">Logo</span></a></span>
+	<span class="txt"><%= setHeaderTitle %></span>
 </h1>
-<a href="javascript:;" class="btn-page-back">
-	<span class="sr-only">Prev</span>
+<a href="javascript: history.back();" class="btn-page-back">
+	<span class="sr-only">Back</span>
 </a>
 <button type="button" class="btn-menu">
-	<span class="ico-menu-bar"></span>
 	<span class="sr-only">Menu</span>
 </button>

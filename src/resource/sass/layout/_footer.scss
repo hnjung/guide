@@ -1,8 +1,30 @@
 /*
-	파일정보 : 레이아웃 > 푸터
+	파일정보 : 레이아웃 > 페이지 구조 > 푸터
 	업데이트 : 2024-09-01
 */
 
+@use 'config' as config;
+
 #footer {
-	position: relative;
+	height: var(--#{config.$prefix}footer-height);
+	flex-shrink: 0;
 }
+.footer-inner {
+	padding: var(--#{config.$prefix}space-md);
+	text-align: center;
+	font-size: var(--#{config.$prefix}font-body-sm);
+}
+.btn-page-top {
+	position: fixed;
+	bottom: var(--#{config.$prefix}space-md);
+	right: var(--#{config.$prefix}space-md);
+	@include config.icon-common(xl,0,0);
+	border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-30);
+	border-radius: var(--#{config.$prefix}radius-pill);
+	background-color: var(--#{config.$prefix}color-white);
+	box-shadow: var(--#{config.$prefix}shadow-md);
+}
+
+.company-info {display: flex; flex-direction: column; font-weight: var(--#{config.$prefix}font-light); font-size: var(--#{config.$prefix}font-body-sm); color: var(--#{config.$prefix}color-black);}
+.company-info > span + span {margin-top: .4rem;}
+.company-info > .address {padding-right: 4.8rem;}

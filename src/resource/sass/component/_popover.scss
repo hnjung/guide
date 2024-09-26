@@ -1,0 +1,38 @@
+/*
+	파일정보 : 컴포넌트 > 팝오버
+	업데이트 : 2024-08-01
+*/
+
+@use 'config' as config;
+
+/* 팝오버 */
+.helper {display: inline-flex; width: var(--icon-sm); height: var(--icon-sm); margin-top: -.2rem; vertical-align: middle;}
+.helper-btn {display: block; width: 100%; height: 100%; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -4) 0; background-size: var(--bg-size-sm);}
+
+.popover {position: absolute; display: none; z-index: 10; left: var(--#{config.$prefix}space-md); width: calc(100% - var(--space-xxl)); padding: var(--space-xxl) var(--space-xxl) var(--#{config.$prefix}space-md) var(--#{config.$prefix}space-md); text-align: left; transform: translate3d(0, -12%, 0); opacity: 0; transition-duration: 0s; transition-delay: 0s;}
+.popover.is-open {display: block; animation: animation-popover var(--animation-speed) var(--animation-timing-outback) forwards;}
+.popover::before {content: ''; position: absolute; z-index: -1; top: var(--#{config.$prefix}space-md); bottom: 0; left: 0; right: 0; background-color: var(--#{config.$prefix}color-white); border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-40); border-radius: var(--#{config.$prefix}radius-xl); box-shadow: var(--shadow-lg);}
+
+.popover-title {line-height: 1.35; font-size: var(--#{config.$prefix}font-body-lg); color: var(--#{config.$prefix}color-black);}
+.popover-content {line-height: 1.5; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-80);}
+.popover-content .text {font-weight: var(--#{config.$prefix}font-regular); font-size: var(--#{config.$prefix}font-body-md);}
+.popover-title ~ .popover-content {padding-top: var(--#{config.$prefix}space-xs);}
+.btn-popover-close {position: absolute; z-index: 1; top: var(--space-xxl); right: var(--#{config.$prefix}space-md); width: var(--icon-sm); height: var(--icon-sm); background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -5) calc(var(--icon-sm) * -3); background-size: var(--bg-size-sm);}
+
+.card-item .popover {left: 0; width: 100%;}
+.card-title .popover {left: -2.4rem; width: calc(100% + 4.8rem);}
+.card-select .checkbox-control ~ .label .card-title .popover {left: calc((2.4rem + 3.2rem) * -1); width: calc(100% + 4.8rem + 3.2rem);}
+
+/* 팝오버 - (태블릿+PC) */
+@media screen and (min-width: 768px) {
+	#content .popover,
+	.popup-wrap.option-full.expended .popover {left: auto; width: 320px;}
+	.helper.option-right {justify-content: flex-end;}
+}
+
+@keyframes animation-popover {
+	100% {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}

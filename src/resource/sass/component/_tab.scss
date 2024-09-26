@@ -1,4 +1,69 @@
 /*
-	파일정보 : 
+	파일정보 : 컴포넌트 > 탭
 	업데이트 : 2024-08-01
 */
+
+@use 'config' as config;
+
+/* 탭 */
+.tab-head {display: flex; flex-wrap: wrap; position: relative;}
+.tab-head::before {content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: var(--#{config.$prefix}border-sm); background-color: var(--#{config.$prefix}color-base-20);}
+
+.tab-menu {position: relative;}
+.tab-menu > a {display: inline-block; width: 100%; padding: .9rem .8rem .942rem; line-height: 1.35; font-weight: var(--#{config.$prefix}font-semibold); font-size: var(--#{config.$prefix}font-body-lg); color: var(--#{config.$prefix}color-base-60); transition: all var(--animation-speed) var(--animation-timing-base);}
+.tab-menu::after {content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: var(--#{config.$prefix}border-md); margin-left: 0; background-color: var(--#{config.$prefix}color-black); transition: all var(--animation-speed) var(--animation-timing-outback-sm);}
+.tab-menu.is-active > a {color: var(--#{config.$prefix}color-black);}
+.tab-menu.is-active::after {width: 100%; margin-left: -50%;}
+.tab-menu:active {background-color: var(--#{config.$prefix}color-base-30); transition: all var(--animation-speed) var(--animation-timing-base);}
+
+.tab-item {display: none; padding-top: var(--space-lg);}
+.tab-item.is-active {display: block;}
+
+/** 탭 - 폭전체사용 */
+.tab-head.option-full {margin-left: calc(var(--#{config.$prefix}space-md) * -1); margin-right: calc(var(--#{config.$prefix}space-md) * -1); padding-left: var(--#{config.$prefix}space-md); padding-right: var(--#{config.$prefix}space-md);}
+.tab-head.option-full .tab-menu {flex-grow: 1; text-align: center;}
+.tab-head.option-full .tab-menu + .tab-menu {margin-left: 0;}
+
+/** 탭 - 폭전체사용 - (태블릿+PC) */
+@media screen and (min-width: 768px) {
+	#content .tab-head.option-full {margin-left: calc(var(--space-max) * -1); margin-right: calc(var(--space-max) * -1); padding-left: var(--space-max); padding-right: var(--space-max);}
+}
+
+/** 탭 - 폭전체사용 - (PC) */
+@media screen and (min-width: 1025px) {
+	#content .tab-head.option-full {margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;}
+}
+
+/* 탭 - 박스형 */
+.tab-head.option-box {flex-wrap: nowrap; background-color: var(--#{config.$prefix}color-base-10); border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-20); border-radius: var(--radius-md);}
+.tab-head.option-box::before,
+.tab-head.option-box .tab-menu::after {display: none;}
+.tab-head.option-box .tab-menu {flex-grow: 1; flex-shrink: 1; flex-basis: 100%;}
+.tab-head.option-box .tab-menu > a {display: flex; align-items: center; justify-content: center; height: 100%; padding: 1.1rem 1.2rem 1.075rem; text-align: center; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
+.tab-head.option-box .tab-menu.is-active > a {position: relative; background-color: var(--#{config.$prefix}color-white); color: var(--#{config.$prefix}color-black);}
+.tab-head.option-box .tab-menu.is-active > a::before {content: ''; position: absolute; z-index: 1; top: -.1rem; bottom: -.1rem; left: -.1rem; right: -.1rem; width: calc(100% + .2rem); height: calc(100% + .2rem); border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-black); border-radius: var(--radius-md); box-shadow: var(--shadow-md);}
+
+/* 탭 - 텍스트형 */
+.tab-head.option-txt .tab-menu::after {bottom: auto; top: 50%; left: 0; width: var(--#{config.$prefix}border-sm); height: 1.4rem; margin-left: 0; margin-top: -.7rem; background-color: var(--#{config.$prefix}color-base-30);}
+.tab-head.option-txt .tab-menu > a {padding: 1.45rem .8rem 1.45rem .9rem; line-height: 1.358; font-weight: var(--#{config.$prefix}font-regular); font-size: var(--#{config.$prefix}font-body-md);}
+.tab-head.option-txt .tab-menu.is-active > a {font-weight: var(--#{config.$prefix}font-semibold);}
+.tab-head.option-txt .tab-menu:first-child::after {display: none;}
+.tab-head.option-txt .tab-menu:first-child > a {padding-left: .2rem;}
+
+/** 탭 - 스크롤 */
+.tab-scroll {width: 100%; overflow-x: auto; scroll-behavior: smooth;}
+.tab-scroll::-webkit-scrollbar {display: none; width: 0; height: 0; background: transparent; -webkit-appearance: none;}
+.tab-scroll .tab-head {width: max-content; min-width: 100%; justify-content: center;}
+
+/** 탭 - 칩 */
+.tab-head.option-chip {overflow: hidden;}
+.tab-head.option-chip::before {display: none;}
+.tab-head.option-chip .tab-menu {background-color: var(--#{config.$prefix}color-base-10); border-radius: var(--radius-xl); transition: all var(--animation-speed) var(--animation-timing-base), transform var(--animation-speed-fast) var(--animation-timing-base);}
+.tab-head.option-chip .tab-menu + .tab-menu {margin-left: var(--#{config.$prefix}space-xs);}
+.tab-head.option-chip .tab-menu > a {padding: .842rem 1.6rem .8rem; line-height: 1.35; font-weight: var(--#{config.$prefix}font-bold); font-size: var(--#{config.$prefix}font-body-lg); color: var(--#{config.$prefix}color-base-40); transition: all var(--animation-speed) var(--animation-timing-base);}
+.tab-head.option-chip .tab-menu::after {display: none;}
+.tab-head.option-chip .tab-menu.is-active::after {display: none;}
+.tab-head.option-chip .tab-menu.is-active {background-color:var(--#{config.$prefix}color-primary-50);}
+.tab-head.option-chip .tab-menu.is-active > a {color: var(--#{config.$prefix}color-white);}
+.tab-head.option-chip .tab-menu:active {background-color:var(--#{config.$prefix}color-primary-60); transition: all var(--animation-speed) var(--animation-timing-base);}
+.tab-head.option-chip .tab-menu:active > a {color: var(--#{config.$prefix}color-white);}

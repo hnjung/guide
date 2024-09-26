@@ -1,0 +1,10 @@
+/*
+	파일정보 : 콘텐츠 > 스텝
+	업데이트 : 2024-08-01
+*/
+
+@use 'config' as config;
+
+/* 스텝 */
+.step {display: inline-block; padding: .2rem .85rem .25rem; background-color:var(--#{config.$prefix}color-primary-20); border-radius: var(--radius-xl); vertical-align: middle; letter-spacing: .08rem; font-weight: var(--#{config.$prefix}font-medium); font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-80);}
+.step > strong {font-weight: var(--#{config.$prefix}font-medium); color:var(--#{config.$prefix}color-primary-50);}

@@ -1,4 +1,127 @@
 /*
-	파일정보 : 
+	파일정보 : 콘텐츠 > 목록
 	업데이트 : 2024-08-01
 */
+
+@use 'config' as config;
+
+/** 타이포그래피 - 목록 */
+[class^="title-h"] ~ .txt,
+[class^="title-h"] ~ .text,
+[class^="title-h"] ~ .list {margin-top: var(--#{config.$prefix}space-md);}
+.list li {color: var(--#{config.$prefix}color-base-80);}
+.list li > a {color: var(--#{config.$prefix}color-base-80);}
+.list li.primary {color:var(--#{config.$prefix}color-primary-50);}
+.list > li + li {margin-top: var(--#{config.$prefix}space-xs);}
+.list > li > .list {margin-top: var(--#{config.$prefix}space-xs);}
+
+.list.depth-u1 > li {padding-left: var(--#{config.$prefix}space-md); text-indent: calc(var(--#{config.$prefix}space-md) * -1);}
+.list.depth-u1 > li > .text {text-indent: 0;}
+.list.depth-u1 > li::before {content: ''; display: inline-block; width: .4rem; height: .4rem; margin-right: var(--#{config.$prefix}space-xs); margin-left: var(--#{config.$prefix}space-xxs); margin-top: -.2rem; background-color: var(--#{config.$prefix}color-base-80); border-radius: 100%; vertical-align: middle;}
+.list.depth-u1 > li.primary {color:var(--#{config.$prefix}color-primary-50);}
+.list.depth-u1 > li.primary::before {background-color:var(--#{config.$prefix}color-primary-50);}
+.list.depth-u1 > li.highlight {color: var(--#{config.$prefix}color-danger);}
+.list.depth-u1 > li.highlight::before {background-color: var(--#{config.$prefix}color-danger);}
+.list.depth-u1 > li .list {padding-bottom: var(--#{config.$prefix}space-xs);}
+.list.depth-u1 > li .box {padding: 1.9rem; margin-left: calc(var(--#{config.$prefix}space-md) * -1);}
+
+.list.depth-u2 > li {padding-left: var(--#{config.$prefix}space-md); text-indent: calc(var(--#{config.$prefix}space-md) * -1);}
+.list.depth-u2 > li::before {content: ''; display: inline-block; width: .4rem; height: .1rem; margin-right: var(--#{config.$prefix}space-xs); margin-left: var(--#{config.$prefix}space-xxs); margin-top: -.2rem; background-color: var(--#{config.$prefix}color-base-80); border-radius: 100%; vertical-align: middle;}
+.list.depth-u2 > li.primary {color:var(--#{config.$prefix}color-primary-50);}
+.list.depth-u2 > li.primary::before {background-color:var(--#{config.$prefix}color-primary-50);}
+.list.depth-u2 > li.highlight {color: var(--#{config.$prefix}color-danger);}
+.list.depth-u2 > li.highlight::before {background-color: var(--#{config.$prefix}color-danger);}
+
+.list.depth-u3 > li {padding-left: var(--#{config.$prefix}space-md); text-indent: calc(var(--#{config.$prefix}space-md) * -1); font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-70);}
+.list.depth-u3 > li::before {content: ''; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); margin-right: var(--#{config.$prefix}space-xxs); margin-top: -.2rem; background: var(--bg-url-sm) no-repeat 0 calc(var(--icon-sm) * -4); background-size: var(--bg-size-sm); vertical-align: middle;}
+.list.depth-u3 > li.primary {color:var(--#{config.$prefix}color-primary-50);}
+.list.depth-u3 > li.primary::before {background-position: calc(var(--icon-sm) * -1) calc(var(--icon-sm) * -4);}
+
+.list.depth-u4 > li {padding-left: var(--#{config.$prefix}space-md); text-indent: calc(var(--#{config.$prefix}space-md) * -1); font-size: var(--#{config.$prefix}font-body-sm); color: var(--#{config.$prefix}color-base-70);}
+.list.depth-u4 > li::before {content: ''; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); margin-right: var(--#{config.$prefix}space-xxs); margin-top: -.2rem; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -2) calc(var(--icon-sm) * -4); background-size: var(--bg-size-sm); vertical-align: middle;}
+.list.depth-u4 > li.primary {color:var(--#{config.$prefix}color-primary-50);}
+.list.depth-u4 > li.primary::before {background-position: calc(var(--icon-sm) * -3) calc(var(--icon-sm) * -4);}
+
+.list.depth-o1 > li {padding-left: 1.4rem; text-indent: -1.4rem;}
+.list.depth-o2 > li {padding-left: 1.7rem; text-indent: -1.7rem;}
+.list.depth-o3 > li {padding-left: 2.1rem; text-indent: -2.1rem;}
+
+/* 리스트 공통 */
+.list-head {position: relative; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; margin-bottom: 1.6rem;}
+.list-head.option-row {flex-direction: row; flex-wrap: wrap; align-items: center;}
+.list-head > div {line-height: 1;}
+.list-head > div:first-child,
+.list-head > [class*="title"] {flex-shrink: 0;}
+.list-head:not(.option-row) > div:last-child:not(.unit) {flex-shrink: 1; width: 100%;}
+
+.list-title {max-width: 100%; line-height: 1.35; font-weight: var(--#{config.$prefix}font-semibold); font-size: var(--font-title-sm); color: var(--#{config.$prefix}color-black);}
+.list-title > span {font-weight: var(--#{config.$prefix}font-regular);}
+
+.list-total {text-align: left;}
+.list-total > span {display: inline-block; vertical-align: middle; line-height: 1.5; font-weight: var(--#{config.$prefix}font-medium); font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-black);}
+.list-total > span > strong {font-weight: var(--#{config.$prefix}font-medium); color:var(--#{config.$prefix}color-primary-50);}
+
+.list-info > span {display: inline-block; vertical-align: middle; line-height: 1.5; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
+.list-head .list-title ~ .list-info {margin-top: var(--#{config.$prefix}space-xxs);}
+
+.list-btn {display: flex; padding-top: var(--space-lg);}
+.list-btn > .btn {width: 100%;}
+.list-btn > .btn.option-sm + .btn.option-sm {margin-left: var(--#{config.$prefix}space-xs);}
+
+.list-head .list-must {flex-shrink: 1; width: 100%; margin-top: var(--#{config.$prefix}space-xs);}
+.list-head .list-must > .must {line-height: 1.5; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-70);}
+.list-head .list-must > .must::before {content: '* '; position: relative; top: .2rem; font-weight: var(--#{config.$prefix}font-semibold); color:var(--#{config.$prefix}color-primary-50);}
+
+.list-head.option-row .list-must {text-align: right; margin-top: 0;}
+.list-head.option-row .list-title ~ .list-must {width: auto;}
+.list-head.option-row .list-must ~ .list-btn {width: 100%; padding-top: var(--#{config.$prefix}space-md);}
+
+.list-head .list-item {text-align: right; font-size: 0;}
+.list-head .list-item > span {line-height: 1.5; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
+.list-head .list-item > span + span::before {content: ''; display: inline-block; width: .1rem; height: 1.2rem; margin: -.2rem .8rem 0; background-color: var(--#{config.$prefix}color-base-40); vertical-align: middle;}
+
+.list-head .list-title ~ .list-label {margin-top: var(--#{config.$prefix}space-md);}
+.list-head .list-label {text-align: right; font-size: 0;}
+.list-head .list-label > span {line-height: 1.35; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
+.list-head .list-label > span + span {padding-left: .8rem;}
+.list-head .list-label > span.primary::before {content: '● '; color:var(--#{config.$prefix}color-primary-50);}
+.list-head .list-label > span.warning::before {content: '● '; color: #F35C06;}
+.list-head .list-label > span.highlight::before {content: '● '; color: #DF0707;}
+
+.list-foot {margin-top: var(--space-lg);}
+.list-paging {text-align: center; font-size: var(--#{config.$prefix}font-body-md);}
+.list-paging [class^="btn-list-"] {position: relative; overflow: hidden; display: inline-block; vertical-align: middle; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); background: var(--bg-url-md) no-repeat 0 calc(var(--#{config.$prefix}icon-md) * -1); background-size: var(--bg-size-md);}
+.list-paging .btn-list-prev {margin-right: var(--#{config.$prefix}space-md);}
+.list-paging .btn-list-next {margin-left: var(--#{config.$prefix}space-md); background-position: calc(var(--#{config.$prefix}icon-md) * -1) calc(var(--#{config.$prefix}icon-md) * -1);}
+.page-current {display: inline-block; vertical-align: middle; font-size: 0;}
+.page-current > strong,
+.page-current > a {display: inline-block; min-width: 3.2rem; padding: .5rem .8rem .45rem; margin: 0 .4rem; background-color: var(--#{config.$prefix}color-base-10); border-radius: var(--radius-md); vertical-align: middle; text-align: center; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
+.page-current > strong {background-color: #1A57FF; font-weight: var(--#{config.$prefix}font-medium); color: var(--#{config.$prefix}color-white);}
+
+.list-foot.option-more {margin-top: var(--#{config.$prefix}space-md);}
+.btn-list-more {display: block; width: 100%; padding: var(--#{config.$prefix}space-xs) 0;}
+.btn-list-more > span {vertical-align: middle; line-height: 1.35; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-80);}
+.btn-list-more::after {content: ''; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); margin-left: .4rem; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -7) calc(var(--icon-sm) * -3); background-size: var(--bg-size-sm); vertical-align: middle;}
+.btn-list-more:disabled > span {color: var(--#{config.$prefix}color-base-40);}
+.btn-list-more:disabled::after {background-position: calc(var(--icon-sm) * -7) calc(var(--icon-sm) * -2);}
+
+.list-nodata {padding: var(--space-xxl); text-align: center; color: var(--#{config.$prefix}color-base-70);}
+.list-nodata::before {content: ''; display: block; width: var(--icon-xl); height: var(--icon-xl); margin: 0 auto var(--#{config.$prefix}space-xs); background: var(--bg-url-xl) no-repeat 0 0; background-size: var(--bg-size-xl);}
+.list-nodata.option-search::before {background-position: calc(var(--icon-xl) * -1) 0;}
+.list-nodata.option-info::before {background-position: calc(var(--icon-xl) * -2) 0;}
+
+/* 리스트 공통 - (태블릿+PC) */
+@media screen and (min-width: 768px) {
+	.list-head {flex-direction: row; justify-content: space-between; align-items: center;}
+	.list-info {text-align: right;}
+	.list-head .list-title ~ .list-info {margin-top: 0;}
+	.list-btn {justify-content: flex-end; padding-top: 0;}
+	.list-btn > .btn {width: auto;}
+
+	.list-head .list-must {margin-top: 0; text-align: right;}
+	.list-head.option-row {flex-wrap: nowrap;}
+	.list-head.option-row .list-title ~ .list-must {flex-shrink: 1; width: 100%; text-align: right;}
+	.list-head.option-row .list-must ~ .list-btn {width: auto; flex-shrink: 0; margin-left: var(--#{config.$prefix}space-md); padding-top: 0;}
+
+	.list-head .list-title ~ .list-label {margin-top: 0;}
+}

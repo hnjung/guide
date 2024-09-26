@@ -1,4 +1,40 @@
 /*
-	파일정보 : 컴포넌트 > 폼()
+	파일정보 : 폼 > 파일첨부
 	업데이트 : 2024-08-01
 */
+
+@use 'config' as config;
+
+/* 파일 */
+.file-label {display: block;}
+.file-data[type='file'] {overflow: hidden; position: absolute; clip: rect(0, 0, 0, 0); clip-path: polygon(0 0, 0 0, 0 0); width: 1px; height: 1px; margin: -1px;}
+.file-btn {padding: var(--space-xs) var(--#{config.$prefix}space-md); background-color: var(--#{config.$prefix}color-primary-10); border-radius: var(--radius-md); line-height: 1; text-align: center;}
+.file-btn > .txt {line-height: 1.35; vertical-align: middle;}
+.file-btn::before {content: ''; display: inline-block; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); background: var(--bg-url-md) no-repeat calc(var(--#{config.$prefix}icon-md) * -1) calc(var(--#{config.$prefix}icon-md) * -4); background-size: var(--bg-size-md); vertical-align: middle;}
+.file-name {position: relative; display: none; overflow: hidden; padding: 1.5rem 4.7rem 1.5rem 1.9rem; border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-30); border-radius: var(--radius-md); line-height: 1; white-space: nowrap; text-overflow: ellipsis;}
+.file-name::before {content: ''; display: inline-block; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); background: var(--bg-url-md) no-repeat calc(var(--#{config.$prefix}icon-md) * -4) 0; background-size: var(--bg-size-md); vertical-align: middle;}
+.file-name > .txt {line-height: 1.5; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-70);}
+.file-name > .btn-delete {position: absolute; z-index: 1; top: 50%; right: var(--#{config.$prefix}space-md); width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); margin-top: calc((var(--#{config.$prefix}icon-md) / 2) * -1); background: var(--bg-url-md) no-repeat 0 calc(var(--#{config.$prefix}icon-md) * -3);}
+.file.has-value > .file-label {display: none;}
+.file.has-value > .file-name {display: block;}
+
+.file-readonly {display: block; padding: 1.5rem 1.9rem; border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-30); border-radius: var(--radius-md); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; line-height: 1;}
+.file-readonly::before {content: ''; display: inline-block; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); background: var(--bg-url-md) no-repeat calc(var(--#{config.$prefix}icon-md) * -4) 0; background-size: var(--bg-size-md); vertical-align: middle;}
+.file-readonly > .txt {font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-black);}
+
+/** 파일 - 다중 */
+.file-wrap {display: flex; flex-direction: column-reverse;}
+.file-list.option-main .file-btn {padding: var(--space-xxl) var(--#{config.$prefix}space-md);}
+.file-list.option-main .file-btn > .txt {line-height: 1.35; vertical-align: middle; font-weight: var(--#{config.$prefix}font-semibold); font-size: var(--font-lg);}
+.file-list.option-main .file-btn > .sub-txt {display: block; padding: .4rem 0 0; line-height: 1.35; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-70);}
+.file-list.option-main .file-btn::before {display: block; width: var(--icon-lg); height: var(--icon-lg); margin: 0 auto .8rem; background: var(--bg-url-lg) no-repeat 0 0; background-size: var(--bg-size-lg);}
+
+/** 파일 - 다중 - 단순형 */
+.file-wrap.option-simple .file-list.option-main .file-btn {padding: var(--space-xs) var(--#{config.$prefix}space-md);}
+.file-wrap.option-simple .file-list.option-main .file-btn::before {display: inline-block; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); margin: 0; background: var(--bg-url-md) no-repeat calc(var(--#{config.$prefix}icon-md) * -1) calc(var(--#{config.$prefix}icon-md) * -4); background-size: var(--bg-size-md); vertical-align: middle;}
+.file-wrap.option-simple .file-list.option-main .file-btn > .txt {font-size: var(--#{config.$prefix}font-body-lg); font-weight: var(--#{config.$prefix}font-regular);}
+
+.file-list > .file-label ~ .file-name,
+.file-list > .file-readonly + .file-readonly {margin-top: .8rem;}
+.file-list.has-value > .file-label {display: none;}
+.file-list.has-value > .file-name {display: block;}

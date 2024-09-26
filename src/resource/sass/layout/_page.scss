@@ -1,5 +1,5 @@
 /*
-	파일정보 : 레이아웃 > 메인
+	파일정보 : 레이아웃 > 페이지 구조 > 전체
 	업데이트 : 2024-09-01
 */
 
@@ -9,16 +9,50 @@
 	--#{config.$prefix}body-min-width: 320px;
 	--#{config.$prefix}body-space: #{config.$xl};
 	--#{config.$prefix}header-height: 5.4rem;
+	--#{config.$prefix}footer-height: 5.0rem;
 	--#{config.$prefix}main-btn-height: 8.8rem;
 
-	min-width: var(--#{config.$prefix}body-min-width);
+	position: relative;
+	display: flex;
+	flex: {
+		direction: column;
+	}
+	min: {
+		width: var(--#{config.$prefix}body-min-width);
+		height: 100dvh;
+	}
 
 	@include config.media-up(laptop) {
 		--#{config.$prefix}header-height: 6.4rem;
 	}
 }
-#main {position: relative;}
-#content {position: relative;}
+#main {
+	display: flex;
+	gap: var(--#{config.$prefix}space-md);
+	flex: {
+		direction: row;
+		shrink: 0;
+		grow: 1;
+	}
+}
+#content {
+	width: 100%;
+	flex-shrink: 1;
+}
+#aside {
+	width: 240px;
+	flex-shrink: 0;
+	background-color: var(--#{config.$prefix}color-base-10);
+
+	.aside-wrap {
+		position: sticky;
+		top: var(--#{config.$prefix}header-height);
+		padding: var(--#{config.$prefix}space-md);
+	}
+}
+
+#loading {position: fixed; z-index: 30; top: 0; bottom: 0; left: 0; right: 0; display: none; align-items: center; justify-content: center;}
+#loading.is-active {display: flex;}
 
 .section {
 	padding: var(--#{config.$prefix}space-xl) var(--#{config.$prefix}space-lg) var(--#{config.$prefix}space-max);

@@ -1,0 +1,23 @@
+/*
+	파일정보 : 콘텐츠 > 박스
+	업데이트 : 2024-08-01
+*/
+
+@use 'config' as config;
+
+/* 박스 */
+.box {
+	padding: 2.3rem;
+	border: var(--#{config.$prefix}border-sm) solid transparent;
+	border-radius: var(--#{config.$prefix}radius-xl);
+	background-color: var(--#{config.$prefix}color-white);
+}
+.box.option-line {border-color: var(--#{config.$prefix}color-base-30);}
+.box.option-line + .box.option-line {margin-top: var(--#{config.$prefix}space-md);}
+.box.option-bg {background-color: var(--#{config.$prefix}color-base-10); border-color: var(--#{config.$prefix}color-base-10);}
+.box.option-bg .note-title {color: var(--#{config.$prefix}color-black);}
+.box.option-bg.primary {background-color: var(--#{config.$prefix}color-primary-10); background-color: var(--#{config.$prefix}color-primary-10);}
+.box.option-bg .note-title2 {font-weight: var(--#{config.$prefix}font-semibold); color: var(--#{config.$prefix}color-black);}
+.box.option-bg .text2 {font-size: var(--#{config.$prefix}font-body-md);}
+.box.option-bg .note-title2 ~ .text2 {padding-top: var(--#{config.$prefix}space-xs);}
+.segment-group ~ .box.option-bg {padding-top: 1.5rem; padding-bottom: 1.5rem;}

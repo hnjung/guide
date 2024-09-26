@@ -18,6 +18,7 @@ import babel from '@rollup/plugin-babel';
 import terser from '@rollup/plugin-terser';
 import { glob } from 'glob';
 import browserSync from 'browser-sync';
+import fs from 'fs';
 
 const bs = browserSync.create();
 
@@ -61,10 +62,12 @@ cleanHtml.displayName = `🌟 CleanHTML`;
 
 // EJS 템플릿을 컴파일하는 함수
 export function buildHtml() {
+	const gnbData = JSON.parse(fs.readFileSync(`${pathSRCResource}js/menu-gnb.json`, 'utf8'));
+
 	return gulp.src(paths.src.html)
 		.pipe(newer(paths.dist.html))
 		.pipe(using({ prefix: '🌟 Processing', path: 'relative', color: 'yellow' }))
-		.pipe(ejs({}, { views: paths.src.include }).on('error', console.error))
+		.pipe(ejs({ menu: gnbData }, { views: paths.src.include }).on('error', console.error))
 		.pipe(prettier({
 			printWidth: 200,
 			tabWidth: 4,

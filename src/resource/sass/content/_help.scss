@@ -1,0 +1,26 @@
+/*
+	파일정보 : 콘텐츠 > 도움말
+	업데이트 : 2024-08-01
+*/
+
+@use 'config' as config;
+
+/* 폼도움말 */
+.helper-txt {vertical-align: middle; line-height: 1.5; font-size: var(--#{config.$prefix}font-body-sm); color: var(--#{config.$prefix}color-base-60);}
+
+.data-helper {padding: var(--#{config.$prefix}space-xs) var(--#{config.$prefix}space-xs) 0 0; line-height: 1;}
+.data-helper[class*="option-"] {padding-left: 1.9rem; text-indent: -1.9rem; font-size: var(--#{config.$prefix}font-body-sm);}
+.data-helper[class*="option-"]::before {content: ''; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); background-image: var(--bg-url-sm); background-repeat: no-repeat; background-size: var(--bg-size-sm); vertical-align: middle;}
+
+.data-helper.option-note .helper-txt {color: var(--#{config.$prefix}color-base-70);}
+.data-helper.option-note::before {background-position: calc(var(--icon-sm) * -1) 0;}
+.data-helper.option-caption .helper-txt {color: var(--#{config.$prefix}color-base-70);}
+.data-helper.option-caption::before {background-position: calc(var(--icon-sm) * -2) calc(var(--icon-sm) * -4);}
+.data-helper.option-caption.primary .helper-txt {color:var(--#{config.$prefix}color-primary-50);}
+.data-helper.option-caption.primary::before {background-position: calc(var(--icon-sm) * -3) calc(var(--icon-sm) * -4);}
+.data-helper.option-error .helper-txt {color: var(--#{config.$prefix}color-danger);}
+.data-helper.option-error::before {background-position: calc(var(--icon-sm) * -2) 0;}
+.data-helper.option-error.option-bg {margin-top: var(--#{config.$prefix}space-md); padding: var(--space-xs) var(--#{config.$prefix}space-md); border-radius: var(--radius-md); border-color: var(--#{config.$prefix}color-base-10); background-color: var(--#{config.$prefix}color-base-10);}
+.data-helper.option-error.option-bg::before {margin-left: var(--#{config.$prefix}space-md);}
+
+.card-select .data-helper.option-error.option-bg {margin-left: -3.0rem;} 

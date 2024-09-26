@@ -1,0 +1,44 @@
+/*
+	파일정보 : 유틸리티 > 폰트(스타일, 색상, 크기, 두께, 줄간격)
+	업데이트 : 2024-08-01
+*/
+
+@use 'config' as config;
+
+/* 폰트스타일 */
+.text-under {text-decoration: underline;}
+.text-through {text-decoration: line-through;}
+
+/* 폰트색상 */
+.fc-primary {color: var(--#{config.$prefix}color-primary-50) !important;}
+.fc-secondary {color: var(--#{config.$prefix}color-secondary) !important;}
+.fc-highlight {color: var(--#{config.$prefix}color-danger) !important;}
+.fc-warning {color: var(--#{config.$prefix}color-warning) !important;}
+.fc-info {color: var(--#{config.$prefix}color-info) !important;}
+.fc-success {color: var(--#{config.$prefix}color-success) !important;}
+
+.fc-disabled {color: var(--#{config.$prefix}color-base-40) !important;}
+.fc-placeholder {color: var(--#{config.$prefix}color-base-60) !important;}
+.fc-base {color: var(--#{config.$prefix}color-base-60) !important;}
+.fc-sub {color: var(--#{config.$prefix}color-base-70) !important;}
+.fc-body {color: var(--#{config.$prefix}color-base-80) !important;}
+.fc-dark {color: var(--#{config.$prefix}color-black) !important;}
+
+/* 폰트사이즈 */
+.fs-tiny {font-size: var(--#{config.$prefix}font-body-sm) !important;}
+.fs-caption {font-size: var(--#{config.$prefix}font-body-md) !important;}
+.fs-xs {font-size: var(--#{config.$prefix}font-body-md) !important;}
+.fs-sm {font-size: var(--#{config.$prefix}font-body-md) !important;}
+.fs-md {font-size: var(--#{config.$prefix}font-body-lg) !important;}
+.fs-lg {font-size: var(--font-lg) !important;}
+
+/* 폰트두께 */
+.fw-bold {font-weight: var(--#{config.$prefix}font-bold) !important;}
+.fw-semibold {font-weight: var(--#{config.$prefix}font-semibold) !important;}
+.fw-medium {font-weight: var(--#{config.$prefix}font-medium) !important;}
+.fw-regular {font-weight: var(--#{config.$prefix}font-regular) !important;}
+.fw-light {font-weight: var(--#{config.$prefix}font-light) !important;}
+
+/* 줄간격 */
+.reset-line {line-height: 1 !important;}
+.word-keep {word-break: keep-all !important;}

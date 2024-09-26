@@ -1,8 +1,11 @@
 <%
-	let projectName = 'Guide';
-	let setPageName = (typeof title === 'undefined') ? projectName : title + ' &gt; ' + projectName;
+	let projectName = '가이드 v1.0';
+	let setPageName = (typeof title === 'undefined') ? projectName : title + ' · ' + projectName;
 	let setHeader = (typeof header === 'undefined') ? false : header;
 	let setAside = (typeof aside === 'undefined') ? false : aside;
+	let setGnb = (typeof gnb === 'undefined') ? false : gnb;
+	let setGnb2nd = (typeof gnb2nd === 'undefined') ? false : gnb2nd;
+	let setHeaderTitle = (typeof title === 'undefined') ? projectName : title;
 %>
 <!DOCTYPE html>
 <html lang="ko" data-gd-thema="light">
@@ -12,7 +15,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no">
 	<meta name="format-detection" content="telephone=no, address=no, email=no">
 	<meta name="theme-color" content="#0046FF">
-	<title><%=setPageName%></title>
+	<title><%= setPageName %></title>
 	<link rel="shortcut icon" type="image/x-icon" href="/resource/image/favicon.ico">
 	<link rel="stylesheet" href="/resource/css/main.css">
 	<script src="/resource/js/main.js"></script>
@@ -25,7 +28,7 @@
 	<!-- #skip -->
 	<div id="skip">
 		<div class="skip-menu">
-			<a href="#content">본문으로 건너뛰기</a>
+			<a href="#content">Skip to Content</a>
 		</div>
 	</div>
 	<!--// #skip -->
@@ -34,7 +37,9 @@
 	<% if (setHeader) { %>
 	<!-- #header-->
 	<header id="header">
-		<%- include('./body-header.html'); %>
+		<%- include('./body-header.html', {
+			headertitle: setHeaderTitle
+		}); %>
 	</header>
 	<!--// #header-->
 	<% } %>
@@ -44,6 +49,11 @@
 		<% if (setAside) { %>
 		<!-- #aside -->
 		<aside id="aside">
+			<%- include('./body-aside.html', {
+				aside: setAside,
+				gnb: setGnb,
+				gnb2nd: setGnb2nd
+			}); %>
 		</aside>
 		<!--// #aside -->
 		<% } %>
