@@ -18,7 +18,7 @@
 	position: fixed;
 	bottom: var(--#{config.$prefix}space-md);
 	right: var(--#{config.$prefix}space-md);
-	@include config.icon-common(xl,0,0);
+	@include config.icon(xl,0,0);
 	border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-30);
 	border-radius: var(--#{config.$prefix}radius-pill);
 	background-color: var(--#{config.$prefix}color-white);

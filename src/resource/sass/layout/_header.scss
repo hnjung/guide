@@ -20,13 +20,13 @@
 }
 .btn-page-back {
 	display: block;
-	@include config.icon-common(md,0,1);
+	@include config.icon(2.4rem,0,1);
 	flex-shrink: 0;
 	order: 1;
 }
 .btn-menu {
 	display: block;
-	@include config.icon-common(md,0,0);
+	@include config.icon(md);
 	flex-shrink: 0;
 	order: 3;
 }

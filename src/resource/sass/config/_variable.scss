@@ -27,13 +27,14 @@ $prefix: 'gd-' !default;
 		- Extra-large(데스크탑) : 1600 ~
 */
 $breakpoint: (
-	mobile:  0px, /* 0 ~ 599 : 4columns(designLayout) */
-	tablet:  600px, /* 600 ~ 1023 : 8columns */
-	laptop:  1024px, /* 1024 ~ 1443 : 12columns */
-	desktop: 1440px /* 1440 ~ : 12columns */
+	'mobile':  0px, /* 0 ~ 599 : 4columns(designLayout) */
+	'tablet':  600px, /* 600 ~ 1023 : 8columns */
+	'laptop':  1024px, /* 1024 ~ 1443 : 12columns */
+	'desktop': 1440px /* 1440 ~ : 12columns */
 ) !default;
 
 /* 색상 */
+$color: 'color' !default;
 $white:  #fff !default;
 $black:  #000 !default;
 $blue:   #0d6efd !default;
@@ -47,69 +48,73 @@ $green:  #198754 !default;
 $teal:   #20c997 !default;
 $cyan:   #0dcaf0 !default;
 
-$gray-10: #f8f9fa !default;
-$gray-20: #e9ecef !default;
-$gray-30: #dee2e6 !default;
-$gray-40: #ced4da !default;
-$gray-50: #adb5bd !default;
-$gray-60: #6c757d !default;
-$gray-70: #495057 !default;
-$gray-80: #343a40 !default;
-$gray-90: #212529 !default;
+$base: 'base' !default;
+$base-5:  #fafbfd !default;
+$base-10: #f8f9fa !default;
+$base-20: #e9ecef !default;
+$base-30: #dee2e6 !default;
+$base-40: #ced4da !default;
+$base-50: #adb5bd !default;
+$base-60: #6c757d !default;
+$base-70: #495057 !default;
+$base-80: #343a40 !default;
+$base-90: #212529 !default;
 
-$gray-group: (
-	'10': $gray-10,
-	'20': $gray-20,
-	'30': $gray-30,
-	'40': $gray-40,
-	'50': $gray-50,
-	'60': $gray-60,
-	'70': $gray-70,
-	'80': $gray-80,
-	'90': $gray-90
+$base-group: (
+	5:  $base-5,
+	10: $base-10,
+	20: $base-20,
+	30: $base-30,
+	40: $base-40,
+	50: $base-50,
+	60: $base-60,
+	70: $base-70,
+	80: $base-80,
+	90: $base-90
 ) !default;
 
-$primary:    $blue !default;
-$primary-10: tint-color($primary, 80%) !default;
-$primary-20: tint-color($primary, 60%) !default;
-$primary-30: tint-color($primary, 40%) !default;
-$primary-40: tint-color($primary, 20%) !default;
-$primary-50: $primary !default;
-$primary-60: shade-color($primary, 20%) !default;
-$primary-70: shade-color($primary, 40%) !default;
-$primary-80: shade-color($primary, 60%) !default;
-$primary-90: shade-color($primary, 80%) !default;
+$primary: 'primary' !default;
+$primary-5:  #d9ecff !default;
+$primary-10: #cfe2ff !default;
+$primary-20: #9ec5fe !default;
+$primary-30: #6ea8fe !default;
+$primary-40: #3d8bfd !default;
+$primary-50: $blue !default;
+$primary-60: #0a58ca !default;
+$primary-70: #084298 !default;
+$primary-80: #052c65 !default;
+$primary-90: #031633 !default;
 
 $primary-group: (
-	'10': $primary-10,
-	'20': $primary-20,
-	'30': $primary-30,
-	'40': $primary-40,
-	'50': $primary-50,
-	'60': $primary-60,
-	'70': $primary-70,
-	'80': $primary-80,
-	'90': $primary-90
+	5:  $primary-5,
+	10: $primary-10,
+	20: $primary-20,
+	30: $primary-30,
+	40: $primary-40,
+	50: $primary-50,
+	60: $primary-60,
+	70: $primary-70,
+	80: $primary-80,
+	90: $primary-90
 ) !default;
 
-$secondary: $gray-60 !default;
+$secondary: $base-60 !default;
 $success:   $green !default;
 $info:      $cyan !default;
 $warning:   $yellow !default;
 $danger:    $red !default;
 
 $system-group: (
-	'white':     $white,
-	'black':     $black,
-	'primary':   $primary,
-	'secondary': $secondary,
-	'success':   $success,
-	'info':      $info,
-	'warning':   $warning,
-	'danger':    $danger,
+	'white':   $white,
+	'black':   $black,
+	'success': $success,
+	'info':    $info,
+	'warning': $warning,
+	'danger':  $danger
 ) !default;
 
 /* 폰트 */
+$font: 'font' !default;
 $font-base-family: 'Pretendard' !default;
 $font-base-style: normal !default;
 
@@ -139,31 +144,29 @@ $font-max:  4.0rem !default;
 $font-huge: 5.2rem !default;
 
 $font-size: (
-	type: (
-		display: (
-			'lg': $font-huge,
-			'md': $font-max,
-			'sm': $font-xxl
-		),
-		headline: (
-			'lg': $font-max,
-			'md': $font-xxl,
-			'sm': $font-xl
-		),
-		title: (
-			'xxl': $font-xxl,
-			'xl':  $font-xl,
-			'lg':  $font-lg,
-			'md':  $font-md,
-			'sm':  $font-sm,
-			'xs':  $font-xs
-		),
-		body: (
-			'xl': $font-sm,
-			'lg': $font-xs,
-			'md': $font-xxs,
-			'sm': $font-min
-		)
+	body: (
+		'sm': $font-min,
+		'md': $font-xxs,
+		'lg': $font-xs,
+		'xl': $font-sm
+	),
+	title: (
+		'xs':  $font-xs,
+		'sm':  $font-sm,
+		'md':  $font-md,
+		'lg':  $font-lg,
+		'xl':  $font-xl,
+		'xxl': $font-xxl
+	),
+	headline: (
+		'sm': $font-xl,
+		'md': $font-xxl,
+		'lg': $font-max
+	),
+	display: (
+		'sm': $font-xxl,
+		'md': $font-max,
+		'lg': $font-huge
 	)
 ) !default;
 
@@ -198,6 +201,7 @@ $huge: 4.0rem !default;
 $mega: 4.8rem !default;
 $giga: 6.4rem !default;
 
+$space: 'space' !default;
 $space-group: (
 	'min':  $min,
 	'xxs':  $xxs,
@@ -210,8 +214,9 @@ $space-group: (
 	'max':  $huge,
 	'huge': $mega,
 	'mega': $giga
-);
+) !default;
 
+$icon: 'icon' !default;
 $icon-group: (
 	'xs':  $md,
 	'sm':  $lg,
@@ -219,14 +224,16 @@ $icon-group: (
 	'lg':  $max,
 	'xl':  $mega,
 	'xxl': $giga
-);
+) !default;
 
+$border: 'border' !default;
 $border-group: (
 	'sm': $nano,
 	'md': $min,
 	'lg': $xxs
-);
+) !default;
 
+$radius: 'radius' !default;
 $radius-group: (
 	'xs':   $xxs,
 	'sm':   $xs,
@@ -235,49 +242,49 @@ $radius-group: (
 	'xl':   $lg,
 	'xxl':  $xxl,
 	'pill': 100%
-);
+) !default;
 
 :root,
 [data-#{$prefix}thema='light'] {
 	/* 색상 */
-	@each $color, $value in $gray-group {
-		--#{$prefix}color-base-#{$color}: #{$value};
+	@each $name, $value in $base-group {
+		--#{$prefix}#{$color}-#{$base}-#{$name}: #{$value};
 	}
-	@each $color, $value in $primary-group {
-		--#{$prefix}color-primary-#{$color}: #{$value};
+	@each $name, $value in $primary-group {
+		--#{$prefix}#{$color}-#{$primary}-#{$name}: #{$value};
 	}
-	@each $color, $value in $system-group {
-		--#{$prefix}color-#{$color}: #{$value};
+	@each $name, $value in $system-group {
+		--#{$prefix}#{$color}-#{$name}: #{$value};
 	}
 	
 	/* 폰트 */
-	@each $weight, $value in $font-weight {
-		--#{$prefix}font-#{$weight}: #{$value};
+	@each $name, $value in $font-weight {
+		--#{$prefix}#{$font}-#{$name}: #{$value};
 	}
-	@each $type, $value in map-get($font-size, 'type') {
-		@each $size, $value2 in $value {
-			--#{$prefix}font-#{$type}-#{$size}: #{$value2};
+	@each $name, $value in $font-size {
+		@each $name2, $value2 in $value {
+			--#{$prefix}#{$font}-#{$name}-#{$name2}: #{$value2};
 		}
 	}
 
 	/* 여백 */
-	@each $size, $value in $space-group {
-		--#{$prefix}space-#{$size}: #{$value};
+	@each $name, $value in $space-group {
+		--#{$prefix}#{$space}-#{$name}: #{$value};
 	}
 
 	/* 아이콘 */
-	@each $size, $value in $icon-group {
-		--#{$prefix}icon-#{$size}: #{$value};
+	@each $name, $value in $icon-group {
+		--#{$prefix}#{$icon}-#{$name}: #{$value};
 	}
 
 	/* 선두께 */
-	@each $size, $value in $border-group {
-		--#{$prefix}border-#{$size}: #{$value};
+	@each $name, $value in $border-group {
+		--#{$prefix}#{$border}-#{$name}: #{$value};
 	}
 
 	/* 모서리지름 */
-	@each $size, $value in $radius-group {
-		--#{$prefix}radius-#{$size}: #{$value};
+	@each $name, $value in $radius-group {
+		--#{$prefix}#{$radius}-#{$name}: #{$value};
 	}
 
 	/* 그림자 */
@@ -304,14 +311,14 @@ $radius-group: (
 	color-scheme: dark;
 
 	/* 색상 */
-	@each $color, $value in $gray-group {
+	@each $name, $value in $base-group {
 		$dark: invert-color($value);
-		--#{$prefix}color-base-#{$color}: #{$dark};
+		--#{$prefix}#{$color}-#{$base}-#{$name}: #{$dark};
 	}
-	@each $color, $value in $system-group {
-		@if $color == 'white' or $color == 'black' {
+	@each $name, $value in $system-group {
+		@if $name == 'white' or $name == 'black' {
 			$dark: invert-color($value);
-			--#{$prefix}color-#{$color}: #{$dark};
+			--#{$prefix}#{$color}-#{$name}: #{$dark};
 		}
 	}
 }

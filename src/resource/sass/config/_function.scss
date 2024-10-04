@@ -60,24 +60,6 @@
 	@return rgb(255 - red($color), 255 - green($color), 255 - blue($color));
 }
 
-/* 아이콘 - $size = $icon-group */
-@mixin icon-block($size) {
-	$var: var(--#{config.$prefix}icon-#{$size});
-
-	width: $var;
-	height: $var;
-}
-
-@mixin icon-common($size, $x: 0, $y: 0) {
-	$var: var(--#{config.$prefix}icon-#{$size});
-
-	@include icon-block($size);
-	background-image: url('#{config.$path-image}/common/icon-#{$size}.svg');
-	background-repeat: no-repeat;
-	background-position: calc($var * -#{$x}) calc($var * -#{$y});
-	background-size: calc($var * 10) auto;
-}
-
 /* 말줄임 */
 @mixin ellipsis($max-width, $line: 1) {
 	overflow: hidden;
@@ -93,16 +75,170 @@
 	}
 }
 
+/* 디스플레이 */
 @mixin full-block {
 	display: block;
 	width: 100%;
 	height: 100%;
 }
-
-@mixin full-fix($position: fixed) {
+@mixin full-layer($position: fixed) {
 	position: $position;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+
+/* CSS 사용자 정의 속성 작성 도우미 함수 */
+@function find-match($arr, $key, $prefix) {
+	@each $name, $value in $arr {
+		@if $name == $key or $value == $key {
+			@return var(#{$prefix}#{$name});
+		}
+	}
+	@return null;
+}
+@function custom($type, $value-or-option, $value: null) {
+	$result: null;
+	$prefix: --#{config.$prefix}#{$type}-;
+	$valid: (config.$color, config.$font, config.$space, config.$border, config.$radius);
+
+	/* 첫번째 매개변수 값 유효성 체크 */
+	@if not index($valid, $type) {
+		@error '⛔ Invalid argument for custom function: #{$type}';
+	}
+
+	/* 일부 매개변수의 세번째 매개변수 값 유효성 체크 */
+	@if ($type == config.$space or $type == config.$border or $type == config.$radius) and $value != null {
+		@error '⛔ Invalid argument for custom function: #{$value}';
+	}
+
+	/* 첫번째 매개변수가 색상인 경우 */
+	@if $type == config.$color {
+		@if $value == null {
+			/* 두번째 매개변수 비교 후 리턴 */
+			$result: find-match(config.$system-group, $value-or-option, $prefix)
+				or find-match(config.$base-group, $value-or-option, '#{$prefix}#{config.$base}-')
+				or find-match(config.$primary-group, $value-or-option, '#{$prefix}#{config.$primary}-')
+				or $value-or-option;
+		} @else {
+			/* 세번째 매개변수 비교 후 리턴 */
+			$result: find-match(config.$base-group, $value, '#{$prefix}#{config.$base}-')
+				or find-match(config.$primary-group, $value, '#{$prefix}#{config.$primary}-')
+				or $value;
+		}
+	/* 첫번째 매개변수가 폰트인 경우 */
+	} @else if $type == config.$font {
+		@if $value == null {
+			/* 두번째 매개변수 비교 후 리턴 */
+			$result: find-match(config.$font-weight, $value-or-option, $prefix);
+			@if not $result {
+				@each $category in map-keys(config.$font-size) {
+					$temp-result: find-match(map-get(config.$font-size, $category), $value-or-option, '#{$prefix}#{$category}-');
+					@if $temp-result {
+						$result: $temp-result;
+					}
+				}
+			}
+			$result: $result or $value-or-option;
+		} @else {
+			/* 세번째 매개변수 비교 후 리턴 */
+			@each $category in map-keys(config.$font-size) {
+				@if $category == $value-or-option {
+					$temp-result: find-match(map-get(config.$font-size, $category), $value, '#{$prefix}#{$category}-');
+					@if $temp-result {
+						$result: $temp-result;
+					}
+				}
+			}
+			$result: $result or $value;
+		}
+		/* 두번째, 세번째 매개변수의 비교값이 없고 숫자가 아닌 경우 */
+		@if type-of($result) != 'string' and type-of($result) != 'number' {
+			@error '⛔ Invalid argument for custom function: #{$value-or-option}';
+		}
+	/* 첫번째 매개변수가 여백, 선두께, 모서리지름인 경우 */
+	} @else {
+		$group: ();
+		@if $type == config.$space {
+			$group: config.$space-group;
+		} @else if $type == config.$border {
+			$group: config.$border-group;
+		} @else if $type == config.$radius {
+			$group: config.$radius-group;
+		}
+		$result: find-match($group, $value-or-option, $prefix) or $value-or-option;
+	}
+
+	@return $result;
+}
+
+/* 아이콘 */
+@function icon($input) {
+	@if map-has-key(config.$icon-group, $input) {
+		@return $input;
+	} @else {
+		@each $key, $value in config.$icon-group {
+			@if $value == $input {
+				@return $key;
+			}
+		}
+		@return $input;
+	}
+}
+@mixin icon-block($input) {
+	$size: icon($input);
+	$var: var(--#{config.$prefix}icon-#{$size});
+
+	@if type-of($input) == 'number' {
+		$var: $input;
+	}
+
+	width: $var;
+	height: $var;
+}
+@mixin icon($size, $x-or-type: 0, $y-or-type: 0, $optional-type: 'common') {
+	$size: icon($size);
+	$var: var(--#{config.$prefix}icon-#{$size});
+	$x: 0;
+	$y: 0;
+	$type: 'common';
+
+	@if type-of($x-or-type) == 'number' {
+		$x: $x-or-type;
+		@if type-of($y-or-type) == 'number' {
+			$y: $y-or-type;
+			$type: $optional-type;
+		} @else if type-of($y-or-type) == 'string' {
+			$type: $y-or-type;
+		}
+	} @else if type-of($x-or-type) == 'string' {
+		$type: $x-or-type;
+	}
+
+	@include icon-block($size);
+	background-image: url('#{config.$path-image}/#{$type}/icon-#{$size}.svg');
+	background-repeat: no-repeat;
+	background-position: calc(#{$var} * #{$x * -1}) calc(#{$var} * #{$y * -1});
+	background-size: calc(#{$var} * 10) auto;
+}
+
+.class {
+	color: custom(color, #fff);
+	border-color: custom(color, base, 40);  // 결과: var(--gd-color-base-20)
+	color: custom(color, black);  // 결과: var(--gd-color-white)
+	background: custom(color, primary, #052c65);  // 결과: var(--gd-color-primary-80)
+	font-weight: custom(font, 400);  // 결과: var(--gd-font-regular)
+	font-weight: custom(font, light);  // 결과: var(--gd-font-light)
+	font-size: custom(font, 28px);  // 결과: var(--gd-font-regular)
+	font-size: custom(font, body, 1.8rem);  // 결과: var(--gd-font-title-xl)
+	font-size: custom(font, title, md);  // 결과: var(--gd-font-headline-md)
+	font-size: custom(font, headline, md);  // 결과: var(--gd-font-headline-md)
+	padding: custom(space, lg);  // 결과: var(--gd-space-lg)
+	margin: custom(space, 3.2rem);  // 결과: var(--gd-space-xl)
+	margin-left: custom(space, 30px);
+	border: custom(border, .2rem) solid custom(color, #efefef);
+	border: custom(border, sm) solid custom(color, black);
+	border-radius: custom(radius, md);
+	border-radius: custom(radius, 1.2rem);
 }

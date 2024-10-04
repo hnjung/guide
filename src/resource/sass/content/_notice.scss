@@ -27,7 +27,7 @@
 
 			&::before {
 				content: '';
-				@include config.full-fix(absolute);
+				@include config.full-layer(absolute);
 				background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -6) calc(var(--icon-sm) * -3);
 				background-size: var(--bg-size-sm);
 			}

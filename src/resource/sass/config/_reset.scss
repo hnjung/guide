@@ -114,6 +114,6 @@
 :where(code) {font-family: Consolas, config.$font-base-family;}
 
 ::selection {
-	background-color: var(--#{config.$prefix}color-primary);
+	background-color: var(--#{config.$prefix}color-primary-50);
 	color: var(--#{config.$prefix}color-white);
 }

@@ -52,7 +52,7 @@
 			&::before {
 				content: '';
 				@include config.full-block;
-				@include config.icon-common(sm,3,1);
+				@include config.icon(sm,3,1);
 			}
 			#{$accordion}.is-open & {transform: rotate(0deg);}
 		}
