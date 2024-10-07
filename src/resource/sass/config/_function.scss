@@ -89,7 +89,7 @@
 	height: 100%;
 }
 
-/* CSS 사용자 정의 속성 작성 도우미 함수 */
+/* CSS 사용자 정의 속성 작성 도우미 */
 @function find-match($arr, $key, $prefix) {
 	@each $name, $value in $arr {
 		@if $name == $key or $value == $key {
@@ -98,19 +98,21 @@
 	}
 	@return null;
 }
-@function custom($type, $value-or-option, $value: null) {
+
+/** 색상, 폰트, 여백, 선두께, 모서리지름 */
+@function variable($type, $value-or-option, $value: null) {
 	$result: null;
 	$prefix: --#{config.$prefix}#{$type}-;
 	$valid: (config.$color, config.$font, config.$space, config.$border, config.$radius);
 
 	/* 첫번째 매개변수 값 유효성 체크 */
 	@if not index($valid, $type) {
-		@error '⛔ Invalid argument for custom function: #{$type}';
+		@error '⛔ Invalid argument for variable function: #{$type}';
 	}
 
 	/* 일부 매개변수의 세번째 매개변수 값 유효성 체크 */
 	@if ($type == config.$space or $type == config.$border or $type == config.$radius) and $value != null {
-		@error '⛔ Invalid argument for custom function: #{$value}';
+		@error '⛔ Invalid argument for variable function: #{$value}';
 	}
 
 	/* 첫번째 매개변수가 색상인 경우 */
@@ -123,9 +125,13 @@
 				or $value-or-option;
 		} @else {
 			/* 세번째 매개변수 비교 후 리턴 */
-			$result: find-match(config.$base-group, $value, '#{$prefix}#{config.$base}-')
-				or find-match(config.$primary-group, $value, '#{$prefix}#{config.$primary}-')
-				or $value;
+			@if $value-or-option == config.$base {
+				$result: find-match(config.$base-group, $value, '#{$prefix}#{config.$base}-');
+			} @else if $value-or-option == config.$primary {
+				$result: find-match(config.$primary-group, $value, '#{$prefix}#{config.$primary}-');
+			} @else {
+				$result: $value;
+			}
 		}
 	/* 첫번째 매개변수가 폰트인 경우 */
 	} @else if $type == config.$font {
@@ -155,7 +161,7 @@
 		}
 		/* 두번째, 세번째 매개변수의 비교값이 없고 숫자가 아닌 경우 */
 		@if type-of($result) != 'string' and type-of($result) != 'number' {
-			@error '⛔ Invalid argument for custom function: #{$value-or-option}';
+			@error '⛔ Invalid argument for variable function: #{$value-or-option}';
 		}
 	/* 첫번째 매개변수가 여백, 선두께, 모서리지름인 경우 */
 	} @else {
@@ -173,7 +179,7 @@
 	@return $result;
 }
 
-/* 아이콘 */
+/** 아이콘 */
 @function icon($input) {
 	@if map-has-key(config.$icon-group, $input) {
 		@return $input;
@@ -224,21 +230,21 @@
 }
 
 .class {
-	color: custom(color, #fff);
-	border-color: custom(color, base, 40);  // 결과: var(--gd-color-base-20)
-	color: custom(color, black);  // 결과: var(--gd-color-white)
-	background: custom(color, primary, #052c65);  // 결과: var(--gd-color-primary-80)
-	font-weight: custom(font, 400);  // 결과: var(--gd-font-regular)
-	font-weight: custom(font, light);  // 결과: var(--gd-font-light)
-	font-size: custom(font, 28px);  // 결과: var(--gd-font-regular)
-	font-size: custom(font, body, 1.8rem);  // 결과: var(--gd-font-title-xl)
-	font-size: custom(font, title, md);  // 결과: var(--gd-font-headline-md)
-	font-size: custom(font, headline, md);  // 결과: var(--gd-font-headline-md)
-	padding: custom(space, lg);  // 결과: var(--gd-space-lg)
-	margin: custom(space, 3.2rem);  // 결과: var(--gd-space-xl)
-	margin-left: custom(space, 30px);
-	border: custom(border, .2rem) solid custom(color, #efefef);
-	border: custom(border, sm) solid custom(color, black);
-	border-radius: custom(radius, md);
-	border-radius: custom(radius, 1.2rem);
+	color: variable(color, #fff);
+	border-color: variable(color, primary, 40);  // 결과: var(--gd-color-base-20)
+	color: variable(color, black);  // 결과: var(--gd-color-white)
+	background: variable(color, primary, #052c65);  // 결과: var(--gd-color-primary-80)
+	font-weight: variable(font, 400);  // 결과: var(--gd-font-regular)
+	font-weight: variable(font, light);  // 결과: var(--gd-font-light)
+	font-size: variable(font, 28px);  // 결과: var(--gd-font-regular)
+	font-size: variable(font, body, 1.8rem);  // 결과: var(--gd-font-title-xl)
+	font-size: variable(font, title, md);  // 결과: var(--gd-font-headline-md)
+	font-size: variable(font, headline, md);  // 결과: var(--gd-font-headline-md)
+	padding: variable(space, lg);  // 결과: var(--gd-space-lg)
+	margin: variable(space, 3.2rem);  // 결과: var(--gd-space-xl)
+	margin-left: variable(space, 30px);
+	border: variable(border, .2rem) solid variable(color, #efefef);
+	border: variable(border, sm) solid variable(color, black);
+	border-radius: variable(radius, md);
+	border-radius: variable(radius, 1.2rem);
 }
