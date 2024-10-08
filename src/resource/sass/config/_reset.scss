@@ -4,6 +4,7 @@
 */
 
 @use 'variable' as config;
+@use 'function' as func;
 
 :where([class]) {
 	margin: 0;
@@ -19,7 +20,7 @@
 	padding: 0;
 }
 :where(html) {
-	background-color: var(--#{config.$prefix}color-white);
+	background-color: func.variable(color, #fff);
 	font-size: 62.5%;
 	text-size-adjust: none;
 	-webkit-text-size-adjust: none;
@@ -29,9 +30,9 @@
 	min-height: 100dvh;
 	line-height: 1.5;
 	font-family: config.$font-base-family, sans-serif;
-	font-size: var(--#{config.$prefix}font-body-lg);
-	font-weight: var(--#{config.$prefix}font-regular);
-	color: var(--#{config.$prefix}color-base-90);
+	font-size: func.variable(font, body, 1.6rem);
+	font-weight: func.variable(font, 400);
+	color: func.variable(color, #212529);
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
@@ -81,7 +82,7 @@
 	}
 }
 %form-autofill {
-	box-shadow: 0 0 0 1000px var(--#{config.$prefix}color-white) inset !important;
+	box-shadow: 0 0 0 1000px func.variable(color, #fff) inset !important;
 	transition: background-color 5000s ease 0s;
 }
 
@@ -92,7 +93,7 @@
 	-webkit-user-select: none;
 	user-select: none;
 }
-:where(strong) {font-weight: var(--#{config.$prefix}font-semibold);}
+:where(strong) {font-weight: func.variable(font, 600);}
 :where(em) {font-style: normal;}
 :where(a) {
 	&,
@@ -105,7 +106,7 @@
 }
 :where(a[class], button[class]) {
 	transform: scale3d(1,1,1);
-	transition: transform var(--#{config.$prefix}animation-speed-fast) var(--#{config.$prefix}animation-timing-outback);
+	transition: transform func.variable(animation, speed, fast) func.variable(animation, timing, outback);
 	&:active {
 		transform: scale3d(.94,.94,1);
 	}
@@ -114,6 +115,6 @@
 :where(code) {font-family: Consolas, config.$font-base-family;}
 
 ::selection {
-	background-color: var(--#{config.$prefix}color-primary-50);
-	color: var(--#{config.$prefix}color-white);
+	background-color: func.variable(color, #0d6efd);
+	color: func.variable(color, #fff);
 }

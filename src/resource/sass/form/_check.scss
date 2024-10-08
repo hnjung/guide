@@ -7,41 +7,41 @@
 
 /* 체크박스 */
 .checkbox-item .control[type='checkbox'],
-.checkbox-control[type='checkbox'] {-webkit-appearance: none; appearance: none; position: relative; width: 2.0rem; height: 2.0rem; margin: .2rem; border: var(--#{config.$prefix}border-md) solid var(--#{config.$prefix}color-base-60); background-color: var(--#{config.$prefix}color-white); border-radius: var(--radius-sm); vertical-align: middle;}
+.checkbox-control[type='checkbox'] {-webkit-appearance: none; appearance: none; position: relative; width: 2.0rem; height: 2.0rem; margin: .2rem; border: var(--#{config.$prefix}border-md) solid config.variable(color, #6c757d); background-color: config.variable(color, #fff); border-radius: var(--radius-sm); vertical-align: middle;}
 .checkbox-item .control[type='checkbox']::after,
-.checkbox-control[type='checkbox']::after {content: ''; position: absolute; top: 50%; left: 50%; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); background: var(--bg-url-md) no-repeat 0 calc(var(--#{config.$prefix}icon-md) * -2); background-size: var(--bg-size-md); transform: scale3d(0, 0, 1) translate3d(-50%, -50%, 0); transform-origin: 0 0; transition: transform var(--animation-speed) var(--animation-timing-base) .1s;}
+.checkbox-control[type='checkbox']::after {content: ''; position: absolute; top: 50%; left: 50%; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); background: var(--bg-url-md) no-repeat 0 calc(var(--#{config.$prefix}icon-md) * -2); background-size: var(--bg-size-md); transform: scale3d(0, 0, 1) translate3d(-50%, -50%, 0); transform-origin: 0 0; transition: transform config.variable(animation, speed, base) config.variable(animation, timing, base) .1s;}
 .checkbox-item .control[type='checkbox']:checked,
-.checkbox-control[type='checkbox']:checked {animation: animation-radio var(--animation-speed) var(--animation-timing-outback) forwards;}
+.checkbox-control[type='checkbox']:checked {animation: animation-radio config.variable(animation, speed, base) var(--animation-timing-outback) forwards;}
 .checkbox-item .control[type='checkbox']:checked::after,
 .checkbox-control[type='checkbox']:checked::after {transform: scale3d(1, 1, 1) translate3d(-50%, -50%, 0);}
 .checkbox-item .control[type='checkbox']:disabled,
-.checkbox-control[type='checkbox']:disabled {animation: none; background-color: var(--#{config.$prefix}color-base-10); border-color: var(--#{config.$prefix}color-base-20);}
+.checkbox-control[type='checkbox']:disabled {animation: none; background-color: config.variable(color, #f8f9fa); border-color: config.variable(color, #e9ecef);}
 .checkbox-item .control[type='checkbox']:disabled:checked,
-.checkbox-control[type='checkbox']:disabled:checked {background-color:var(--#{config.$prefix}color-primary-40); border-color:var(--#{config.$prefix}color-primary-40);}
+.checkbox-control[type='checkbox']:disabled:checked {background-color: config.variable(color, #3d8bfd); border-color: config.variable(color, #3d8bfd);}
 .checkbox-item .control[type='checkbox']:disabled:checked::after,
 .checkbox-control[type='checkbox']:disabled:checked::after {transform: scale3d(1, 1, 1) translate3d(-50%, -50%, 0);}
 
 /** 체크박스 - 정보동의 */
-.checkbox-item.option-agree .control[type='checkbox'] {width: 2.2rem; height: 2.2rem; margin: .1rem; background-color: var(--#{config.$prefix}color-white); border-width: var(--#{config.$prefix}border-sm); border-color: var(--#{config.$prefix}color-base-60); border-radius: var(--#{config.$prefix}radius-xl);}
+.checkbox-item.option-agree .control[type='checkbox'] {width: 2.2rem; height: 2.2rem; margin: .1rem; background-color: config.variable(color, #fff); border-width: config.variable(border, .1rem); border-color: config.variable(color, #6c757d); border-radius: config.variable(radius, 1.6rem);}
 .checkbox-item.option-agree .control[type='checkbox']::after {background-position: calc(var(--#{config.$prefix}icon-md) * -6) calc(var(--#{config.$prefix}icon-md) * -2); transform: scale3d(1, 1, 1) translate3d(-50%, -50%, 0); transition: none;}
 .checkbox-item.option-agree .control[type='checkbox']:checked::after {background-position: calc(var(--#{config.$prefix}icon-md) * -5) calc(var(--#{config.$prefix}icon-md) * -2);}
-.checkbox-item.option-agree .control[type='checkbox']:checked ~ .label {font-weight: var(--#{config.$prefix}font-medium); color: var(--#{config.$prefix}color-black);}
+.checkbox-item.option-agree .control[type='checkbox']:checked ~ .label {font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #000);}
 
-.checkbox-item.option-agree .control[type='checkbox']:disabled {animation: none; background-color: var(--#{config.$prefix}color-base-10); border-color: var(--#{config.$prefix}color-base-20);}
-.checkbox-item.option-agree .control[type='checkbox']:disabled:checked {background-color:var(--#{config.$prefix}color-primary-30); border-color:var(--#{config.$prefix}color-primary-30);}
+.checkbox-item.option-agree .control[type='checkbox']:disabled {animation: none; background-color: config.variable(color, #f8f9fa); border-color: config.variable(color, #e9ecef);}
+.checkbox-item.option-agree .control[type='checkbox']:disabled:checked {background-color: config.variable(color, #6ea8fe); border-color: config.variable(color, #6ea8fe);}
 .checkbox-item.option-agree .control[type='checkbox']:disabled:checked::after {transform: scale3d(1, 1, 1) translate3d(-50%, -50%, 0);}
 
 /** 체크박스 - 정보동의 - 자식있는 부모 */
-.agree-total.option-parent .checkbox-item.option-agree .control[type='checkbox']:checked ~ .label {font-weight: var(--#{config.$prefix}font-medium); color: var(--#{config.$prefix}color-black);}
+.agree-total.option-parent .checkbox-item.option-agree .control[type='checkbox']:checked ~ .label {font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #000);}
 
 /** 체크박스 - 정보동의 - 자식 */
 .checkbox-item.option-single {align-items: flex-start;}
-.checkbox-item.option-single .label {padding-top: .1rem; color: var(--#{config.$prefix}color-base-60);}
+.checkbox-item.option-single .label {padding-top: .1rem; color: config.variable(color, #6c757d);}
 .checkbox-item.option-single .control[type='checkbox'] {background-color: transparent; border: none;}
 .checkbox-item.option-single .control[type='checkbox']::after {background-position: calc(var(--#{config.$prefix}icon-md) * -2) calc(var(--#{config.$prefix}icon-md) * -2); transform: scale3d(1, 1, 1) translate3d(-50%, -50%, 0); transform-origin: 0 0; transition: none;}
-.checkbox-item.option-single .control[type='checkbox']:checked {background-color: transparent; animation: animation-checkbox-single var(--animation-speed) var(--animation-timing-base) forwards;}
+.checkbox-item.option-single .control[type='checkbox']:checked {background-color: transparent; animation: animation-checkbox-single config.variable(animation, speed, base) config.variable(animation, timing, base) forwards;}
 .checkbox-item.option-single .control[type='checkbox']:checked::after {background-position: calc(var(--#{config.$prefix}icon-md) * -1) calc(var(--#{config.$prefix}icon-md) * -2);}
-.checkbox-item.option-single .control[type='checkbox']:checked ~ .label {font-weight: var(--#{config.$prefix}font-medium); color: var(--#{config.$prefix}color-black);}
+.checkbox-item.option-single .control[type='checkbox']:checked ~ .label {font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #000);}
 
 .checkbox-item.option-single .control[type='checkbox']:disabled::after {background-position: calc(var(--#{config.$prefix}icon-md) * -3) calc(var(--#{config.$prefix}icon-md) * -2);}
 .checkbox-item.option-single .control[type='checkbox']:disabled:checked::after {background-position: calc(var(--#{config.$prefix}icon-md) * -4) calc(var(--#{config.$prefix}icon-md) * -2);}
@@ -56,30 +56,30 @@
 }
 
 /** 칩 - 체크박스형 */
-.chip-item .control[type='checkbox'] {-webkit-appearance: none; appearance: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--#{config.$prefix}color-base-10); border-radius: var(--radius-xl);}
-.chip-item .control[type='checkbox'] ~ .label {position: relative; display: inline-block; padding: .7rem 1.2rem .612rem .8rem; line-height: 1.35; font-weight: var(--#{config.$prefix}font-regular); font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-70);}
+.chip-item .control[type='checkbox'] {-webkit-appearance: none; appearance: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: config.variable(color, #f8f9fa); border-radius: var(--radius-xl);}
+.chip-item .control[type='checkbox'] ~ .label {position: relative; display: inline-block; padding: .7rem 1.2rem .612rem .8rem; line-height: 1.35; font-weight: config.variable(font, 400); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #495057);}
 .chip-item .control[type='checkbox'] ~ .label::before {content: ''; display: inline-block; position: relative; width: var(--icon-sm); height: var(--icon-sm); margin-right: .2rem; margin-top: -.2rem; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -2) calc(var(--icon-sm) * -3); background-size: var(--bg-size-sm); vertical-align: middle;}
-.chip-item .control[type='checkbox']:checked {background-color:var(--#{config.$prefix}color-primary-50); transition: all var(--animation-speed) var(--animation-timing-base);}
-.chip-item .control[type='checkbox']:checked ~ .label {font-weight: var(--#{config.$prefix}font-semibold); color: var(--#{config.$prefix}color-white); transition: all var(--animation-speed) var(--animation-timing-base);}
-.chip-item .control[type='checkbox']:checked ~ .label::before {background-position: 0 calc(var(--icon-sm) * -3); animation: animation-checkbox-single var(--animation-speed) var(--animation-timing-base) forwards;}
+.chip-item .control[type='checkbox']:checked {background-color: config.variable(color, #0d6efd); transition: all config.variable(animation, speed, base) config.variable(animation, timing, base);}
+.chip-item .control[type='checkbox']:checked ~ .label {font-weight: config.variable(font, 600); color: config.variable(color, #fff); transition: all config.variable(animation, speed, base) config.variable(animation, timing, base);}
+.chip-item .control[type='checkbox']:checked ~ .label::before {background-position: 0 calc(var(--icon-sm) * -3); animation: animation-checkbox-single config.variable(animation, speed, base) config.variable(animation, timing, base) forwards;}
 
 /*** 칩 - 체크박스형 - 배경색 */
 .chip-group.option-bg {display: grid; grid-template-columns: repeat(auto-fill, minmax(10.4rem, auto)); column-gap: 0;}
-.chip-group.option-bg .chip-item .control[type='checkbox'] {background-color: var(--#{config.$prefix}color-white);}
-.chip-group.option-bg .chip-item .control[type='checkbox']:checked {background-color:var(--#{config.$prefix}color-primary-50);}
+.chip-group.option-bg .chip-item .control[type='checkbox'] {background-color: config.variable(color, #fff);}
+.chip-group.option-bg .chip-item .control[type='checkbox']:checked {background-color: config.variable(color, #0d6efd);}
 
 /* 스위치 */
 .switch-item {display: inline-block; vertical-align: middle;}
-.switch-item .control[type='checkbox'] {-webkit-appearance: none; appearance: none; position: relative; width: 4.2rem; height: 2.4rem; padding: .2rem; border-radius: 2.4rem; background-color: var(--#{config.$prefix}color-base-70); vertical-align: middle; transition: all var(--animation-speed) var(--animation-timing-base);}
-.switch-item .control[type='checkbox']::after {content: ''; position: relative; display: block; left: 0; width: 52.65%; height: 100%; border-radius: 2.4rem; background-color: var(--#{config.$prefix}color-white); transition: left var(--animation-speed) cubic-bezier(0.175, 0.885, 0.32, 1.275), padding var(--animation-speed) ease, margin var(--animation-speed) ease; box-sizing: content-box;}
-.switch-item .label {display: inline-block; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-70);}
+.switch-item .control[type='checkbox'] {-webkit-appearance: none; appearance: none; position: relative; width: 4.2rem; height: 2.4rem; padding: .2rem; border-radius: 2.4rem; background-color: config.variable(color, #495057); vertical-align: middle; transition: all config.variable(animation, speed, base) config.variable(animation, timing, base);}
+.switch-item .control[type='checkbox']::after {content: ''; position: relative; display: block; left: 0; width: 52.65%; height: 100%; border-radius: 2.4rem; background-color: config.variable(color, #fff); transition: left config.variable(animation, speed, base) cubic-bezier(0.175, 0.885, 0.32, 1.275), padding config.variable(animation, speed, base) ease, margin config.variable(animation, speed, base) ease; box-sizing: content-box;}
+.switch-item .label {display: inline-block; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #495057);}
 .switch-item .control[type='checkbox']:active::after {padding-right: .4rem;}
-.switch-item .control[type='checkbox']:checked {background-color:var(--#{config.$prefix}color-primary-50);}
+.switch-item .control[type='checkbox']:checked {background-color: config.variable(color, #0d6efd);}
 .switch-item .control[type='checkbox']:checked::after {left: 48%;}
 .switch-item .control[type='checkbox']:checked:active::after {margin-left: -.4rem;}
-.switch-item .control[type='checkbox']:disabled {background-color: var(--#{config.$prefix}color-base-30); pointer-events: none;}
+.switch-item .control[type='checkbox']:disabled {background-color: config.variable(color, #dee2e6); pointer-events: none;}
 .switch-item .control[type='checkbox']:disabled::after {box-shadow: none;}
-.switch-item .control[type='checkbox']:disabled:checked {background-color:var(--#{config.$prefix}color-primary-30);}
+.switch-item .control[type='checkbox']:disabled:checked {background-color: config.variable(color, #6ea8fe);}
 .switch-item .control[type='checkbox']:disabled:active::after {padding-right: 0; margin-left: 0;}
 .switch-item .control[type='checkbox'] ~ .label {margin-left: .4rem;}
 .switch-item .label ~ .control[type='checkbox'] {margin-left: .4rem;}
@@ -92,6 +92,6 @@
 
 /** 토글 - 체크박스형 */
 .segment-item .control[type='checkbox'] ~ .label::before {content: ''; flex-shrink: 0; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -2) calc(var(--icon-sm) * -3); background-size: var(--bg-size-sm); vertical-align: middle;}
-.segment-item .control[type='checkbox']:checked ~ .label::before {background-position: calc(var(--icon-sm) * -1) calc(var(--icon-sm) * -3); animation: animation-checkbox-single var(--animation-speed) var(--animation-timing-base) forwards;}
+.segment-item .control[type='checkbox']:checked ~ .label::before {background-position: calc(var(--icon-sm) * -1) calc(var(--icon-sm) * -3); animation: animation-checkbox-single config.variable(animation, speed, base) config.variable(animation, timing, base) forwards;}
 .segment-item .control[type='checkbox']:disabled ~ .label::before {background-position: calc(var(--icon-sm) * -3) calc(var(--icon-sm) * -3);}
 .segment-item .control[type='checkbox']:disabled:checked ~ .label::before {background-position: calc(var(--icon-sm) * -4) calc(var(--icon-sm) * -3);}

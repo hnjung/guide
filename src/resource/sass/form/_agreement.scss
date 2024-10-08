@@ -6,64 +6,64 @@
 @use 'config' as config;
 
 /* 정보동의 */
-.agreement {border: var(--line-xl) solid var(--#{config.$prefix}color-base-10); border-radius: var(--radius-md);}
-.agree-group {border-top: var(--line-xl) solid var(--#{config.$prefix}color-base-10); padding: 1.6rem 1.8rem 2.2rem;}
+.agreement {border: var(--line-xl) solid config.variable(color, #f8f9fa); border-radius: config.variable(radius, .8rem);}
+.agree-group {border-top: var(--line-xl) solid config.variable(color, #f8f9fa); padding: 1.6rem 1.8rem 2.2rem;}
 .agree-sub-group {padding-left: 2.8rem;}
 
-.agree-total {display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; padding: 1.2rem 1.8rem; background-color: var(--#{config.$prefix}color-base-10);}
+.agree-total {display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; padding: 1.2rem 1.8rem; background-color: config.variable(color, #f8f9fa);}
 .agree-total > .unit {flex-shrink: 1; line-height: 1;}
 .agree-total > .unit:first-child {width: 100%;}
 .agree-total > .unit:first-child .checkbox-item.option-agree {width: 100%;}
 .agree-total .checkbox-item {align-items: flex-start;}
-.agree-total .checkbox-item .label {padding-top: .1rem; color: var(--#{config.$prefix}color-base-80);}
+.agree-total .checkbox-item .label {padding-top: .1rem; color: config.variable(color, #343a40);}
 .agree-total .checkbox-item .label > .fc-primary::after {content: ' ';}
 .agree-total .checkbox-item.option-agree .label {line-height: 1.35;}
-.agree-total .btn-ico-link {margin-top: var(--#{config.$prefix}space-xxs); margin-left: var(--#{config.$prefix}space-xs);}
+.agree-total .btn-ico-link {margin-top: config.variable(space, .4rem); margin-left: config.variable(space, .8rem);}
 
-.agree-title {display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; margin-top: var(--#{config.$prefix}space-md); padding-top: var(--#{config.$prefix}space-md); border-top: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-20); font-weight: var(--#{config.$prefix}font-medium); font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-80);}
+.agree-title {display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; margin-top: config.variable(space, 1.6rem); padding-top: config.variable(space, 1.6rem); border-top: config.variable(border, .1rem) solid config.variable(color, #e9ecef); font-weight: var(--#{config.$prefix}font-medium); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #343a40);}
 .agree-title > .unit {flex-shrink: 1; line-height: 1;}
 .agree-title > .unit:first-child .txt {line-height: 1.5;}
-.agree-title .btn-ico-link {margin-top: .3rem; margin-left: var(--#{config.$prefix}space-xs);}
+.agree-title .btn-ico-link {margin-top: .3rem; margin-left: config.variable(space, .8rem);}
 .agree-title .btn-ico-link::after {background-position: 0 calc(var(--icon-sm) * -2);}
 .agree-title .fc-primary::after {content: ' ';}
-.agree-title .checkbox-item.option-single {font-size: var(--#{config.$prefix}font-body-md);}
-.agree-title .checkbox-item.option-single .label {font-weight: var(--#{config.$prefix}font-regular); color: var(--#{config.$prefix}color-base-60);}
+.agree-title .checkbox-item.option-single {font-size: config.variable(font, body, 1.4rem);}
+.agree-title .checkbox-item.option-single .label {font-weight: config.variable(font, 400); color: config.variable(color, #6c757d);}
 .agree-title > .unit:first-child {width: 100%;}
 .agree-title > .unit:first-child .checkbox-item.option-single {width: 100%;}
 .agree-title:first-child,
 .agree-lead + .agree-title {margin-top: 0; padding-top: 0; border-top: 0;}
 
 .agree-sub-title {padding-top: 1.4rem;}
-.agree-sub-title .txt {line-height: 1.5; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-70);}
-.agree-sub-title .sub-txt {line-height: 1.35; font-size: var(--#{config.$prefix}font-body-sm); color: var(--#{config.$prefix}color-base-60);}
-.agree-select ~ .agree-sub-title {padding-top: var(--#{config.$prefix}space-md);}
+.agree-sub-title .txt {line-height: 1.5; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #495057);}
+.agree-sub-title .sub-txt {line-height: 1.35; font-size: config.variable(font, body, 1.2rem); color: config.variable(color, #6c757d);}
+.agree-select ~ .agree-sub-title {padding-top: config.variable(space, 1.6rem);}
 .agree-title + .agree-sub-title {padding-top: 1.4rem;}
-.agree-graph + .agree-sub-title {padding-top: var(--#{config.$prefix}space-md);}
-.agree-btn ~ .agree-sub-title {margin-top: var(--#{config.$prefix}space-xxs);}
+.agree-graph + .agree-sub-title {padding-top: config.variable(space, 1.6rem);}
+.agree-btn ~ .agree-sub-title {margin-top: config.variable(space, .4rem);}
 
-.agree-select {padding-top: var(--#{config.$prefix}space-xs);}
+.agree-select {padding-top: config.variable(space, .8rem);}
 .agree-select.option-depth1 {padding-left: 2.8rem;}
 .agree-select .radio-group {flex-wrap: nowrap; margin-top: 0; margin-bottom: 0;}
 .agree-select .radio-group .radio-item {flex-shrink: 1; width: 100%; margin-top: 0; margin-bottom: 0;}
-.agree-select .radio-group .radio-item .label {font-size: var(--#{config.$prefix}font-body-md);}
+.agree-select .radio-group .radio-item .label {font-size: config.variable(font, body, 1.4rem);}
 
-.agree-lead {margin-bottom: var(--space-lg); font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-70);}
-.agree-btn {margin-top: var(--#{config.$prefix}space-xs);}
+.agree-lead {margin-bottom: var(--space-lg); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #495057);}
+.agree-btn {margin-top: config.variable(space, .8rem);}
 
-.agreement .unit.option-parent {position: relative; padding-bottom: var(--#{config.$prefix}space-md);}
-.agreement .unit.option-parent::after {content: ''; position: absolute; bottom: 0; left: calc(var(--#{config.$prefix}space-md) * -1); right: calc(var(--#{config.$prefix}space-md) * -1); height: var(--#{config.$prefix}border-sm); background-color: var(--#{config.$prefix}color-base-10);}
-.agreement .unit.option-parent + .unit {margin-top: var(--#{config.$prefix}space-md);}
+.agreement .unit.option-parent {position: relative; padding-bottom: config.variable(space, 1.6rem);}
+.agreement .unit.option-parent::after {content: ''; position: absolute; bottom: 0; left: calc(config.variable(space, 1.6rem) * -1); right: calc(config.variable(space, 1.6rem) * -1); height: config.variable(border, .1rem); background-color: config.variable(color, #f8f9fa);}
+.agreement .unit.option-parent + .unit {margin-top: config.variable(space, 1.6rem);}
 
-.agree-graph {padding-top: var(--#{config.$prefix}space-xs);}
+.agree-graph {padding-top: config.variable(space, .8rem);}
 .agree-step-list {display: flex; flex-direction: row; align-items: flex-start; line-height: 1; font-size: 0;}
 .agree-step-item {width: 20%; text-align: center;}
-.agree-step-item > .txt {display: inline-block; position: relative; padding-top: .4rem; line-height: 1.35; font-size: var(--#{config.$prefix}font-body-sm); color: var(--#{config.$prefix}color-base-70);}
-.agree-step-item[aria-hidden='false'] > .txt {width: 4.8rem; max-width: 100%; padding: .2rem 0; border-radius: 1.0rem; color: var(--#{config.$prefix}color-white);}
+.agree-step-item > .txt {display: inline-block; position: relative; padding-top: .4rem; line-height: 1.35; font-size: config.variable(font, body, 1.2rem); color: config.variable(color, #495057);}
+.agree-step-item[aria-hidden='false'] > .txt {width: 4.8rem; max-width: 100%; padding: .2rem 0; border-radius: 1.0rem; color: config.variable(color, #fff);}
 .agree-step-item[aria-hidden='false'] > .txt::before {content: ''; position: absolute; bottom: -.4rem; left: 50%; width: .8rem; height: .6rem; margin-left: -.4rem; background: var(--bg-url-etc) no-repeat 0 -6.0rem; background-size: var(--bg-size-etc);}
-.agree-step-item > .bar {display: block; height: .8rem; margin-top: var(--#{config.$prefix}space-xs);}
+.agree-step-item > .bar {display: block; height: .8rem; margin-top: config.variable(space, .8rem);}
 
-.agree-graph .sub-txt {display: block; padding-top: 1.2rem; padding-left: var(--#{config.$prefix}space-md); text-indent: calc(var(--#{config.$prefix}space-md) * -1); line-height: 1.35; font-size: var(--#{config.$prefix}font-body-sm); color: var(--#{config.$prefix}color-base-70);}
-.agree-graph .sub-txt::before {content: ''; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); margin-right: var(--#{config.$prefix}space-xxs); margin-top: -.2rem; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -2) calc(var(--icon-sm) * -4); background-size: var(--bg-size-sm); vertical-align: middle;}
+.agree-graph .sub-txt {display: block; padding-top: 1.2rem; padding-left: config.variable(space, 1.6rem); text-indent: calc(config.variable(space, 1.6rem) * -1); line-height: 1.35; font-size: config.variable(font, body, 1.2rem); color: config.variable(color, #495057);}
+.agree-graph .sub-txt::before {content: ''; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); margin-right: config.variable(space, .4rem); margin-top: -.2rem; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -2) calc(var(--icon-sm) * -4); background-size: var(--bg-size-sm); vertical-align: middle;}
 
 .agree-step-item:nth-child(1) > .bar {background-color: #0AF; border-top-left-radius: var(--radius-sm); border-bottom-left-radius: var(--radius-sm);}
 .agree-step-item:nth-child(1)[aria-hidden='false'] > .txt {background-color: #0AF;}
@@ -80,18 +80,18 @@
 .agree-step-item:nth-child(5)[aria-hidden='false'] > .txt {background-color: #F03543;}
 .agree-step-item:nth-child(5)[aria-hidden='false'] > .txt::before {background-position: -4.0rem -6.0rem;}
 
-.agree-doc .list > li strong {font-weight: var(--#{config.$prefix}font-medium); font-size: 120%; color:var(--#{config.$prefix}color-primary-70);}
+.agree-doc .list > li strong {font-weight: var(--#{config.$prefix}font-medium); font-size: 120%; color: config.variable(color, #084298);}
 
 /* 정보동의 - 이전 버전으로 사용 금지 추후 삭제 예정, .agree-title 로 사용 */
-.agree-item {display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; margin-top: var(--#{config.$prefix}space-md); padding-top: var(--#{config.$prefix}space-md); border-top: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-20);}
+.agree-item {display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; margin-top: config.variable(space, 1.6rem); padding-top: config.variable(space, 1.6rem); border-top: config.variable(border, .1rem) solid config.variable(color, #e9ecef);}
 .agree-item > .unit {flex-shrink: 1; line-height: 1;}
-.agree-item > .unit > .btn-ico-link {margin-top: .4rem; margin-left: var(--#{config.$prefix}space-xs);}
+.agree-item > .unit > .btn-ico-link {margin-top: .4rem; margin-left: config.variable(space, .8rem);}
 .agree-item > .unit > .btn-ico-link::after {background-position: 0 calc(var(--icon-sm) * -2);}
 .agree-item > .unit:first-child {width: 100%;}
 .agree-item > .unit:first-child .checkbox-item.option-single {width: 100%;}
-.agree-item .checkbox-item.option-single {font-size: var(--#{config.$prefix}font-body-md);}
-.agree-item .sub-txt {padding-left: 2.8rem; line-height: 1.35; font-size: var(--#{config.$prefix}font-body-sm); color: var(--#{config.$prefix}color-base-60);}
-.agree-item ~ .agree-title {margin-top: var(--#{config.$prefix}space-md);}
-.agree-btn ~ .agree-item {margin-top: var(--#{config.$prefix}space-xxs);}
+.agree-item .checkbox-item.option-single {font-size: config.variable(font, body, 1.4rem);}
+.agree-item .sub-txt {padding-left: 2.8rem; line-height: 1.35; font-size: config.variable(font, body, 1.2rem); color: config.variable(color, #6c757d);}
+.agree-item ~ .agree-title {margin-top: config.variable(space, 1.6rem);}
+.agree-btn ~ .agree-item {margin-top: config.variable(space, .4rem);}
 .agree-item:first-child,
 .agree-lead + .agree-item {margin-top: 0; padding-top: 0; border-top: 0;}

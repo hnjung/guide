@@ -6,9 +6,9 @@
 @use 'config' as config;
 
 /* 토스트 */
-.toast {position: fixed; display: none; z-index: 11; bottom: 0; left: 0; width: calc(100% - (var(--space-body) * 2)); margin: 0 var(--space-body) var(--space-lg); margin-bottom: calc(var(--space-lg) + constant(safe-area-inset-bottom)); margin-bottom: calc(var(--space-lg) + env(safe-area-inset-bottom)); padding: var(--space-xs) var(--space-xl) var(--space-xs) var(--#{config.$prefix}space-md); background-color: var(--#{config.$prefix}color-base-80); border-radius: var(--radius-md); transform: translate3d(0, 100%, 0); opacity: 0;}
-.toast.is-open {display: block; animation: animation-toast var(--animation-speed) var(--animation-timing-outback) forwards;}
-.toast-content {line-height: 1.5; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-white);}
+.toast {position: fixed; display: none; z-index: 11; bottom: 0; left: 0; width: calc(100% - (var(--space-body) * 2)); margin: 0 var(--space-body) var(--space-lg); margin-bottom: calc(var(--space-lg) + constant(safe-area-inset-bottom)); margin-bottom: calc(var(--space-lg) + env(safe-area-inset-bottom)); padding: var(--space-xs) config.variable(space, 2.4rem) var(--space-xs) config.variable(space, 1.6rem); background-color: config.variable(color, #343a40); border-radius: config.variable(radius, .8rem); transform: translate3d(0, 100%, 0); opacity: 0;}
+.toast.is-open {display: block; animation: animation-toast config.variable(animation, speed, base) var(--animation-timing-outback) forwards;}
+.toast-content {line-height: 1.5; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #fff);}
 .btn-toast-close {position: absolute; z-index: 1; top: 1.45rem; right: var(--space-xs); width: var(--icon-sm); height: var(--icon-sm); background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -5) calc(var(--icon-sm) * -3); background-size: var(--bg-size-sm);}
 
 .section.has-space .toast {margin-bottom: calc(8.8rem + 1.2rem); margin-bottom: calc(8.8rem + 1.2rem + constant(safe-area-inset-bottom)); margin-bottom: calc(8.8rem + 1.2rem + env(safe-area-inset-bottom));}

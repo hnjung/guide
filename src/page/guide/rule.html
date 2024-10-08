@@ -1,0 +1,140 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'guide',
+	gnb2nd: 'rule',
+	title: '코딩 규칙'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section - 규칙 - 예약어 -->
+	<section class="section" id="word">
+		<h1 class="headline-h1"><span class="txt">규칙</span></h1>
+		<h2 class="title-h2"><span class="txt">예약어</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">레이아웃</span></h3>
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li><code>#wrap</code> : 본 페이지와 팝업 페이지를 감싼 아이디</li>
+					<li><code>#page</code> : 본 페이지</li>
+					<li><code>#header</code> : 본 페이지 헤더</li>
+					<li><code>#main</code> : 본 페이지 바디</li>
+					<li><code>.section</code> : 콘텐츠 영역 대 그룹핑 {검색 / 등록폼}</li>
+					<li><code>.group</code> : 콘텐츠 영역 소 그룹핑 {검색 / 필수입력폼 / 추가입력폼}</li>
+					<li><code>#footer</code> : 본 페이지 푸터</li>
+					<li><code>#popup</code> : 팝업 페이지</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">구조</span></h3>
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li><code>.xx {.card}</code> : 최상위 클래스로 하나의 단어</li>
+					<li><code>.xx-wrap {.card-wrap}</code> : 한번 더 감싸야 할 때</li>
+					<li><code>.xx-head {.card-head}</code> : 영역의 상단</li>
+					<li><code>.xx-list {.card-list}</code> : 콘텐츠 목록 영역</li>
+					<li><code>.xx-item {.card-item}</code> : 콘텐츠 목록의 Row Data</li>
+					<li><code>.xx-body {.card-body}</code> : 콘텐츠 (목록 유형이 아닌 경우)</li>
+					<li><code>.xx-foot {.card-foot}</code> : 영역의 하단</li>
+					<li><code>.xx.option-yy {.card.option-fixed}</code> : xx에서 파생된 유형</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">이벤트</span></h3>
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li><code>.is-xx {.is-active}</code> : 스타일 변경을 스크립트로 조작하는 클래스</li>
+					<li><code>.fn-xx {.fn-popup-open}</code> : 스타일 변경 없이 함수를 실행하기 위한 클래스</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 규칙 - 예약어 -->
+
+	<!-- .section - 규칙 - HTML -->
+	<section class="section" id="html">
+		<h2 class="title-h2"><span class="txt">HTML</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li>영역 주석 : <code>&lt;!-- #header --&gt;&lt;!--// #header --&gt;</code>, <code>&lt;!-- .group --&gt;&lt;!--// .group --&gt;</code></li>
+					<li>날짜 추가 주석 : <code>&lt;!-- 2023-05-18 : 탭 활성화 코드 수정(구체적으로 작성) --&gt;</code></li>
+					<li>개발 참고 주석 : <code>&lt;!-- [D]클릭 시 .is-active 클래스 추가 --&gt;</code></li>
+					<li>들여쓰기 : 1탭(공백 4칸)</li>
+					<li>특수기호 : Entity Code로 변환하여 작성</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 규칙 - HTML -->
+
+	<!-- .section - 규칙 - CSS -->
+	<section class="section" id="scss">
+		<h2 class="title-h2"><span class="txt">CSS</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li>미니마이징 시 주석은 모두 삭제되므로 자세하게 작성</li>
+					<li>파일 수정 시 상단의 수정 주석에 날짜와 내용, 작성자 업데이트</li>
+					<li>클래스명 : 하이픈{-}으로 구분하여 소문자로 작성</li>
+					<li>문법 규칙 : <code>.class {property: value; property2: url('./xxx/xxx.png');}</code></li>
+					<li>속성 선언 순서 : <code>display > visibility > position > z-index > top, right, bottom, left > overflow > float > width > height > margin > padding > background > border > align > font > color > cursor > transform > transition</code></li>
+					<li>단위 : 모바일 ~ 태블릿은 <code>{rem}</code>단위(브라우저 사용자 설정의 폰트 크기 변경 후 화면 테스트 필요), PC는 <code>{px}</code>단위로 작성</li>
+					<li>선택자 선언 시 3뎁스 이하로 종속하여 선언 : <code>.xx .yy > strong {}</code></li>
+					<li><code>html</code>에 인라인 스타일 금지, 가능한 모두 CSS 파일에 클래스 선언 후 작업 (가이드에 있는 인라인 스타일은 카피 후 삭제)</li>
+					<li><code>{*}</code>선택자와 <code>{!important}</code>속성은 가급적 사용 금지</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 규칙 - CSS -->
+
+	<!-- .section - 규칙 - JS -->
+	<section class="section" id="js">
+		<h2 class="title-h2"><span class="txt">Javascript</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li>Javascript ES6 문법 사용 권고</li>
+					<li>중복되는 구문은 가능한 함수로 선언하여 작성</li>
+					<li>공통변수 : commUiVar 객체에 선언</li>
+					<li>함수명 : commUiFn으로 시작하고 단어 첫번째 글자는 대문자로 작성 - <code>const commUiFnPopupOpen = () => {};</code></li>
+					<li>매개변수명 : <code>(_)</code>으로 시작하여 작성 - <code>const commUiFnPopupOpen = (_element, _index) => {};</code></li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 규칙 - JS -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

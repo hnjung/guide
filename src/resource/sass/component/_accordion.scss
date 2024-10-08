@@ -8,12 +8,13 @@
 .accordion {
 	$accordion : &;
 	position: relative;
-	background-color: var(--#{config.$prefix}color-white);
-	border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-30) {
-		radius: var(--#{config.$prefix}radius-xl);
+	background-color: config.variable(color, #fff);
+	border: config.variable(border, .1rem) solid config.variable(color, #dee2e6) {
+		radius: config.variable(radius, 1.6rem);
+		radius: config.variable(radius, 1.6rem);
 	}
 
-	&:nth-child(1n + 2) {margin-top: var(--#{config.$prefix}space-xs);}
+	&:nth-child(1n + 2) {margin-top: config.variable(space, .8rem);}
 
 	&-head {
 		position: relative;
@@ -34,37 +35,36 @@
 			}
 
 			& > span {
-				font-size: var(--#{config.$prefix}font-body-md);
-				color: var(--#{config.$prefix}color-black);
+				font-size: config.variable(font, body, 1.4rem);
+				color: config.variable(color, #000);
 			}
-
 		}
 
 		.btn-fold {
 			position: absolute;
 			top: 1.9rem;
 			right: 1.9rem;
-			@include config.icon-block(md);
-			padding: var(--#{config.$prefix}space-xxs);
+			@include config.icon-block(2.4rem);
+			padding: config.variable(space, .4rem);
 			transform: rotate(-180deg);
-			transition: transform var(--animation-speed) var(--animation-timing-base);
+			transition: transform config.variable(animation, speed, base) config.variable(animation, timing, base);
 
 			&::before {
 				content: '';
 				@include config.full-block;
-				@include config.icon(sm,3,1);
+				@include config.icon-bg(1.6rem, all, 3, 1);
 			}
 			#{$accordion}.is-open & {transform: rotate(0deg);}
 		}
 
-		.checkbox-item .label {font-size: var(--#{config.$prefix}font-body-md);}
+		.checkbox-item .label {font-size: config.variable(font, body, 1.4rem);}
 	}
 
 	&-body {
 		position: relative;
 		overflow: hidden;
 		max-height: 0;
-		transition: max-height var(--animation-speed) var(--animation-timing-base);
+		transition: max-height config.variable(animation, speed, base) config.variable(animation, timing, base);
 
 		&::before {
 			content: '';
@@ -72,8 +72,8 @@
 			top: 0;
 			left: 1.9rem;
 			width: calc(100% - 3.8rem);
-			height: var(--#{config.$prefix}border-sm);
-			background-color: var(--#{config.$prefix}color-base-20);
+			height: config.variable(border, .1rem);
+			background-color: config.variable(color, #e9ecef);
 		}
 
 		.inner {
@@ -84,8 +84,8 @@
 
 	&-foot {
 		padding: 1.9rem 2.3rem;
-		border-top: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-10);
+		border-top: config.variable(border, .1rem) solid config.variable(color, #f8f9fa);
 
-		.checkbox-item .label {font-size: var(--#{config.$prefix}font-body-md);}
+		.checkbox-item .label {font-size: config.variable(font, body, 1.4rem);}
 	}
 }

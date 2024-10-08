@@ -6,25 +6,35 @@
 @use 'config' as config;
 
 #footer {
-	height: var(--#{config.$prefix}footer-height);
+	height: config.prefix(footer-height, 1);
 	flex-shrink: 0;
 }
 .footer-inner {
-	padding: var(--#{config.$prefix}space-md);
+	padding: config.variable(space, 1.6rem);
 	text-align: center;
-	font-size: var(--#{config.$prefix}font-body-sm);
+	font-size: config.variable(font, body, 1.2rem);
 }
 .btn-page-top {
 	position: fixed;
-	bottom: var(--#{config.$prefix}space-md);
-	right: var(--#{config.$prefix}space-md);
-	@include config.icon(xl,0,0);
-	border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-30);
-	border-radius: var(--#{config.$prefix}radius-pill);
-	background-color: var(--#{config.$prefix}color-white);
-	box-shadow: var(--#{config.$prefix}shadow-md);
+	bottom: config.variable(space, 1.6rem);
+	right: config.variable(space, 1.6rem);
+	@include config.icon(4.8rem);
+	border: config.variable(border, .1rem) solid config.variable(color, #dee2e6);
+	border-radius: config.variable(radius, 100%);
+	background-color: config.variable(color, #fff);
+	box-shadow: config.variable(shadow, 0 0.2rem 1.2rem 0 rgba(18, 25, 43, 0.12));
 }
 
-.company-info {display: flex; flex-direction: column; font-weight: var(--#{config.$prefix}font-light); font-size: var(--#{config.$prefix}font-body-sm); color: var(--#{config.$prefix}color-black);}
-.company-info > span + span {margin-top: .4rem;}
-.company-info > .address {padding-right: 4.8rem;}
+.company-info {
+	display: flex;
+	flex-direction: column;
+	font-weight: config.variable(font, 300);
+	font-size: config.variable(font, body, 1.2rem);
+	color: config.variable(color, #000);
+	& > {
+		span {
+			& + span {margin-top: config.variable(space, .4rem);}
+		}
+		.address {padding-right: 4.8rem;}
+	}
+}

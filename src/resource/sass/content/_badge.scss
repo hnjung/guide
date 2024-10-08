@@ -9,47 +9,47 @@
 .badge-group {display: inline-flex; flex-wrap: wrap; margin: -.2rem; vertical-align: middle;}
 .badge-group .badge {margin: .2rem;}
 
-.badge {display: inline-block; border-radius: var(--radius-sm); vertical-align: middle; text-align: center; font-weight: var(--#{config.$prefix}font-semibold); font-size: var(--#{config.$prefix}font-body-sm);}
-.badge.option-base {min-width: 2.0rem; padding: .3rem .4rem .3rem; line-height: 1; letter-spacing: -.06rem; color: var(--#{config.$prefix}color-white);}
-.badge.option-base.man {background-color:var(--#{config.$prefix}color-primary-50);}
+.badge {display: inline-block; border-radius: config.variable(radius, .4rem); vertical-align: middle; text-align: center; font-weight: config.variable(font, 600); font-size: config.variable(font, body, 1.2rem);}
+.badge.option-base {min-width: 2.0rem; padding: .3rem .4rem .3rem; line-height: 1; letter-spacing: -.06rem; color: config.variable(color, #fff);}
+.badge.option-base.man {background-color: config.variable(color, #0d6efd);}
 .badge.option-base.woman {background-color: #FF3194;}
-.badge.option-base.primary {background-color:var(--#{config.$prefix}color-primary-50);}
-.badge.option-base.primary2 {background-color:var(--#{config.$prefix}color-primary-20); color:var(--#{config.$prefix}color-primary-50);}
-.badge.option-base.highlight {background-color: var(--#{config.$prefix}color-danger);}
-.badge.option-base.highlight2 {background-color: rgba(245, 0, 44, .1); color: var(--#{config.$prefix}color-danger);}
-.badge.option-base.info {background-color: var(--#{config.$prefix}color-base-30); color: var(--#{config.$prefix}color-base-70);}
-.badge.option-base.info2 {background-color: var(--#{config.$prefix}color-base-60); color: var(--#{config.$prefix}color-white);}
-.badge.option-base.type1 {background-color: var(--#{config.$prefix}color-base-60); color: var(--#{config.$prefix}color-white);}
-.badge.option-base.type2 {background-color: var(--#{config.$prefix}color-base-30); color: var(--#{config.$prefix}color-base-70);}
+.badge.option-base.primary {background-color: config.variable(color, #0d6efd);}
+.badge.option-base.primary2 {background-color: config.variable(color, #9ec5fe); color: config.variable(color, #0d6efd);}
+.badge.option-base.highlight {background-color: config.variable(color, #dc3545);}
+.badge.option-base.highlight2 {background-color: rgba(245, 0, 44, .1); color: config.variable(color, #dc3545);}
+.badge.option-base.info {background-color: config.variable(color, #dee2e6); color: config.variable(color, #495057);}
+.badge.option-base.info2 {background-color: config.variable(color, #6c757d); color: config.variable(color, #fff);}
+.badge.option-base.type1 {background-color: config.variable(color, #6c757d); color: config.variable(color, #fff);}
+.badge.option-base.type2 {background-color: config.variable(color, #dee2e6); color: config.variable(color, #495057);}
 .badge.option-base.type3 {background-color: #FFEFEE; color: #DF0707;}
 .badge.option-base.type4 {background-color: #8F00FF;}
 .badge.option-base.type5 {background-color: #E7F5F3; color: var(--#{config.$prefix}color-success);}
 .badge.option-base.type6 {background-color: #FEF3DA; color: var(--#{config.$prefix}color-warning);}
 .badge.option-base.type7 {background-color: #F4ECFD; color: var(--#{config.$prefix}color-info);}
 .badge.option-base.type8 {background-color: #EEF9FF; color: #0797DF;}
-.badge.option-base.type9 {background-color:var(--#{config.$prefix}color-primary-70); color: var(--#{config.$prefix}color-white);}
-.badge.option-base.type10 {background-color: #0797DF; color: var(--#{config.$prefix}color-white);}
+.badge.option-base.type9 {background-color: config.variable(color, #084298); color: config.variable(color, #fff);}
+.badge.option-base.type10 {background-color: #0797DF; color: config.variable(color, #fff);}
 
 .badge.option-status {min-width: 4.0rem; padding: .5rem .8rem .342rem; line-height: 1.3;}
-.badge.option-status.primary {background-color:var(--#{config.$prefix}color-primary-20); color:var(--#{config.$prefix}color-primary-50);}
+.badge.option-status.primary {background-color: config.variable(color, #9ec5fe); color: config.variable(color, #0d6efd);}
 .badge.option-status.highlight {background-color: #FFEFEE; color: #DF0707;}
 .badge.option-status.warning {background-color: #FEF3DA; color: var(--#{config.$prefix}color-warning);}
 .badge.option-status.success {background-color: #E7F5F3; color: var(--#{config.$prefix}color-success);}
 
 .badge.option-alarm {min-width: 4.0rem; padding: .5rem .8rem .342rem; line-height: 1.3; border-radius: var(--radius-xl);}
-.badge.option-alarm.primary {background-color:var(--#{config.$prefix}color-primary-20); color:var(--#{config.$prefix}color-primary-50);}
+.badge.option-alarm.primary {background-color: config.variable(color, #9ec5fe); color: config.variable(color, #0d6efd);}
 .badge.option-alarm.highlight {background-color: #FFEFEE; color: #DF0707;}
 .badge.option-alarm.warning {background-color: #FEF3DA; color: var(--#{config.$prefix}color-warning);}
 .badge.option-alarm.success {background-color: #E7F5F3; color: var(--#{config.$prefix}color-success);}
 .badge.option-alarm.info {background-color: #F5ECFD; color: #8000FF;}
-.badge.option-alarm.type1 {background-color:var(--#{config.$prefix}color-primary-70); color: var(--#{config.$prefix}color-white);}
-.badge.option-alarm.type2 {background-color:var(--#{config.$prefix}color-primary-50); color: var(--#{config.$prefix}color-white);}
-.badge.option-alarm.type3 {background-color: var(--#{config.$prefix}color-base-30); color: var(--#{config.$prefix}color-base-70);}
-.badge.option-alarm.type4 {background-color: #0088CC; color: var(--#{config.$prefix}color-white);}
-.badge.option-alarm.type5 {background-color: var(--#{config.$prefix}color-base-60); color: var(--#{config.$prefix}color-white);}
+.badge.option-alarm.type1 {background-color: config.variable(color, #084298); color: config.variable(color, #fff);}
+.badge.option-alarm.type2 {background-color: config.variable(color, #0d6efd); color: config.variable(color, #fff);}
+.badge.option-alarm.type3 {background-color: config.variable(color, #dee2e6); color: config.variable(color, #495057);}
+.badge.option-alarm.type4 {background-color: #0088CC; color: config.variable(color, #fff);}
+.badge.option-alarm.type5 {background-color: config.variable(color, #6c757d); color: config.variable(color, #fff);}
 
 /** 칩 - 선택 데이터 */
 .chip-group .chip-data {margin: .2rem;}
-.chip-data {position: relative; display: inline-block; padding: .6rem .7rem .512rem 1.1rem; background-color: var(--#{config.$prefix}color-white); border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-30); border-radius: var(--radius-xl); line-height: 1; vertical-align: middle;}
-.chip-data .txt {line-height: 1.35; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-black);}
+.chip-data {position: relative; display: inline-block; padding: .6rem .7rem .512rem 1.1rem; background-color: config.variable(color, #fff); border: config.variable(border, .1rem) solid config.variable(color, #dee2e6); border-radius: var(--radius-xl); line-height: 1; vertical-align: middle;}
+.chip-data .txt {line-height: 1.35; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #000);}
 .chip-data .delete {display: inline-block; width: var(--icon-sm); height: var(--icon-sm); background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -5) calc(var(--icon-sm) * -3); background-size: var(--bg-size-sm); vertical-align: middle;}

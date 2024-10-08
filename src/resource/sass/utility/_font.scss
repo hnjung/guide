@@ -10,34 +10,34 @@
 .text-through {text-decoration: line-through;}
 
 /* 폰트색상 */
-.fc-primary {color: var(--#{config.$prefix}color-primary-50) !important;}
+.fc-primary {color:  config.variable(color, #0d6efd) !important;}
 .fc-secondary {color: var(--#{config.$prefix}color-secondary) !important;}
-.fc-highlight {color: var(--#{config.$prefix}color-danger) !important;}
+.fc-highlight {color: config.variable(color, #dc3545) !important;}
 .fc-warning {color: var(--#{config.$prefix}color-warning) !important;}
 .fc-info {color: var(--#{config.$prefix}color-info) !important;}
 .fc-success {color: var(--#{config.$prefix}color-success) !important;}
 
-.fc-disabled {color: var(--#{config.$prefix}color-base-40) !important;}
-.fc-placeholder {color: var(--#{config.$prefix}color-base-60) !important;}
-.fc-base {color: var(--#{config.$prefix}color-base-60) !important;}
-.fc-sub {color: var(--#{config.$prefix}color-base-70) !important;}
-.fc-body {color: var(--#{config.$prefix}color-base-80) !important;}
-.fc-dark {color: var(--#{config.$prefix}color-black) !important;}
+.fc-disabled {color: config.variable(color, #ced4da) !important;}
+.fc-placeholder {color: config.variable(color, #6c757d) !important;}
+.fc-base {color: config.variable(color, #6c757d) !important;}
+.fc-sub {color: config.variable(color, #495057) !important;}
+.fc-body {color: config.variable(color, #343a40) !important;}
+.fc-dark {color: config.variable(color, #000) !important;}
 
 /* 폰트사이즈 */
-.fs-tiny {font-size: var(--#{config.$prefix}font-body-sm) !important;}
-.fs-caption {font-size: var(--#{config.$prefix}font-body-md) !important;}
-.fs-xs {font-size: var(--#{config.$prefix}font-body-md) !important;}
-.fs-sm {font-size: var(--#{config.$prefix}font-body-md) !important;}
-.fs-md {font-size: var(--#{config.$prefix}font-body-lg) !important;}
-.fs-lg {font-size: var(--font-lg) !important;}
+.fs-tiny {font-size: config.variable(font, body, 1.2rem) !important;}
+.fs-caption {font-size: config.variable(font, body, 1.4rem) !important;}
+.fs-xs {font-size: config.variable(font, body, 1.4rem) !important;}
+.fs-sm {font-size: config.variable(font, body, 1.4rem) !important;}
+.fs-md {font-size: config.variable(font, body, 1.6rem) !important;}
+.fs-lg {font-size: config.variable(font, body, 1.8rem) !important;}
 
 /* 폰트두께 */
 .fw-bold {font-weight: var(--#{config.$prefix}font-bold) !important;}
-.fw-semibold {font-weight: var(--#{config.$prefix}font-semibold) !important;}
+.fw-semibold {font-weight: config.variable(font, 600) !important;}
 .fw-medium {font-weight: var(--#{config.$prefix}font-medium) !important;}
-.fw-regular {font-weight: var(--#{config.$prefix}font-regular) !important;}
-.fw-light {font-weight: var(--#{config.$prefix}font-light) !important;}
+.fw-regular {font-weight: config.variable(font, 400) !important;}
+.fw-light {font-weight: config.variable(font, 300) !important;}
 
 /* 줄간격 */
 .reset-line {line-height: 1 !important;}

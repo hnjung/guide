@@ -9,15 +9,15 @@
 .helper {display: inline-flex; width: var(--icon-sm); height: var(--icon-sm); margin-top: -.2rem; vertical-align: middle;}
 .helper-btn {display: block; width: 100%; height: 100%; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -4) 0; background-size: var(--bg-size-sm);}
 
-.popover {position: absolute; display: none; z-index: 10; left: var(--#{config.$prefix}space-md); width: calc(100% - var(--space-xxl)); padding: var(--space-xxl) var(--space-xxl) var(--#{config.$prefix}space-md) var(--#{config.$prefix}space-md); text-align: left; transform: translate3d(0, -12%, 0); opacity: 0; transition-duration: 0s; transition-delay: 0s;}
-.popover.is-open {display: block; animation: animation-popover var(--animation-speed) var(--animation-timing-outback) forwards;}
-.popover::before {content: ''; position: absolute; z-index: -1; top: var(--#{config.$prefix}space-md); bottom: 0; left: 0; right: 0; background-color: var(--#{config.$prefix}color-white); border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-40); border-radius: var(--#{config.$prefix}radius-xl); box-shadow: var(--shadow-lg);}
+.popover {position: absolute; display: none; z-index: 10; left: config.variable(space, 1.6rem); width: calc(100% - var(--space-xxl)); padding: var(--space-xxl) var(--space-xxl) config.variable(space, 1.6rem) config.variable(space, 1.6rem); text-align: left; transform: translate3d(0, -12%, 0); opacity: 0; transition-duration: 0s; transition-delay: 0s;}
+.popover.is-open {display: block; animation: animation-popover config.variable(animation, speed, base) var(--animation-timing-outback) forwards;}
+.popover::before {content: ''; position: absolute; z-index: -1; top: config.variable(space, 1.6rem); bottom: 0; left: 0; right: 0; background-color: config.variable(color, #fff); border: config.variable(border, .1rem) solid config.variable(color, #ced4da); border-radius: config.variable(radius, 1.6rem); box-shadow: var(--shadow-lg);}
 
-.popover-title {line-height: 1.35; font-size: var(--#{config.$prefix}font-body-lg); color: var(--#{config.$prefix}color-black);}
-.popover-content {line-height: 1.5; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-80);}
-.popover-content .text {font-weight: var(--#{config.$prefix}font-regular); font-size: var(--#{config.$prefix}font-body-md);}
-.popover-title ~ .popover-content {padding-top: var(--#{config.$prefix}space-xs);}
-.btn-popover-close {position: absolute; z-index: 1; top: var(--space-xxl); right: var(--#{config.$prefix}space-md); width: var(--icon-sm); height: var(--icon-sm); background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -5) calc(var(--icon-sm) * -3); background-size: var(--bg-size-sm);}
+.popover-title {line-height: 1.35; font-size: config.variable(font, body, 1.6rem); color: config.variable(color, #000);}
+.popover-content {line-height: 1.5; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #343a40);}
+.popover-content .text {font-weight: config.variable(font, 400); font-size: config.variable(font, body, 1.4rem);}
+.popover-title ~ .popover-content {padding-top: config.variable(space, .8rem);}
+.btn-popover-close {position: absolute; z-index: 1; top: var(--space-xxl); right: config.variable(space, 1.6rem); width: var(--icon-sm); height: var(--icon-sm); background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -5) calc(var(--icon-sm) * -3); background-size: var(--bg-size-sm);}
 
 .card-item .popover {left: 0; width: 100%;}
 .card-title .popover {left: -2.4rem; width: calc(100% + 4.8rem);}

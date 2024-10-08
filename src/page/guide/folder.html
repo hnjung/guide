@@ -1,0 +1,55 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'guide',
+	gnb2nd: 'folder',
+	title: '폴더 및 파일명'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section - 기준 - 폴더 -->
+	<section class="section" id="standard-folder">
+		<h2 class="title-h2"><span class="txt">폴더</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li><code>/CSSPUB/<strong>view</strong>/</code> : 루트</li>
+					<li><code>/CSSPUB/view/<strong>css</strong>/</code> : 스타일시트</li>
+					<li><code>/CSSPUB/view/<strong>js</strong>/</code> : 스크립트</li>
+					<li><code>/CSSPUB/view/<strong>image</strong>/</code> : 이미지</li>
+					<li><code>/CSSPUB/view/<strong>html</strong>/</code> : HTML</li>
+					<li><code>/CSSPUB/view/<strong>xxx</strong>/com/</code> : 각 폴더의 공통 파일 (공통 스타일시트 예시 : <code>/CSSPUB/view/css/com/</code>)</li>
+					<li><code>/CSSPUB/view/<strong>xxx</strong>/xxx/</code> : 카테고리 별 파일 (상품 페이지 예시 : <code>/CSSPUB/view/html/prd/</code>)</li>
+					<li><code>/CSSPUB/view/<strong>doc</strong>/</code> : 산출물 목록 및 가이드(배포 대상 아님)</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 기준 - 폴더 -->
+	<!-- .section - 기준 - 파일명 -->
+	<section class="section" id="standard-file">
+		<h2 class="title-h2"><span class="txt">파일명</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li>스크립트 파일은 개발 파일과 구분을 위해 <code>_pub</code>를 파일명 맨 뒤에 추가 (예시 : <code>common<strong>_pub</strong>.js</code>)</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 기준 - 파일명 -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

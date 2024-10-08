@@ -8,38 +8,38 @@
 /** 타이포그래피 - 목록 */
 [class^="title-h"] ~ .txt,
 [class^="title-h"] ~ .text,
-[class^="title-h"] ~ .list {margin-top: var(--#{config.$prefix}space-md);}
-.list li {color: var(--#{config.$prefix}color-base-80);}
-.list li > a {color: var(--#{config.$prefix}color-base-80);}
-.list li.primary {color:var(--#{config.$prefix}color-primary-50);}
-.list > li + li {margin-top: var(--#{config.$prefix}space-xs);}
-.list > li > .list {margin-top: var(--#{config.$prefix}space-xs);}
+[class^="title-h"] ~ .list {margin-top: config.variable(space, 1.6rem);}
+.list li {color: config.variable(color, #343a40);}
+.list li > a {color: config.variable(color, #343a40);}
+.list li.primary {color: config.variable(color, #0d6efd);}
+.list > li + li {margin-top: config.variable(space, .8rem);}
+.list > li > .list {margin-top: config.variable(space, .8rem);}
 
-.list.depth-u1 > li {padding-left: var(--#{config.$prefix}space-md); text-indent: calc(var(--#{config.$prefix}space-md) * -1);}
+.list.depth-u1 > li {padding-left: config.variable(space, 1.6rem); text-indent: calc(config.variable(space, 1.6rem) * -1);}
 .list.depth-u1 > li > .text {text-indent: 0;}
-.list.depth-u1 > li::before {content: ''; display: inline-block; width: .4rem; height: .4rem; margin-right: var(--#{config.$prefix}space-xs); margin-left: var(--#{config.$prefix}space-xxs); margin-top: -.2rem; background-color: var(--#{config.$prefix}color-base-80); border-radius: 100%; vertical-align: middle;}
-.list.depth-u1 > li.primary {color:var(--#{config.$prefix}color-primary-50);}
-.list.depth-u1 > li.primary::before {background-color:var(--#{config.$prefix}color-primary-50);}
-.list.depth-u1 > li.highlight {color: var(--#{config.$prefix}color-danger);}
-.list.depth-u1 > li.highlight::before {background-color: var(--#{config.$prefix}color-danger);}
-.list.depth-u1 > li .list {padding-bottom: var(--#{config.$prefix}space-xs);}
-.list.depth-u1 > li .box {padding: 1.9rem; margin-left: calc(var(--#{config.$prefix}space-md) * -1);}
+.list.depth-u1 > li::before {content: ''; display: inline-block; width: .4rem; height: .4rem; margin-right: config.variable(space, .8rem); margin-left: config.variable(space, .4rem); margin-top: -.2rem; background-color: config.variable(color, #343a40); border-radius: 100%; vertical-align: middle;}
+.list.depth-u1 > li.primary {color: config.variable(color, #0d6efd);}
+.list.depth-u1 > li.primary::before {background-color: config.variable(color, #0d6efd);}
+.list.depth-u1 > li.highlight {color: config.variable(color, #dc3545);}
+.list.depth-u1 > li.highlight::before {background-color: config.variable(color, #dc3545);}
+.list.depth-u1 > li .list {padding-bottom: config.variable(space, .8rem);}
+.list.depth-u1 > li .box {padding: 1.9rem; margin-left: calc(config.variable(space, 1.6rem) * -1);}
 
-.list.depth-u2 > li {padding-left: var(--#{config.$prefix}space-md); text-indent: calc(var(--#{config.$prefix}space-md) * -1);}
-.list.depth-u2 > li::before {content: ''; display: inline-block; width: .4rem; height: .1rem; margin-right: var(--#{config.$prefix}space-xs); margin-left: var(--#{config.$prefix}space-xxs); margin-top: -.2rem; background-color: var(--#{config.$prefix}color-base-80); border-radius: 100%; vertical-align: middle;}
-.list.depth-u2 > li.primary {color:var(--#{config.$prefix}color-primary-50);}
-.list.depth-u2 > li.primary::before {background-color:var(--#{config.$prefix}color-primary-50);}
-.list.depth-u2 > li.highlight {color: var(--#{config.$prefix}color-danger);}
-.list.depth-u2 > li.highlight::before {background-color: var(--#{config.$prefix}color-danger);}
+.list.depth-u2 > li {padding-left: config.variable(space, 1.6rem); text-indent: calc(config.variable(space, 1.6rem) * -1);}
+.list.depth-u2 > li::before {content: ''; display: inline-block; width: .4rem; height: .1rem; margin-right: config.variable(space, .8rem); margin-left: config.variable(space, .4rem); margin-top: -.2rem; background-color: config.variable(color, #343a40); border-radius: 100%; vertical-align: middle;}
+.list.depth-u2 > li.primary {color: config.variable(color, #0d6efd);}
+.list.depth-u2 > li.primary::before {background-color: config.variable(color, #0d6efd);}
+.list.depth-u2 > li.highlight {color: config.variable(color, #dc3545);}
+.list.depth-u2 > li.highlight::before {background-color: config.variable(color, #dc3545);}
 
-.list.depth-u3 > li {padding-left: var(--#{config.$prefix}space-md); text-indent: calc(var(--#{config.$prefix}space-md) * -1); font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-70);}
-.list.depth-u3 > li::before {content: ''; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); margin-right: var(--#{config.$prefix}space-xxs); margin-top: -.2rem; background: var(--bg-url-sm) no-repeat 0 calc(var(--icon-sm) * -4); background-size: var(--bg-size-sm); vertical-align: middle;}
-.list.depth-u3 > li.primary {color:var(--#{config.$prefix}color-primary-50);}
+.list.depth-u3 > li {padding-left: config.variable(space, 1.6rem); text-indent: calc(config.variable(space, 1.6rem) * -1); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #495057);}
+.list.depth-u3 > li::before {content: ''; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); margin-right: config.variable(space, .4rem); margin-top: -.2rem; background: var(--bg-url-sm) no-repeat 0 calc(var(--icon-sm) * -4); background-size: var(--bg-size-sm); vertical-align: middle;}
+.list.depth-u3 > li.primary {color: config.variable(color, #0d6efd);}
 .list.depth-u3 > li.primary::before {background-position: calc(var(--icon-sm) * -1) calc(var(--icon-sm) * -4);}
 
-.list.depth-u4 > li {padding-left: var(--#{config.$prefix}space-md); text-indent: calc(var(--#{config.$prefix}space-md) * -1); font-size: var(--#{config.$prefix}font-body-sm); color: var(--#{config.$prefix}color-base-70);}
-.list.depth-u4 > li::before {content: ''; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); margin-right: var(--#{config.$prefix}space-xxs); margin-top: -.2rem; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -2) calc(var(--icon-sm) * -4); background-size: var(--bg-size-sm); vertical-align: middle;}
-.list.depth-u4 > li.primary {color:var(--#{config.$prefix}color-primary-50);}
+.list.depth-u4 > li {padding-left: config.variable(space, 1.6rem); text-indent: calc(config.variable(space, 1.6rem) * -1); font-size: config.variable(font, body, 1.2rem); color: config.variable(color, #495057);}
+.list.depth-u4 > li::before {content: ''; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); margin-right: config.variable(space, .4rem); margin-top: -.2rem; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -2) calc(var(--icon-sm) * -4); background-size: var(--bg-size-sm); vertical-align: middle;}
+.list.depth-u4 > li.primary {color: config.variable(color, #0d6efd);}
 .list.depth-u4 > li.primary::before {background-position: calc(var(--icon-sm) * -3) calc(var(--icon-sm) * -4);}
 
 .list.depth-o1 > li {padding-left: 1.4rem; text-indent: -1.4rem;}
@@ -54,59 +54,59 @@
 .list-head > [class*="title"] {flex-shrink: 0;}
 .list-head:not(.option-row) > div:last-child:not(.unit) {flex-shrink: 1; width: 100%;}
 
-.list-title {max-width: 100%; line-height: 1.35; font-weight: var(--#{config.$prefix}font-semibold); font-size: var(--font-title-sm); color: var(--#{config.$prefix}color-black);}
-.list-title > span {font-weight: var(--#{config.$prefix}font-regular);}
+.list-title {max-width: 100%; line-height: 1.35; font-weight: config.variable(font, 600); font-size: var(--font-title-sm); color: config.variable(color, #000);}
+.list-title > span {font-weight: config.variable(font, 400);}
 
 .list-total {text-align: left;}
-.list-total > span {display: inline-block; vertical-align: middle; line-height: 1.5; font-weight: var(--#{config.$prefix}font-medium); font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-black);}
-.list-total > span > strong {font-weight: var(--#{config.$prefix}font-medium); color:var(--#{config.$prefix}color-primary-50);}
+.list-total > span {display: inline-block; vertical-align: middle; line-height: 1.5; font-weight: var(--#{config.$prefix}font-medium); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #000);}
+.list-total > span > strong {font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #0d6efd);}
 
-.list-info > span {display: inline-block; vertical-align: middle; line-height: 1.5; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
-.list-head .list-title ~ .list-info {margin-top: var(--#{config.$prefix}space-xxs);}
+.list-info > span {display: inline-block; vertical-align: middle; line-height: 1.5; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #6c757d);}
+.list-head .list-title ~ .list-info {margin-top: config.variable(space, .4rem);}
 
 .list-btn {display: flex; padding-top: var(--space-lg);}
 .list-btn > .btn {width: 100%;}
-.list-btn > .btn.option-sm + .btn.option-sm {margin-left: var(--#{config.$prefix}space-xs);}
+.list-btn > .btn.option-sm + .btn.option-sm {margin-left: config.variable(space, .8rem);}
 
-.list-head .list-must {flex-shrink: 1; width: 100%; margin-top: var(--#{config.$prefix}space-xs);}
-.list-head .list-must > .must {line-height: 1.5; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-70);}
-.list-head .list-must > .must::before {content: '* '; position: relative; top: .2rem; font-weight: var(--#{config.$prefix}font-semibold); color:var(--#{config.$prefix}color-primary-50);}
+.list-head .list-must {flex-shrink: 1; width: 100%; margin-top: config.variable(space, .8rem);}
+.list-head .list-must > .must {line-height: 1.5; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #495057);}
+.list-head .list-must > .must::before {content: '* '; position: relative; top: .2rem; font-weight: config.variable(font, 600); color: config.variable(color, #0d6efd);}
 
 .list-head.option-row .list-must {text-align: right; margin-top: 0;}
 .list-head.option-row .list-title ~ .list-must {width: auto;}
-.list-head.option-row .list-must ~ .list-btn {width: 100%; padding-top: var(--#{config.$prefix}space-md);}
+.list-head.option-row .list-must ~ .list-btn {width: 100%; padding-top: config.variable(space, 1.6rem);}
 
 .list-head .list-item {text-align: right; font-size: 0;}
-.list-head .list-item > span {line-height: 1.5; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
-.list-head .list-item > span + span::before {content: ''; display: inline-block; width: .1rem; height: 1.2rem; margin: -.2rem .8rem 0; background-color: var(--#{config.$prefix}color-base-40); vertical-align: middle;}
+.list-head .list-item > span {line-height: 1.5; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #6c757d);}
+.list-head .list-item > span + span::before {content: ''; display: inline-block; width: .1rem; height: 1.2rem; margin: -.2rem .8rem 0; background-color: config.variable(color, #ced4da); vertical-align: middle;}
 
-.list-head .list-title ~ .list-label {margin-top: var(--#{config.$prefix}space-md);}
+.list-head .list-title ~ .list-label {margin-top: config.variable(space, 1.6rem);}
 .list-head .list-label {text-align: right; font-size: 0;}
-.list-head .list-label > span {line-height: 1.35; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
+.list-head .list-label > span {line-height: 1.35; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #6c757d);}
 .list-head .list-label > span + span {padding-left: .8rem;}
-.list-head .list-label > span.primary::before {content: '● '; color:var(--#{config.$prefix}color-primary-50);}
+.list-head .list-label > span.primary::before {content: '● '; color: config.variable(color, #0d6efd);}
 .list-head .list-label > span.warning::before {content: '● '; color: #F35C06;}
 .list-head .list-label > span.highlight::before {content: '● '; color: #DF0707;}
 
 .list-foot {margin-top: var(--space-lg);}
-.list-paging {text-align: center; font-size: var(--#{config.$prefix}font-body-md);}
+.list-paging {text-align: center; font-size: config.variable(font, body, 1.4rem);}
 .list-paging [class^="btn-list-"] {position: relative; overflow: hidden; display: inline-block; vertical-align: middle; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); background: var(--bg-url-md) no-repeat 0 calc(var(--#{config.$prefix}icon-md) * -1); background-size: var(--bg-size-md);}
-.list-paging .btn-list-prev {margin-right: var(--#{config.$prefix}space-md);}
-.list-paging .btn-list-next {margin-left: var(--#{config.$prefix}space-md); background-position: calc(var(--#{config.$prefix}icon-md) * -1) calc(var(--#{config.$prefix}icon-md) * -1);}
+.list-paging .btn-list-prev {margin-right: config.variable(space, 1.6rem);}
+.list-paging .btn-list-next {margin-left: config.variable(space, 1.6rem); background-position: calc(var(--#{config.$prefix}icon-md) * -1) calc(var(--#{config.$prefix}icon-md) * -1);}
 .page-current {display: inline-block; vertical-align: middle; font-size: 0;}
 .page-current > strong,
-.page-current > a {display: inline-block; min-width: 3.2rem; padding: .5rem .8rem .45rem; margin: 0 .4rem; background-color: var(--#{config.$prefix}color-base-10); border-radius: var(--radius-md); vertical-align: middle; text-align: center; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
-.page-current > strong {background-color: #1A57FF; font-weight: var(--#{config.$prefix}font-medium); color: var(--#{config.$prefix}color-white);}
+.page-current > a {display: inline-block; min-width: 3.2rem; padding: .5rem .8rem .45rem; margin: 0 .4rem; background-color: config.variable(color, #f8f9fa); border-radius: config.variable(radius, .8rem); vertical-align: middle; text-align: center; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #6c757d);}
+.page-current > strong {background-color: #1A57FF; font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #fff);}
 
-.list-foot.option-more {margin-top: var(--#{config.$prefix}space-md);}
-.btn-list-more {display: block; width: 100%; padding: var(--#{config.$prefix}space-xs) 0;}
-.btn-list-more > span {vertical-align: middle; line-height: 1.35; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-80);}
+.list-foot.option-more {margin-top: config.variable(space, 1.6rem);}
+.btn-list-more {display: block; width: 100%; padding: config.variable(space, .8rem) 0;}
+.btn-list-more > span {vertical-align: middle; line-height: 1.35; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #343a40);}
 .btn-list-more::after {content: ''; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); margin-left: .4rem; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -7) calc(var(--icon-sm) * -3); background-size: var(--bg-size-sm); vertical-align: middle;}
-.btn-list-more:disabled > span {color: var(--#{config.$prefix}color-base-40);}
+.btn-list-more:disabled > span {color: config.variable(color, #ced4da);}
 .btn-list-more:disabled::after {background-position: calc(var(--icon-sm) * -7) calc(var(--icon-sm) * -2);}
 
-.list-nodata {padding: var(--space-xxl); text-align: center; color: var(--#{config.$prefix}color-base-70);}
-.list-nodata::before {content: ''; display: block; width: var(--icon-xl); height: var(--icon-xl); margin: 0 auto var(--#{config.$prefix}space-xs); background: var(--bg-url-xl) no-repeat 0 0; background-size: var(--bg-size-xl);}
+.list-nodata {padding: var(--space-xxl); text-align: center; color: config.variable(color, #495057);}
+.list-nodata::before {content: ''; display: block; width: var(--icon-xl); height: var(--icon-xl); margin: 0 auto config.variable(space, .8rem); background: var(--bg-url-xl) no-repeat 0 0; background-size: var(--bg-size-xl);}
 .list-nodata.option-search::before {background-position: calc(var(--icon-xl) * -1) 0;}
 .list-nodata.option-info::before {background-position: calc(var(--icon-xl) * -2) 0;}
 
@@ -121,7 +121,7 @@
 	.list-head .list-must {margin-top: 0; text-align: right;}
 	.list-head.option-row {flex-wrap: nowrap;}
 	.list-head.option-row .list-title ~ .list-must {flex-shrink: 1; width: 100%; text-align: right;}
-	.list-head.option-row .list-must ~ .list-btn {width: auto; flex-shrink: 0; margin-left: var(--#{config.$prefix}space-md); padding-top: 0;}
+	.list-head.option-row .list-must ~ .list-btn {width: auto; flex-shrink: 0; margin-left: config.variable(space, 1.6rem); padding-top: 0;}
 
 	.list-head .list-title ~ .list-label {margin-top: 0;}
 }

@@ -9,52 +9,52 @@
 .select {position: relative; display: inline-block; vertical-align: middle;}
 .select-data {overflow: hidden; position: absolute; clip: rect(0, 0, 0, 0); clip-path: polygon(0 0, 0 0, 0 0); width: 1px; height: 1px; margin: -1px; border: 0;}
 
-.select-button {position: relative; display: inline-block; width: 100%; padding: 1.5rem 4.3rem 1.5rem 1.5rem; background-color: var(--#{config.$prefix}color-white); border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-30); border-radius: var(--radius-md); outline: none; line-height: 1.5; text-align: left; font-size: var(--#{config.$prefix}font-body-lg); color: var(--#{config.$prefix}color-black); transition: all 0s var(--animation-timing-base);}
+.select-button {position: relative; display: inline-block; width: 100%; padding: 1.5rem 4.3rem 1.5rem 1.5rem; background-color: config.variable(color, #fff); border: config.variable(border, .1rem) solid config.variable(color, #dee2e6); border-radius: config.variable(radius, .8rem); outline: none; line-height: 1.5; text-align: left; font-size: config.variable(font, body, 1.6rem); color: config.variable(color, #000); transition: all 0s config.variable(animation, timing, base);}
 .select-button::after {content: ''; position: absolute; top: 50%; right: 1.1rem; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); margin: -1.2rem 0 0; background: var(--bg-url-md) no-repeat calc(var(--#{config.$prefix}icon-md) * -3) calc(var(--#{config.$prefix}icon-md) * -1); background-size: var(--bg-size-md);}
 
-.select.option-sm .select-button {padding: .5rem 2.7rem .475rem 1.1rem; border-radius: var(--radius-sm); line-height: 1.35; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-80);}
+.select.option-sm .select-button {padding: .5rem 2.7rem .475rem 1.1rem; border-radius: var(--radius-sm); line-height: 1.35; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #343a40);}
 .select.option-sm .select-button::after {right: .7rem; width: var(--icon-xs); height: var(--icon-xs); margin-top: -.6rem; background: var(--bg-url-xs) no-repeat 0 0; background-size: var(--bg-size-xs);}
 
-.select.option-txt .select-button {padding: 0 1.8rem 0 0; border-top: 0; border-left: 0; border-right: 0; border-color:var(--#{config.$prefix}color-primary-50); border-radius: 0; line-height: 1.334; font-weight: var(--#{config.$prefix}font-semibold); font-size: var(--font-lg); color:var(--#{config.$prefix}color-primary-50);}
+.select.option-txt .select-button {padding: 0 1.8rem 0 0; border-top: 0; border-left: 0; border-right: 0; border-color: config.variable(color, #0d6efd); border-radius: 0; line-height: 1.334; font-weight: config.variable(font, 600); font-size: config.variable(font, body, 1.8rem); color: config.variable(color, #0d6efd);}
 .select.option-txt .select-button::after {right: 0; width: var(--icon-sm); height: var(--icon-sm); margin-top: -.8rem; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -9) calc(var(--icon-sm) * -2); background-size: var(--bg-size-sm);}
 .select.option-txt .select-button:active,
 .select.option-txt .select-button:focus {box-shadow: none;}
 
 .select-button > span {display: block; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
-.select-button > span.is-placeholder {color: var(--#{config.$prefix}color-base-60);}
+.select-button > span.is-placeholder {color: config.variable(color, #6c757d);}
 .select-button:active,
-.select-button:focus {border-color:var(--#{config.$prefix}color-primary-50); box-shadow: 0 .4rem 1.6rem 0 rgba(85, 141, 255, .2); transition-duration: var(--animation-speed-fast);}
+.select-button:focus {border-color: config.variable(color, #0d6efd); box-shadow: 0 .4rem 1.6rem 0 rgba(85, 141, 255, .2); transition-duration: config.variable(animation, speed, fast);}
 
-.select-data.is-error ~ .select-button {border-color: var(--#{config.$prefix}color-danger);}
+.select-data.is-error ~ .select-button {border-color: config.variable(color, #dc3545);}
 .select-data.is-error ~ .select-button:active,
-.select-data.is-error ~ .select-button:focus {border-color:var(--#{config.$prefix}color-primary-50);}
-.select-data:disabled ~ .select-button {background-color: var(--#{config.$prefix}color-base-10); border-color: var(--#{config.$prefix}color-base-20); color: var(--#{config.$prefix}color-base-40); pointer-events: none;}
-.select-data.is-readonly ~ .select-button {background-color: var(--#{config.$prefix}color-base-10); border-color: var(--#{config.$prefix}color-base-30); color: var(--#{config.$prefix}color-black); pointer-events: none;}
+.select-data.is-error ~ .select-button:focus {border-color: config.variable(color, #0d6efd);}
+.select-data:disabled ~ .select-button {background-color: config.variable(color, #f8f9fa); border-color: config.variable(color, #e9ecef); color: config.variable(color, #ced4da); pointer-events: none;}
+.select-data.is-readonly ~ .select-button {background-color: config.variable(color, #f8f9fa); border-color: config.variable(color, #dee2e6); color: config.variable(color, #000); pointer-events: none;}
 
 /** 셀렉트박스 - 옵션 선택 팝업 */
-.select-popup {position: fixed; z-index: 20; top: 0; bottom: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: center; transform: translate3d(0,120%,0); transition: transform 0s var(--animation-timing-base) var(--animation-speed);}
-.select-popup::before {content: ''; position: fixed; top: 0; bottom: 0; left: 0; right: 0; background-color: var(--color-dimmed); transform: translate3d(0,120%,0); transition: opacity var(--animation-speed) var(--animation-timing-base), transform 0s var(--animation-speed); opacity: 0;}
+.select-popup {position: fixed; z-index: 20; top: 0; bottom: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: center; transform: translate3d(0,120%,0); transition: transform 0s config.variable(animation, timing, base) config.variable(animation, speed, base);}
+.select-popup::before {content: ''; position: fixed; top: 0; bottom: 0; left: 0; right: 0; background-color: var(--color-dimmed); transform: translate3d(0,120%,0); transition: opacity config.variable(animation, speed, base) config.variable(animation, timing, base), transform 0s config.variable(animation, speed, base); opacity: 0;}
 
-.select-content {position: relative; width: 100%; max-width: 32.0rem; padding: 0 0 2.4rem; background-color: var(--#{config.$prefix}color-white); border-radius: var(--radius-xl); opacity: 0; margin: 0 var(--space-xl); box-shadow: var(--shadow-sm); transform: translate3d(0,-12%,0); transition: opacity var(--animation-speed-fast) var(--animation-timing-base), transform var(--animation-speed) var(--animation-timing-outback);}
-.select-title {position: relative; width: calc(100% - 5.6rem); padding: 2.0rem 0 1.971rem 2.0rem; line-height: 1.35; font-weight: var(--#{config.$prefix}font-semibold); font-size: var(--font-title-sm); color: var(--#{config.$prefix}color-black);}
+.select-content {position: relative; width: 100%; max-width: 32.0rem; padding: 0 0 2.4rem; background-color: config.variable(color, #fff); border-radius: var(--radius-xl); opacity: 0; margin: 0 config.variable(space, 2.4rem); box-shadow: var(--shadow-sm); transform: translate3d(0,-12%,0); transition: opacity config.variable(animation, speed, fast) config.variable(animation, timing, base), transform config.variable(animation, speed, base) var(--animation-timing-outback);}
+.select-title {position: relative; width: calc(100% - 5.6rem); padding: 2.0rem 0 1.971rem 2.0rem; line-height: 1.35; font-weight: config.variable(font, 600); font-size: var(--font-title-sm); color: config.variable(color, #000);}
 
 .select-popup.is-open {transform: translate3d(0, 0, 0); transition-duration: 0s; transition-delay: 0s;}
-.select-popup.is-open::before {transform: translate3d(0, 0, 0); opacity: 1; transition: opacity var(--animation-speed) var(--animation-timing-base), transform 0s 0s;}
+.select-popup.is-open::before {transform: translate3d(0, 0, 0); opacity: 1; transition: opacity config.variable(animation, speed, base) config.variable(animation, timing, base), transform 0s 0s;}
 .select-popup.is-open .select-content {opacity: 1; transform: translate3d(0, 0, 0);}
 
 .select-popup .options {overflow-y: auto; max-height: calc((var(--vh, 1vh) * 90) - 8.8rem);}
-.select-popup .options > .item {position: relative; padding: 1.0rem 2.4rem; text-align: left; font-size: var(--#{config.$prefix}font-body-lg); color: var(--#{config.$prefix}color-black); cursor: pointer;}
+.select-popup .options > .item {position: relative; padding: 1.0rem 2.4rem; text-align: left; font-size: config.variable(font, body, 1.6rem); color: config.variable(color, #000); cursor: pointer;}
 .select-popup .options > .item:active,
-.select-popup .options > .item.is-active {background-color:var(--#{config.$prefix}color-primary-20);}
+.select-popup .options > .item.is-active {background-color: config.variable(color, #9ec5fe);}
 @media (hover: hover) and (pointer: fine) {
-	.select-popup .options > .item:hover {background-color:var(--#{config.$prefix}color-primary-20);}
+	.select-popup .options > .item:hover {background-color: config.variable(color, #9ec5fe);}
 }
-.select-popup .options > .item.is-active {font-weight: var(--#{config.$prefix}font-medium); color:var(--#{config.$prefix}color-primary-50);}
+.select-popup .options > .item.is-active {font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #0d6efd);}
 .select-popup .options > .item.is-placeholder {display: none;}
 .select-popup .options > .item::after {content: ' 버튼'; overflow: hidden; position: absolute; clip: rect(0, 0, 0, 0); clip-path: polygon(0 0, 0 0, 0 0); width: 1px; height: 1px; margin: -1px; padding: 0; border: 0;}
 
 /** 셀렉트박스 - in 캘린더 */
-.in-calendar .select-button {padding-top: 0; padding-bottom: 0; padding-left: 0; padding-right: 2.3rem; border: 0; font-weight: var(--#{config.$prefix}font-semibold);}
+.in-calendar .select-button {padding-top: 0; padding-bottom: 0; padding-left: 0; padding-right: 2.3rem; border: 0; font-weight: config.variable(font, 600);}
 .in-calendar .select-button::after {right: 0; width: var(--icon-sm); height: var(--icon-sm); margin-top: -.8rem; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -7) calc(var(--icon-sm) * -3);}
 .in-calendar .select-button:active,
 .in-calendar .select-button:focus {box-shadow: none;}

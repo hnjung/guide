@@ -6,52 +6,52 @@
 @use 'config' as config;
 
 /* 카드형목록 */
-.card-item {position: relative; padding: 2.3rem; background-color: var(--#{config.$prefix}color-white); border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-30); border-radius: var(--#{config.$prefix}radius-xl); box-shadow: var(--shadow-sm);}
+.card-item {position: relative; padding: 2.3rem; background-color: config.variable(color, #fff); border: config.variable(border, .1rem) solid config.variable(color, #dee2e6); border-radius: config.variable(radius, 1.6rem); box-shadow: var(--shadow-sm);}
 .card-item.is-active {border-color: #1A57FF;}
 .card-item[aria-selected='true'] {border-color: #1A57FF;}
 
-.card-item + .card-item {margin-top: var(--#{config.$prefix}space-md);}
+.card-item + .card-item {margin-top: config.variable(space, 1.6rem);}
 .card-title {position: relative; line-height: 1;}
 .card-item.option-more .card-title,
-.card-link .card-title {padding-right: var(--#{config.$prefix}space-md);}
+.card-link .card-title {padding-right: config.variable(space, 1.6rem);}
 
 /** 카드형목록 - 제목 */
-.card-title .key {display: inline-block; line-height: 1.334; vertical-align: middle; font-size: var(--font-lg); font-weight: var(--#{config.$prefix}font-regular); color: var(--#{config.$prefix}color-black);}
-.card-title .key > em {vertical-align: middle; font-weight: var(--#{config.$prefix}font-semibold); font-style: normal;}
-.card-title .txt {display: block; padding-bottom: var(--#{config.$prefix}space-xxs); line-height: 1.5; font-size: var(--#{config.$prefix}font-body-md); font-weight: var(--#{config.$prefix}font-regular); color: var(--#{config.$prefix}color-base-60);}
+.card-title .key {display: inline-block; line-height: 1.334; vertical-align: middle; font-size: config.variable(font, body, 1.8rem); font-weight: config.variable(font, 400); color: config.variable(color, #000);}
+.card-title .key > em {vertical-align: middle; font-weight: config.variable(font, 600); font-style: normal;}
+.card-title .txt {display: block; padding-bottom: config.variable(space, .4rem); line-height: 1.5; font-size: config.variable(font, body, 1.4rem); font-weight: config.variable(font, 400); color: config.variable(color, #6c757d);}
 .card-title .txt > em {vertical-align: middle;}
-.card-title .txt > em + em::before {content: ''; display: inline-block; width: .1rem; height: 1.2rem; margin: 0 var(--#{config.$prefix}space-xs); background-color: var(--#{config.$prefix}color-base-30); vertical-align: middle;}
-.card-title .txt .badge + em {margin-left: var(--#{config.$prefix}space-xxs);}
+.card-title .txt > em + em::before {content: ''; display: inline-block; width: .1rem; height: 1.2rem; margin: 0 config.variable(space, .8rem); background-color: config.variable(color, #dee2e6); vertical-align: middle;}
+.card-title .txt .badge + em {margin-left: config.variable(space, .4rem);}
 .card-title .key > em ~ .helper {margin-top: 0;}
 
 /** 카드형목록 - 버튼 및 링크 */
 .btn-card-detail {position: absolute; overflow: hidden; top: 2.8rem; right: 2.3rem; width: var(--icon-sm); height: var(--icon-sm); background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -1) calc(var(--icon-sm) * -1); background-size: var(--bg-size-sm);}
 .card-link {display: block; position: relative; margin: -2.3rem; padding: 2.3rem;}
-.card-link .card-title::before {content: ''; position: absolute; bottom: var(--#{config.$prefix}space-xxs); right: 0; width: var(--icon-sm); height: var(--icon-sm); background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -1) calc(var(--icon-sm) * -1); background-size: var(--bg-size-sm);}
+.card-link .card-title::before {content: ''; position: absolute; bottom: config.variable(space, .4rem); right: 0; width: var(--icon-sm); height: var(--icon-sm); background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -1) calc(var(--icon-sm) * -1); background-size: var(--bg-size-sm);}
 
 .card-title .btn-card-detail {top: .5rem; right: 0;}
 .card-title .txt ~ .btn-card-detail {top: 2.8rem;}
 .card-title .key ~ .txt ~ .btn-card-detail {top: .5rem;}
 
 /** 카드형목록 - 내용 */
-.card-main {margin-top: var(--#{config.$prefix}space-xxs); font-size: var(--#{config.$prefix}font-body-md);}
-.card-main .txt {display: inline-block; color: var(--#{config.$prefix}color-base-70);}
-.card-main .txt > em {color: var(--#{config.$prefix}color-base-60);}
-.card-main .txt > em + em::before {content: ''; display: inline-block; width: .1rem; height: 1.2rem; margin: 0 var(--#{config.$prefix}space-xs); background-color: var(--#{config.$prefix}color-base-30); vertical-align: middle;}
+.card-main {margin-top: config.variable(space, .4rem); font-size: config.variable(font, body, 1.4rem);}
+.card-main .txt {display: inline-block; color: config.variable(color, #495057);}
+.card-main .txt > em {color: config.variable(color, #6c757d);}
+.card-main .txt > em + em::before {content: ''; display: inline-block; width: .1rem; height: 1.2rem; margin: 0 config.variable(space, .8rem); background-color: config.variable(color, #dee2e6); vertical-align: middle;}
 
 /** 카드형목록 - 항목명 + 값 */
-[class*="card-"] ~ .card-info {margin-top: var(--#{config.$prefix}space-xs); padding-top: var(--#{config.$prefix}space-xs); border-top: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-20);}
-.card-info .txt {display: inline-block; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
+[class*="card-"] ~ .card-info {margin-top: config.variable(space, .8rem); padding-top: config.variable(space, .8rem); border-top: config.variable(border, .1rem) solid config.variable(color, #e9ecef);}
+.card-info .txt {display: inline-block; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #6c757d);}
 .card-info .item-row {padding-top: .2rem; padding-bottom: .2rem;}
 .card-info .item-row + .item-row {margin-top: 0;}
-.card-info .txt.option-value {color: var(--#{config.$prefix}color-black);}
-.card-info .txt.option-value .btn-txt-link[href^='tel'] {display: inline; padding: 0; vertical-align: inherit; line-height: inherit; color:var(--#{config.$prefix}color-primary-50);}
-.card-info .txt.option-stress {font-size: var(--#{config.$prefix}font-body-lg); font-weight: var(--#{config.$prefix}font-medium); color: var(--#{config.$prefix}color-black);}
-.card-info .link {text-decoration: underline; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-black);}
+.card-info .txt.option-value {color: config.variable(color, #000);}
+.card-info .txt.option-value .btn-txt-link[href^='tel'] {display: inline; padding: 0; vertical-align: inherit; line-height: inherit; color: config.variable(color, #0d6efd);}
+.card-info .txt.option-stress {font-size: config.variable(font, body, 1.6rem); font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #000);}
+.card-info .link {text-decoration: underline; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #000);}
 .card-info .item-row.option-left .unit:first-child {min-width: 23.5%;}
 .card-info .item-row .unit > .select,
 .card-info .item-row .unit > .switch-item,
-.card-info .item-row .unit > .btn {margin-top: var(--#{config.$prefix}space-xxs); margin-bottom: var(--#{config.$prefix}space-xxs);}
+.card-info .item-row .unit > .btn {margin-top: config.variable(space, .4rem); margin-bottom: config.variable(space, .4rem);}
 .card-info .item-row .unit:last-child {text-align: right;}
 .card-info .item-row.detail {overflow: hidden; max-height: 0; padding-top: 0; padding-bottom: 0;}
 .card-info .item-row .unit > .text-price {line-height: 1.35;}
@@ -60,12 +60,12 @@
 .box > .card-info:first-child {margin-top: 0; padding-top: 0; border-top: none;}
 
 /** 카드형목록 - 기능버튼 */
-.card-func {display: flex; margin-top: var(--#{config.$prefix}space-md);}
+.card-func {display: flex; margin-top: config.variable(space, 1.6rem);}
 .card-func .btn {flex-shrink: 1; width: 100%;}
 
 /** 카드형목록 - 접고펼치기 */
-.btn-card-more {display: block; width: calc(100% + 4.6rem); max-width: initial; position: relative; margin: 1.6rem -2.3rem -2.0rem; padding: .95rem 0 1.1rem; border-top: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-20); line-height: 1;}
-.btn-card-more > span {display: inline-block; vertical-align: middle; line-height: 1.5; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
+.btn-card-more {display: block; width: calc(100% + 4.6rem); max-width: initial; position: relative; margin: 1.6rem -2.3rem -2.0rem; padding: .95rem 0 1.1rem; border-top: config.variable(border, .1rem) solid config.variable(color, #e9ecef); line-height: 1;}
+.btn-card-more > span {display: inline-block; vertical-align: middle; line-height: 1.5; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #6c757d);}
 .btn-card-more::after {content: ''; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); margin-left: .4rem; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -8) calc(var(--icon-sm) * -2); background-size: var(--bg-size-sm); vertical-align: middle; transform: rotate3d(0, 0, 1, 180deg);}
 .btn-card-more > .txt::before {content: '더보기';}
 .card-item.is-open .btn-card-more::after {transform: rotate3d(0, 0, 1, 0deg);}
@@ -73,27 +73,27 @@
 
 /** 카드형목록 - 제목 단독형 */
 .card-list.option-single .card-item {padding-top: 1.9rem; padding-bottom: 1.9rem;}
-.card-list.option-single .card-item + .card-item {margin-top: var(--#{config.$prefix}space-xs);}
+.card-list.option-single .card-item + .card-item {margin-top: config.variable(space, .8rem);}
 .card-list.option-single .btn-card-detail {top: 2.3rem;}
 .card-list.option-single .card-link {margin: -1.9rem -2.3rem; padding: 1.9rem 2.3rem;}
 
 /** 카드형목록 - 제목 아이콘형 */
 .card-list.option-icon .card-item {padding: 1.9rem;}
-.card-list.option-icon .card-item + .card-item {margin-top: var(--#{config.$prefix}space-xs);}
+.card-list.option-icon .card-item + .card-item {margin-top: config.variable(space, .8rem);}
 .card-list.option-icon .btn-card-detail {top: 2.3rem;}
 .card-list.option-icon .card-link {margin: -1.9rem; padding: 1.9rem;}
-.card-list.option-icon .card-link .card-title::before {bottom: auto; top: 50%; margin-top: calc(var(--#{config.$prefix}space-xs) * -1);}
+.card-list.option-icon .card-link .card-title::before {bottom: auto; top: 50%; margin-top: calc(config.variable(space, .8rem) * -1);}
 
-.card-list.option-icon .card-title .key {display: flex; align-items: center; font-size: var(--#{config.$prefix}font-body-lg);}
+.card-list.option-icon .card-title .key {display: flex; align-items: center; font-size: config.variable(font, body, 1.6rem);}
 .card-list.option-icon .card-title .key.option-top {align-items: flex-start;}
-.card-list.option-icon .card-title .key::before {content: ''; flex-shrink: 0; display: block; width: var(--icon-xl); height: var(--icon-xl); margin-right: var(--#{config.$prefix}space-xs); background-image: var(--bg-url-xl); background-repeat: no-repeat; background-size: var(--bg-size-xl);}
+.card-list.option-icon .card-title .key::before {content: ''; flex-shrink: 0; display: block; width: var(--icon-xl); height: var(--icon-xl); margin-right: config.variable(space, .8rem); background-image: var(--bg-url-xl); background-repeat: no-repeat; background-size: var(--bg-size-xl);}
 .card-list.option-icon .card-title .key > em {display: block;}
-.card-list.option-icon .card-title .key > em .sub {display: block; padding-top: var(--#{config.$prefix}space-xxs); line-height: 1.5; font-weight: var(--#{config.$prefix}font-regular); font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-70);}
+.card-list.option-icon .card-title .key > em .sub {display: block; padding-top: config.variable(space, .4rem); line-height: 1.5; font-weight: config.variable(font, 400); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #495057);}
 
 /** 카드형목록 - 선택 - 라디오 + 체크박스 */
 .card-select .control[type='radio'] ~ .label::before,
 .card-select .control[type='checkbox'] ~ .label::before,
-.card-select .checkbox-control[type='checkbox'] ~ .label::before {content: ''; position: absolute; top: -.1rem; bottom: -.1rem; left: -.1rem; right: -.1rem; border: var(--#{config.$prefix}border-sm) solid transparent; border-radius: var(--#{config.$prefix}radius-xl); transition: all var(--animation-speed-fast) var(--animation-timing-base);}
+.card-select .checkbox-control[type='checkbox'] ~ .label::before {content: ''; position: absolute; top: -.1rem; bottom: -.1rem; left: -.1rem; right: -.1rem; border: config.variable(border, .1rem) solid transparent; border-radius: config.variable(radius, 1.6rem); transition: all config.variable(animation, speed, fast) config.variable(animation, timing, base);}
 .card-select .control[type='radio']:checked ~ .label::before,
 .card-select .control[type='checkbox']:checked ~ .label::before,
 .card-select .checkbox-control[type='checkbox']:checked ~ .label::before {border-color: #1A57FF; box-shadow: var(--shadow-primary-md);}
@@ -104,16 +104,16 @@
 .card-select .card-title .key > em {font-weight: var(--#{config.$prefix}font-medium);}
 .card-select .control[type='radio']:checked ~ .label .card-title .key > em,
 .card-select .control[type='checkbox']:checked ~ .label .card-title .key > em,
-.card-select .checkbox-control[type='checkbox']:checked ~ .label .card-title .key > em {font-weight: var(--#{config.$prefix}font-semibold);}
+.card-select .checkbox-control[type='checkbox']:checked ~ .label .card-title .key > em {font-weight: config.variable(font, 600);}
 
 /** 카드형목록 - 선택 - 체크박스 */
 .card-select > .checkbox-control[type='checkbox'] {flex-shrink: 0;}
-.card-select > .checkbox-control[type='checkbox'] ~ .unit {margin-left: var(--#{config.$prefix}space-xs);}
+.card-select > .checkbox-control[type='checkbox'] ~ .unit {margin-left: config.variable(space, .8rem);}
 
 .card-select.card-link {position: initial;}
 
 /** 카드형목록 - 합계 */
-.card-item.option-bg {background-color: var(--#{config.$prefix}color-primary-10); border-color:var(--#{config.$prefix}color-primary-30);}
+.card-item.option-bg {background-color: var(--#{config.$prefix}color-primary-10); border-color: config.variable(color, #6ea8fe);}
 
 /** 카드형목록 - 비활성화 */
 .card-item.is-disabled .card-title .txt,
@@ -124,25 +124,25 @@
 .card-item.is-disabled .card-info .text-price2 > em {color: var(--#{config.$prefix}color-base-50);}
 
 /** 카드형목록 - 출력용 - 박스 내 목록 */
-.card.option-data {padding: 2.3rem; background-color: var(--#{config.$prefix}color-white); border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-30); border-radius: var(--#{config.$prefix}radius-xl);}
-.card.option-data .card-item {padding: var(--#{config.$prefix}space-md) 0; background-color: transparent; border: none; border-radius: 0; box-shadow: none;}
+.card.option-data {padding: 2.3rem; background-color: config.variable(color, #fff); border: config.variable(border, .1rem) solid config.variable(color, #dee2e6); border-radius: config.variable(radius, 1.6rem);}
+.card.option-data .card-item {padding: config.variable(space, 1.6rem) 0; background-color: transparent; border: none; border-radius: 0; box-shadow: none;}
 .card.option-data .card-item:first-child {padding-top: 0;}
 .card.option-data .card-item:last-child {padding-bottom: 0;}
-.card.option-data .card-item + .card-item {margin-top: 0; border-top: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-20);}
+.card.option-data .card-item + .card-item {margin-top: 0; border-top: config.variable(border, .1rem) solid config.variable(color, #e9ecef);}
 
-.card.option-data .card-title .key {line-height: 1.375; font-size: var(--#{config.$prefix}font-body-lg);}
+.card.option-data .card-title .key {line-height: 1.375; font-size: config.variable(font, body, 1.6rem);}
 .card.option-data .card-info {padding-top: 0; margin-top: 0; border-top: none;}
 .card.option-data .card-title ~ .card-main,
-.card.option-data .card-title ~ .card-info {margin-top: var(--#{config.$prefix}space-xs);}
-.title-h4 ~ .card.option-data {margin-top: var(--#{config.$prefix}space-md);}
+.card.option-data .card-title ~ .card-info {margin-top: config.variable(space, .8rem);}
+.title-h4 ~ .card.option-data {margin-top: config.variable(space, 1.6rem);}
 
 /** 카드형목록 - 출력용 - 아이템 박스 */
-.card.option-flat .card-item {border-color: var(--#{config.$prefix}color-base-30); box-shadow: none;}
-.card.option-flat .card-title .key {line-height: 1.375; font-size: var(--#{config.$prefix}font-body-lg);}
+.card.option-flat .card-item {border-color: config.variable(color, #dee2e6); box-shadow: none;}
+.card.option-flat .card-title .key {line-height: 1.375; font-size: config.variable(font, body, 1.6rem);}
 .card.option-flat .card-info {padding-top: 0; margin-top: 0; border-top: none;}
 .card.option-flat .card-title ~ .card-main,
-.card.option-flat .card-title ~ .card-info {margin-top: var(--#{config.$prefix}space-xs);}
-.title-h4 ~ .card.option-flat {margin-top: var(--#{config.$prefix}space-md);}
+.card.option-flat .card-title ~ .card-info {margin-top: config.variable(space, .8rem);}
+.title-h4 ~ .card.option-flat {margin-top: config.variable(space, 1.6rem);}
 
 .card.option-flat .card-item .detail {overflow: hidden; max-height: 0;}
 .card.option-flat .card-item.is-open .detail {max-height: inherit;}
@@ -151,9 +151,9 @@
 .card.option-step .card-item[class*="step-type"] {display: flex; flex-direction: row; align-items: center; padding-top: 1.75rem; padding-bottom: 1.75rem;}
 .card.option-step .card-item[class*="step-type"]:first-child {padding-top: 0;}
 .card.option-step .card-item[class*="step-type"]:last-child {padding-bottom: 0;}
-.card-item[class*="step-type"] .card-title .txt {padding-bottom: 0; line-height: 1.35; font-weight: var(--#{config.$prefix}font-semibold); color:var(--#{config.$prefix}color-primary-50);}
+.card-item[class*="step-type"] .card-title .txt {padding-bottom: 0; line-height: 1.35; font-weight: config.variable(font, 600); color: config.variable(color, #0d6efd);}
 .card-item[class*="step-type"] .card-title .key {line-height: 1.5;}
-.card-item[class*="step-type"] .card-title .key > em {font-weight: var(--#{config.$prefix}font-regular);}
+.card-item[class*="step-type"] .card-title .key > em {font-weight: config.variable(font, 400);}
 
 .card-item[class*="step-type"]::after {content: ''; position: absolute; z-index: 1; bottom: -1rem; left: 50%; width: 3.6rem; height: 2.0rem; margin-left: -1.8rem; background: var(--bg-url-etc) no-repeat 0 -.8rem; background-size: var(--bg-size-etc);}
 .card-item[class*="step-type"]:last-child::after {display: none;}

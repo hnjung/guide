@@ -6,11 +6,11 @@
 @use 'config' as config;
 
 #wrap {
-	--#{config.$prefix}body-min-width: 320px;
-	--#{config.$prefix}body-space: #{config.$xl};
-	--#{config.$prefix}header-height: 5.4rem;
-	--#{config.$prefix}footer-height: 5.0rem;
-	--#{config.$prefix}main-btn-height: 8.8rem;
+	#{config.prefix(body-min-width)}: 320px;
+	#{config.prefix(body-space)}: #{config.$xl};
+	#{config.prefix(header-height)}: 5.4rem;
+	#{config.prefix(footer-height)}: 5.0rem;
+	#{config.prefix(main-btn-height)}: 8.8rem;
 
 	position: relative;
 	display: flex;
@@ -18,17 +18,17 @@
 		direction: column;
 	}
 	min: {
-		width: var(--#{config.$prefix}body-min-width);
+		width: config.prefix(body-min-width, 1);
 		height: 100dvh;
 	}
 
 	@include config.media-up(laptop) {
-		--#{config.$prefix}header-height: 6.4rem;
+		#{config.prefix(header-height)}: 6.4rem;
 	}
 }
 #main {
 	display: flex;
-	gap: var(--#{config.$prefix}space-md);
+	gap: config.variable(space, 1.6rem);
 	flex: {
 		direction: row;
 		shrink: 0;
@@ -42,12 +42,12 @@
 #aside {
 	width: 240px;
 	flex-shrink: 0;
-	background-color: var(--#{config.$prefix}color-base-10);
+	background-color: config.variable(color, #f8f9fa);
 
 	.aside-wrap {
 		position: sticky;
-		top: var(--#{config.$prefix}header-height);
-		padding: var(--#{config.$prefix}space-md);
+		top: config.prefix(header-height, 1);
+		padding: config.variable(space, 1.6rem);
 	}
 }
 
@@ -55,17 +55,17 @@
 #loading.is-active {display: flex;}
 
 .section {
-	padding: var(--#{config.$prefix}space-xl) var(--#{config.$prefix}space-lg) var(--#{config.$prefix}space-max);
+	padding: config.variable(space, 2.4rem) config.variable(space, 2rem) config.variable(space, 4rem);
 	+ .section {
 		padding-top: 0;
 	}
 	&:last-child {
-		padding-bottom: var(--#{config.$prefix}space-mega);
+		padding-bottom: config.variable(space, 6.4rem);
 	}
 }
 .group {
 	+ .group {
-		padding-top: var(--#{config.$prefix}space-xxl);
+		padding-top: config.variable(space, 3.2rem);
 	}
 }
 

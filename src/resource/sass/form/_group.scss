@@ -8,47 +8,47 @@
 /* 등록폼 */
 .form {position: relative;}
 .form-wrap {position: relative;}
-.form-title ~ .form-wrap > .form-list > .form-item:first-child {padding-top: var(--#{config.$prefix}space-md);}
+.form-title ~ .form-wrap > .form-list > .form-item:first-child {padding-top: config.variable(space, 1.6rem);}
 .form-list {position: relative; display: flex; flex-direction: column; flex-wrap: wrap;}
-.form-item {display: flex; flex-direction: column; flex-shrink: 0; width: 100%; padding: var(--space-xl) 0 0;}
+.form-item {display: flex; flex-direction: column; flex-shrink: 0; width: 100%; padding: config.variable(space, 2.4rem) 0 0;}
 .form-item:first-child {padding-top: 0;}
 .form-item[class*="item-"] {align-items: flex-start;}
-.form-name {flex-shrink: 0; min-height: 2.4rem; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-80);}
+.form-name {flex-shrink: 0; min-height: 2.4rem; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #343a40);}
 .form-name > strong {display: inline-block; padding: .15rem 0; font-weight: var(--#{config.$prefix}font-medium);}
-.form-value {flex-shrink: 1; width: 100%; padding-top: var(--#{config.$prefix}space-xs); color: var(--#{config.$prefix}color-black);}
+.form-value {flex-shrink: 1; width: 100%; padding-top: config.variable(space, .8rem); color: config.variable(color, #000);}
 .form-name .must {display: inline;}
-.form-name .must::after {content: ' *'; font-weight: var(--#{config.$prefix}font-semibold); color:var(--#{config.$prefix}color-primary-50);}
+.form-name .must::after {content: ' *'; font-weight: config.variable(font, 600); color: config.variable(color, #0d6efd);}
 .form-name .radio-item,
-.form-name .checkbox-item {font-weight: var(--#{config.$prefix}font-medium); font-size: var(--#{config.$prefix}font-body-md);}
+.form-name .checkbox-item {font-weight: var(--#{config.$prefix}font-medium); font-size: config.variable(font, body, 1.4rem);}
 .form-name .radio-item .label,
-.form-name .checkbox-item .label {color: var(--#{config.$prefix}color-base-80);}
+.form-name .checkbox-item .label {color: config.variable(color, #343a40);}
 .form-wrap .form-item.item-row + .form-item.item-row {margin-top: 0;}
-.box.option-line .form-wrap .form-item {padding-top: var(--#{config.$prefix}space-md);}
+.box.option-line .form-wrap .form-item {padding-top: config.variable(space, 1.6rem);}
 .box.option-line .form-wrap .form-item:first-child{padding-top: 0;}
 
 /** 등록폼 - 타이틀 */
-.form-title {padding: 1.971rem 3.2rem 1.9rem 0; border-top: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-30); line-height: 1.35; font-weight: var(--#{config.$prefix}font-semibold); font-size: var(--font-title-sm); color: var(--#{config.$prefix}color-black);}
-.form-title > span {font-weight: var(--#{config.$prefix}font-regular);}
+.form-title {padding: 1.971rem 3.2rem 1.9rem 0; border-top: config.variable(border, .1rem) solid config.variable(color, #dee2e6); line-height: 1.35; font-weight: config.variable(font, 600); font-size: var(--font-title-sm); color: config.variable(color, #000);}
+.form-title > span {font-weight: config.variable(font, 400);}
 
 /** 등록폼 - 콘텐츠접기 */
-.form.option-fold .btn-fold {position: absolute; top: var(--space-lg); right: var(--#{config.$prefix}space-xxs); width: var(--icon-sm); height: var(--icon-sm); transform: rotate(0deg); transition: transform var(--animation-speed) var(--animation-timing-base);}
+.form.option-fold .btn-fold {position: absolute; top: var(--space-lg); right: config.variable(space, .4rem); width: var(--icon-sm); height: var(--icon-sm); transform: rotate(0deg); transition: transform config.variable(animation, speed, base) config.variable(animation, timing, base);}
 .form.option-fold .btn-fold::before {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -2) calc(var(--icon-sm) * -1); background-size: var(--bg-size-sm);}
 .form.option-fold.is-open .btn-fold {transform: rotate(-180deg);}
-.form.option-fold .form-wrap {overflow: hidden; max-height: 0; transition: all var(--animation-speed) var(--animation-timing-base);}
+.form.option-fold .form-wrap {overflow: hidden; max-height: 0; transition: all config.variable(animation, speed, base) config.variable(animation, timing, base);}
 .form.option-fold .form-wrap .form-list {padding-bottom: var(--space-xxl);}
-.form.option-fold .form-wrap .form-list .agreement {margin-top: var(--#{config.$prefix}space-md);}
+.form.option-fold .form-wrap .form-list .agreement {margin-top: config.variable(space, 1.6rem);}
 
 /** 등록폼 - 상세검색 */
 .form.option-search .form-item:not(.detail) {padding-top: 0;}
-.form.option-search .form-item:not(.detail) ~ .form-item:not(.detail) {padding-top: var(--space-xl);}
+.form.option-search .form-item:not(.detail) ~ .form-item:not(.detail) {padding-top: config.variable(space, 2.4rem);}
 .form.option-search .form-item.detail {overflow: hidden; max-height: 0; padding-top: 0;}
-.form.option-search.is-open .form-item.detail {max-height: inherit; padding-top: var(--space-xl);}
-.form.option-search.is-open .form-item:not(.detail) {padding-top: var(--space-xl);}
+.form.option-search.is-open .form-item.detail {max-height: inherit; padding-top: config.variable(space, 2.4rem);}
+.form.option-search.is-open .form-item:not(.detail) {padding-top: config.variable(space, 2.4rem);}
 .form.option-search.is-open .form-item:first-child {padding-top: 0;}
 
-.form.option-search .btn-search-more {display: block; width: calc(100% + (var(--space-body) * 2)); max-width: initial; position: relative; margin-top: var(--space-lg); margin-left: calc(var(--space-body) * -1); margin-right: calc(var(--space-body) * -1); padding: 1.35rem 0 1.362rem; border-top: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-20); border-bottom: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-20); line-height: 1;}
-.form.option-search .btn-search-more > span {display: inline-block; vertical-align: middle; line-height: 1.35; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-80);}
-.form.option-search .btn-search-more::after {content: ''; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); margin-left: var(--#{config.$prefix}space-xxs); background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -4) calc(var(--icon-sm) * -1); background-size: var(--bg-size-sm); vertical-align: middle;}
+.form.option-search .btn-search-more {display: block; width: calc(100% + (var(--space-body) * 2)); max-width: initial; position: relative; margin-top: var(--space-lg); margin-left: calc(var(--space-body) * -1); margin-right: calc(var(--space-body) * -1); padding: 1.35rem 0 1.362rem; border-top: config.variable(border, .1rem) solid config.variable(color, #e9ecef); border-bottom: config.variable(border, .1rem) solid config.variable(color, #e9ecef); line-height: 1;}
+.form.option-search .btn-search-more > span {display: inline-block; vertical-align: middle; line-height: 1.35; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #343a40);}
+.form.option-search .btn-search-more::after {content: ''; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); margin-left: config.variable(space, .4rem); background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -4) calc(var(--icon-sm) * -1); background-size: var(--bg-size-sm); vertical-align: middle;}
 .form.option-search.is-open .btn-search-more::after {background-position: calc(var(--icon-sm) * -5) calc(var(--icon-sm) * -1);}
 
 /** 등록폼 - 상세검색 - (태블릿+PC) */
@@ -57,4 +57,4 @@
 }
 
 /** 등록폼 - 버튼 */
-.form-wrap ~ .btn-group {margin-top: var(--space-xl);}
+.form-wrap ~ .btn-group {margin-top: config.variable(space, 2.4rem);}

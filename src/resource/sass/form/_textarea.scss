@@ -7,12 +7,12 @@
 
 /* 텍스트에어리어 */
 .textarea {position: relative; display: inline-block; vertical-align: middle;}
-.textarea-data {display: block; width: 100%; height: 100%; min-height: 12.8rem; padding: calc(var(--#{config.$prefix}space-md) - var(--#{config.$prefix}border-sm)); background-color: var(--#{config.$prefix}color-white); border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-30); border-radius: var(--radius-md); outline: none; font-size: var(--#{config.$prefix}font-body-lg); color: var(--#{config.$prefix}color-black); resize: none; transition: border var(--animation-speed-fast) var(--animation-timing-base);}
-.textarea-count {margin-bottom: .8rem; padding: .3rem 0; text-align: right; font-size: var(--#{config.$prefix}font-body-sm); color: var(--#{config.$prefix}color-base-70);}
+.textarea-data {display: block; width: 100%; height: 100%; min-height: 12.8rem; padding: calc(config.variable(space, 1.6rem) - config.variable(border, .1rem)); background-color: config.variable(color, #fff); border: config.variable(border, .1rem) solid config.variable(color, #dee2e6); border-radius: config.variable(radius, .8rem); outline: none; font-size: config.variable(font, body, 1.6rem); color: config.variable(color, #000); resize: none; transition: border config.variable(animation, speed, fast) config.variable(animation, timing, base);}
+.textarea-count {margin-bottom: .8rem; padding: .3rem 0; text-align: right; font-size: config.variable(font, body, 1.2rem); color: config.variable(color, #495057);}
 .textarea-count .count-char {font-style: normal;}
-.textarea-data.is-error {border-color: var(--#{config.$prefix}color-danger);}
-.textarea-data:focus {border-color:var(--#{config.$prefix}color-primary-50); box-shadow: var(--shadow-primary-lg);}
-.textarea-data:read-only {background-color: var(--#{config.$prefix}color-base-10); color: var(--#{config.$prefix}color-black);}
-.textarea-data:disabled {border-color: var(--#{config.$prefix}color-base-20); background-color: var(--#{config.$prefix}color-base-10); color: var(--#{config.$prefix}color-base-40); cursor: default;}
+.textarea-data.is-error {border-color: config.variable(color, #dc3545);}
+.textarea-data:focus {border-color: config.variable(color, #0d6efd); box-shadow: var(--shadow-primary-lg);}
+.textarea-data:read-only {background-color: config.variable(color, #f8f9fa); color: config.variable(color, #000);}
+.textarea-data:disabled {border-color: config.variable(color, #e9ecef); background-color: config.variable(color, #f8f9fa); color: config.variable(color, #ced4da); cursor: default;}
 
 .form-name ~ .form-value .textarea .textarea-count {position: absolute; top: -3.2rem; right: 0;}

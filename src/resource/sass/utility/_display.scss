@@ -49,11 +49,11 @@
 /* 요소분할 */
 .item-col {display: flex; flex-direction: column;}
 .item-col > .unit {width: 100%;}
-.item-col > .unit + .unit {margin-top: var(--#{config.$prefix}space-xs);}
+.item-col > .unit + .unit {margin-top: config.variable(space, .8rem);}
 
 .item-row {display: flex; flex-direction: row; align-items: center; justify-content: space-between;}
 .item-row > .unit {flex-shrink: 1;}
-.item-row > .unit + .unit {margin-left: var(--#{config.$prefix}space-xs);}
+.item-row > .unit + .unit {margin-left: config.variable(space, .8rem);}
 .item-row > .unit.fixed {flex-shrink: 0;}
 .item-row > .unit.filled {flex-shrink: 1; width: 100%;}
 
@@ -64,18 +64,18 @@
 .item-row.option-right {justify-content: right;}
 
 .item-row + .item-row,
-.item-row + .input {margin-top: var(--#{config.$prefix}space-xs);}
+.item-row + .input {margin-top: config.variable(space, .8rem);}
 
 .item-react {display: flex; flex-direction: column;}
 .item-react > .unit {flex-shrink: 1;}
-.item-react > .unit + .unit {margin-top: var(--#{config.$prefix}space-xs);}
+.item-react > .unit + .unit {margin-top: config.variable(space, .8rem);}
 
 /* 요소분할 - (태블릿+PC) */
 @media screen and (min-width: 768px) {
-	.item-row.option-half > .unit + .unit {margin-left: var(--#{config.$prefix}space-md);}
+	.item-row.option-half > .unit + .unit {margin-left: config.variable(space, 1.6rem);}
 
 	.item-react {flex-direction: row; align-items: center;}
-	.item-react > .unit + .unit {margin-top: 0; margin-left: var(--#{config.$prefix}space-xs);}
+	.item-react > .unit + .unit {margin-top: 0; margin-left: config.variable(space, .8rem);}
 	.item-react > .unit.fixed {flex-shrink: 0;}
 	.item-react > .unit.filled {flex-shrink: 1; width: 100%;}
 	.item-react.option-top {align-items: flex-start;}
@@ -88,13 +88,13 @@
 /* 요소분할 1:1 */
 .item-half {display: flex; flex-direction: column;}
 .item-half > .unit {flex-shrink: 1; width: 100%;}
-.item-half > .unit + .unit {margin-top: var(--#{config.$prefix}space-xs);}
+.item-half > .unit + .unit {margin-top: config.variable(space, .8rem);}
 
 /* 요소분할 1:1 - (태블릿+PC) */
 @media screen and (min-width: 768px) {
 	.item-half {flex-direction: row; align-items: center;}
 	.item-half > .unit {width: 100%;}
-	.item-half > .unit + .unit {margin-top: 0; margin-left: var(--#{config.$prefix}space-md);}
+	.item-half > .unit + .unit {margin-top: 0; margin-left: config.variable(space, 1.6rem);}
 	.item-half.option-top {align-items: flex-start;}
 	.item-half.option-bottom {align-items: flex-end;}
 	.item-half.option-left {justify-content: left;}
@@ -105,7 +105,7 @@
 }
 
 /** 요소분할 1:1 - 등록폼 */
-.form-item.item-half > .unit {padding-top: var(--space-xl); margin-top: 0;}
+.form-item.item-half > .unit {padding-top: config.variable(space, 2.4rem); margin-top: 0;}
 .form-item.item-half > .unit:first-child {padding-top: 0;}
 
 /** 요소분할 1:1 - 등록폼 - (태블릿+PC) */

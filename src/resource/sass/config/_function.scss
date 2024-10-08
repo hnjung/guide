@@ -90,6 +90,22 @@
 }
 
 /* CSS 사용자 정의 속성 작성 도우미 */
+@function prefix($input: null, $var: false) {
+	@if $var == false {
+		@if $input == null {
+			@return --#{config.$prefix};
+		} @else {
+			@return --#{config.$prefix}#{$input};
+		}
+	} @else {
+		@if $input == null {
+			@return var(--#{config.$prefix});
+		} @else {
+			@return var(--#{config.$prefix}#{$input});
+		}
+	}
+}
+
 @function find-match($arr, $key, $prefix) {
 	@each $name, $value in $arr {
 		@if $name == $key or $value == $key {
@@ -99,11 +115,11 @@
 	@return null;
 }
 
-/** 색상, 폰트, 여백, 선두께, 모서리지름 */
+/** 색상, 폰트, 여백, 아이콘, 선두께, 모서리지름 */
 @function variable($type, $value-or-option, $value: null) {
 	$result: null;
-	$prefix: --#{config.$prefix}#{$type}-;
-	$valid: (config.$color, config.$font, config.$space, config.$border, config.$radius);
+	$prefix: prefix(#{$type}-);
+	$valid: (config.$color, config.$font, config.$space, config.$border, config.$radius, config.$shadow, config.$animation);
 
 	/* 첫번째 매개변수 값 유효성 체크 */
 	@if not index($valid, $type) {
@@ -163,7 +179,47 @@
 		@if type-of($result) != 'string' and type-of($result) != 'number' {
 			@error '⛔ Invalid argument for variable function: #{$value-or-option}';
 		}
-	/* 첫번째 매개변수가 여백, 선두께, 모서리지름인 경우 */
+	/* 첫번째 매개변수가 그림자인 경우 */
+	} @else if $type == config.$shadow {
+		@if $value == null {
+			/* 두번째 매개변수 비교 후 리턴 */
+			@each $category in map-keys(config.$shadow-group) {
+				$temp-result: find-match(config.$shadow-group, $value-or-option, '#{$prefix}');
+				@if $temp-result {
+					$result: $temp-result;
+				}
+			}
+			$result: $result or $value-or-option;
+		} @else {
+			/* 세번째 매개변수 비교 후 리턴 */
+			@each $category in map-keys(config.$shadow-group) {
+				@if $category == $value-or-option {
+					$temp-result: find-match(map-get(config.$shadow-group, $category), $value, '#{$prefix}#{$category}-');
+					@if $temp-result {
+						$result: $temp-result;
+					}
+				}
+			}
+			$result: $result or $value;
+		}
+	/* 첫번째 매개변수가 애니메이션 경우 */
+	} @else if $type == config.$animation {
+		@if $value != null {
+			/* 세번째 매개변수 비교 후 리턴 */
+			@each $category in map-keys(config.$animation-group) {
+				@if $category == $value-or-option {
+					$temp-result: find-match(map-get(config.$animation-group, $category), $value, '#{$prefix}#{$category}-');
+					@if $temp-result {
+						$result: $temp-result;
+					}
+				}
+			}
+			$result: $result or $value;
+		} @else {
+			/* 세번째 매개변수 값이 없을 경우 */
+			@error '⛔ Invalid argument for variable function: #{$value-or-option}';
+		}
+	/* 첫번째 매개변수가 여백, 아이콘, 선두께, 모서리지름인 경우 */
 	} @else {
 		$group: ();
 		@if $type == config.$space {
@@ -194,9 +250,9 @@
 }
 @mixin icon-block($input) {
 	$size: icon($input);
-	$var: var(--#{config.$prefix}icon-#{$size});
+	$var: var(#{prefix()}icon-#{$size});
 
-	@if type-of($input) == 'number' {
+	@if $size == null and type-of($input) == 'number' {
 		$var: $input;
 	}
 
@@ -204,8 +260,12 @@
 	height: $var;
 }
 @mixin icon($size, $x-or-type: 0, $y-or-type: 0, $optional-type: 'common') {
+	@include icon-block($size);
+	@include icon-bg($size, all, $x-or-type, $y-or-type, $optional-type);
+}
+@mixin icon-bg($size, $category, $x-or-type: 0, $y-or-type: 0, $optional-type: 'common') {
 	$size: icon($size);
-	$var: var(--#{config.$prefix}icon-#{$size});
+	$var: var(#{prefix()}icon-#{$size});
 	$x: 0;
 	$y: 0;
 	$type: 'common';
@@ -222,11 +282,18 @@
 		$type: $x-or-type;
 	}
 
-	@include icon-block($size);
-	background-image: url('#{config.$path-image}/#{$type}/icon-#{$size}.svg');
-	background-repeat: no-repeat;
-	background-position: calc(#{$var} * #{$x * -1}) calc(#{$var} * #{$y * -1});
-	background-size: calc(#{$var} * 10) auto;
+	@if $category == 'all' or $category == 'url' {
+		background-image: url('#{config.$path-image}/#{$type}/icon-#{$size}.svg');
+	}
+	@if $category == 'all' {
+		background-repeat: no-repeat;
+	}
+	@if $category == 'all' or $category == 'position' {
+		background-position: calc(#{$var} * #{$x * -1}) calc(#{$var} * #{$y * -1});
+	}
+	@if $category == 'all' or $category == 'size' {
+		background-size: calc(#{$var} * 10) auto;
+	}
 }
 
 .class {
@@ -247,4 +314,8 @@
 	border: variable(border, sm) solid variable(color, black);
 	border-radius: variable(radius, md);
 	border-radius: variable(radius, 1.2rem);
+	box-shadow: variable(shadow, primary, md);
+	box-shadow: variable(shadow, 0 .1rem .4rem 0 rgba(50, 25, 43, .08));
+	animation-duration: variable(animation, speed, .3s);
+	animation-timing-function: variable(animation, timing, base);
 }

@@ -1,0 +1,36 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'guide',
+	gnb2nd: 'device',
+	title: '기기별 해상도 기준'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section - 기준 - 기기별 해상도 기준 -->
+	<section class="section" id="standard-device">
+		<h1 class="headline-h1"><span class="txt">가이드</span></h1>
+		<h2 class="title-h2"><span class="txt">기기별 해상도 기준</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li>모바일 : 미디어 쿼리 없이 디폴트로 작성(모바일 퍼스트)</li>
+					<li>태블릿 : <code>@media screen and (min-width: 768px) and (max-width: 1024px) {}</code></li>
+					<li>태블릿 ~ PC : <code>@media screen and (min-width: 768px) {}</code></li>
+					<li>PC : <code>@media screen and (min-width: 1025px) {}</code></li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 기준 - 기기별 해상도 기준 -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

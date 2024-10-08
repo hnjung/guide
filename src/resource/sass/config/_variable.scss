@@ -244,6 +244,34 @@ $radius-group: (
 	'pill': 100%
 ) !default;
 
+/* 그림자 */
+$shadow: 'shadow' !default;
+$shadow-group: (
+	'reset': 0 0 0 rgba(0, 0, 0, 0),
+	'sm': 0 .1rem .4rem 0 rgba(18, 25, 43, .08),
+	'md': 0 .2rem 1.2rem 0 rgba(18, 25, 43, .12),
+	'lg': 0 .4rem 1.6rem 0 rgba(18, 25, 43, .16),
+	'primary': (
+		'sm': 0 .1rem .4rem 0 rgba(87, 132, 255, .08),
+		'md': 0 .2rem 1.2rem 0 rgba(87, 132, 255, .12),
+		'lg': 0 .4rem 1.6rem 0 rgba(87, 132, 255, .16)
+	)
+) !default;
+
+/* 애니메이션 */
+$animation: 'animation' !default;
+$animation-group: (
+	'speed': (
+		'base': .3s,
+		'fast': .15s
+	),
+	'timing': (
+		'base': cubic-bezier(.4, 0, .7, 1),
+		'outback': cubic-bezier(.4, 0, .3, 1.8),
+		'outback-sm': cubic-bezier(.4, 0, .1, 1.4)
+	)
+) !default;
+
 :root,
 [data-#{$prefix}thema='light'] {
 	/* 색상 */
@@ -288,23 +316,22 @@ $radius-group: (
 	}
 
 	/* 그림자 */
-	--#{$prefix}shadow-reset: 0 0 0 rgba(0, 0, 0, 0);
-	--#{$prefix}shadow-sm: 0 .1rem .4rem 0 rgba(18, 25, 43, .08);
-	--#{$prefix}shadow-md: 0 .2rem 1.2rem 0 rgba(18, 25, 43, .12);
-	--#{$prefix}shadow-lg: 0 .4rem 1.6rem 0 rgba(18, 25, 43, .16);
-
-	--#{$prefix}shadow-primary-sm: 0 .1rem .4rem 0 rgba(87, 132, 255, .08);
-	--#{$prefix}shadow-primary-md: 0 .2rem 1.2rem 0 rgba(87, 132, 255, .12);
-	--#{$prefix}shadow-primary-lg: 0 .4rem 1.6rem 0 rgba(87, 132, 255, .16);
+	@each $name, $value in $shadow-group {
+		@if type-of($value) == 'map' {
+			@each $name2, $value2 in $value {
+				--#{$prefix}#{$shadow}-#{$name}-#{$name2}: #{$value2};
+			}
+		} @else {
+			--#{$prefix}#{$shadow}-#{$name}: #{$value};
+		}
+	}
 
 	/* 애니메이션 */
-	--#{$prefix}animation-speed-fast: .15s;
-	--#{$prefix}animation-speed: .3s;
-	--#{$prefix}animation-timing-base: cubic-bezier(.4, 0, .7, 1);
-	--#{$prefix}animation-timing-outback: cubic-bezier(.4, 0, .3, 1.8);
-	--#{$prefix}animation-timing-outback-sm: cubic-bezier(.4, 0, .1, 1.4);
-	--#{$prefix}animation-timing-ease: ease;
-	--#{$prefix}animation-timing-linear: linear;
+	@each $name, $value in $animation-group {
+		@each $name2, $value2 in $value {
+			--#{$prefix}#{$animation}-#{$name}-#{$name2}: #{$value2};
+		}
+	}
 }
 
 [data-#{$prefix}thema='dark'] {

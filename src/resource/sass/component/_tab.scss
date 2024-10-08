@@ -7,20 +7,20 @@
 
 /* 탭 */
 .tab-head {display: flex; flex-wrap: wrap; position: relative;}
-.tab-head::before {content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: var(--#{config.$prefix}border-sm); background-color: var(--#{config.$prefix}color-base-20);}
+.tab-head::before {content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: config.variable(border, .1rem); background-color: config.variable(color, #e9ecef);}
 
 .tab-menu {position: relative;}
-.tab-menu > a {display: inline-block; width: 100%; padding: .9rem .8rem .942rem; line-height: 1.35; font-weight: var(--#{config.$prefix}font-semibold); font-size: var(--#{config.$prefix}font-body-lg); color: var(--#{config.$prefix}color-base-60); transition: all var(--animation-speed) var(--animation-timing-base);}
-.tab-menu::after {content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: var(--#{config.$prefix}border-md); margin-left: 0; background-color: var(--#{config.$prefix}color-black); transition: all var(--animation-speed) var(--animation-timing-outback-sm);}
-.tab-menu.is-active > a {color: var(--#{config.$prefix}color-black);}
+.tab-menu > a {display: inline-block; width: 100%; padding: .9rem .8rem .942rem; line-height: 1.35; font-weight: config.variable(font, 600); font-size: config.variable(font, body, 1.6rem); color: config.variable(color, #6c757d); transition: all config.variable(animation, speed, base) config.variable(animation, timing, base);}
+.tab-menu::after {content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: var(--#{config.$prefix}border-md); margin-left: 0; background-color: config.variable(color, #000); transition: all config.variable(animation, speed, base) var(--animation-timing-outback-sm);}
+.tab-menu.is-active > a {color: config.variable(color, #000);}
 .tab-menu.is-active::after {width: 100%; margin-left: -50%;}
-.tab-menu:active {background-color: var(--#{config.$prefix}color-base-30); transition: all var(--animation-speed) var(--animation-timing-base);}
+.tab-menu:active {background-color: config.variable(color, #dee2e6); transition: all config.variable(animation, speed, base) config.variable(animation, timing, base);}
 
 .tab-item {display: none; padding-top: var(--space-lg);}
 .tab-item.is-active {display: block;}
 
 /** 탭 - 폭전체사용 */
-.tab-head.option-full {margin-left: calc(var(--#{config.$prefix}space-md) * -1); margin-right: calc(var(--#{config.$prefix}space-md) * -1); padding-left: var(--#{config.$prefix}space-md); padding-right: var(--#{config.$prefix}space-md);}
+.tab-head.option-full {margin-left: calc(config.variable(space, 1.6rem) * -1); margin-right: calc(config.variable(space, 1.6rem) * -1); padding-left: config.variable(space, 1.6rem); padding-right: config.variable(space, 1.6rem);}
 .tab-head.option-full .tab-menu {flex-grow: 1; text-align: center;}
 .tab-head.option-full .tab-menu + .tab-menu {margin-left: 0;}
 
@@ -35,18 +35,18 @@
 }
 
 /* 탭 - 박스형 */
-.tab-head.option-box {flex-wrap: nowrap; background-color: var(--#{config.$prefix}color-base-10); border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-20); border-radius: var(--radius-md);}
+.tab-head.option-box {flex-wrap: nowrap; background-color: config.variable(color, #f8f9fa); border: config.variable(border, .1rem) solid config.variable(color, #e9ecef); border-radius: config.variable(radius, .8rem);}
 .tab-head.option-box::before,
 .tab-head.option-box .tab-menu::after {display: none;}
 .tab-head.option-box .tab-menu {flex-grow: 1; flex-shrink: 1; flex-basis: 100%;}
-.tab-head.option-box .tab-menu > a {display: flex; align-items: center; justify-content: center; height: 100%; padding: 1.1rem 1.2rem 1.075rem; text-align: center; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
-.tab-head.option-box .tab-menu.is-active > a {position: relative; background-color: var(--#{config.$prefix}color-white); color: var(--#{config.$prefix}color-black);}
-.tab-head.option-box .tab-menu.is-active > a::before {content: ''; position: absolute; z-index: 1; top: -.1rem; bottom: -.1rem; left: -.1rem; right: -.1rem; width: calc(100% + .2rem); height: calc(100% + .2rem); border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-black); border-radius: var(--radius-md); box-shadow: var(--shadow-md);}
+.tab-head.option-box .tab-menu > a {display: flex; align-items: center; justify-content: center; height: 100%; padding: 1.1rem 1.2rem 1.075rem; text-align: center; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #6c757d);}
+.tab-head.option-box .tab-menu.is-active > a {position: relative; background-color: config.variable(color, #fff); color: config.variable(color, #000);}
+.tab-head.option-box .tab-menu.is-active > a::before {content: ''; position: absolute; z-index: 1; top: -.1rem; bottom: -.1rem; left: -.1rem; right: -.1rem; width: calc(100% + .2rem); height: calc(100% + .2rem); border: config.variable(border, .1rem) solid config.variable(color, #000); border-radius: config.variable(radius, .8rem); box-shadow: var(--shadow-md);}
 
 /* 탭 - 텍스트형 */
-.tab-head.option-txt .tab-menu::after {bottom: auto; top: 50%; left: 0; width: var(--#{config.$prefix}border-sm); height: 1.4rem; margin-left: 0; margin-top: -.7rem; background-color: var(--#{config.$prefix}color-base-30);}
-.tab-head.option-txt .tab-menu > a {padding: 1.45rem .8rem 1.45rem .9rem; line-height: 1.358; font-weight: var(--#{config.$prefix}font-regular); font-size: var(--#{config.$prefix}font-body-md);}
-.tab-head.option-txt .tab-menu.is-active > a {font-weight: var(--#{config.$prefix}font-semibold);}
+.tab-head.option-txt .tab-menu::after {bottom: auto; top: 50%; left: 0; width: config.variable(border, .1rem); height: 1.4rem; margin-left: 0; margin-top: -.7rem; background-color: config.variable(color, #dee2e6);}
+.tab-head.option-txt .tab-menu > a {padding: 1.45rem .8rem 1.45rem .9rem; line-height: 1.358; font-weight: config.variable(font, 400); font-size: config.variable(font, body, 1.4rem);}
+.tab-head.option-txt .tab-menu.is-active > a {font-weight: config.variable(font, 600);}
 .tab-head.option-txt .tab-menu:first-child::after {display: none;}
 .tab-head.option-txt .tab-menu:first-child > a {padding-left: .2rem;}
 
@@ -58,12 +58,12 @@
 /** 탭 - 칩 */
 .tab-head.option-chip {overflow: hidden;}
 .tab-head.option-chip::before {display: none;}
-.tab-head.option-chip .tab-menu {background-color: var(--#{config.$prefix}color-base-10); border-radius: var(--radius-xl); transition: all var(--animation-speed) var(--animation-timing-base), transform var(--animation-speed-fast) var(--animation-timing-base);}
-.tab-head.option-chip .tab-menu + .tab-menu {margin-left: var(--#{config.$prefix}space-xs);}
-.tab-head.option-chip .tab-menu > a {padding: .842rem 1.6rem .8rem; line-height: 1.35; font-weight: var(--#{config.$prefix}font-bold); font-size: var(--#{config.$prefix}font-body-lg); color: var(--#{config.$prefix}color-base-40); transition: all var(--animation-speed) var(--animation-timing-base);}
+.tab-head.option-chip .tab-menu {background-color: config.variable(color, #f8f9fa); border-radius: var(--radius-xl); transition: all config.variable(animation, speed, base) config.variable(animation, timing, base), transform config.variable(animation, speed, fast) config.variable(animation, timing, base);}
+.tab-head.option-chip .tab-menu + .tab-menu {margin-left: config.variable(space, .8rem);}
+.tab-head.option-chip .tab-menu > a {padding: .842rem 1.6rem .8rem; line-height: 1.35; font-weight: var(--#{config.$prefix}font-bold); font-size: config.variable(font, body, 1.6rem); color: config.variable(color, #ced4da); transition: all config.variable(animation, speed, base) config.variable(animation, timing, base);}
 .tab-head.option-chip .tab-menu::after {display: none;}
 .tab-head.option-chip .tab-menu.is-active::after {display: none;}
-.tab-head.option-chip .tab-menu.is-active {background-color:var(--#{config.$prefix}color-primary-50);}
-.tab-head.option-chip .tab-menu.is-active > a {color: var(--#{config.$prefix}color-white);}
-.tab-head.option-chip .tab-menu:active {background-color:var(--#{config.$prefix}color-primary-60); transition: all var(--animation-speed) var(--animation-timing-base);}
-.tab-head.option-chip .tab-menu:active > a {color: var(--#{config.$prefix}color-white);}
+.tab-head.option-chip .tab-menu.is-active {background-color: config.variable(color, #0d6efd);}
+.tab-head.option-chip .tab-menu.is-active > a {color: config.variable(color, #fff);}
+.tab-head.option-chip .tab-menu:active {background-color: config.variable(color, #0a58ca); transition: all config.variable(animation, speed, base) config.variable(animation, timing, base);}
+.tab-head.option-chip .tab-menu:active > a {color: config.variable(color, #fff);}

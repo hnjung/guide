@@ -6,46 +6,46 @@
 @use 'config' as config;
 
 /* 게시판형목록 */
-.board-list {border-top: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-black);}
-.board-item {border-bottom: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-10);}
+.board-list {border-top: config.variable(border, .1rem) solid config.variable(color, #000);}
+.board-item {border-bottom: config.variable(border, .1rem) solid config.variable(color, #f8f9fa);}
 
 .board-link {display: block; position: relative;}
-.board-link::before {content: ''; position: absolute; top: 50%; right: .3rem; width: .7rem; height: .7rem; margin-top: -.35rem; border-right: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-black); border-bottom: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-black); transform: rotate(-45deg);}
+.board-link::before {content: ''; position: absolute; top: 50%; right: .3rem; width: .7rem; height: .7rem; margin-top: -.35rem; border-right: config.variable(border, .1rem) solid config.variable(color, #000); border-bottom: config.variable(border, .1rem) solid config.variable(color, #000); transform: rotate(-45deg);}
 
 /* 카드형목록 */
-.card-item {position: relative; padding: 2.3rem; background-color: var(--#{config.$prefix}color-white); border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-30); border-radius: var(--#{config.$prefix}radius-xl); box-shadow: var(--shadow-sm);}
+.card-item {position: relative; padding: 2.3rem; background-color: config.variable(color, #fff); border: config.variable(border, .1rem) solid config.variable(color, #dee2e6); border-radius: config.variable(radius, 1.6rem); box-shadow: var(--shadow-sm);}
 .card-item.is-active {border-color: #1A57FF;}
 .card-item[aria-selected='true'] {border-color: #1A57FF;}
 
-.card-item + .card-item {margin-top: var(--#{config.$prefix}space-md);}
+.card-item + .card-item {margin-top: config.variable(space, 1.6rem);}
 .card-title {position: relative; line-height: 1;}
 .card-item.option-more .card-title,
-.card-link .card-title {padding-right: var(--#{config.$prefix}space-md);}
+.card-link .card-title {padding-right: config.variable(space, 1.6rem);}
 
 /* 테이블 */
 /** 테이블 - 데이타형 */
-.data-body {border-top: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-50);}
-.data-list {width: 100%; color: var(--#{config.$prefix}color-base-70); border-collapse: separate;}
+.data-body {border-top: config.variable(border, .1rem) solid var(--#{config.$prefix}color-base-50);}
+.data-list {width: 100%; color: config.variable(color, #495057); border-collapse: separate;}
 .data-list > thead > tr > th,
 .data-list > tbody > tr > th,
-.data-list > tbody > tr > td {padding: 1.2rem 1.0rem 1.15rem; border-right: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-20); border-bottom: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-20); text-align: center; font-weight: var(--#{config.$prefix}font-regular); font-size: var(--#{config.$prefix}font-body-md);}
+.data-list > tbody > tr > td {padding: 1.2rem 1.0rem 1.15rem; border-right: config.variable(border, .1rem) solid config.variable(color, #e9ecef); border-bottom: config.variable(border, .1rem) solid config.variable(color, #e9ecef); text-align: center; font-weight: config.variable(font, 400); font-size: config.variable(font, body, 1.4rem);}
 .data-list > tbody > tr > td.align-left {text-align: left;}
 .data-list > tbody > tr > td.align-right {text-align: right;}
 .data-list > thead > tr > th,
-.data-list > tbody > tr > th {background-color: var(--#{config.$prefix}color-base-10); font-weight: var(--#{config.$prefix}font-medium); color: var(--#{config.$prefix}color-base-80);}
+.data-list > tbody > tr > th {background-color: config.variable(color, #f8f9fa); font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #343a40);}
 .data-list > thead > tr > th:last-child,
 .data-list > tbody > tr > th:last-child,
 .data-list > tbody > tr > td:last-child,
 .data-list > tfoot > tr > td:last-child {border-right: 0;}
 .data-list > thead > tr > th:last-child.line,
-.data-list > tbody > tr > td:last-child.line {border-right: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-20);}
+.data-list > tbody > tr > td:last-child.line {border-right: config.variable(border, .1rem) solid config.variable(color, #e9ecef);}
 .data-list > tfoot > tr > th,
-.data-list > tfoot > tr > td {padding: 1.2rem 1.0rem 1.15rem; border-right: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-20); border-bottom: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-20); text-align: center; font-weight: var(--#{config.$prefix}font-medium); font-size: var(--#{config.$prefix}font-body-md); background-color: var(--#{config.$prefix}color-primary-10); color: var(--#{config.$prefix}color-black);}
-.data-list > tfoot > tr > td {text-align: right; color:var(--#{config.$prefix}color-primary-50);}
+.data-list > tfoot > tr > td {padding: 1.2rem 1.0rem 1.15rem; border-right: config.variable(border, .1rem) solid config.variable(color, #e9ecef); border-bottom: config.variable(border, .1rem) solid config.variable(color, #e9ecef); text-align: center; font-weight: var(--#{config.$prefix}font-medium); font-size: config.variable(font, body, 1.4rem); background-color: var(--#{config.$prefix}color-primary-10); color: config.variable(color, #000);}
+.data-list > tfoot > tr > td {text-align: right; color: config.variable(color, #0d6efd);}
 .data-list > tfoot > tr > td.align-left {text-align: left;}
 .data-list > tfoot > tr > td.align-right {text-align: right;}
 
-.data-list .data-select {width: 5.0rem; padding-top: 0; padding-bottom: 0; padding-left: var(--#{config.$prefix}space-xs); padding-right: var(--#{config.$prefix}space-xs);}
+.data-list .data-select {width: 5.0rem; padding-top: 0; padding-bottom: 0; padding-left: config.variable(space, .8rem); padding-right: config.variable(space, .8rem);}
 .data-list .data-select .radio-item .label,
 .data-list .data-select .checkbox-item .label,
 .data-list .data-select .switch-item .label {overflow: hidden; position: absolute; clip: rect(0, 0, 0, 0); clip-path: polygon(0 0, 0 0, 0 0); width: 1px; height: 1px; margin: -1px;}
@@ -55,37 +55,37 @@
 .data-list > tbody > tr.is-active {background-color: var(--#{config.$prefix}color-primary-10);}
 
 .data-list .data-radio {padding: 0;}
-.data-list .data-radio .radio-item {display: block; padding: var(--#{config.$prefix}space-md) var(--#{config.$prefix}space-xs);}
-.data-list .data-radio .radio-item .label {display: block; margin-top: var(--#{config.$prefix}space-xxs); padding-left: 0; line-height: 1.35; font-size: var(--#{config.$prefix}font-body-md);}
+.data-list .data-radio .radio-item {display: block; padding: config.variable(space, 1.6rem) config.variable(space, .8rem);}
+.data-list .data-radio .radio-item .label {display: block; margin-top: config.variable(space, .4rem); padding-left: 0; line-height: 1.35; font-size: config.variable(font, body, 1.4rem);}
 .data-list .data-radio .radio-item .control[type='radio']:checked {animation-name: animation-data-radio;}
-.data-list .data-radio .txt {margin-top: var(--#{config.$prefix}space-xxs); line-height: 1.35; font-size: var(--#{config.$prefix}font-body-sm); color: var(--#{config.$prefix}color-base-70);}
-.data-list .data-radio .txt > strong {display: block; line-height: 1.5; font-weight: var(--#{config.$prefix}font-medium); font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-black);}
+.data-list .data-radio .txt {margin-top: config.variable(space, .4rem); line-height: 1.35; font-size: config.variable(font, body, 1.2rem); color: config.variable(color, #495057);}
+.data-list .data-radio .txt > strong {display: block; line-height: 1.5; font-weight: var(--#{config.$prefix}font-medium); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #000);}
 
-.data-list .btn.texted > span {font-size: var(--#{config.$prefix}font-body-md);}
-.data-list .btn.texted:not(.primary) > span {color: var(--#{config.$prefix}color-base-70);}
+.data-list .btn.texted > span {font-size: config.variable(font, body, 1.4rem);}
+.data-list .btn.texted:not(.primary) > span {color: config.variable(color, #495057);}
 
 @keyframes animation-data-radio {
 	0% {
 		transform: scale3d(1, 1, 1);
-		border-color: var(--#{config.$prefix}color-base-40);
-		background-color: var(--#{config.$prefix}color-white);
+		border-color: config.variable(color, #ced4da);
+		background-color: config.variable(color, #fff);
 	}
 	30% {
 		transform: scale3d(.6, .6, 1);
 	}
 	100% {
 		transform: scale3d(1, 1, 1);
-		border-color:var(--#{config.$prefix}color-primary-70);
-		background-color:var(--#{config.$prefix}color-primary-70);
+		border-color: config.variable(color, #084298);
+		background-color: config.variable(color, #084298);
 	}
 }
 
-.data-list td .con-helper {display: flex; align-items: center; font-weight: var(--#{config.$prefix}font-regular);}
-.data-list td .con-helper .txt {font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-50);}
-.data-list td .con-helper .helper {flex: none; margin-left: var(--#{config.$prefix}space-xxs);}
+.data-list td .con-helper {display: flex; align-items: center; font-weight: config.variable(font, 400);}
+.data-list td .con-helper .txt {font-size: config.variable(font, body, 1.4rem); color: var(--#{config.$prefix}color-base-50);}
+.data-list td .con-helper .helper {flex: none; margin-left: config.variable(space, .4rem);}
 
-.data-list > thead .txt {display: block; margin-top: var(--#{config.$prefix}space-xxs); font-weight: var(--#{config.$prefix}font-regular); font-size: var(--font-13-sm); color: var(--#{config.$prefix}color-base-70);}
-.data-list > thead .num {font-size: var(--#{config.$prefix}font-body-sm); color: var(--#{config.$prefix}color-base-60);}
+.data-list > thead .txt {display: block; margin-top: config.variable(space, .4rem); font-weight: config.variable(font, 400); font-size: var(--font-13-sm); color: config.variable(color, #495057);}
+.data-list > thead .num {font-size: config.variable(font, body, 1.2rem); color: config.variable(color, #6c757d);}
 
 /*** 테이블 - 데이타형 - 가로형 */
 .data-body.option-row .data-list > tbody > tr > th,
@@ -99,25 +99,25 @@
 /*** 테이블 - 데이타형 - 왼쪽 고정 */
 .data-body.option-fixed-side {position: relative; overflow-x: auto; max-width: 100%;}
 .data-body.option-fixed-side .data-list {width: max-content; min-width: 100%;}
-.data-body.option-fixed-side .data-list > tbody > tr > th {position: sticky; z-index: 1; left: 0; font-weight: var(--#{config.$prefix}font-regular);}
+.data-body.option-fixed-side .data-list > tbody > tr > th {position: sticky; z-index: 1; left: 0; font-weight: config.variable(font, 400);}
 
 /*** 테이블 - 데이타형 - 상단 + 왼쪽 고정 */
 .data-body.option-fixed-mix {position: relative; overflow-y: auto; overflow-x: auto; max-width: 100%; max-height: calc((4.7rem * 10) + .2rem);}
 .data-body.option-fixed-mix .data-list {width: max-content; min-width: 100%;}
 .data-body.option-fixed-mix .data-list > thead > tr > th {position: sticky; z-index: 1; top: 0;}
 .data-body.option-fixed-mix .data-list > thead > tr > th:first-child {z-index: 2; left: 0;}
-.data-body.option-fixed-mix .data-list > tbody > tr > th {position: sticky; z-index: 1; left: 0; font-weight: var(--#{config.$prefix}font-regular);}
+.data-body.option-fixed-mix .data-list > tbody > tr > th {position: sticky; z-index: 1; left: 0; font-weight: config.variable(font, 400);}
 
 /*** 테이블 - 데이타형 - 상단 + 왼쪽 + 하단 고정 */
 .data-body.option-fixed-total {position: relative; overflow-y: auto; overflow-x: auto; max-width: 100%; max-height: calc((4.7rem * 10) + .2rem);}
 .data-body.option-fixed-total .data-list {width: max-content; min-width: 100%;}
 .data-body.option-fixed-total .data-list > thead > tr > th {position: sticky; z-index: 1; top: 0;}
 .data-body.option-fixed-total .data-list > thead > tr > th:first-child {z-index: 2; left: 0;}
-.data-body.option-fixed-total .data-list > tbody > tr > th {position: sticky; z-index: 1; left: 0; font-weight: var(--#{config.$prefix}font-regular);}
+.data-body.option-fixed-total .data-list > tbody > tr > th {position: sticky; z-index: 1; left: 0; font-weight: config.variable(font, 400);}
 .data-body.option-fixed-total .data-list > tbody > tr:last-child > th,
 .data-body.option-fixed-total .data-list > tbody > tr:last-child > td {border-bottom: 0;}
 .data-body.option-fixed-total .data-list > tfoot > tr > th,
-.data-body.option-fixed-total .data-list > tfoot > tr > td {position: sticky; z-index: 1; bottom: 0; border-top: var(--#{config.$prefix}border-sm) solidvar(--#{config.$prefix}color-primary-30);}
+.data-body.option-fixed-total .data-list > tfoot > tr > td {position: sticky; z-index: 1; bottom: 0; border-top: config.variable(border, .1rem) solid config.variable(color, #6ea8fe);}
 .data-body.option-fixed-total .data-list > tfoot > tr > th:first-child {z-index: 2; left: 0;}
 .data-body.option-fixed-total .data-list > tfoot > tr > td:first-child {z-index: 2; left: 0;}
 
@@ -125,7 +125,7 @@
 .data-body.option-react .data-list > tbody > tr {display: flex; flex-wrap: wrap;}
 .data-body.option-react .data-list > tbody > tr > th,
 .data-body.option-react .data-list > tbody > tr > td {display: flex; align-items: center; text-align: left;}
-.data-body.option-react .data-list > tbody > tr > th {flex-shrink: 0; width: 120px; font-weight: var(--#{config.$prefix}font-regular);}
+.data-body.option-react .data-list > tbody > tr > th {flex-shrink: 0; width: 120px; font-weight: config.variable(font, 400);}
 .data-body.option-react .data-list > tbody > tr > td {flex-shrink: 1; width: calc(100% - 120px); border-right: 0;}
 
 .data-body.option-x-scroll {overflow-x: auto; max-width: 100%;}
@@ -138,23 +138,23 @@
 }
 
 /*** 테이블 - 데이타형 - 접고펼치기 */
-.data.option-fold .inner {overflow: hidden; max-height: 0; transition: all var(--animation-speed) var(--animation-timing-base);}
+.data.option-fold .inner {overflow: hidden; max-height: 0; transition: all config.variable(animation, speed, base) config.variable(animation, timing, base);}
 .data.option-fold.is-open .inner {max-height: initial;}
-.data.option-fold .btn-fold {position: absolute; top: var(--#{config.$prefix}space-xxs); right: var(--#{config.$prefix}space-xxs); width: var(--icon-sm); height: var(--icon-sm); transform: rotate(0deg); transition: transform var(--animation-speed) var(--animation-timing-base);}
+.data.option-fold .btn-fold {position: absolute; top: config.variable(space, .4rem); right: config.variable(space, .4rem); width: var(--icon-sm); height: var(--icon-sm); transform: rotate(0deg); transition: transform config.variable(animation, speed, base) config.variable(animation, timing, base);}
 .data.option-fold .btn-fold::before {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -2) calc(var(--icon-sm) * -1); background-size: var(--bg-size-sm);}
 .data.option-fold.is-open .btn-fold {transform: rotate(-180deg);}
 
-.data.option-fold .list-head {margin-bottom: 0; padding-bottom: 1.6rem; border-bottom: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-50);}
+.data.option-fold .list-head {margin-bottom: 0; padding-bottom: 1.6rem; border-bottom: config.variable(border, .1rem) solid var(--#{config.$prefix}color-base-50);}
 .data.option-fold .list-title {width: 100%;}
 .data.option-fold .inner {margin-top: -.1rem;}
 
 /*** 테이블 - 데이타형 - 열선택 */
-.data-body.rounded {border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-40); border-radius: 1.6rem;}
-.data-body.rounded .data-list > thead .is-select {background-color:var(--#{config.$prefix}color-primary-50);}
+.data-body.rounded {border: config.variable(border, .1rem) solid config.variable(color, #ced4da); border-radius: 1.6rem;}
+.data-body.rounded .data-list > thead .is-select {background-color: config.variable(color, #0d6efd);}
 .data-body.rounded .data-list > thead .is-select .radio-item .label,
 .data-body.rounded .data-list > thead .is-select .txt,
-.data-body.rounded .data-list > thead .is-select .txt > strong {color: var(--#{config.$prefix}color-white);}
-.data-body.rounded .data-list > tbody .is-select {background-color: var(--#{config.$prefix}color-primary-10); color:var(--#{config.$prefix}color-primary-50);}
+.data-body.rounded .data-list > thead .is-select .txt > strong {color: config.variable(color, #fff);}
+.data-body.rounded .data-list > tbody .is-select {background-color: var(--#{config.$prefix}color-primary-10); color: config.variable(color, #0d6efd);}
 .data-body.rounded .data-list > tbody > tr:last-child > th,
 .data-body.rounded .data-list > tbody > tr:last-child > td {border-bottom: none;}
 
@@ -163,15 +163,15 @@
 	.data-body.rounded {max-height: calc((8.3rem * 5) + 13.3rem);}
 	.data-body.rounded .data-list > thead > tr > th,
 	.data-body.rounded .data-list > tbody > tr:nth-child(even) > th,
-	.data-body.rounded .data-list > tbody > tr:nth-child(even) > td {border-bottom-color: var(--#{config.$prefix}color-base-40);}
+	.data-body.rounded .data-list > tbody > tr:nth-child(even) > td {border-bottom-color: config.variable(color, #ced4da);}
 
-	.data-body.rounded .data-list > tbody > tr > td.detail {padding-top: .8rem; padding-bottom: .75rem; text-align: left; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-80);}
+	.data-body.rounded .data-list > tbody > tr > td.detail {padding-top: .8rem; padding-bottom: .75rem; text-align: left; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #343a40);}
 }
 
 /*** 테이블 - 데이타형 - 열선택 - (태블릿+PC) */
 @media screen and (min-width: 768px) {
 	.data-body.rounded {max-height: calc((4.7rem * 10) + 13.3rem);}
-	.data-body.rounded .data-list > tbody > tr > td.detail {text-align: left; font-weight: var(--#{config.$prefix}font-medium); color: var(--#{config.$prefix}color-base-80);}
+	.data-body.rounded .data-list > tbody > tr > td.detail {text-align: left; font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #343a40);}
 }
 
 /*** 테이블 - 데이타형 - 열이동 */
@@ -179,7 +179,7 @@
 .data-body.option-move .data-list {width: max-content; min-width: 100%;}
 
 .data-body.option-move .data-list > tbody > tr > td:first-child {position: sticky; z-index: 1; left: 0;}
-.data-body.option-move .data-list > tbody > tr > td:first-child:not(.is-select) {background-color: var(--#{config.$prefix}color-white);}
+.data-body.option-move .data-list > tbody > tr > td:first-child:not(.is-select) {background-color: config.variable(color, #fff);}
 .data-body.option-move .data-list > thead > tr > th {z-index: 2;}
 .data-body.option-move .data-list > thead > tr > th:first-child {left: 0; z-index: 3;}
 .data-body.option-move .data-list > tbody > tr > td.detail {border-right: 0;}
@@ -189,54 +189,54 @@
 /*** 테이블 - 이중 */
 .data-list .table-inner {display: none;}
 .data-list .table-inner.is-open {display: table-row;}
-.data-list .table-inner > td {padding: 2.0rem 2.0rem 3.2rem; background-color: var(--#{config.$prefix}color-white);}
+.data-list .table-inner > td {padding: 2.0rem 2.0rem 3.2rem; background-color: config.variable(color, #fff);}
 
-.data-list .data-control {padding-top: 0; padding-bottom: 0; padding-left: var(--#{config.$prefix}space-xs); padding-right: var(--#{config.$prefix}space-xs);}
-.data-list .btn-row-fold {display: inline-block; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); transform: rotate(0deg); transition: transform var(--animation-speed) var(--animation-timing-base);}
+.data-list .data-control {padding-top: 0; padding-bottom: 0; padding-left: config.variable(space, .8rem); padding-right: config.variable(space, .8rem);}
+.data-list .btn-row-fold {display: inline-block; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); transform: rotate(0deg); transition: transform config.variable(animation, speed, base) config.variable(animation, timing, base);}
 .data-list .btn-row-fold::before {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-url-md) no-repeat calc(var(--#{config.$prefix}icon-md) * -3) calc(var(--#{config.$prefix}icon-md) * -1); background-size: var(--bg-size-md);}
 .data-list > tbody > tr.is-active .btn-row-fold {transform: rotate(-180deg);}
 
-.data-sub-list {overflow: hidden; width: 100%; border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-30); border-radius: var(--radius-sm); border-collapse: separate; color: var(--#{config.$prefix}color-base-70);}
+.data-sub-list {overflow: hidden; width: 100%; border: config.variable(border, .1rem) solid config.variable(color, #dee2e6); border-radius: var(--radius-sm); border-collapse: separate; color: config.variable(color, #495057);}
 .data-sub-list > thead > tr > th,
 .data-sub-list > tbody > tr > th,
-.data-sub-list > tbody > tr > td {padding: 1.2rem 1.0rem 1.3rem; border-right: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-20); border-bottom: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-20); text-align: center; font-weight: var(--#{config.$prefix}font-regular); font-size: var(--#{config.$prefix}font-body-md);}
+.data-sub-list > tbody > tr > td {padding: 1.2rem 1.0rem 1.3rem; border-right: config.variable(border, .1rem) solid config.variable(color, #e9ecef); border-bottom: config.variable(border, .1rem) solid config.variable(color, #e9ecef); text-align: center; font-weight: config.variable(font, 400); font-size: config.variable(font, body, 1.4rem);}
 .data-sub-list > tbody > tr > td.align-left {text-align: left;}
 .data-sub-list > tbody > tr > td.align-right {text-align: right;}
 .data-sub-list > thead > tr > th,
-.data-sub-list > tbody > tr > th {background-color: var(--#{config.$prefix}color-base-10); font-weight: var(--#{config.$prefix}font-regular); color: var(--#{config.$prefix}color-base-80);}
+.data-sub-list > tbody > tr > th {background-color: config.variable(color, #f8f9fa); font-weight: config.variable(font, 400); color: config.variable(color, #343a40);}
 .data-sub-list > thead > tr > th:last-child,
 .data-sub-list > tbody > tr > th:last-child,
 .data-sub-list > tbody > tr > td:last-child {border-right: 0;}
 .data-sub-list > tbody > tr:last-child > th,
 .data-sub-list > tbody > tr:last-child > td {border-bottom: 0;}
-.data-sub-list .name {display: block; font-weight: var(--#{config.$prefix}font-medium); color: var(--#{config.$prefix}color-base-80);}
-.data-sub-list .value {color: var(--#{config.$prefix}color-base-70);}
+.data-sub-list .name {display: block; font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #343a40);}
+.data-sub-list .value {color: config.variable(color, #495057);}
 .data-sub-list .name ~ .value {margin-top: .2rem;}
 
 /*** 테이블 - 접고펼치기 */
 .data.option-fold tr.detail {display: none;}
 .data.option-fold.is-open tr.detail {display: table-row;}
 
-.btn-data-more {display: block; width: 100%; position: relative; padding: 1.05rem 0 1.1rem; border-bottom: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-20); line-height: 1;}
-.btn-data-more > span {display: inline-block; vertical-align: middle; line-height: 1.5; font-size: var(--#{config.$prefix}font-body-md); color: var(--#{config.$prefix}color-base-60);}
+.btn-data-more {display: block; width: 100%; position: relative; padding: 1.05rem 0 1.1rem; border-bottom: config.variable(border, .1rem) solid config.variable(color, #e9ecef); line-height: 1;}
+.btn-data-more > span {display: inline-block; vertical-align: middle; line-height: 1.5; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #6c757d);}
 .btn-data-more::after {content: ''; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); margin-left: .4rem; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -8) calc(var(--icon-sm) * -2); background-size: var(--bg-size-sm); vertical-align: middle; transform: rotate3d(0, 0, 1, 180deg);}
 .btn-data-more > .txt::before {content: '더보기';}
 .data.is-open .btn-data-more::after {transform: rotate3d(0, 0, 1, 0deg);}
 .data.is-open .btn-data-more > .txt::before {content: '닫기';}
 
 /** 테이블 - 일반형 */
-.table-list {width: 100%; border-collapse: separate; color: var(--#{config.$prefix}color-black);}
-.table-list > thead > tr > th {height: 3.6rem; padding: calc(var(--#{config.$prefix}space-xs) - var(--#{config.$prefix}border-sm)); background-color: var(--#{config.$prefix}color-primary-10); border: var(--#{config.$prefix}border-sm) solidvar(--#{config.$prefix}color-primary-20); border-right: 0; text-align: center; font-weight: var(--#{config.$prefix}font-regular); font-size: var(--#{config.$prefix}font-body-md);}
-.table-list > thead > tr > th:first-child {border-top-left-radius: var(--radius-md);}
-.table-list > thead > tr > th:last-child {border-right: var(--#{config.$prefix}border-sm) solidvar(--#{config.$prefix}color-primary-20); border-top-right-radius: var(--radius-md);}
-.table-list > tbody > tr > th {background-color: #F5F6F8; border: var(--#{config.$prefix}border-sm) solidvar(--#{config.$prefix}color-primary-20); border-right: 0; text-align: center; font-weight: var(--#{config.$prefix}font-regular); font-size: var(--#{config.$prefix}font-body-md);}
-.table-list > tbody > tr > td {border: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-10); border-right: 0; font-size: var(--#{config.$prefix}font-body-md);}
-.table-list > tbody > tr > th:last-child {border-right: var(--#{config.$prefix}border-sm) solidvar(--#{config.$prefix}color-primary-20);}
-.table-list > tbody > tr > td:last-child {border-right: var(--#{config.$prefix}border-sm) solid var(--#{config.$prefix}color-base-10);}
+.table-list {width: 100%; border-collapse: separate; color: config.variable(color, #000);}
+.table-list > thead > tr > th {height: 3.6rem; padding: calc(config.variable(space, .8rem) - config.variable(border, .1rem)); background-color: var(--#{config.$prefix}color-primary-10); border: config.variable(border, .1rem) solid config.variable(color, #9ec5fe); border-right: 0; text-align: center; font-weight: config.variable(font, 400); font-size: config.variable(font, body, 1.4rem);}
+.table-list > thead > tr > th:first-child {border-top-left-radius: config.variable(radius, .8rem);}
+.table-list > thead > tr > th:last-child {border-right: config.variable(border, .1rem) solid config.variable(color, #9ec5fe); border-top-right-radius: config.variable(radius, .8rem);}
+.table-list > tbody > tr > th {background-color: #F5F6F8; border: config.variable(border, .1rem) solid config.variable(color, #9ec5fe); border-right: 0; text-align: center; font-weight: config.variable(font, 400); font-size: config.variable(font, body, 1.4rem);}
+.table-list > tbody > tr > td {border: config.variable(border, .1rem) solid config.variable(color, #f8f9fa); border-right: 0; font-size: config.variable(font, body, 1.4rem);}
+.table-list > tbody > tr > th:last-child {border-right: config.variable(border, .1rem) solid config.variable(color, #9ec5fe);}
+.table-list > tbody > tr > td:last-child {border-right: config.variable(border, .1rem) solid config.variable(color, #f8f9fa);}
 .table-list > tbody > tr > th,
-.table-list > tbody > tr > td {height: 3.6rem; padding: calc(var(--#{config.$prefix}space-xs) - var(--#{config.$prefix}border-sm)); border-top: 0;}
-.table-list > tbody > tr > th + td {border-left-color:var(--#{config.$prefix}color-primary-20);}
+.table-list > tbody > tr > td {height: 3.6rem; padding: calc(config.variable(space, .8rem) - config.variable(border, .1rem)); border-top: 0;}
+.table-list > tbody > tr > th + td {border-left-color: config.variable(color, #9ec5fe);}
 .table-list > tbody > tr:last-child > th:first-child,
-.table-list > tbody > tr:last-child > td:first-child {border-bottom-left-radius: var(--radius-md);}
+.table-list > tbody > tr:last-child > td:first-child {border-bottom-left-radius: config.variable(radius, .8rem);}
 .table-list > tbody > tr:last-child > th:last-child,
-.table-list > tbody > tr:last-child > td:last-child {border-bottom-right-radius: var(--radius-md);}
+.table-list > tbody > tr:last-child > td:last-child {border-bottom-right-radius: config.variable(radius, .8rem);}
