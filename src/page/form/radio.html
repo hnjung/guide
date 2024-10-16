@@ -1,0 +1,343 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'form',
+	gnb2nd: 'radio',
+	title: '라디오버튼'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section -->
+	<section class="section" id="form-radioButton">
+		<h2 class="title-h2"><span class="txt">@라디오버튼</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">다중</span></h3>
+			<!-- .box -->
+			<div class="box option-line">
+				<!-- .radio* -->
+				<fieldset class="radio-group">
+					<label for="radioA1" class="radio-item">
+						<input type="radio" name="radioA" id="radioA1" class="control" checked>
+						<span class="label">옵션A1</span>
+					</label>
+					<label for="radioA2" class="radio-item">
+						<input type="radio" name="radioA" id="radioA2" class="control">
+						<span class="label">옵션A2</span>
+					</label>
+					<label for="radioA5" class="radio-item is-error">
+						<input type="radio" name="radioA11" id="radioA5" class="control" checked>
+						<span class="label">옵션A5</span>
+					</label>
+					<label for="radioA3" class="radio-item">
+						<input type="radio" name="radioA" id="radioA3" class="control" disabled>
+						<span class="label">옵션A3</span>
+					</label>
+					<label for="radioA4" class="radio-item">
+						<input type="radio" name="radioA1" id="radioA4" class="control" checked disabled>
+						<span class="label">옵션A3</span>
+					</label>
+				</fieldset>
+				<!--// .radio* -->
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">오른쪽 정렬 (.option-right)</span></h3>
+			<!-- .box -->
+			<div class="box option-line">
+				<!-- .radio* -->
+				<fieldset class="radio-group option-right"><!-- @set: option-right -->
+					<label for="radioB1" class="radio-item">
+						<input type="radio" name="radioB" id="radioB1" class="control" checked>
+						<span class="label">옵션B1</span>
+					</label>
+					<label for="radioB2" class="radio-item">
+						<input type="radio" name="radioB" id="radioB2" class="control">
+						<span class="label">옵션B2</span>
+					</label>
+					<label for="radioB3" class="radio-item">
+						<input type="radio" name="radioB" id="radioB3" class="control" disabled>
+						<span class="label">옵션B3</span>
+					</label>
+					<label for="radioB4" class="radio-item">
+						<input type="radio" name="radioB1" id="radioB4" class="control" checked disabled>
+						<span class="label">옵션B3</span>
+					</label>
+				</fieldset>
+				<!--// .radio* -->
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">텍스트 혼합</span></h3>
+			<!-- .box -->
+			<div class="box option-line">
+				<!-- .radio* -->
+				<fieldset class="radio-group">
+					<span class="txt-subject">항목명 :</span>
+					<label for="radioC1" class="radio-item">
+						<input type="radio" name="radioC" id="radioC1" class="control">
+						<span class="label">옵션C1</span>
+					</label>
+				</fieldset>
+				<!--// .radio* -->
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">단일</span></h3>
+			<!-- .box -->
+			<div class="box option-line">
+				<!-- .radio* -->
+				<label for="radioD1" class="radio-item">
+					<input type="radio" name="radioD" id="radioD1" class="control">
+					<span class="label">옵션D1</span>
+				</label>
+				<!--// .radio* -->
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">박스형 - 다중 (.option-boxed)</span></h3>
+			<!-- .radio* -->
+			<fieldset class="radio-group option-boxed"><!-- @set: option-boxed -->
+				<label for="radioBoxA1" class="radio-item">
+					<input type="radio" name="radioBoxA" id="radioBoxA1" class="control" checked>
+					<span class="label"><em class="txt">박스형 라디오버튼 옵션1</em></span>
+				</label>
+				<label for="radioBoxA2" class="radio-item">
+					<input type="radio" name="radioBoxA" id="radioBoxA2" class="control">
+					<span class="label"><em class="txt">박스형 라디오버튼 옵션2 내용이 길어질 경우 두 줄 처리 상단 정렬됨 내용이 길어질 경우 두 줄 처리 상단 정렬됨 내용이 길어질 경우 두 줄 처리 상단 정렬됨</em></span>
+				</label>
+				<label for="radioBoxB5" class="radio-item is-error">
+					<input type="radio" name="radioBoxA111" id="radioBoxB5" class="control" checked>
+					<span class="label"><em class="txt">박스형 라디오버튼 옵션3</em></span>
+				</label>
+				<label for="radioBoxB3" class="radio-item">
+					<input type="radio" name="radioBoxB" id="radioBoxB3" class="control" disabled>
+					<span class="label"><em class="txt">박스형 라디오버튼 옵션3</em></span>
+				</label>
+				<label for="radioBoxB4" class="radio-item">
+					<input type="radio" name="radioBoxB" id="radioBoxB4" class="control" checked disabled>
+					<span class="label"><em class="txt">박스형 라디오버튼 옵션4</em></span>
+				</label>
+			</fieldset>
+			<!--// .radio* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">세그먼트 + 라디오버튼 (.option-segment)</span></h3>
+			<!-- .form -->
+			<div class="form">
+				<div class="form-wrap">
+					<!-- .form-list -->
+					<ul class="form-list">
+						<li class="form-item">
+							<div class="form-name"><strong>항목명</strong></div>
+							<div class="form-value">
+								<!-- .segment* -->
+								<fieldset class="segment-group">
+									<label for="formItem1a" class="segment-item">
+										<input type="radio" name="formItem1" id="formItem1a" class="control" checked>
+										<span class="label"><em class="txt">옵션A</em></span>
+									</label>
+									<label for="formItem1b" class="segment-item">
+										<input type="radio" name="formItem1" id="formItem1b" class="control">
+										<span class="label"><em class="txt">옵션B</em></span>
+									</label>
+								</fieldset>
+								<!--// .segment* -->
+								<!-- .box -->
+								<div class="box option-bg space-mt-xxs">
+									<!-- .radio* -->
+									<fieldset class="radio-group option-segment">
+										<label for="formItem2a" class="radio-item">
+											<input type="radio" name="formItem2" id="formItem2a" class="control" checked>
+											<span class="label">옵션A1</span>
+										</label>
+										<label for="formItem2b" class="radio-item">
+											<input type="radio" name="formItem2" id="formItem2b" class="control">
+											<span class="label">옵션A2</span>
+										</label>
+										<label for="formItem2c" class="radio-item">
+											<input type="radio" name="formItem2" id="formItem2c" class="control">
+											<span class="label">옵션A5</span>
+										</label>
+										<label for="formItem2d" class="radio-item">
+											<input type="radio" name="formItem2" id="formItem2d" class="control">
+											<span class="label">옵션A3</span>
+										</label>
+									</fieldset>
+									<!--// .radio* -->
+								</div>
+								<!--// .box -->
+							</div>
+						</li>
+					</ul>
+					<!--// .form-list -->
+				</div>
+			</div>
+			<!--// .form -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section -->
+
+	<!-- .section - 컴포넌트 - 칩 -->
+	<section class="section" id="form-chip">
+		<h2 class="title-h2"><span class="txt">@칩</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">라디오버튼형</span></h3>
+			<!-- .chip* -->
+			<fieldset class="chip-group">
+				<label for="chipD1" class="chip-item">
+					<input type="radio" name="chipD" id="chipD1" class="control" checked>
+					<span class="label">선택</span>
+				</label>
+				<label for="chipD2" class="chip-item">
+					<input type="radio" name="chipD" id="chipD2" class="control">
+					<span class="label">선택</span>
+				</label>
+			</fieldset>
+			<!--// .chip* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">폭전체 (.option-full)</span></h3>
+			<!-- .chip* -->
+			<fieldset class="chip-group option-full"><!-- @set: option-full -->
+				<label for="chipE1" class="chip-item">
+					<input type="radio" name="chipE" id="chipE1" class="control" checked>
+					<span class="label">오늘</span>
+				</label>
+				<label for="chipE2" class="chip-item">
+					<input type="radio" name="chipE" id="chipE2" class="control">
+					<span class="label">7일</span>
+				</label>
+				<label for="chipE3" class="chip-item">
+					<input type="radio" name="chipE" id="chipE3" class="control">
+					<span class="label">15일</span>
+				</label>
+				<label for="chipE4" class="chip-item">
+					<input type="radio" name="chipE" id="chipE4" class="control">
+					<span class="label">30일</span>
+				</label>
+				<label for="chipE5" class="chip-item">
+					<input type="radio" name="chipE" id="chipE5" class="control">
+					<span class="label">90일</span>
+				</label>
+			</fieldset>
+			<!--// .chip* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">선택 데이터</span></h3>
+			<!-- .chip* -->
+			<div class="chip-group">
+				<span class="chip-data">
+					<span class="txt">선택값</span>
+					<button type="button" class="delete">
+						<span class="icon"></span>
+						<span class="sr-only">삭제</span>
+					</button>
+				</span>
+				<span class="chip-data">
+					<span class="txt">선택값</span>
+					<button type="button" class="delete">
+						<span class="icon"></span>
+						<span class="sr-only">삭제</span>
+					</button>
+				</span>
+			</div>
+			<!--// .chip* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 컴포넌트 - 칩 -->
+
+	<!-- .section - 컴포넌트 - 세그먼트 -->
+	<section class="section" id="form-segment">
+		<h2 class="title-h2"><span class="txt">@세그먼트</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">라디오버튼형</span></h3>
+			<!-- .segment* -->
+			<fieldset class="segment-group">
+				<label for="radioT1" class="segment-item">
+					<input type="radio" name="radioT" id="radioT1" class="control" checked>
+					<span class="label"><em class="txt">선택T1</em></span>
+				</label>
+				<label for="radioT2" class="segment-item">
+					<input type="radio" name="radioT" id="radioT2" class="control">
+					<span class="label"><em class="txt">선택T2</em></span>
+				</label>
+			</fieldset>
+			<!--// .segment* -->
+			<!-- .segment* -->
+			<fieldset class="segment-group space-mt-xxs">
+				<label for="radioV1" class="segment-item">
+					<input type="radio" name="radioV" id="radioV1" class="control" checked>
+					<span class="label"><em class="txt">선택V1</em></span>
+				</label>
+				<label for="radioV2" class="segment-item">
+					<input type="radio" name="radioV" id="radioV2" class="control">
+					<span class="label"><em class="txt">선택V2</em></span>
+				</label>
+				<label for="radioV3" class="segment-item">
+					<input type="radio" name="radioV2" id="radioV3" class="control" disabled>
+					<span class="label"><em class="txt">비활성화</em></span>
+				</label>
+				<label for="radioV4" class="segment-item">
+					<input type="radio" name="radioV2" id="radioV4" class="control" checked disabled>
+					<span class="label"><em class="txt">체크된비활성화</em></span>
+				</label>
+			</fieldset>
+			<!--// .segment* -->
+			<!-- .segment* -->
+			<fieldset class="segment-group w-fix-lg space-mt-xxs">
+				<label for="radioU1" class="segment-item">
+					<input type="radio" name="radioU" id="radioU1" class="control" checked>
+					<span class="label"><em class="txt">텍스트가 여러줄일 경우 예시</em></span>
+				</label>
+				<label for="radioU2" class="segment-item">
+					<input type="radio" name="radioU" id="radioU2" class="control">
+					<span class="label"><em class="txt">선택T2</em></span>
+				</label>
+			</fieldset>
+			<!--// .segment* -->
+			<!-- .segment* -->
+			<fieldset class="segment-group option-enable space-mt-xxs">
+				<label for="radioW1" class="segment-item">
+					<input type="radio" name="radioW" id="radioW1" class="control" checked disabled>
+					<span class="label"><em class="txt">비활성화 스타일 해제(교차판매 현업 요청)</em></span>
+				</label>
+				<label for="radioW2" class="segment-item">
+					<input type="radio" name="radioW" id="radioW2" class="control" disabled>
+					<span class="label"><em class="txt">선택W2</em></span>
+				</label>
+			</fieldset>
+			<!--// .segment* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 컴포넌트 - 세그먼트 -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

@@ -11,14 +11,14 @@
 .radio-group.option-right,
 .checkbox-group.option-right {justify-content: flex-end;}
 .radio-item,
-.checkbox-item {display: inline-flex; align-items: center; vertical-align: middle; padding-right: var(--space-lg); line-height: 1; font-size: config.variable(font, body, 1.6rem);}
+.checkbox-item {display: inline-flex; align-items: center; vertical-align: middle; padding-right: config.variable(space, 2.4rem); line-height: 1; font-size: config.variable(font, body, 1.6rem);}
 .radio-item:last-child,
 .checkbox-item:last-child {padding-right: 0;}
 .radio-group .radio-item,
 .checkbox-group .checkbox-item {margin-top: config.variable(space, .8rem); margin-bottom: config.variable(space, .8rem);}
 
 .radio-group.option-right .radio-item,
-.checkbox-group.option-right .checkbox-item {padding-right: 0; padding-left: var(--space-lg);}
+.checkbox-group.option-right .checkbox-item {padding-right: 0; padding-left: config.variable(space, 2.4rem);}
 .radio-group.option-right .radio-item:first-child,
 .checkbox-group.option-right .checkbox-item:first-child,
 .radio-group.option-right .txt-subject + .radio-item:nth-child(2),
@@ -45,20 +45,20 @@
 .txt-subject ~ .checkbox-item {padding-left: config.variable(space, .8rem);}
 
 /* 라디오버튼 */
-.radio-item .control[type='radio'] {-webkit-appearance: none; appearance: none; position: relative; width: 2.0rem; height: 2.0rem; margin: .2rem; border: var(--#{config.$prefix}border-md) solid config.variable(color, #6c757d); background-color: config.variable(color, #fff); border-radius: var(--radius-xl); vertical-align: middle;}
+.radio-item .control[type='radio'] {-webkit-appearance: none; appearance: none; position: relative; width: 2.0rem; height: 2.0rem; margin: .2rem; border: var(--#{config.$prefix}border-md) solid config.variable(color, #6c757d); background-color: config.variable(color, #fff); border-radius: config.variable(radius, 2.4rem); vertical-align: middle;}
 .radio-item .control[type='radio']::after {content: ''; position: absolute; top: 50%; left: 50%; width: 1.0rem; height: 1.0rem; background-color: config.variable(color, #fff); border-radius: config.variable(radius, .8rem); transform: scale3d(0, 0, 1) translate3d(-50%, -50%, 0); transform-origin: 0 0;}
-.radio-item .control[type='radio']:checked {animation: animation-radio config.variable(animation, speed, base) var(--animation-timing-outback) forwards;}
-.radio-item .control[type='radio']:checked::after {animation: animation-radio-icon config.variable(animation, speed, base) var(--animation-timing-outback) .1s forwards;}
+.radio-item .control[type='radio']:checked {animation: animation-radio config.variable(animation, speed, base) config.variable(animation, timing, outback) forwards;}
+.radio-item .control[type='radio']:checked::after {animation: animation-radio-icon config.variable(animation, speed, base) config.variable(animation, timing, outback) .1s forwards;}
 .radio-item .control[type='radio']:disabled {animation: none; background-color: config.variable(color, #f8f9fa); border-color: config.variable(color, #e9ecef);}
 .radio-item .control[type='radio']:disabled:checked {background-color: config.variable(color, #3d8bfd); border-color: config.variable(color, #3d8bfd);}
 .radio-item .control[type='radio']:disabled:checked::after {animation: none; transform: scale3d(1, 1, 1) translate3d(-50%, -50%, 0);}
 .radio-item.is-error .control[type='radio'] {border-color: config.variable(color, #dc3545);}
 .radio-item.is-error .control[type='radio']:checked {animation-name: animation-radio-error;}
 
-.radio-item .control-icon {display: inline-block; position: relative; z-index: 1; width: 2.0rem; height: 2.0rem; margin: .2rem; border: var(--#{config.$prefix}border-md) solid config.variable(color, #ced4da); background-color: config.variable(color, #fff); border-radius: var(--radius-xl); vertical-align: middle;}
+.radio-item .control-icon {display: inline-block; position: relative; z-index: 1; width: 2.0rem; height: 2.0rem; margin: .2rem; border: var(--#{config.$prefix}border-md) solid config.variable(color, #ced4da); background-color: config.variable(color, #fff); border-radius: config.variable(radius, 2.4rem); vertical-align: middle;}
 .radio-item .control-icon::after {content: ''; position: absolute; top: 50%; left: 50%; width: 1.0rem; height: 1.0rem; background-color: config.variable(color, #fff); border-radius: config.variable(radius, .8rem); transform: scale3d(0, 0, 1) translate3d(-50%, -50%, 0); transform-origin: 0 0;}
-.radio-item[aria-selected='true'] .control-icon {animation: animation-radio config.variable(animation, speed, base) var(--animation-timing-outback) forwards;}
-.radio-item[aria-selected='true'] .control-icon::after {animation: animation-radio-icon config.variable(animation, speed, base) var(--animation-timing-outback) .1s forwards;}
+.radio-item[aria-selected='true'] .control-icon {animation: animation-radio config.variable(animation, speed, base) config.variable(animation, timing, outback) forwards;}
+.radio-item[aria-selected='true'] .control-icon::after {animation: animation-radio-icon config.variable(animation, speed, base) config.variable(animation, timing, outback) .1s forwards;}
 
 @keyframes animation-radio {
 	0% {
@@ -137,7 +137,7 @@
 .checkbox-group.option-boxed .checkbox-item .control[type='checkbox']:disabled ~ .label::before,
 .checkbox-item.boxed .control[type='checkbox']:disabled ~ .label::before {background-color: config.variable(color, #f8f9fa); border-color: config.variable(color, #e9ecef); box-shadow: none;}
 
-.checkbox-item.option-radio.boxed .control[type='checkbox'] {border-radius: var(--radius-xl);}
+.checkbox-item.option-radio.boxed .control[type='checkbox'] {border-radius: config.variable(radius, 2.4rem);}
 .checkbox-item.option-radio.boxed .control[type='checkbox']::after {width: 1.0rem; height: 1.0rem; background-color: config.variable(color, #fff); background-image: none; border-radius: config.variable(radius, .8rem);}
 
 .radio-group.option-boxed .radio-item.is-error .label::before,
@@ -158,10 +158,10 @@
 .chip-group.option-full .chip-item {flex-grow: 1;}
 
 /** 칩 - 라디오버튼형 */
-.chip-item .control[type='radio'] {-webkit-appearance: none; appearance: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: config.variable(color, #f8f9fa); border-radius: var(--radius-xl);}
+.chip-item .control[type='radio'] {-webkit-appearance: none; appearance: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: config.variable(color, #f8f9fa); border-radius: config.variable(radius, 2.4rem);}
 .chip-item .control[type='radio'] ~ .label {position: relative; display: inline-block; padding: .7rem 1.2rem .612rem; line-height: 1.35; font-weight: config.variable(font, 400); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #495057);}
-.chip-item .control[type='radio']:checked {background-color: config.variable(color, #0d6efd); transition: all config.variable(animation, speed, base) var(--animation-timing-outback);}
-.chip-item .control[type='radio']:checked ~ .label {font-weight: config.variable(font, 600); color: config.variable(color, #fff); transition: all config.variable(animation, speed, base) var(--animation-timing-outback);}
+.chip-item .control[type='radio']:checked {background-color: config.variable(color, #0d6efd); transition: all config.variable(animation, speed, base) config.variable(animation, timing, outback);}
+.chip-item .control[type='radio']:checked ~ .label {font-weight: config.variable(font, 600); color: config.variable(color, #fff); transition: all config.variable(animation, speed, base) config.variable(animation, timing, outback);}
 
 /* 토글 - 공통 */
 .segment-group {display: flex; flex-wrap: nowrap; background-color: config.variable(color, #f8f9fa); border-radius: config.variable(radius, .8rem);}

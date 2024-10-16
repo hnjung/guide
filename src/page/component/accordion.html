@@ -1,0 +1,136 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'component',
+	gnb2nd: 'accordion',
+	title: '아코디언'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section-->
+	<section class="section" id="module-accordion">
+		<h2 class="title-h2"><span class="txt">@아코디언</span></h2>
+		<!-- .note* -->
+		<div class="note space-mb-xxs">
+			<ul class="note-list">
+				<li>📌접고 펼치기 동작을 위한 아래 클래스 추가</li>
+				<li>부모 요소 : <code>.fn-fold-wrap</code></li>
+				<li>타이틀 요소(버튼 이벤트 연결 시) : <code>.fn-fold-link</code></li>
+				<li>버튼 요소 : <code>.fn-fold-btn</code></li>
+				<li>접고 펼칠 요소들 : <code>.fn-fold-item[]</code></li>
+				<li>애니메이션 반영 여부 : <code>data-fold-slide="true"</code></li>
+				<li>📌제목 클릭 시 아코디언을 펼칠 경우 클래스 추가, 클래스이 없을 경우 화살표 클릭 시 펼쳐짐 <code>(.fn-fold-link)</code></li>
+				<li>📌제목에 체크박스가 있을 경우 클래스 삭제 <code>(.fn-fold-link)</code></li>
+			</ul>
+		</div>
+		<!--// .note* -->
+
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">기본</span></h3>
+
+			<!-- .accordion -->
+			<div class="accordion fn-fold-wrap w-fix-lg" data-fold-slide="true"><!-- @set: fn-fold-wrap, data-fold-slide="true" -->
+				<div class="accordion-head">
+					<div class="inner fn-fold-link"><!-- @set: fn-fold-link -->
+						<!-- .title* -->
+						<h4 class="title-h4" id="accordionTitle1"><span class="txt">닫혔을 때도 보이는 내용</span></h4>
+						<!--// .title* -->
+					</div>
+					<button type="button" class="btn-fold fn-fold-btn" aria-expanded="false" aria-controls="accordionBody1" aria-labelledby="accordionTitle1"><span class="sr-only">열기</span></button><!-- @set: fn-fold-btn -->
+				</div>
+				<div class="accordion-body fn-fold-item" id="accordionBody1" role="region" aria-labelledby="accordionTitle1" aria-hidden="true"><!-- @set: fn-fold-item -->
+					<div class="inner">
+						열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용
+					</div>
+				</div>
+			</div>
+			<!--// .accordion -->
+			<!-- .accordion -->
+			<div class="accordion fn-fold-wrap is-open w-fix-lg" data-fold-slide="true">
+				<div class="accordion-head">
+					<div class="inner fn-fold-link">
+						<span id="accordionTitle2">열린 상태가 디폴트인 경우</span>
+					</div>
+					<button type="button" class="btn-fold fn-fold-btn" aria-expanded="true" aria-controls="accordionBody2" aria-labelledby="accordionTitle2"><span class="sr-only">열기</span></button>
+				</div>
+				<div class="accordion-body fn-fold-item" id="accordionBody2" role="region" aria-labelledby="accordionTitle2" aria-hidden="false">
+					<div class="inner">
+						열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용
+					</div>
+				</div>
+			</div>
+			<!--// .accordion -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">타이틀 체크박스</span></h3>
+
+			<!-- .accordion -->
+			<div class="accordion fn-fold-wrap" data-fold-slide="true">
+				<div class="accordion-head">
+					<div class="inner">
+						<span>
+							<!-- .checkbox* -->
+							<label for="checkL1" class="checkbox-item">
+								<input type="checkbox" name="checkL" id="checkL1" class="control" checked>
+								<span class="label" id="accordionTitle3">체크박스와 함께 사용할 경우</span>
+							</label>
+							<!--// .checkbox* -->
+						</span>
+					</div>
+					<button type="button" class="btn-fold fn-fold-btn" aria-expanded="false" aria-controls="accordionBody3" aria-labelledby="accordionTitle3"><span class="sr-only">열기</span></button>
+				</div>
+				<div class="accordion-body fn-fold-item" id="accordionBody3" role="region" aria-labelledby="accordionTitle3" aria-hidden="true">
+					<div class="inner">
+						열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용
+					</div>
+				</div>
+			</div>
+			<!--// .accordion -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">하단 요소</span></h3>
+
+			<!-- .accordion -->
+			<div class="accordion fn-fold-wrap is-open" data-fold-slide="true">
+				<div class="accordion-head">
+					<div class="inner fn-fold-link">
+						<span id="accordionTitle4"><strong>수집이용에 관한 사항 <span class="fc-highlight">(필수)</span></strong></span>
+					</div>
+					<button type="button" class="btn-fold fn-fold-btn" aria-expanded="true" aria-controls="accordionBody4" aria-labelledby="accordionTitle4"><span class="sr-only">열기</span></button>
+				</div>
+				<div class="accordion-body fn-fold-item" id="accordionBody4" role="region" aria-labelledby="accordionTitle4" aria-hidden="false">
+					<div class="inner">
+						열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용 열렸을 때 보이는 내용
+					</div>
+					<div class="accordion-foot item-row">
+						<div class="unit filled">
+							<!-- .checkbox* -->
+							<label for="checkM1" class="checkbox-item">
+								<input type="checkbox" name="checkM" id="checkM1" class="control" checked>
+								<span class="label">동의합니다.</span>
+							</label>
+							<!--// .checkbox* -->
+						</div>
+						<div class="unit fixed">
+							<button type="button" class="btn outlined option-sm"><span>다음</span></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--// .accordion -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section-->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

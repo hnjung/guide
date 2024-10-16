@@ -1,0 +1,33 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'content',
+	gnb2nd: 'step',
+	title: '스텝'
+}); %>
+
+<!-- #content -->
+<div id="content">
+
+	<!-- .section - 컴포넌트 - 스텝 -->
+	<section class="section" id="element-step">
+		<h2 class="title-h2"><span class="txt">@스텝</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .step -->
+			<div class="step">
+				<span class="sr-only">총 4 단계로 구성되어 있습니다.</span>
+				<strong><span class="sr-only">현재 단계</span>3</strong><span aria-hidden="true">/4</span>
+			</div>
+			<!--// .step -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 컴포넌트 - 스텝 -->
+
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

@@ -9,30 +9,151 @@
 ::placeholder,
 ::-webkit-input-placeholder {color: config.variable(color, #6c757d);}
 
-.input {position: relative; display: inline-block; vertical-align: middle;}
-.input-data,
-.read-data {width: 100%; padding: 1.5rem; border: config.variable(border, .1rem) solid config.variable(color, #dee2e6); border-radius: config.variable(radius, .8rem); font-size: config.variable(font, body, 1.6rem); transition: border config.variable(animation, speed, fast) config.variable(animation, timing, base); color: config.variable(color, #000);}
-.input-data {background-color: config.variable(color, #fff);}
-.read-data {border-color: transparent;}
-.input-data:read-only {background-color: config.variable(color, #f8f9fa); color: config.variable(color, #000);}
-.input-data.is-keypad:read-only {background-color: config.variable(color, #fff);}
-div.input-data.is-keypad:read-only {background-color: config.variable(color, #f8f9fa);}
-.input-data:disabled {border-color: config.variable(color, #e9ecef); background-color: config.variable(color, #f8f9fa); color: config.variable(color, #ced4da); cursor: default;}
-.input-data.is-error {border-color: config.variable(color, #dc3545);}
-.input-data:focus,
-.input.is-text-focus .input-data {border-color: config.variable(color, #0d6efd); outline: none; box-shadow: var(--shadow-primary-lg);}
-.input-data .is-placeholder {color: var(--#{config.$prefix}color-base-50);}
+.input {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
 
-.input .input-data.is-active {padding-right: 4.3rem;}
+	/* 기본 */
+	@at-root %input-data {
+		width: 100%;
+		padding: 1.5rem;
+		border: config.variable(border, .1rem) solid config.variable(color, #dee2e6);
+		border-radius: config.variable(radius, .8rem);
+		font-size: config.variable(font, body, 1.6rem);
+		transition: border config.variable(animation, speed, fast) config.variable(animation, timing, base);
+		color: config.variable(color, #000);
+	}
 
-.input .btn-clear {display: none; position: absolute; overflow: hidden; top: 50%; right: config.variable(space, .8rem); width: calc(var(--#{config.$prefix}icon-md) + config.variable(space, .8rem)); height: calc(var(--#{config.$prefix}icon-md) + config.variable(space, .8rem)); margin-top: calc((var(--#{config.$prefix}icon-md) + config.variable(space, .8rem)) / 2 * -1); padding: config.variable(space, .4rem); border: 0; transform: scale3d(0, 0, 1); opacity: 0; transform-origin: 50% 50%;}
-.input .btn-clear::before {content: ''; display: block; width: 100%; height: 100%; background: var(--bg-url-md) no-repeat 0 calc(var(--#{config.$prefix}icon-md) * -3); background-size: var(--bg-size-md);}
-.input .input-data.is-active ~ .btn-clear {display: block; 
-	animation-fill-mode: forwards; 
-	animation-duration: config.variable(animation, speed, base); 
-	animation-name: animation-input-clear1, animation-input-clear2; 
-	animation-timing-function: config.variable(animation, timing, base), var(--animation-timing-outback);
+	&-data {
+		@extend %input-data;
+		background-color: config.variable(color, #fff);
+
+		@at-root .read-data {
+			@extend %input-data;
+			border-color: transparent;
+		}
+
+		&:read-only {
+			background-color: config.variable(color, #f8f9fa);
+			color: config.variable(color, #000);
+		}
+		&:disabled {
+			border-color: config.variable(color, #e9ecef);
+			background-color: config.variable(color, #f8f9fa);
+			color: config.variable(color, #ced4da);
+			cursor: default;
+		}
+		.is-placeholder {color: config.variable(color, #adb5bd);}
+
+		@at-root %input-data-focus {
+			border-color: config.variable(color, #0d6efd);
+			outline: none;
+			box-shadow: config.variable(shadow, primary, lg);
+		}
+		&:focus {
+			@extend %input-data-focus;
+		}
+		&.is-error {border-color: config.variable(color, #dc3545);}
+		&.is-active {
+			padding-right: 4.3rem;
+			& ~ .btn-clear {
+				display: block; 
+				animation-fill-mode: forwards; 
+				animation-duration: config.variable(animation, speed, base); 
+				animation-name: animation-input-clear1, animation-input-clear2; 
+				animation-timing-function: config.variable(animation, timing, base), config.variable(animation, timing, outback);
+			}
+		}
+		&[type='number']::-webkit-inner-spin-button {
+			appearance: none;
+			-moz-appearance: none;
+			-webkit-appearance: none;
+		}
+		&[data-input-delete='false'] {
+			& ~ .btn-clear {display: none;}
+		}
+	}
+	&.is-text-focus {
+		&-data {
+			@extend %input-data-focus;
+		}
+	}
+
+	/* 입력내용 삭제 버튼 */
+	.btn-clear {
+		display: none;
+		position: absolute;
+		overflow: hidden;
+		top: 50%;
+		right: config.variable(space, .8rem);
+		width: calc(config.variable(icon, 2.4rem) + config.variable(space, .8rem));
+		height: calc(config.variable(icon, 2.4rem) + config.variable(space, .8rem));
+		margin-top: calc((config.variable(icon, 2.4rem) + config.variable(space, .8rem)) / 2 * -1);
+		padding: config.variable(space, .4rem);
+		border: 0;
+		transform: scale3d(0, 0, 1);
+		opacity: 0;
+		transform-origin: 50% 50%;
+
+		&:before {
+			content: '';
+			@include config.full-block;
+			@include config.icon-bg(2.4rem, all, 0, 3);
+		}
+	}
+
+	/* 종류 */
+	&.option {
+		/* 주민등록번호 */
+		&-person-id {
+			width: 1.2rem;
+			padding: 0 !important;
+	
+			.input-data {
+				padding-right: 0 !important;
+				padding-left: 0 !important;
+	
+				&::placeholder,
+				&::-webkit-input-placeholder {
+					background: url('../../image/com/ico-hyphen.svg') no-repeat 0 100%;
+					background-size: 100% auto;
+				}
+			}
+			.btn-clear {display: none !important;}
+		}
+
+		/* 검색어 자동입력 */
+		&-search {
+			.input-data {
+				padding-right: 4.3rem;
+				
+				&.is-active {padding-right: 7.5rem;}
+			}
+			.btn {
+				&-search {
+					position: absolute;
+					top: 50%;
+					right: config.variable(space, .8rem);
+					width: calc(config.variable(icon, 2.4rem) + config.variable(space, .8rem));
+					height: calc(config.variable(icon, 2.4rem) + config.variable(space, .8rem));
+					margin-top: calc((config.variable(icon, 2.4rem) + config.variable(space, .8rem)) / 2 * -1);
+					padding: config.variable(space, .4rem);
+		
+					&:before {
+						content: '';
+						@include config.full-block;
+						@include config.icon-bg(2.4rem, all, 4, 0);
+					}
+				}
+	
+				&-clear {right: 4.0rem;}
+			}
+	
+		}
+	}
 }
+
 @keyframes animation-input-clear1 {
 	100% {
 		opacity: 1;
@@ -44,22 +165,7 @@ div.input-data.is-keypad:read-only {background-color: config.variable(color, #f8
 	}
 }
 
-.input-data[type='number']::-webkit-inner-spin-button {appearance: none; -moz-appearance: none; -webkit-appearance: none;}
-
-.input-data[data-input-delete='false'] ~ .btn-clear {display: none;}
-
-.input.option-person-id {width: 1.2rem; padding: 0 !important;}
-.input.option-person-id .input-data {padding-right: 0 !important; padding-left: 0 !important;}
-.input.option-person-id .input-data::placeholder,
-.input.option-person-id .input-data::-webkit-input-placeholder {background: url('../../image/com/ico-hyphen.svg') no-repeat 0 100%; background-size: 100% auto;}
-.input.option-person-id .btn-clear {display: none !important;}
-
 /** 인풋 - 검색어 자동입력 */
-.input.option-search .input-data {padding-right: 4.3rem;}
-.input.option-search .input-data.is-active {padding-right: 7.5rem;}
-.input.option-search .btn-search {position: absolute; top: 50%; right: config.variable(space, .8rem); width: calc(var(--#{config.$prefix}icon-md) + config.variable(space, .8rem)); height: calc(var(--#{config.$prefix}icon-md) + config.variable(space, .8rem)); margin-top: calc((var(--#{config.$prefix}icon-md) + config.variable(space, .8rem)) / 2 * -1); padding: config.variable(space, .4rem);}
-.input.option-search .btn-search::before {content: ''; display: block; width: 100%; height: 100%; background: var(--bg-url-md) no-repeat 0 0; background-size: var(--bg-size-md);}
-.input.option-search .btn-clear {right: 4.0rem;}
 .input.option-search .input-data:read-only,
 .input.option-search .input-data:disabled {padding-right: calc(config.variable(space, 1.6rem) - config.variable(border, .1rem));}
 .input.option-search .input-data:read-only ~ .btn-search,
@@ -109,7 +215,7 @@ div.input-data.is-keypad:read-only {background-color: config.variable(color, #f8
 .input-button {display: inline-flex; flex-direction: row; align-items: center; justify-content: space-between; border: config.variable(border, .1rem) solid config.variable(color, #dee2e6); border-radius: config.variable(radius, .8rem); background-color: config.variable(color, #fff); vertical-align: middle;}
 .input-button.is-error {border-color: config.variable(color, #dc3545);}
 .input-button.is-text-focus,
-.input-button.is-select-focus {border-color: config.variable(color, #0d6efd); box-shadow: var(--shadow-primary-lg);}
+.input-button.is-select-focus {border-color: config.variable(color, #0d6efd); box-shadow: config.variable(shadow, primary, lg);}
 .input-button.is-disabled {background-color: config.variable(color, #f8f9fa); border-color: config.variable(color, #e9ecef);}
 .input-button.is-readonly {background-color: config.variable(color, #f8f9fa);}
 
@@ -119,12 +225,12 @@ div.input-data.is-keypad:read-only {background-color: config.variable(color, #f8
 
 .input-button > .unit .select .select-button {border: 0;}
 .input-button > .unit .input {padding: .3rem;}
-.input-button > .unit .input-data {border: 0; outline: none; box-shadow: none; padding: 1.2rem; border-radius: var(--radius-sm);}
+.input-button > .unit .input-data {border: 0; outline: none; box-shadow: none; padding: 1.2rem; border-radius: config.variable(radius, .4rem);}
 .input-button > .unit:nth-child(n + 2) .input-data {padding-left: 0;}
 .input-button > .unit > .btn {margin-right: 1.1rem; margin-left: .8rem;}
 
 .input-button.option-read .read-data {min-height: 5.4rem; border: none;}
-.input-button.option-read .read-data .is-placeholder {color: var(--#{config.$prefix}color-base-50);}
+.input-button.option-read .read-data .is-placeholder {color: config.variable(color, #adb5bd);}
 .input-button.option-read .btn.contained.option-md {padding: .5rem 1.1rem .4rem; border-radius: config.variable(radius, .6rem); font-size: config.variable(font, body, 1.4rem);}
 .input-button.option-read > .unit .read-data {min-height: 4.8rem; padding: 1.2rem;}
 
@@ -140,7 +246,7 @@ div.input-data.is-keypad:read-only {background-color: config.variable(color, #f8
 .input-mixed {display: inline-flex; flex-direction: row; align-items: center; justify-content: space-between; border: config.variable(border, .1rem) solid config.variable(color, #dee2e6); border-radius: config.variable(radius, .8rem); background-color: config.variable(color, #fff); vertical-align: middle;}
 .input-mixed.is-error {border-color: config.variable(color, #dc3545);}
 .input-mixed.is-text-focus,
-.input-mixed.is-select-focus {border-color: config.variable(color, #0d6efd); box-shadow: var(--shadow-primary-lg);}
+.input-mixed.is-select-focus {border-color: config.variable(color, #0d6efd); box-shadow: config.variable(shadow, primary, lg);}
 .input-mixed.is-disabled {background-color: config.variable(color, #f8f9fa); border-color: config.variable(color, #e9ecef);}
 .input-mixed.is-readonly {background-color: config.variable(color, #f8f9fa);}
 
@@ -150,7 +256,7 @@ div.input-data.is-keypad:read-only {background-color: config.variable(color, #f8
 
 .input-mixed > .unit .select .select-button {border: 0;}
 .input-mixed > .unit .input {padding: .3rem;}
-.input-mixed > .unit .input-data {border: 0; outline: none; box-shadow: none; padding: 1.2rem; border-radius: var(--radius-sm);}
+.input-mixed > .unit .input-data {border: 0; outline: none; box-shadow: none; padding: 1.2rem; border-radius: config.variable(radius, .4rem);}
 .input-mixed > .unit div.input-data {min-height: 4.8rem;}
 .input-mixed > .unit .input .input-data.is-active {padding-right: 4.0rem;}
 .input-mixed > .unit:nth-child(n + 2) .input-data {padding-left: .6rem;}

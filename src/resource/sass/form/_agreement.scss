@@ -20,7 +20,7 @@
 .agree-total .checkbox-item.option-agree .label {line-height: 1.35;}
 .agree-total .btn-ico-link {margin-top: config.variable(space, .4rem); margin-left: config.variable(space, .8rem);}
 
-.agree-title {display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; margin-top: config.variable(space, 1.6rem); padding-top: config.variable(space, 1.6rem); border-top: config.variable(border, .1rem) solid config.variable(color, #e9ecef); font-weight: var(--#{config.$prefix}font-medium); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #343a40);}
+.agree-title {display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; margin-top: config.variable(space, 1.6rem); padding-top: config.variable(space, 1.6rem); border-top: config.variable(border, .1rem) solid config.variable(color, #e9ecef); font-weight: config.variable(font, 500); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #343a40);}
 .agree-title > .unit {flex-shrink: 1; line-height: 1;}
 .agree-title > .unit:first-child .txt {line-height: 1.5;}
 .agree-title .btn-ico-link {margin-top: .3rem; margin-left: config.variable(space, .8rem);}
@@ -47,7 +47,7 @@
 .agree-select .radio-group .radio-item {flex-shrink: 1; width: 100%; margin-top: 0; margin-bottom: 0;}
 .agree-select .radio-group .radio-item .label {font-size: config.variable(font, body, 1.4rem);}
 
-.agree-lead {margin-bottom: var(--space-lg); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #495057);}
+.agree-lead {margin-bottom: config.variable(space, 2.4rem); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #495057);}
 .agree-btn {margin-top: config.variable(space, .8rem);}
 
 .agreement .unit.option-parent {position: relative; padding-bottom: config.variable(space, 1.6rem);}
@@ -65,7 +65,7 @@
 .agree-graph .sub-txt {display: block; padding-top: 1.2rem; padding-left: config.variable(space, 1.6rem); text-indent: calc(config.variable(space, 1.6rem) * -1); line-height: 1.35; font-size: config.variable(font, body, 1.2rem); color: config.variable(color, #495057);}
 .agree-graph .sub-txt::before {content: ''; display: inline-block; width: var(--icon-sm); height: var(--icon-sm); margin-right: config.variable(space, .4rem); margin-top: -.2rem; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -2) calc(var(--icon-sm) * -4); background-size: var(--bg-size-sm); vertical-align: middle;}
 
-.agree-step-item:nth-child(1) > .bar {background-color: #0AF; border-top-left-radius: var(--radius-sm); border-bottom-left-radius: var(--radius-sm);}
+.agree-step-item:nth-child(1) > .bar {background-color: #0AF; border-top-left-radius: config.variable(radius, .4rem); border-bottom-left-radius: config.variable(radius, .4rem);}
 .agree-step-item:nth-child(1)[aria-hidden='false'] > .txt {background-color: #0AF;}
 .agree-step-item:nth-child(2) > .bar {background-color: #83CA88;}
 .agree-step-item:nth-child(2)[aria-hidden='false'] > .txt {background-color: #83CA88;}
@@ -76,11 +76,11 @@
 .agree-step-item:nth-child(4) > .bar {background-color: #F99040;}
 .agree-step-item:nth-child(4)[aria-hidden='false'] > .txt {background-color: #F99040;}
 .agree-step-item:nth-child(4)[aria-hidden='false'] > .txt::before {background-position: -3.0rem -6.0rem;}
-.agree-step-item:nth-child(5) > .bar {background-color: #F03543; border-top-right-radius: var(--radius-sm); border-bottom-right-radius: var(--radius-sm);}
+.agree-step-item:nth-child(5) > .bar {background-color: #F03543; border-top-right-radius: config.variable(radius, .4rem); border-bottom-right-radius: config.variable(radius, .4rem);}
 .agree-step-item:nth-child(5)[aria-hidden='false'] > .txt {background-color: #F03543;}
 .agree-step-item:nth-child(5)[aria-hidden='false'] > .txt::before {background-position: -4.0rem -6.0rem;}
 
-.agree-doc .list > li strong {font-weight: var(--#{config.$prefix}font-medium); font-size: 120%; color: config.variable(color, #084298);}
+.agree-doc .list > li strong {font-weight: config.variable(font, 500); font-size: 120%; color: config.variable(color, #084298);}
 
 /* 정보동의 - 이전 버전으로 사용 금지 추후 삭제 예정, .agree-title 로 사용 */
 .agree-item {display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; margin-top: config.variable(space, 1.6rem); padding-top: config.variable(space, 1.6rem); border-top: config.variable(border, .1rem) solid config.variable(color, #e9ecef);}

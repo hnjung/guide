@@ -9,87 +9,87 @@
 .space-reset-mt {margin-top: 0 !important;}
 .space-mt-min {margin-top: config.variable(space, .4rem) !important;}
 .space-mt-xxs {margin-top: config.variable(space, .8rem) !important;}
-.space-mt-xs {margin-top: var(--space-xs) !important;}
+.space-mt-xs {margin-top: config.variable(space, 1.2rem) !important;}
 .space-mt-sm {margin-top: config.variable(space, 1.6rem) !important;}
 .space-mt-md {margin-top: config.variable(space, 1.6rem) !important;}
-.space-mt-lg {margin-top: var(--space-lg) !important;}
+.space-mt-lg {margin-top: config.variable(space, 2.4rem) !important;}
 .space-mt-xl {margin-top: config.variable(space, 2.4rem) !important;}
-.space-mt-xxl {margin-top: var(--space-xxl) !important;}
+.space-mt-xxl {margin-top: config.variable(space, 4.0rem) !important;}
 .space-mt-max {margin-top: var(--space-max) !important;}
 
 .space-reset-mb {margin-bottom: 0 !important;}
 .space-mb-min {margin-bottom: config.variable(space, .4rem) !important;}
 .space-mb-xxs {margin-bottom: config.variable(space, .8rem) !important;}
-.space-mb-xs {margin-bottom: var(--space-xs) !important;}
+.space-mb-xs {margin-bottom: config.variable(space, 1.2rem) !important;}
 .space-mb-sm {margin-bottom: config.variable(space, 1.6rem) !important;}
 .space-mb-md {margin-bottom: config.variable(space, 1.6rem) !important;}
-.space-mb-lg {margin-bottom: var(--space-lg) !important;}
+.space-mb-lg {margin-bottom: config.variable(space, 2.4rem) !important;}
 .space-mb-xl {margin-bottom: config.variable(space, 2.4rem) !important;}
-.space-mb-xxl {margin-bottom: var(--space-xxl) !important;}
+.space-mb-xxl {margin-bottom: config.variable(space, 4.0rem) !important;}
 .space-mb-max {margin-bottom: var(--space-max) !important;}
 
 .space-reset-ml {margin-left: 0 !important;}
 .space-ml-min {margin-left: config.variable(space, .4rem) !important;}
 .space-ml-xxs {margin-left: config.variable(space, .8rem) !important;}
-.space-ml-xs {margin-left: var(--space-xs) !important;}
+.space-ml-xs {margin-left: config.variable(space, 1.2rem) !important;}
 .space-ml-sm {margin-left: config.variable(space, 1.6rem) !important;}
 .space-ml-md {margin-left: config.variable(space, 1.6rem) !important;}
-.space-ml-lg {margin-left: var(--space-lg) !important;}
+.space-ml-lg {margin-left: config.variable(space, 2.4rem) !important;}
 .space-ml-xl {margin-left: config.variable(space, 2.4rem) !important;}
-.space-ml-xxl {margin-left: var(--space-xxl) !important;}
+.space-ml-xxl {margin-left: config.variable(space, 4.0rem) !important;}
 .space-ml-max {margin-left: var(--space-max) !important;}
 
 .space-reset-mr {margin-right: 0 !important;}
 .space-mr-min {margin-right: config.variable(space, .4rem) !important;}
 .space-mr-xxs {margin-right: config.variable(space, .8rem) !important;}
-.space-mr-xs {margin-right: var(--space-xs) !important;}
+.space-mr-xs {margin-right: config.variable(space, 1.2rem) !important;}
 .space-mr-sm {margin-right: config.variable(space, 1.6rem) !important;}
 .space-mr-md {margin-right: config.variable(space, 1.6rem) !important;}
-.space-mr-lg {margin-right: var(--space-lg) !important;}
+.space-mr-lg {margin-right: config.variable(space, 2.4rem) !important;}
 .space-mr-xl {margin-right: config.variable(space, 2.4rem) !important;}
-.space-mr-xxl {margin-right: var(--space-xxl) !important;}
+.space-mr-xxl {margin-right: config.variable(space, 4.0rem) !important;}
 .space-mr-max {margin-right: var(--space-max) !important;}
 
 .space-reset-pt {padding-top: 0 !important;}
 .space-pt-min {padding-top: config.variable(space, .4rem) !important;}
 .space-pt-xxs {padding-top: config.variable(space, .8rem) !important;}
-.space-pt-xs {padding-top: var(--space-xs) !important;}
+.space-pt-xs {padding-top: config.variable(space, 1.2rem) !important;}
 .space-pt-sm {padding-top: config.variable(space, 1.6rem) !important;}
 .space-pt-md {padding-top: config.variable(space, 1.6rem) !important;}
-.space-pt-lg {padding-top: var(--space-lg) !important;}
+.space-pt-lg {padding-top: config.variable(space, 2.4rem) !important;}
 .space-pt-xl {padding-top: config.variable(space, 2.4rem) !important;}
-.space-pt-xxl {padding-top: var(--space-xxl) !important;}
+.space-pt-xxl {padding-top: config.variable(space, 4.0rem) !important;}
 .space-pt-max {padding-top: var(--space-max) !important;}
 
 .space-reset-pb {padding-bottom: 0 !important;}
 .space-pb-min {padding-bottom: config.variable(space, .4rem) !important;}
 .space-pb-xxs {padding-bottom: config.variable(space, .8rem) !important;}
-.space-pb-xs {padding-bottom: var(--space-xs) !important;}
+.space-pb-xs {padding-bottom: config.variable(space, 1.2rem) !important;}
 .space-pb-sm {padding-bottom: config.variable(space, 1.6rem) !important;}
 .space-pb-md {padding-bottom: config.variable(space, 1.6rem) !important;}
-.space-pb-lg {padding-bottom: var(--space-lg) !important;}
+.space-pb-lg {padding-bottom: config.variable(space, 2.4rem) !important;}
 .space-pb-xl {padding-bottom: config.variable(space, 2.4rem) !important;}
-.space-pb-xxl {padding-bottom: var(--space-xxl) !important;}
+.space-pb-xxl {padding-bottom: config.variable(space, 4.0rem) !important;}
 .space-pb-max {padding-bottom: var(--space-max) !important;}
 
 .space-reset-pl {padding-left: 0 !important;}
 .space-pl-min {padding-left: config.variable(space, .4rem) !important;}
 .space-pl-xxs {padding-left: config.variable(space, .8rem) !important;}
-.space-pl-xs {padding-left: var(--space-xs) !important;}
+.space-pl-xs {padding-left: config.variable(space, 1.2rem) !important;}
 .space-pl-sm {padding-left: config.variable(space, 1.6rem) !important;}
 .space-pl-md {padding-left: config.variable(space, 1.6rem) !important;}
-.space-pl-lg {padding-left: var(--space-lg) !important;}
+.space-pl-lg {padding-left: config.variable(space, 2.4rem) !important;}
 .space-pl-xl {padding-left: config.variable(space, 2.4rem) !important;}
-.space-pl-xxl {padding-left: var(--space-xxl) !important;}
+.space-pl-xxl {padding-left: config.variable(space, 4.0rem) !important;}
 .space-pl-max {padding-left: var(--space-max) !important;}
 
 .space-reset-pr {padding-right: 0 !important;}
 .space-pr-min {padding-right: config.variable(space, .4rem) !important;}
 .space-pr-xxs {padding-right: config.variable(space, .8rem) !important;}
-.space-pr-xs {padding-right: var(--space-xs) !important;}
+.space-pr-xs {padding-right: config.variable(space, 1.2rem) !important;}
 .space-pr-sm {padding-right: config.variable(space, 1.6rem) !important;}
 .space-pr-md {padding-right: config.variable(space, 1.6rem) !important;}
-.space-pr-lg {padding-right: var(--space-lg) !important;}
+.space-pr-lg {padding-right: config.variable(space, 2.4rem) !important;}
 .space-pr-xl {padding-right: config.variable(space, 2.4rem) !important;}
-.space-pr-xxl {padding-right: var(--space-xxl) !important;}
+.space-pr-xxl {padding-right: config.variable(space, 4.0rem) !important;}
 .space-pr-max {padding-right: var(--space-max) !important;}

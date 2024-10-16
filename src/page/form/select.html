@@ -1,0 +1,190 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'form',
+	gnb2nd: 'select',
+	title: '셀렉트박스'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section -->
+	<section class="section" id="form-selectBox">
+		<h2 class="title-h2"><span class="txt">@셀렉트박스</span></h2>
+		<!-- .note* -->
+		<div class="note space-mb-xxs">
+			<ul class="note-list">
+				<li>📌<code>placeholder</code> 사용 시 해당 <code>option</code>에 <code>disabled, selected</code> 속성 지정.</li>
+				<li>📌<code>&lt;select aria-label=""&gt;</code> 또는 <code>&lt;select aria-labelledby=""&gt;</code> 둘 중 하나는 반드시 포함되어야 함.</li>
+				<li>📌셀렉트박스의 <code>&lt;label&gt;</code>이 1:1로 매칭될 경우 <code>&lt;label id=""&gt;</code> 값과 <code>&lt;select aria-labelledby=""&gt;</code> 값 동일하게 지정.</li>
+				<li>📌셀렉트박스의 <code>&lt;label&gt;</code>이 없을 경우 <code>&lt;select aria-label=""&gt;</code>에 대체 텍스트 작성.</li>
+			</ul>
+		</div>
+		<!--// .note* -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">기본</span></h3>
+			<!-- .select -->
+			<div class="select">
+				<select name="" id="selectA" class="select-data" aria-label="옵션제목A" aria-hidden="true" tabindex="-1">
+					<option value="" disabled selected>옵션을 선택해 주세요</option>
+					<option value="">넓이가변</option>
+					<option value="">옵션길이만큼</option>
+					<option value="">자동세팅됨</option>
+				</select>
+			</div>
+			<!--// .select -->
+			<!-- .select -->
+			<div class="select w-fix-md">
+				<select name="" id="selectB" class="select-data is-error" aria-label="옵션제목B" aria-hidden="true" tabindex="-1">
+					<option value="" disabled>옵션22을 선택해 주세요</option>
+					<option value="" selected>is-error</option>
+					<option value="">옵션222</option>
+				</select>
+			</div>
+			<!--// .select -->
+			<!-- .select -->
+			<div class="select w-fix-md">
+				<select name="" id="selectD" class="select-data" aria-label="옵션제목D" aria-hidden="true" tabindex="-1" disabled>
+					<option value="" disabled>옵션을 선택해 주세요2.</option>
+					<option value="">옵션21</option>
+					<option value="">옵션22</option>
+					<option value="" selected>Disabled</option>
+				</select>
+			</div>
+			<!--// .select -->
+			<!-- .select -->
+			<div class="select w-fix-md">
+				<select name="" id="selectJ" class="select-data is-readonly" aria-label="옵션제목J" aria-hidden="true" tabindex="-1">
+					<option value="" disabled>옵션을 선택해 주세요2.</option>
+					<option value="">옵션21</option>
+					<option value="">옵션22</option>
+					<option value="" selected>Readonly</option>
+				</select>
+			</div>
+			<!--// .select -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">미니형</span></h3>
+			<!-- .select -->
+			<div class="select option-sm"><!-- @set: option-sm -->
+				<select name="" id="selectK" class="select-data" aria-label="옵션제목A" aria-hidden="true" tabindex="-1">
+					<option value="" disabled selected>옵션을 선택해 주세요</option>
+					<option value="">넓이가변</option>
+					<option value="">옵션길이만큼</option>
+					<option value="">자동세팅됨</option>
+				</select>
+			</div>
+			<!--// .select -->
+			<!-- .select -->
+			<div class="select option-sm w-fix-md">
+				<select name="" id="selectL" class="select-data is-error" aria-label="옵션제목B" aria-hidden="true" tabindex="-1">
+					<option value="" disabled>옵션22을 선택해 주세요</option>
+					<option value="" selected>is-error</option>
+					<option value="">옵션222</option>
+				</select>
+			</div>
+			<!--// .select -->
+			<!-- .select -->
+			<div class="select option-sm w-fix-md">
+				<select name="" id="selectM" class="select-data" aria-label="옵션제목D" aria-hidden="true" tabindex="-1" disabled>
+					<option value="" disabled>옵션을 선택해 주세요2.</option>
+					<option value="">옵션21</option>
+					<option value="">옵션22</option>
+					<option value="" selected>Disabled</option>
+				</select>
+			</div>
+			<!--// .select -->
+			<!-- .select -->
+			<div class="select option-sm w-fix-md">
+				<select name="" id="selectN" class="select-data is-readonly" aria-label="옵션제목J" aria-hidden="true" tabindex="-1">
+					<option value="" disabled>옵션을 선택해 주세요2.</option>
+					<option value="">옵션21</option>
+					<option value="">옵션22</option>
+					<option value="" selected>Readonly</option>
+				</select>
+			</div>
+			<!--// .select -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">텍스트형</span></h3>
+			<!-- .select -->
+			<div class="select option-txt"><!-- @set: option-txt -->
+				<select name="" id="selectO" class="select-data" aria-label="옵션제목A" aria-hidden="true" tabindex="-1">
+					<option value="">김신한</option>
+					<option value="">홍길동</option>
+				</select>
+			</div>
+			<!--// .select -->
+			<!-- .select -->
+			<div class="select option-txt w-fix-md">
+				<select name="" id="selectP" class="select-data is-error" aria-label="옵션제목B" aria-hidden="true" tabindex="-1">
+					<option value="" selected disabled>선택해 주세요</option>
+					<option value="">is-error</option>
+					<option value="">옵션222</option>
+				</select>
+			</div>
+			<!--// .select -->
+			<!-- .select -->
+			<div class="select option-txt w-fix-md">
+				<select name="" id="selectQ" class="select-data" aria-label="옵션제목D" aria-hidden="true" tabindex="-1" disabled>
+					<option value="" disabled>옵션을 선택해 주세요2.</option>
+					<option value="">옵션21</option>
+					<option value="">옵션22</option>
+					<option value="" selected>Disabled</option>
+				</select>
+			</div>
+			<!--// .select -->
+			<!-- .select -->
+			<div class="select option-txt w-fix-md">
+				<select name="" id="selectR" class="select-data is-readonly" aria-label="옵션제목J" aria-hidden="true" tabindex="-1">
+					<option value="" disabled>옵션을 선택해 주세요2.</option>
+					<option value="">옵션21</option>
+					<option value="">옵션22</option>
+					<option value="" selected>Readonly</option>
+				</select>
+			</div>
+			<!--// .select -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">옵션이 없을 경우</span></h3>
+			<!-- .select -->
+			<div class="select">
+				<select name="" id="selectC" class="select-data" aria-label="옵션이 없을 경우" aria-hidden="true" tabindex="-1">
+				</select>
+			</div>
+			<!--// .select -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">텍스트 혼합</span></h3>
+			<!-- .select -->
+			<label class="txt-subject" for="selectE" id="selectETitle">항목명 :</label>
+			<div class="select">
+				<select name="" id="selectE" class="select-data" aria-labelledby="selectETitle" aria-hidden="true" tabindex="-1">
+					<option value="selectE1">옵션1</option>
+					<option value="selectE2">옵션2</option>
+					<option value="selectE3">옵션3</option>
+					<option value="selectE4">옵션4</option>
+					<option value="selectE5" selected>옵션5</option>
+					<option value="selectE6">옵션6</option>
+				</select>
+			</div>
+			<!--// .select -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

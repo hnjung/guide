@@ -16,7 +16,7 @@
 .box.option-line + .box.option-line {margin-top: config.variable(space, 1.6rem);}
 .box.option-bg {background-color: config.variable(color, #f8f9fa); border-color: config.variable(color, #f8f9fa);}
 .box.option-bg .note-title {color: config.variable(color, #000);}
-.box.option-bg.primary {background-color: var(--#{config.$prefix}color-primary-10); background-color: var(--#{config.$prefix}color-primary-10);}
+.box.option-bg.primary {background-color: config.variable(color, #cfe2ff); background-color: config.variable(color, #cfe2ff);}
 .box.option-bg .note-title2 {font-weight: config.variable(font, 600); color: config.variable(color, #000);}
 .box.option-bg .text2 {font-size: config.variable(font, body, 1.4rem);}
 .box.option-bg .note-title2 ~ .text2 {padding-top: config.variable(space, .8rem);}

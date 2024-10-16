@@ -8,4 +8,4 @@
 .page-current {display: inline-block; vertical-align: middle; font-size: 0;}
 .page-current > strong,
 .page-current > a {display: inline-block; min-width: 3.2rem; padding: .5rem .8rem .45rem; margin: 0 .4rem; background-color: config.variable(color, #f8f9fa); border-radius: config.variable(radius, .8rem); vertical-align: middle; text-align: center; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #6c757d);}
-.page-current > strong {background-color: #1A57FF; font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #fff);}
+.page-current > strong {background-color: #1A57FF; font-weight: config.variable(font, 500); color: config.variable(color, #fff);}

@@ -46,7 +46,7 @@
 .card-info .item-row + .item-row {margin-top: 0;}
 .card-info .txt.option-value {color: config.variable(color, #000);}
 .card-info .txt.option-value .btn-txt-link[href^='tel'] {display: inline; padding: 0; vertical-align: inherit; line-height: inherit; color: config.variable(color, #0d6efd);}
-.card-info .txt.option-stress {font-size: config.variable(font, body, 1.6rem); font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #000);}
+.card-info .txt.option-stress {font-size: config.variable(font, body, 1.6rem); font-weight: config.variable(font, 500); color: config.variable(color, #000);}
 .card-info .link {text-decoration: underline; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #000);}
 .card-info .item-row.option-left .unit:first-child {min-width: 23.5%;}
 .card-info .item-row .unit > .select,
@@ -101,7 +101,7 @@
 .box .card-select {position: relative;}
 .box .card-select .label::before {display: none;}
 
-.card-select .card-title .key > em {font-weight: var(--#{config.$prefix}font-medium);}
+.card-select .card-title .key > em {font-weight: config.variable(font, 500);}
 .card-select .control[type='radio']:checked ~ .label .card-title .key > em,
 .card-select .control[type='checkbox']:checked ~ .label .card-title .key > em,
 .card-select .checkbox-control[type='checkbox']:checked ~ .label .card-title .key > em {font-weight: config.variable(font, 600);}
@@ -113,7 +113,7 @@
 .card-select.card-link {position: initial;}
 
 /** 카드형목록 - 합계 */
-.card-item.option-bg {background-color: var(--#{config.$prefix}color-primary-10); border-color: config.variable(color, #6ea8fe);}
+.card-item.option-bg {background-color: config.variable(color, #cfe2ff); border-color: config.variable(color, #6ea8fe);}
 
 /** 카드형목록 - 비활성화 */
 .card-item.is-disabled .card-title .txt,
@@ -121,7 +121,7 @@
 .card-item.is-disabled .card-info .txt,
 .card-item.is-disabled .card-info .txt.option-value,
 .card-item.is-disabled .card-info .text-price2,
-.card-item.is-disabled .card-info .text-price2 > em {color: var(--#{config.$prefix}color-base-50);}
+.card-item.is-disabled .card-info .text-price2 > em {color: config.variable(color, #adb5bd);}
 
 /** 카드형목록 - 출력용 - 박스 내 목록 */
 .card.option-data {padding: 2.3rem; background-color: config.variable(color, #fff); border: config.variable(border, .1rem) solid config.variable(color, #dee2e6); border-radius: config.variable(radius, 1.6rem);}
@@ -158,4 +158,4 @@
 .card-item[class*="step-type"]::after {content: ''; position: absolute; z-index: 1; bottom: -1rem; left: 50%; width: 3.6rem; height: 2.0rem; margin-left: -1.8rem; background: var(--bg-url-etc) no-repeat 0 -.8rem; background-size: var(--bg-size-etc);}
 .card-item[class*="step-type"]:last-child::after {display: none;}
 
-.card-item[class*="step-type"]::before {content: ''; display: block; flex-shrink: 0; width: var(--icon-xl); height: var(--icon-xl); margin-right: var(--space-xs); background-image: var(--bg-url-xl); background-repeat: no-repeat; background-size: var(--bg-size-xl);}
+.card-item[class*="step-type"]::before {content: ''; display: block; flex-shrink: 0; width: var(--icon-xl); height: var(--icon-xl); margin-right: config.variable(space, 1.2rem); background-image: var(--bg-url-xl); background-repeat: no-repeat; background-size: var(--bg-size-xl);}

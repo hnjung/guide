@@ -9,8 +9,8 @@
 .calendar {position: relative;}
 .calendar [class^="btn-"] {position: absolute; top: 0; width: var(--icon-lg); height: var(--icon-lg); border: config.variable(border, .1rem) solid config.variable(color, #dee2e6); border-radius: config.variable(radius, .8rem);}
 .calendar [class^="btn-"]::before {content: ''; position: absolute; top: 50%; left: 50%; width: var(--icon-sm); height: var(--icon-sm); margin: -.8rem 0 0 -.8rem; background: var(--bg-url-sm) no-repeat 0 calc(var(--icon-sm) * -1); background-size: var(--bg-size-sm);}
-.calendar .btn-prev {left: var(--space-lg);}
-.calendar .btn-next {right: var(--space-lg);}
+.calendar .btn-prev {left: config.variable(space, 2.4rem);}
+.calendar .btn-next {right: config.variable(space, 2.4rem);}
 .calendar .btn-next::before {background-position: calc(var(--icon-sm) * -1) calc(var(--icon-sm) * -1);}
 .calendar-group {padding: 0 config.variable(space, 1.6rem);}
 .calendar-head {padding: .4rem 0; text-align: center; line-height: 1;}
@@ -31,7 +31,7 @@
 .day-group .day:nth-child(7n + 1),
 .day-group .day.holiday {color: config.variable(color, #dc3545);}
 .day-group .day.prev,
-.day-group .day.next {color: var(--#{config.$prefix}color-base-50);}
+.day-group .day.next {color: config.variable(color, #adb5bd);}
 .day-group .day.is-active {background-color: config.variable(color, #0d6efd); color: config.variable(color, #fff);}
 .day-group .day.disabled {color: config.variable(color, #dee2e6);}
 
@@ -48,16 +48,16 @@
 .day-group .day.is-end:nth-child(7n + 1)::before {left: 0; width: 100%; background-position: -16.8rem 0; background-color: transparent;}
 
 /*** 인풋 - 월 - 캘린더 */
-.calendar-head .year {display: block; padding-bottom: .1rem; line-height: 1.35; font-weight: config.variable(font, 600); font-size: var(--font-title-md); color: config.variable(color, #343a40);}
+.calendar-head .year {display: block; padding-bottom: .1rem; line-height: 1.35; font-weight: config.variable(font, 600); font-size: config.variable(font, title, 2.0rem); color: config.variable(color, #343a40);}
 .month-group {display: flex; flex-wrap: wrap;}
-.month-group .month {flex-shrink: 0; width: 33.33%; padding: .95rem 1.2rem; border-radius: 1.2rem; line-height: 1.5; font-weight: var(--#{config.$prefix}font-medium); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #000); cursor: pointer;}
+.month-group .month {flex-shrink: 0; width: 33.33%; padding: .95rem 1.2rem; border-radius: 1.2rem; line-height: 1.5; font-weight: config.variable(font, 500); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #000); cursor: pointer;}
 .month-group .month.is-active {background-color: config.variable(color, #0d6efd); color: config.variable(color, #fff);}
 
 /*** 인풋 - 날짜 - 캘린더 - 팝업 */
 .calendar-popup {position: fixed; z-index: 20; top: 0; bottom: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: center; transform: translate3d(0, 100%, 0); transition: transform 0s config.variable(animation, timing, base) config.variable(animation, speed, base);}
 .calendar-popup::before {content: ''; position: fixed; top: 0; bottom: 0; left: 0; right: 0; background-color: var(--color-dimmed); transform: translate3d(0, 100%, 0); transition: opacity config.variable(animation, speed, base) config.variable(animation, timing, base), transform 0s config.variable(animation, speed, base); opacity: 0;}
 
-.calendar-content {position: relative; z-index: 21; width: 100%; max-width: 32.0rem; padding: 0 0 2.4rem; background-color: config.variable(color, #fff); border-radius: var(--radius-xl); opacity: 0; margin: 0 config.variable(space, 2.4rem); box-shadow: var(--shadow-sm); transform: translate3d(0, -12%, 0); transition: opacity config.variable(animation, speed, fast) config.variable(animation, timing, base), transform config.variable(animation, speed, base) var(--animation-timing-outback);}
+.calendar-content {position: relative; z-index: 21; width: 100%; max-width: 32.0rem; padding: 0 0 2.4rem; background-color: config.variable(color, #fff); border-radius: config.variable(radius, 2.4rem); opacity: 0; margin: 0 config.variable(space, 2.4rem); box-shadow: var(--shadow-sm); transform: translate3d(0, -12%, 0); transition: opacity config.variable(animation, speed, fast) config.variable(animation, timing, base), transform config.variable(animation, speed, base) config.variable(animation, timing, outback);}
 .calendar-title {position: relative; padding: 2.0rem 5.6rem 1.971rem 2.0rem; line-height: 1.35; font-weight: config.variable(font, 600); font-size: config.variable(font, body, 1.8rem); color: config.variable(color, #000);}
 
 .calendar-popup.is-open {transform: translate3d(0, 0, 0); transition-duration: 0s; transition-delay: 0s;}

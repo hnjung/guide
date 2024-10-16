@@ -20,7 +20,7 @@
 .data-helper.option-caption.primary::before {background-position: calc(var(--icon-sm) * -3) calc(var(--icon-sm) * -4);}
 .data-helper.option-error .helper-txt {color: config.variable(color, #dc3545);}
 .data-helper.option-error::before {background-position: calc(var(--icon-sm) * -2) 0;}
-.data-helper.option-error.option-bg {margin-top: config.variable(space, 1.6rem); padding: var(--space-xs) config.variable(space, 1.6rem); border-radius: config.variable(radius, .8rem); border-color: config.variable(color, #f8f9fa); background-color: config.variable(color, #f8f9fa);}
+.data-helper.option-error.option-bg {margin-top: config.variable(space, 1.6rem); padding: config.variable(space, 1.2rem) config.variable(space, 1.6rem); border-radius: config.variable(radius, .8rem); border-color: config.variable(color, #f8f9fa); background-color: config.variable(color, #f8f9fa);}
 .data-helper.option-error.option-bg::before {margin-left: config.variable(space, 1.6rem);}
 
 .card-select .data-helper.option-error.option-bg {margin-left: -3.0rem;} 

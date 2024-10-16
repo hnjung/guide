@@ -119,7 +119,7 @@
 @function variable($type, $value-or-option, $value: null) {
 	$result: null;
 	$prefix: prefix(#{$type}-);
-	$valid: (config.$color, config.$font, config.$space, config.$border, config.$radius, config.$shadow, config.$animation);
+	$valid: (config.$color, config.$font, config.$space, config.$icon, config.$border, config.$radius, config.$shadow, config.$animation);
 
 	/* 첫번째 매개변수 값 유효성 체크 */
 	@if not index($valid, $type) {
@@ -127,7 +127,7 @@
 	}
 
 	/* 일부 매개변수의 세번째 매개변수 값 유효성 체크 */
-	@if ($type == config.$space or $type == config.$border or $type == config.$radius) and $value != null {
+	@if ($type == config.$space or $type == config.$icon or $type == config.$border or $type == config.$radius) and $value != null {
 		@error '⛔ Invalid argument for variable function: #{$value}';
 	}
 
@@ -224,6 +224,8 @@
 		$group: ();
 		@if $type == config.$space {
 			$group: config.$space-group;
+		} @else if $type == config.$icon {
+			$group: config.$icon-group;
 		} @else if $type == config.$border {
 			$group: config.$border-group;
 		} @else if $type == config.$radius {

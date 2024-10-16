@@ -9,10 +9,10 @@
 .tooltip {position: relative; display: inline-flex; width: var(--icon-sm); height: var(--icon-sm); margin-top: -.2rem; vertical-align: middle;}
 .tooltip-btn {display: block; width: 100%; height: 100%; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -3) 0; background-size: var(--bg-size-sm);}
 .tooltip-btn > span {font-size: 0;}
-.tooltip-body {position: absolute; display: none; z-index: 10; width: max-content; padding: config.variable(space, .8rem) var(--space-xs); background-color: config.variable(color, #495057); border-radius: config.variable(radius, .8rem); box-shadow: var(--shadow-sm); line-height: 1.35; font-weight: config.variable(font, 400); font-size: config.variable(font, body, 1.2rem); color: config.variable(color, #fff); transform: translate3d(0, -12%, 0); opacity: 0; transition-duration: 0s; transition-delay: 0s;}
+.tooltip-body {position: absolute; display: none; z-index: 10; width: max-content; padding: config.variable(space, .8rem) config.variable(space, 1.2rem); background-color: config.variable(color, #495057); border-radius: config.variable(radius, .8rem); box-shadow: var(--shadow-sm); line-height: 1.35; font-weight: config.variable(font, 400); font-size: config.variable(font, body, 1.2rem); color: config.variable(color, #fff); transform: translate3d(0, -12%, 0); opacity: 0; transition-duration: 0s; transition-delay: 0s;}
 .tooltip-body::before {content: ''; position: absolute; width: .5rem; height: .8rem; background: var(--bg-url-etc) no-repeat 0 0; background-size: var(--bg-size-etc);}
 
-.tooltip.is-open .tooltip-body {display: block; animation: animation-tooltip config.variable(animation, speed, base) var(--animation-timing-outback) forwards;}
+.tooltip.is-open .tooltip-body {display: block; animation: animation-tooltip config.variable(animation, speed, base) config.variable(animation, timing, outback) forwards;}
 
 .tooltip.bottom {align-items: end;}
 .tooltip.bottom.left .tooltip-body {margin-bottom: 2.4rem; margin-left: -1.0rem; margin-right: config.variable(space, 1.6rem);}

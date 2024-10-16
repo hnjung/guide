@@ -9,7 +9,7 @@
 /** 타이포그래피 - 헤드라인 */
 [class^="headline-h"] {overflow: hidden; font-weight: config.variable(font, 600); color: config.variable(color, #000);}
 [class^="headline-h"] > .txt {display: inline-block; vertical-align: middle;}
-.headline-h1 > .txt {font-size: var(--font-headline-md); line-height: 1.35; letter-spacing: -.028rem;}
+.headline-h1 > .txt {font-size: config.variable(font, headline, 2.8rem); line-height: 1.35; letter-spacing: -.028rem;}
 
 [class^="headline-h"][class*="option-item"] {display: flex; flex-direction: row; align-items: center;}
 [class^="headline-h"].option-item-left {justify-content: flex-start;}
@@ -23,10 +23,10 @@
 /** 타이포그래피 - 타이틀 */
 [class^="title-h"] {overflow: hidden; font-weight: config.variable(font, 600); color: config.variable(color, #000);}
 [class^="title-h"] > .txt {display: inline-block; vertical-align: middle;}
-.title-h2 > .txt {font-size: var(--font-title-lg); line-height: 1.35; letter-spacing: -.024rem;}
-.title-h3 > .txt {font-size: var(--font-title-md); line-height: 1.35; letter-spacing: -.02rem;}
-.title-h4 > .txt {font-size: var(--font-title-sm); line-height: 1.35;}
-.title-h5 > .txt {font-size: var(--font-title-xs); line-height: 1.35;}
+.title-h2 > .txt {font-size: config.variable(font, title, 2.4rem); line-height: 1.35; letter-spacing: -.024rem;}
+.title-h3 > .txt {font-size: config.variable(font, title, 2.0rem); line-height: 1.35; letter-spacing: -.02rem;}
+.title-h4 > .txt {font-size: config.variable(font, title, 1.8rem); line-height: 1.35;}
+.title-h5 > .txt {font-size: config.variable(font, title, 1.6rem); line-height: 1.35;}
 
 [class^="title-h"][class*="option-item"] {display: flex; flex-direction: row; align-items: center;}
 [class^="title-h"].option-item-left {justify-content: flex-start;}
@@ -42,9 +42,9 @@
 
 /** 타이포그래피 - 텍스트 */
 .text {font-size: config.variable(font, body, 1.6rem); word-break: break-all;}
-.text-price {letter-spacing: -.02rem; font-weight: config.variable(font, 600); font-size: var(--font-title-md);}
+.text-price {letter-spacing: -.02rem; font-weight: config.variable(font, 600); font-size: config.variable(font, title, 2.0rem);}
 .text-price > em {color: config.variable(color, #0d6efd);}
-.text-price2 {font-weight: var(--#{config.$prefix}font-medium);}
+.text-price2 {font-weight: config.variable(font, 500);}
 .text-price2 > em {color: config.variable(color, #0d6efd);}
 .txt-subject {vertical-align: middle; font-weight: config.variable(font, 600);}
 .txt-line {font-weight: 100; color: config.variable(color, #e9ecef);}
@@ -62,9 +62,9 @@
 
 .main-copy {overflow: hidden; padding: 2.4rem 0 3.2rem; line-height: 1; font-weight: config.variable(font, 600); color: config.variable(color, #000);}
 .main-copy > .step {line-height: 1.5;}
-.main-copy > .txt {display: block; font-size: var(--font-title-lg); line-height: 1.35; letter-spacing: -.024rem;}
-.main-copy > .sub {display: block; padding: .6rem 0 .4rem; line-height: 1.35; font-weight: config.variable(font, 400); font-size: config.variable(font, body, 1.2rem); color: var(--#{config.$prefix}color-base-50);}
-.main-copy > strong.sub {padding: 0 0 .2rem; line-height: 1.5; font-weight: var(--#{config.$prefix}font-medium); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #000);}
+.main-copy > .txt {display: block; font-size: config.variable(font, title, 2.4rem); line-height: 1.35; letter-spacing: -.024rem;}
+.main-copy > .sub {display: block; padding: .6rem 0 .4rem; line-height: 1.35; font-weight: config.variable(font, 400); font-size: config.variable(font, body, 1.2rem); color: config.variable(color, #adb5bd);}
+.main-copy > strong.sub {padding: 0 0 .2rem; line-height: 1.5; font-weight: config.variable(font, 500); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #000);}
 .main-copy > .copy {display: block; padding-top: .8rem; line-height: 1.5; font-weight: config.variable(font, 400); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #6c757d);}
 .main-copy > .step + .txt,
 .main-copy > .step + strong.sub,

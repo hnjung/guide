@@ -1,0 +1,198 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'form',
+	gnb2nd: 'group',
+	title: '폼그룹'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section -->
+	<section class="section" id="module-formLayout">
+		<h2 class="title-h2"><span class="txt">@등록폼</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">기본</span></h3>
+			<!-- .form -->
+			<div class="form">
+				<h3 class="form-title">필수정보</h3>
+				<div class="form-wrap">
+					<!-- .form-list -->
+					<ul class="form-list">
+						<li class="form-item">
+							<div class="form-name"><strong><label for="textfield1">이름</label></strong><strong class="must"><span class="sr-only">필수입력</span></strong></div>
+							<div class="form-value">
+								<!-- .input -->
+								<div class="input w-100">
+									<input type="text" name="" id="textfield1" class="input-data" placeholder="입력해 주세요" maxlength="20" value="김신한" aria-required="true">
+								</div>
+								<!--// .input -->
+							</div>
+						</li>
+						<li class="form-item item-half"><!-- @set: item-half -->
+							<div class="unit">
+								<div class="form-name"><strong><label for="textfield7">필드명</label></strong></div>
+								<div class="form-value">
+									<!-- .input -->
+									<div class="input w-100">
+										<input type="text" name="" id="textfield7" class="input-data" placeholder="입력해 주세요" maxlength="20" value="모바일은 상하 태블릿은 좌우 1:1로 배치할 경우"> 
+									</div>
+									<!--// .input -->
+								</div>
+							</div>
+							<div class="unit">
+								<div class="form-name"><strong><label for="textfield8">필드명</label></strong></div>
+								<div class="form-value">
+									<!-- .input -->
+									<div class="input w-100">
+										<input type="text" name="" id="textfield8" class="input-data" placeholder="입력해 주세요" maxlength="20" value="모바일은 상하 태블릿은 좌우 1:1로 배치할 경우">
+									</div>
+									<!--// .input -->
+								</div>
+							</div>
+						</li>
+						<li class="form-item item-row option-half"><!-- @set: item-row.option-half -->
+							<div class="unit filled">
+								<div class="form-name"><strong><label for="textfield38">필드명</label></strong></div>
+								<div class="form-value">
+									<!-- .input -->
+									<div class="input w-100">
+										<input type="text" name="" id="textfield38" class="input-data" placeholder="입력해 주세요" maxlength="20" value="좌우 간격이 태블릿 16, 모바일 8일 경우"> 
+									</div>
+									<!--// .input -->
+								</div>
+							</div>
+							<div class="unit filled">
+								<div class="form-name"><strong><label for="textfield41">필드명</label></strong></div>
+								<div class="form-value">
+									<!-- .input -->
+									<div class="input w-100">
+										<input type="text" name="" id="textfield41" class="input-data" placeholder="입력해 주세요" maxlength="20" value="좌우 간격이 태블릿 16, 모바일 8일 경우">
+									</div>
+									<!--// .input -->
+								</div>
+							</div>
+						</li>
+					</ul>
+					<!--// .form-list -->
+				</div>
+			</div>
+			<!--// .form -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">검색 접고펼치기 (.option-search)</span></h3>
+			<!-- .note* -->
+			<div class="note space-mb-xxs">
+				<ul class="note-list">
+					<li>📌접고 펼치기 동작을 위한 아래 클래스 추가</li>
+					<li>부모 요소 : <code>.option-search.fn-fold-wrap</code></li>
+					<li>버튼 요소 : <code>.fn-fold-btn</code></li>
+					<li>접고 펼칠 요소들 : <code>.detail.fn-fold-item[]</code></li>
+				</ul>
+			</div>
+			<!--// .note* -->
+			<!-- .form -->
+			<div class="form option-search fn-fold-wrap is-open"><!-- @set: option-search, fn-fold-wrap -->
+				<div class="form-wrap">
+					<!-- .form-list -->
+					<ul class="form-list">
+						<li class="form-item detail fn-fold-item" aria-hidden="true"><!-- @set: detail, fn-fold-item -->
+							<div class="form-name"><strong><label for="textfield91">상세검색옵션</label></strong></div>
+							<div class="form-value">
+								<!-- .input -->
+								<div class="input w-100">
+									<input type="text" name="" id="textfield91" class="input-data" placeholder="입력해 주세요"> 
+								</div>
+								<!--// .input -->
+							</div>
+						</li>
+						<li class="form-item">
+							<div class="form-name"><strong><label for="textfield9">검색옵션</label></strong></div>
+							<div class="form-value">
+								<!-- .input -->
+								<div class="input w-100">
+									<input type="text" name="" id="textfield9" class="input-data" placeholder="입력해 주세요"> 
+								</div>
+								<!--// .input -->
+							</div>
+						</li>
+						<li class="form-item detail fn-fold-item" aria-hidden="true">
+							<div class="form-name"><strong><label for="textfield92">상세검색옵션</label></strong></div>
+							<div class="form-value">
+								<!-- .input -->
+								<div class="input w-100">
+									<input type="text" name="" id="textfield92" class="input-data" placeholder="입력해 주세요"> 
+								</div>
+								<!--// .input -->
+							</div>
+						</li>
+					</ul>
+					<!--// .form-list -->
+				</div>
+				<!-- .btn -->
+				<button type="button" class="btn-search-more fn-fold-btn" aria-expanded="false"><span>상세검색</span><span class="sr-only">열기</span></button><!-- @set: fn-fold-btn -->
+				<!--// .btn -->
+			</div>
+			<!--// .form -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">접고펼치기 (.option-fold)</span></h3>
+			<!-- .note* -->
+			<div class="note space-mb-xxs">
+				<ul class="note-list">
+					<li>📌접고 펼치기 동작을 위한 아래 클래스 추가</li>
+					<li>부모 요소 : <code>.option-fold.fn-fold-wrap</code></li>
+					<li>타이틀 요소(버튼 이벤트 연결 시) : <code>.fn-fold-link</code></li>
+					<li>버튼 요소 : <code>.fn-fold-btn</code></li>
+					<li>접고 펼칠 요소들 : <code>.fn-fold-item[]</code></li>
+					<li>애니메이션 반영 여부 : <code>data-fold-slide="true"</code></li>
+				</ul>
+			</div>
+			<!--// .note* -->
+			<!-- .form -->
+			<div class="form option-fold fn-fold-wrap is-open" data-fold-slide="true"><!-- @set: option-fold, fn-fold-wrap -->
+				<h3 class="form-title fn-fold-link" id="formTitle1">추가정보<span>(생략가능)</span></h3><!-- @set: fn-fold-link -->
+				<button type="button" class="btn-fold fn-fold-btn" aria-expanded="true" aria-controls="formBody1" aria-labelledby="formTitle1"><span class="sr-only">열기</span></button><!-- @set: fn-fold-btn -->
+				<div class="form-wrap fn-fold-item" id="formBody1" role="region" aria-labelledby="formTitle1" aria-hidden="false"><!-- @set: fn-fold-item -->
+					<!-- .form-list -->
+					<ul class="form-list">
+						<li class="form-item">
+							<div class="form-name"><strong><label for="textfield2">필드명</label></strong></div>
+							<div class="form-value">
+								<!-- .input -->
+								<div class="input w-100">
+									<input type="text" name="" id="textfield2" class="input-data" placeholder="입력해 주세요"> 
+								</div>
+								<!--// .input -->
+							</div>
+						</li>
+						<li class="form-item">
+							<div class="form-name"><strong><label for="textfield34">필드명</label></strong></div>
+							<div class="form-value">
+								<!-- .input -->
+								<div class="input w-100">
+									<input type="text" name="" id="textfield34" class="input-data" placeholder="입력해 주세요"> 
+								</div>
+								<!--// .input -->
+							</div>
+						</li>
+					</ul>
+					<!--// .form-list -->
+				</div>
+			</div>
+			<!--// .form -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

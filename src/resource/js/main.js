@@ -268,7 +268,9 @@ const commUiFnGNB = {
 		}
 	}
 };
-commUiFnGNB.init();
+document.addEventListener('DOMContentLoaded', () => {
+	commUiFnGNB.init();
+});
 
 /* 페이지 검색 */
 const commUiFnPageSearch = {
@@ -368,7 +370,9 @@ const commUiFnPageSearch = {
 		}
 	}
 };
-commUiFnPageSearch.init();
+document.addEventListener('DOMContentLoaded', () => {
+	commUiFnPageSearch.init();
+});
 
 /* 탭 */
 const commUiFnTab = {
@@ -610,7 +614,9 @@ const commUiFnTab = {
 		});
 	}
 };
-commUiFnTab.init();
+document.addEventListener('DOMContentLoaded', () => {
+	commUiFnTab.init();
+});
 
 /* 텍스트 필드 */
 const commUiFnInput = {
@@ -679,7 +685,7 @@ const commUiFnInput = {
 		const inputData = document.querySelectorAll('.input-data');
 		inputData.forEach(function(_this) {
 			/* 인풋이 비활성화가 아닐 경우 */
-			if (!_this.disabled && ((_this.classList.contains('option-delete') && _this.readOnly) || !_this.readOnly)) {
+			if (!_this.disabled && (_this.readOnly || !_this.readOnly)) {
 				/* 삭제 버튼 엘리먼트 생성 */
 				const thisGroup = _this.closest('.input');
 				const addButton = document.createElement('button');
@@ -726,7 +732,9 @@ const commUiFnInput = {
 		});
 	}
 };
-commUiFnInput.init();
+document.addEventListener('DOMContentLoaded', () => {
+	commUiFnInput.init();
+});
 
 /* 텍스트 필드 - 검색형 */
 const commUiFnSearch = {
@@ -1114,7 +1122,9 @@ const commUiFnCalendar = {
 		});
 	}
 };
-commUiFnCalendar.init();
+document.addEventListener('DOMContentLoaded', () => {
+	commUiFnCalendar.init();
+});
 
 /* 셀렉트박스 팝업형 - 단일 오픈 처리 */
 const commUiFnSelectPopup = {
@@ -1628,88 +1638,9 @@ const commUiFnSelectCustom = {
 		}
 	}
 };
-commUiFnSelectCustom.init();
-
-/* 셀렉트박스 버튼형 *//* 2024-02-02 : 요건 변경으로 (commUiFnSelectCustom) 대체, 사용 금지, 웹접근성 심사 후 삭제 예정 */
-const commUiFnSelectBtn = {
-	/* 전역변수 */
-	comm : {
-		openId : ''
-	},
-	/* 초기실행 */
-	init : () => {
-		/* 선택 완료 시 이벤트 바인딩 */
-		const selectConfirm = document.querySelectorAll('.fn-select-confirm');
-		selectConfirm.forEach(function(_this) {
-			_this.addEventListener('click', commUiFnSelectBtn.confirm);
-		});
-
-		/* 목록 오픈 시 이벤트 바인딩 */
-		const selectBtn = document.querySelectorAll('.fn-select-btn');
-		selectBtn.forEach(function(_this) {
-			_this.addEventListener('click', commUiFnSelectBtn.open);
-		});
-
-		/* 목록 아이템 선택 시 이벤트 바인딩 */
-		const selectWrap = document.querySelectorAll('.fn-select-wrap');
-		selectWrap.forEach(function(_this) {
-			const selectItem = _this.querySelectorAll('.fn-select-item');
-			selectItem.forEach(function(_this) {
-				_this.querySelector('.fn-select-input').addEventListener('input', commUiFnSelectBtn.select);
-			});
-		});
-	},
-	/* 선택 값 체크 */
-	check : (_element) => {
-		const thisParent = _element.closest('.fn-select-wrap');
-		const thisItem = thisParent.querySelectorAll('.fn-select-item');
-		let getValue = '';
-		let getText = '';
-
-		thisItem.forEach(function(_this) {
-			const thisInput = _this.querySelector('.fn-select-input');
-			const thisTitle = _this.querySelector('.fn-select-title')
-
-			if (thisInput.checked === true) {
-				getValue = thisInput.dataset.selectValue;
-				getText = thisTitle.innerHTML;
-			}
-		});
-
-		/* 선택 값 리턴 */
-		if (getValue) return [getValue, getText];
-	},
-	/* 목록 아이템 선택 */
-	select : (_event) => {
-		const element = _event.target;
-		const getValue = commUiFnSelectBtn.check(element)[0];
-
-		if (getValue) {
-			element.closest('.fn-select-wrap').querySelector('.fn-select-confirm').disabled = false;
-		}
-	},
-	/* 목록 오픈 */
-	open : (_event) => {
-		let element = _event.target;
-		if (element.classList.contains('fn-select-value')) {
-			element = element.parentElement;
-		}
-		commUiFnSelectBtn.comm.openId = element;
-	},
-	/* 선택 완료 */
-	confirm : (_event) => {
-		const element = _event.target;
-		const selectBtn = commUiFnSelectBtn.comm.openId.querySelector('.fn-select-value');
-		const getValue = commUiFnSelectBtn.check(element)[0];
-		const getText = commUiFnSelectBtn.check(element)[1];
-
-		selectBtn.classList.remove('is-placeholder');
-		selectBtn.innerHTML = getText;
-		selectBtn.dataset.selectValue = getValue;
-		commUiFnSelectBtn.comm.openId = '';
-	}
-};
-/* commUiFnSelectBtn.init(); *//* 2024-02-02 : 요건 변경으로 (commUiFnSelectCustom) 대체, 사용 금지, 웹접근성 심사 후 삭제 예정 */
+document.addEventListener('DOMContentLoaded', () => {
+	commUiFnSelectCustom.init();
+});
 
 /* 텍스트에어리어 */
 const commUiFnTextarea = {
@@ -1780,7 +1711,9 @@ const commUiFnTextarea = {
 		return (_decimal >> 7) || (10 === _decimal) ? 2 : 1;
 	}
 };
-commUiFnTextarea.init();
+document.addEventListener('DOMContentLoaded', () => {
+	commUiFnTextarea.init();
+});
 
 /* 파일첨부 */
 const commUiFnFile = {
@@ -1878,7 +1811,9 @@ const commUiFnFile = {
 		element.querySelector('.file-label').setAttribute('tabindex', waLabelTabIndex);
 	}
 };
-commUiFnFile.init();
+document.addEventListener('DOMContentLoaded', () => {
+	commUiFnFile.init();
+});
 
 /* 멀티파일첨부 */
 const commUiFnMultiFile = {
@@ -1975,7 +1910,9 @@ const commUiFnMultiFile = {
 		commUiFnMultiFile.remove(element);
 	}
 };
-commUiFnMultiFile.init();
+document.addEventListener('DOMContentLoaded', () => {
+	commUiFnMultiFile.init();
+});
 
 /* 범위 */
 const commUiFnRange = {
@@ -2021,7 +1958,9 @@ const commUiFnRange = {
 		commUiFnRange.set(element);
 	}
 };
-commUiFnRange.init();
+document.addEventListener('DOMContentLoaded', () => {
+	commUiFnRange.init();
+});
 
 /* 팝업 - 다중 오픈 처리 */
 const commUiFnPopup = {
@@ -2303,8 +2242,10 @@ const commUiFnPopup = {
 			});
 		});
 	}
-}
-commUiFnPopup.init();
+};
+document.addEventListener('DOMContentLoaded', () => {
+	commUiFnPopup.init();
+});
 
 /* 팝오버 */
 const commUiFnPopover = {
@@ -2412,7 +2353,9 @@ const commUiFnPopover = {
 		});
 	}
 };
-commUiFnPopover.init();
+document.addEventListener('DOMContentLoaded', () => {
+	commUiFnPopover.init();
+});
 
 /** 팝오버 - 스크롤 영역에 포함되어 있을 경우 */
 const commUiFnPopoverScroll = {
@@ -2519,7 +2462,9 @@ const commUiFnTooltip = {
 		return [y, x, boxWidth];
 	}
 };
-commUiFnTooltip.init();
+document.addEventListener('DOMContentLoaded', () => {
+	commUiFnTooltip.init();
+});
 
 /* 토스트 */
 const commUiFnToast = {
@@ -2587,11 +2532,12 @@ const commUiFnToast = {
 		});
 	}
 };
-commUiFnToast.init();
+document.addEventListener('DOMContentLoaded', () => {
+	commUiFnToast.init();
+});
 
 /* 바디 클릭 시 */
 document.addEventListener('DOMContentLoaded', () => {
-	
 	document.querySelector('body').addEventListener('click', function(_event) {
 		/* console.log('_event.target===', _event.target); */
 		/* 인풋 삭제 버튼 숨기기 */
@@ -2840,7 +2786,9 @@ const commUiFnFoldID = {
 		}
 	}
 };
-commUiFnFoldID.init();
+document.addEventListener('DOMContentLoaded', () => {
+	commUiFnFoldID.init();
+});
 
 /* 하단 고정형 버튼일 경우 콘텐츠 여백 클래스 추가 */
 const commUiFnFixMainButton = {
@@ -2848,27 +2796,29 @@ const commUiFnFixMainButton = {
 		const mainButton = document.querySelectorAll('.btn-group.option-main');
 		mainButton.forEach(function(_this) {
 			const thisPage = _this.closest('#page');
-			const thisFooter = thisPage.querySelector('#footer > .footer-inner');
-			if (thisFooter) {
-				commUiFnFixMainButton.add(thisPage);
-			} else {
-				/* 탭 안에 버튼이 있는 경우 */
-				if (_this.closest('.tab-item')) {
-					const group = _this.closest('.tab-item').querySelectorAll('.group');
-					group.forEach(function(_element, _index) {
-						if ((group.length - 1) === _index) {
+			if (thisPage) {
+				const thisFooter = thisPage.querySelector('#footer > .footer-inner');
+				if (thisFooter) {
+					commUiFnFixMainButton.add(thisPage);
+				} else {
+					/* 탭 안에 버튼이 있는 경우 */
+					if (_this.closest('.tab-item')) {
+						const group = _this.closest('.tab-item').querySelectorAll('.group');
+						group.forEach(function(_element, _index) {
+							if ((group.length - 1) === _index) {
+								commUiFnFixMainButton.add(_element);
+							}
+						});
+						return;
+					}
+					const thisParent = _this.closest('#content');
+					const section = thisParent.querySelectorAll('.section');
+					section.forEach(function(_element, _index) {
+						if ((section.length - 1) === _index) {
 							commUiFnFixMainButton.add(_element);
 						}
 					});
-					return;
 				}
-				const thisParent = _this.closest('#content');
-				const section = thisParent.querySelectorAll('.section');
-				section.forEach(function(_element, _index) {
-					if ((section.length - 1) === _index) {
-						commUiFnFixMainButton.add(_element);
-					}
-				});
 			}
 		});
 	},
@@ -2876,7 +2826,9 @@ const commUiFnFixMainButton = {
 		_element.classList.add('has-space');
 	}
 };
-commUiFnFixMainButton.init();
+document.addEventListener('DOMContentLoaded', () => {
+	commUiFnFixMainButton.init();
+});
 
 /* 콘텐츠하단 고정영역 있을 경우 여백 추가 */
 const commUiFnContentFix = {
@@ -2911,15 +2863,19 @@ const commUiFnContentFix = {
 		});
 	}
 };
-commUiFnContentFix.init();
-commUiFnContentFix.init2();
+document.addEventListener('DOMContentLoaded', () => {
+	commUiFnContentFix.init();
+	commUiFnContentFix.init2();
+});
 
 /* VH 단위 계산 */
 const commUiFnSetVH = () => {
 	const vh = window.innerHeight * 0.01;
 	document.documentElement.style.setProperty('--vh', `${vh}px`);
 };
-commUiFnSetVH();
+document.addEventListener('DOMContentLoaded', () => {
+	commUiFnSetVH();
+});
 window.addEventListener('resize', commUiFnSetVH);
 
 /* 데이터형 테이블 열 선택 */
@@ -2998,7 +2954,9 @@ const commUiPageTop = {
 		}
 	}
 };
-commUiPageTop.init();
+document.addEventListener('DOMContentLoaded', () => {
+	commUiPageTop.init();
+});
 
 /* 애니메이션 */
 const commUiResultAnimation = {
@@ -3126,3 +3084,41 @@ const commUiFnTabSize = () => {
 window.addEventListener('resize', function() {
 	commUiFnTabSize();
 }); */
+
+const guideMenu = {
+	init : () => {
+		/* guideMenu.links(); */
+		guideMenu.folder();
+	},
+	folder : () => {
+		const checkAll = document.querySelector('#checkSideControl');
+		checkAll.addEventListener('click', function() {
+			const menus = document.querySelectorAll('#aside .accordion');
+			if (this.checked) {
+				menus.forEach(function(_this) {
+					commUiFnFold.set(_this.querySelector('.btn-fold'), true);
+				});
+			} else {
+				menus.forEach(function(_this) {
+					commUiFnFold.set(_this.querySelector('.btn-fold'), false);
+				});
+			}
+		});
+	},
+	links : () => {
+		const guideLink = document.querySelectorAll('#aside .fn-guide-link');
+		guideLink.forEach(function(_this) {
+			_this.addEventListener('click', function(e) {
+				e.preventDefault();
+				const _thisId = this.getAttribute('href');
+				const _thisElement = document.querySelector(_thisId);
+				if (_thisElement !== null) {
+					document.querySelector('#page').scrollTop = _thisElement.offsetTop;
+				}
+			});
+		});
+	}
+};
+document.addEventListener('DOMContentLoaded', () => {
+	guideMenu.init();
+});

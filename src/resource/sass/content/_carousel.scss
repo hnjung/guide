@@ -12,15 +12,15 @@
 .visual-item > .link > img {width: 100%;}
 .visual-control {position: absolute; z-index: 1; bottom: 1.3rem; left: 50%; display: flex; align-items: center; transform: translate3d(-50%, 0, 0);;}
 .visual-page {position: relative; bottom: auto; padding: .35rem .6rem; background-color: rgba(0, 22, 68, .6); border-radius: 9.9rem; line-height: 1; font-size: 1.1rem; color: rgba(255, 255, 255, .7);}
-.visual-page .swiper-pagination-current {font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #fff);}
+.visual-page .swiper-pagination-current {font-weight: config.variable(font, 500); color: config.variable(color, #fff);}
 
-.visual-control .btn-pause {display: block; overflow: hidden; flex-shrink: 0; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); margin-left: .1rem; background: var(--bg-url-md) no-repeat calc(var(--#{config.$prefix}icon-md) * -8) calc(var(--#{config.$prefix}icon-md) * -3); background-size: var(--bg-size-md); transform: scale3d(1,1,1); transition: transform config.variable(animation, speed, fast) var(--animation-timing-outback);}
+.visual-control .btn-pause {display: block; overflow: hidden; flex-shrink: 0; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); margin-left: .1rem; background: var(--bg-url-md) no-repeat calc(var(--#{config.$prefix}icon-md) * -8) calc(var(--#{config.$prefix}icon-md) * -3); background-size: var(--bg-size-md); transform: scale3d(1,1,1); transition: transform config.variable(animation, speed, fast) config.variable(animation, timing, outback);}
 .visual-control .btn-pause.is-stop {background-position: calc(var(--#{config.$prefix}icon-md) * -9) calc(var(--#{config.$prefix}icon-md) * -3);}
 .visual-control .btn-pause:active {transform: scale3d(.94,.94,1);}
 .swiper-pagination-lock ~ .btn-pause {display: none;}
 
 /* 이달의 추천 상품 */
-.main-monthly {margin-left: calc(var(--space-body) * -1); margin-right: calc(var(--space-body) * -1); padding-top: config.variable(space, .8rem); padding-bottom: var(--space-lg); background-color: config.variable(color, #fff);}
+.main-monthly {margin-left: calc(var(--space-body) * -1); margin-right: calc(var(--space-body) * -1); padding-top: config.variable(space, .8rem); padding-bottom: config.variable(space, 2.4rem); background-color: config.variable(color, #fff);}
 .monthly-wrap {padding-left: var(--space-body); padding-right: var(--space-body);}
 .monthly-item {width: 88.89%;}
 .monthly-item > .link {display: block; overflow: hidden; border-radius: config.variable(radius, 1.6rem);}

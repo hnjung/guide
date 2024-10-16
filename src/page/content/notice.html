@@ -1,0 +1,128 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'content',
+	gnb2nd: 'notice',
+	title: '공지'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section -->
+	<section class="section" id="module-note">
+		<h2 class="title-h2"><span class="txt">@공지사항</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">한줄</span></h3>
+			<!-- .note* -->
+			<p class="note-info">
+				<span>찾는 직업이 없는 경우, 가장 비슷한 직업으로 선택해주세요. 상담 시 직군에 맞는 직업으로 변경해드립니다. 찾는 직업이 없는 경우, 가장 비슷한 직업으로 선택해주세요. 상담 시 직군에 맞는 직업으로 변경해드립니다.</span>
+			</p>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">여러줄</span></h3>
+			<!-- .note* -->
+			<ul class="note-list depth-root">
+				<li>필수표시가 되어있는 항목은 전체를 정확하게 입력해주셔야 합니다.</li>
+				<li>필수표시가 되어있는 항목은 전체를 정확하게 입력해주셔야 합니다. 필수표시가 되어있는 항목은 전체를 정확하게 입력해주셔야 합니다. 필수표시가 되어있는 항목은 전체를 정확하게 입력해주셔야 합니다.</li>
+			</ul>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">박스형 - 상단 - 단락</span></h3>
+			<!-- .note* -->
+			<div class="note">
+				<p class="note-txt">
+					<span>찾는 직업이 없는 경우, 가장 비슷한 직업으로 선택해주세요. 상담 시 직군에 맞는 직업으로 변경해드립니다. 찾는 직업이 없는 경우, 가장 비슷한 직업으로 선택해주세요. 상담 시 직군에 맞는 직업으로 변경해드립니다.</span>
+				</p>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">박스형 - 상단 - 목록</span></h3>
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list depth-root">
+					<li>필수표시가 되어있는 항목은 전체를 정확하게 입력해주셔야 합니다. 필수표시가 되어있는 항목은 전체를 정확하게 입력해주셔야 합니다. 필수표시가 되어있는 항목은 전체를 정확하게 입력해주셔야 합니다.</li>
+					<li class="highlight">2뎁스가 있는 경우
+						<ul class="list depth-u2">
+							<li>2뎁스 내용</li>
+							<li class="primary">2뎁스 내용</li>
+							<li class="highlight">2뎁스 내용</li>
+						</ul>
+					</li>
+					<li class="primary">선택정보는 고객에게 직접 문의하여 작성해 주세요.</li>
+				</ul>
+				<strong class="note-sub-title">타이틀영역</strong>
+				<ul class="note-list depth-root">
+					<li>목록</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">접고펼치기 (.option-fold) - 하단 - 단락</span></h3>
+			<!-- .note* -->
+			<div class="note space-mb-xxs">
+				<ul class="note-list">
+					<li>📌접고 펼치기 동작을 위한 아래 클래스 추가</li>
+					<li>부모 요소 : <code>.option-fold.fn-fold-wrap</code></li>
+					<li>타이틀 요소(버튼 이벤트 연결 시) : <code>.fn-fold-link</code></li>
+					<li>버튼 요소 : <code>.fn-fold-btn</code></li>
+					<li>접고 펼칠 요소들 : <code>.fn-fold-item[]</code></li>
+					<li>애니메이션 반영 여부 : <code>data-fold-slide="true"</code></li>
+				</ul>
+			</div>
+			<!--// .note* -->
+			<!-- .note* -->
+			<div class="note option-fold fn-fold-wrap is-open" data-fold-slide="true"><!-- @set: option-fold, fn-fold-wrap, data-fold-slide="true" -->
+				<div class="note-head">
+					<strong class="note-title fn-fold-link" id="noteTitle1">열린 상태가 디폴트인 경우</strong><!-- @set: fn-fold-link -->
+					<button type="button" class="btn-fold fn-fold-btn" aria-expanded="false" aria-controls="noteBody1" aria-labelledby="noteTitle1"><span class="sr-only">열기</span></button><!-- @set: fn-fold-btn -->
+				</div>
+				<div class="note-body fn-fold-item" id="noteBody1" role="region" aria-labelledby="noteTitle1" aria-hidden="true"><!-- @set: fn-fold-item -->
+					<p class="note-txt">
+						<span>찾는 직업이 없는 경우, 가장 비슷한 직업으로 선택해주세요. 상담 시 직군에 맞는 직업으로 변경해드립니다. 찾는 직업이 없는 경우, 가장 비슷한 직업으로 선택해주세요. 상담 시 직군에 맞는 직업으로 변경해드립니다.</span>
+					</p>
+				</div>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">접고펼치기 (.option-fold) - 하단 - 목록</span></h3>
+			<!-- .note* -->
+			<div class="note option-fold fn-fold-wrap" data-fold-slide="true">
+				<div class="note-head">
+					<strong class="note-title fn-fold-link" id="noteTitle2">알려드립니다</strong>
+					<button type="button" class="btn-fold fn-fold-btn" aria-expanded="false" aria-controls="noteBody2" aria-labelledby="noteTitle2"><span class="sr-only">열기</span></button>
+				</div>
+				<div class="note-body fn-fold-item" id="noteBody2" role="region" aria-labelledby="noteTitle2" aria-hidden="true">
+					<ul class="note-list">
+						<li>필수표시가 되어있는 항목은 전체를 정확하게 입력해주셔야 합니다. 필수표시가 되어있는 항목은 전체를 정확하게 입력해주셔야 합니다. 필수표시가 되어있는 항목은 전체를 정확하게 입력해주셔야 합니다.</li>
+						<li>선택정보는 고객에게 직접 문의하여 작성해 주세요.</li>
+						<li>보험가입설계를 위한 정보동의의 경우 선택 내용만 변경할 수 있습니다.</li>
+					</ul>
+				</div>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

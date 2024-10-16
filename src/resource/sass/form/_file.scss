@@ -8,7 +8,7 @@
 /* 파일 */
 .file-label {display: block;}
 .file-data[type='file'] {overflow: hidden; position: absolute; clip: rect(0, 0, 0, 0); clip-path: polygon(0 0, 0 0, 0 0); width: 1px; height: 1px; margin: -1px;}
-.file-btn {padding: var(--space-xs) config.variable(space, 1.6rem); background-color: var(--#{config.$prefix}color-primary-10); border-radius: config.variable(radius, .8rem); line-height: 1; text-align: center;}
+.file-btn {padding: config.variable(space, 1.2rem) config.variable(space, 1.6rem); background-color: config.variable(color, #cfe2ff); border-radius: config.variable(radius, .8rem); line-height: 1; text-align: center;}
 .file-btn > .txt {line-height: 1.35; vertical-align: middle;}
 .file-btn::before {content: ''; display: inline-block; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); background: var(--bg-url-md) no-repeat calc(var(--#{config.$prefix}icon-md) * -1) calc(var(--#{config.$prefix}icon-md) * -4); background-size: var(--bg-size-md); vertical-align: middle;}
 .file-name {position: relative; display: none; overflow: hidden; padding: 1.5rem 4.7rem 1.5rem 1.9rem; border: config.variable(border, .1rem) solid config.variable(color, #dee2e6); border-radius: config.variable(radius, .8rem); line-height: 1; white-space: nowrap; text-overflow: ellipsis;}
@@ -24,13 +24,13 @@
 
 /** 파일 - 다중 */
 .file-wrap {display: flex; flex-direction: column-reverse;}
-.file-list.option-main .file-btn {padding: var(--space-xxl) config.variable(space, 1.6rem);}
+.file-list.option-main .file-btn {padding: config.variable(space, 4.0rem) config.variable(space, 1.6rem);}
 .file-list.option-main .file-btn > .txt {line-height: 1.35; vertical-align: middle; font-weight: config.variable(font, 600); font-size: config.variable(font, body, 1.8rem);}
 .file-list.option-main .file-btn > .sub-txt {display: block; padding: .4rem 0 0; line-height: 1.35; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #495057);}
 .file-list.option-main .file-btn::before {display: block; width: var(--icon-lg); height: var(--icon-lg); margin: 0 auto .8rem; background: var(--bg-url-lg) no-repeat 0 0; background-size: var(--bg-size-lg);}
 
 /** 파일 - 다중 - 단순형 */
-.file-wrap.option-simple .file-list.option-main .file-btn {padding: var(--space-xs) config.variable(space, 1.6rem);}
+.file-wrap.option-simple .file-list.option-main .file-btn {padding: config.variable(space, 1.2rem) config.variable(space, 1.6rem);}
 .file-wrap.option-simple .file-list.option-main .file-btn::before {display: inline-block; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); margin: 0; background: var(--bg-url-md) no-repeat calc(var(--#{config.$prefix}icon-md) * -1) calc(var(--#{config.$prefix}icon-md) * -4); background-size: var(--bg-size-md); vertical-align: middle;}
 .file-wrap.option-simple .file-list.option-main .file-btn > .txt {font-size: config.variable(font, body, 1.6rem); font-weight: config.variable(font, 400);}
 

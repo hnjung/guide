@@ -24,7 +24,7 @@
 
 /* 테이블 */
 /** 테이블 - 데이타형 */
-.data-body {border-top: config.variable(border, .1rem) solid var(--#{config.$prefix}color-base-50);}
+.data-body {border-top: config.variable(border, .1rem) solid config.variable(color, #adb5bd);}
 .data-list {width: 100%; color: config.variable(color, #495057); border-collapse: separate;}
 .data-list > thead > tr > th,
 .data-list > tbody > tr > th,
@@ -32,7 +32,7 @@
 .data-list > tbody > tr > td.align-left {text-align: left;}
 .data-list > tbody > tr > td.align-right {text-align: right;}
 .data-list > thead > tr > th,
-.data-list > tbody > tr > th {background-color: config.variable(color, #f8f9fa); font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #343a40);}
+.data-list > tbody > tr > th {background-color: config.variable(color, #f8f9fa); font-weight: config.variable(font, 500); color: config.variable(color, #343a40);}
 .data-list > thead > tr > th:last-child,
 .data-list > tbody > tr > th:last-child,
 .data-list > tbody > tr > td:last-child,
@@ -40,7 +40,7 @@
 .data-list > thead > tr > th:last-child.line,
 .data-list > tbody > tr > td:last-child.line {border-right: config.variable(border, .1rem) solid config.variable(color, #e9ecef);}
 .data-list > tfoot > tr > th,
-.data-list > tfoot > tr > td {padding: 1.2rem 1.0rem 1.15rem; border-right: config.variable(border, .1rem) solid config.variable(color, #e9ecef); border-bottom: config.variable(border, .1rem) solid config.variable(color, #e9ecef); text-align: center; font-weight: var(--#{config.$prefix}font-medium); font-size: config.variable(font, body, 1.4rem); background-color: var(--#{config.$prefix}color-primary-10); color: config.variable(color, #000);}
+.data-list > tfoot > tr > td {padding: 1.2rem 1.0rem 1.15rem; border-right: config.variable(border, .1rem) solid config.variable(color, #e9ecef); border-bottom: config.variable(border, .1rem) solid config.variable(color, #e9ecef); text-align: center; font-weight: config.variable(font, 500); font-size: config.variable(font, body, 1.4rem); background-color: config.variable(color, #cfe2ff); color: config.variable(color, #000);}
 .data-list > tfoot > tr > td {text-align: right; color: config.variable(color, #0d6efd);}
 .data-list > tfoot > tr > td.align-left {text-align: left;}
 .data-list > tfoot > tr > td.align-right {text-align: right;}
@@ -52,14 +52,14 @@
 
 .data-list th.is-active,
 .data-list td.is-active,
-.data-list > tbody > tr.is-active {background-color: var(--#{config.$prefix}color-primary-10);}
+.data-list > tbody > tr.is-active {background-color: config.variable(color, #cfe2ff);}
 
 .data-list .data-radio {padding: 0;}
 .data-list .data-radio .radio-item {display: block; padding: config.variable(space, 1.6rem) config.variable(space, .8rem);}
 .data-list .data-radio .radio-item .label {display: block; margin-top: config.variable(space, .4rem); padding-left: 0; line-height: 1.35; font-size: config.variable(font, body, 1.4rem);}
 .data-list .data-radio .radio-item .control[type='radio']:checked {animation-name: animation-data-radio;}
 .data-list .data-radio .txt {margin-top: config.variable(space, .4rem); line-height: 1.35; font-size: config.variable(font, body, 1.2rem); color: config.variable(color, #495057);}
-.data-list .data-radio .txt > strong {display: block; line-height: 1.5; font-weight: var(--#{config.$prefix}font-medium); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #000);}
+.data-list .data-radio .txt > strong {display: block; line-height: 1.5; font-weight: config.variable(font, 500); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #000);}
 
 .data-list .btn.texted > span {font-size: config.variable(font, body, 1.4rem);}
 .data-list .btn.texted:not(.primary) > span {color: config.variable(color, #495057);}
@@ -81,7 +81,7 @@
 }
 
 .data-list td .con-helper {display: flex; align-items: center; font-weight: config.variable(font, 400);}
-.data-list td .con-helper .txt {font-size: config.variable(font, body, 1.4rem); color: var(--#{config.$prefix}color-base-50);}
+.data-list td .con-helper .txt {font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #adb5bd);}
 .data-list td .con-helper .helper {flex: none; margin-left: config.variable(space, .4rem);}
 
 .data-list > thead .txt {display: block; margin-top: config.variable(space, .4rem); font-weight: config.variable(font, 400); font-size: var(--font-13-sm); color: config.variable(color, #495057);}
@@ -144,7 +144,7 @@
 .data.option-fold .btn-fold::before {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -2) calc(var(--icon-sm) * -1); background-size: var(--bg-size-sm);}
 .data.option-fold.is-open .btn-fold {transform: rotate(-180deg);}
 
-.data.option-fold .list-head {margin-bottom: 0; padding-bottom: 1.6rem; border-bottom: config.variable(border, .1rem) solid var(--#{config.$prefix}color-base-50);}
+.data.option-fold .list-head {margin-bottom: 0; padding-bottom: 1.6rem; border-bottom: config.variable(border, .1rem) solid config.variable(color, #adb5bd);}
 .data.option-fold .list-title {width: 100%;}
 .data.option-fold .inner {margin-top: -.1rem;}
 
@@ -154,7 +154,7 @@
 .data-body.rounded .data-list > thead .is-select .radio-item .label,
 .data-body.rounded .data-list > thead .is-select .txt,
 .data-body.rounded .data-list > thead .is-select .txt > strong {color: config.variable(color, #fff);}
-.data-body.rounded .data-list > tbody .is-select {background-color: var(--#{config.$prefix}color-primary-10); color: config.variable(color, #0d6efd);}
+.data-body.rounded .data-list > tbody .is-select {background-color: config.variable(color, #cfe2ff); color: config.variable(color, #0d6efd);}
 .data-body.rounded .data-list > tbody > tr:last-child > th,
 .data-body.rounded .data-list > tbody > tr:last-child > td {border-bottom: none;}
 
@@ -171,7 +171,7 @@
 /*** 테이블 - 데이타형 - 열선택 - (태블릿+PC) */
 @media screen and (min-width: 768px) {
 	.data-body.rounded {max-height: calc((4.7rem * 10) + 13.3rem);}
-	.data-body.rounded .data-list > tbody > tr > td.detail {text-align: left; font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #343a40);}
+	.data-body.rounded .data-list > tbody > tr > td.detail {text-align: left; font-weight: config.variable(font, 500); color: config.variable(color, #343a40);}
 }
 
 /*** 테이블 - 데이타형 - 열이동 */
@@ -196,7 +196,7 @@
 .data-list .btn-row-fold::before {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-url-md) no-repeat calc(var(--#{config.$prefix}icon-md) * -3) calc(var(--#{config.$prefix}icon-md) * -1); background-size: var(--bg-size-md);}
 .data-list > tbody > tr.is-active .btn-row-fold {transform: rotate(-180deg);}
 
-.data-sub-list {overflow: hidden; width: 100%; border: config.variable(border, .1rem) solid config.variable(color, #dee2e6); border-radius: var(--radius-sm); border-collapse: separate; color: config.variable(color, #495057);}
+.data-sub-list {overflow: hidden; width: 100%; border: config.variable(border, .1rem) solid config.variable(color, #dee2e6); border-radius: config.variable(radius, .4rem); border-collapse: separate; color: config.variable(color, #495057);}
 .data-sub-list > thead > tr > th,
 .data-sub-list > tbody > tr > th,
 .data-sub-list > tbody > tr > td {padding: 1.2rem 1.0rem 1.3rem; border-right: config.variable(border, .1rem) solid config.variable(color, #e9ecef); border-bottom: config.variable(border, .1rem) solid config.variable(color, #e9ecef); text-align: center; font-weight: config.variable(font, 400); font-size: config.variable(font, body, 1.4rem);}
@@ -209,7 +209,7 @@
 .data-sub-list > tbody > tr > td:last-child {border-right: 0;}
 .data-sub-list > tbody > tr:last-child > th,
 .data-sub-list > tbody > tr:last-child > td {border-bottom: 0;}
-.data-sub-list .name {display: block; font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #343a40);}
+.data-sub-list .name {display: block; font-weight: config.variable(font, 500); color: config.variable(color, #343a40);}
 .data-sub-list .value {color: config.variable(color, #495057);}
 .data-sub-list .name ~ .value {margin-top: .2rem;}
 
@@ -226,7 +226,7 @@
 
 /** 테이블 - 일반형 */
 .table-list {width: 100%; border-collapse: separate; color: config.variable(color, #000);}
-.table-list > thead > tr > th {height: 3.6rem; padding: calc(config.variable(space, .8rem) - config.variable(border, .1rem)); background-color: var(--#{config.$prefix}color-primary-10); border: config.variable(border, .1rem) solid config.variable(color, #9ec5fe); border-right: 0; text-align: center; font-weight: config.variable(font, 400); font-size: config.variable(font, body, 1.4rem);}
+.table-list > thead > tr > th {height: 3.6rem; padding: calc(config.variable(space, .8rem) - config.variable(border, .1rem)); background-color: config.variable(color, #cfe2ff); border: config.variable(border, .1rem) solid config.variable(color, #9ec5fe); border-right: 0; text-align: center; font-weight: config.variable(font, 400); font-size: config.variable(font, body, 1.4rem);}
 .table-list > thead > tr > th:first-child {border-top-left-radius: config.variable(radius, .8rem);}
 .table-list > thead > tr > th:last-child {border-right: config.variable(border, .1rem) solid config.variable(color, #9ec5fe); border-top-right-radius: config.variable(radius, .8rem);}
 .table-list > tbody > tr > th {background-color: #F5F6F8; border: config.variable(border, .1rem) solid config.variable(color, #9ec5fe); border-right: 0; text-align: center; font-weight: config.variable(font, 400); font-size: config.variable(font, body, 1.4rem);}

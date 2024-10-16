@@ -16,7 +16,7 @@
 .tab-menu.is-active::after {width: 100%; margin-left: -50%;}
 .tab-menu:active {background-color: config.variable(color, #dee2e6); transition: all config.variable(animation, speed, base) config.variable(animation, timing, base);}
 
-.tab-item {display: none; padding-top: var(--space-lg);}
+.tab-item {display: none; padding-top: config.variable(space, 2.4rem);}
 .tab-item.is-active {display: block;}
 
 /** 탭 - 폭전체사용 */
@@ -58,7 +58,7 @@
 /** 탭 - 칩 */
 .tab-head.option-chip {overflow: hidden;}
 .tab-head.option-chip::before {display: none;}
-.tab-head.option-chip .tab-menu {background-color: config.variable(color, #f8f9fa); border-radius: var(--radius-xl); transition: all config.variable(animation, speed, base) config.variable(animation, timing, base), transform config.variable(animation, speed, fast) config.variable(animation, timing, base);}
+.tab-head.option-chip .tab-menu {background-color: config.variable(color, #f8f9fa); border-radius: config.variable(radius, 2.4rem); transition: all config.variable(animation, speed, base) config.variable(animation, timing, base), transform config.variable(animation, speed, fast) config.variable(animation, timing, base);}
 .tab-head.option-chip .tab-menu + .tab-menu {margin-left: config.variable(space, .8rem);}
 .tab-head.option-chip .tab-menu > a {padding: .842rem 1.6rem .8rem; line-height: 1.35; font-weight: var(--#{config.$prefix}font-bold); font-size: config.variable(font, body, 1.6rem); color: config.variable(color, #ced4da); transition: all config.variable(animation, speed, base) config.variable(animation, timing, base);}
 .tab-head.option-chip .tab-menu::after {display: none;}

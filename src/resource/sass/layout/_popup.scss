@@ -13,15 +13,15 @@
 .popup-head.is-hide {min-height: 4.4rem;}
 .popup-content {overflow-y: auto; overflow-x: hidden; scroll-behavior: smooth;}
 .popup-content .section:first-child {padding-top: 0;}
-.popup-content .section:last-child {padding-bottom: calc(var(--space-lg) + var(--space-xs));}
-.popup-content .group + .group {padding-top: var(--space-xxl);}
+.popup-content .section:last-child {padding-bottom: calc(config.variable(space, 2.4rem) + config.variable(space, 1.2rem));}
+.popup-content .group + .group {padding-top: config.variable(space, 4.0rem);}
 .popup-foot {position: relative; padding: 0 config.variable(space, 1.6rem) config.variable(space, 1.6rem);}
 .modal-msg {color: config.variable(color, #000);}
 
 /** 팝업레이아웃 - 타이틀, 닫기 버튼 */
-.popup-title {line-height: 1.35; font-weight: config.variable(font, 600); font-size: var(--font-title-sm); color: config.variable(color, #000);}
+.popup-title {line-height: 1.35; font-weight: config.variable(font, 600); font-size: config.variable(font, title, 1.8rem); color: config.variable(color, #000);}
 [data-main-copy="true"].popup-wrap .popup-title > span {display: none; opacity: 0;}
-[data-main-copy="true"].popup-wrap .popup-title.is-active > span {display: block; animation: animation-popup-main-copy config.variable(animation, speed, base) var(--animation-timing-ease) forwards;}
+[data-main-copy="true"].popup-wrap .popup-title.is-active > span {display: block; animation: animation-popup-main-copy config.variable(animation, speed, base) ease forwards;}
 @keyframes animation-popup-main-copy {
 	0% {
 		opacity: 0;
@@ -57,8 +57,8 @@
 
 /* 풀 - (태블릿+PC) */
 @media screen and (min-width: 768px) {
-	.popup-wrap.option-full .popup-inner {max-width: 360px; height: auto; max-height: calc(var(--vh, 1vh) * 90); border-radius: var(--radius-xl);}
-	.popup-wrap.option-full.expended .popup-inner {max-width: 90%; height: calc(var(--vh, 1vh) * 90); border-radius: var(--radius-xl);}
+	.popup-wrap.option-full .popup-inner {max-width: 360px; height: auto; max-height: calc(var(--vh, 1vh) * 90); border-radius: config.variable(radius, 2.4rem);}
+	.popup-wrap.option-full.expended .popup-inner {max-width: 90%; height: calc(var(--vh, 1vh) * 90); border-radius: config.variable(radius, 2.4rem);}
 	.popup-wrap.option-full .popup-foot {padding-bottom: config.variable(space, 1.6rem);}
 }
 
@@ -77,7 +77,7 @@
 .popup-wrap.option-bottom-sheet {left: 0; bottom: 0; right: 0;}
 .popup-wrap.option-bottom-sheet::before {bottom: calc(var(--vh, 1vh) * -10); left: 0; width: 100vw; height: calc(var(--vh, 1vh) * 110); transform: translate3d(0, 0, 0);}
 .popup-wrap.option-bottom-sheet::after {content: ''; position: absolute; left: 0; right: 0; bottom: calc(var(--vh, 1vh) * -10); height: calc(var(--vh, 1vh) * 10); background-color: config.variable(color, #fff);}
-.popup-wrap.option-bottom-sheet .popup-inner {max-height: calc(var(--vh, 1vh) * 90); max-height: calc((var(--vh, 1vh) * 90) - constant(safe-area-inset-bottom)); max-height: calc((var(--vh, 1vh) * 90) - env(safe-area-inset-bottom)); border-top-left-radius: var(--radius-xl); border-top-right-radius: var(--radius-xl);}
+.popup-wrap.option-bottom-sheet .popup-inner {max-height: calc(var(--vh, 1vh) * 90); max-height: calc((var(--vh, 1vh) * 90) - constant(safe-area-inset-bottom)); max-height: calc((var(--vh, 1vh) * 90) - env(safe-area-inset-bottom)); border-top-left-radius: config.variable(radius, 2.4rem); border-top-right-radius: config.variable(radius, 2.4rem);}
 
 .popup-wrap.option-bottom-sheet .popup-head.is-hide {min-height: 5.4rem;}
 .popup-wrap.option-bottom-sheet .popup-content {flex-basis: 100%;}
@@ -98,16 +98,16 @@
 /** 바텀시트 - 콘텐츠접기 */
 .popup-wrap.option-bottom-sheet.option-fold {will-change: auto;}
 .popup-wrap.option-bottom-sheet.option-fold.is-open {will-change: max-height;}
-.popup-wrap.option-bottom-sheet.option-fold .popup-inner {max-height: calc(var(--vh, 1vh) * 50); transition: max-height config.variable(animation, speed, base) var(--animation-timing-ease), opacity config.variable(animation, speed, fast) config.variable(animation, timing, base);}
+.popup-wrap.option-bottom-sheet.option-fold .popup-inner {max-height: calc(var(--vh, 1vh) * 50); transition: max-height config.variable(animation, speed, base) ease, opacity config.variable(animation, speed, fast) config.variable(animation, timing, base);}
 .popup-wrap.option-bottom-sheet.option-fold .popup-inner.is-fill {max-height: calc(var(--vh, 1vh) * 90);}
-.popup-wrap.option-bottom-sheet.option-fold .popup-head {padding-top: var(--space-lg);}
-.popup-wrap.option-bottom-sheet.option-fold .btn-popup-close {top: var(--space-lg);}
+.popup-wrap.option-bottom-sheet.option-fold .popup-head {padding-top: config.variable(space, 2.4rem);}
+.popup-wrap.option-bottom-sheet.option-fold .btn-popup-close {top: config.variable(space, 2.4rem);}
 .btn-popup-drag {position: absolute; z-index: 1; top: 0; left: 50%; display: inline-block; padding: 1.0rem 4.0rem 1.6rem; margin-left: -8.0rem;}
-.btn-popup-drag::before {content: ''; display: block; width: 8.0rem; height: .4rem; border-radius: var(--radius-sm); background-color: config.variable(color, #e9ecef);}
+.btn-popup-drag::before {content: ''; display: block; width: 8.0rem; height: .4rem; border-radius: config.variable(radius, .4rem); background-color: config.variable(color, #e9ecef);}
 
 /** 바텀시트 - 스와이프 닫기 */
-.popup-wrap.option-bottom-sheet.option-swipe .popup-head {padding-top: var(--space-lg);}
-.popup-wrap.option-bottom-sheet.option-swipe .btn-popup-close {top: var(--space-lg);}
+.popup-wrap.option-bottom-sheet.option-swipe .popup-head {padding-top: config.variable(space, 2.4rem);}
+.popup-wrap.option-bottom-sheet.option-swipe .btn-popup-close {top: config.variable(space, 2.4rem);}
 
 @keyframes animation-popup-bottom-wrap {
 	100% {
@@ -123,13 +123,13 @@
 /* 모달 */
 .popup-wrap.option-modal {top: 0; bottom: 0; left: 0; right: 0; align-items: center;}
 .popup-wrap.option-modal::before {top: 0; bottom: 0; left: 0; right: 0; transform: translate3d(0, 0, 0);}
-.popup-wrap.option-modal .popup-inner {max-height: calc(var(--vh, 1vh) * 90); max-height: calc((var(--vh, 1vh) * 90) - constant(safe-area-inset-bottom)); max-height: calc((var(--vh, 1vh) * 90) - env(safe-area-inset-bottom)); margin: 0 config.variable(space, 1.6rem); border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); transform: translate3d(0,-12%,0);}
-.popup-wrap.option-modal .popup-content .section:last-child {padding-bottom: var(--space-lg);}
+.popup-wrap.option-modal .popup-inner {max-height: calc(var(--vh, 1vh) * 90); max-height: calc((var(--vh, 1vh) * 90) - constant(safe-area-inset-bottom)); max-height: calc((var(--vh, 1vh) * 90) - env(safe-area-inset-bottom)); margin: 0 config.variable(space, 1.6rem); border-radius: config.variable(radius, 2.4rem); box-shadow: var(--shadow-sm); transform: translate3d(0,-12%,0);}
+.popup-wrap.option-modal .popup-content .section:last-child {padding-bottom: config.variable(space, 2.4rem);}
 
 /** 모달 - 오픈 시 */
 .popup-wrap.option-modal.is-open {transform: translate3d(0, 0, 0);}
 .popup-wrap.option-modal.is-open::before {animation-duration: config.variable(animation, speed, base);}
-.popup-wrap.option-modal.is-open .popup-inner {animation: animation-popup-modal-inner config.variable(animation, speed, base) var(--animation-timing-outback) forwards;}
+.popup-wrap.option-modal.is-open .popup-inner {animation: animation-popup-modal-inner config.variable(animation, speed, base) config.variable(animation, timing, outback) forwards;}
 
 /* 모달 - (태블릿+PC) */
 @media screen and (min-width: 768px) {
@@ -157,8 +157,8 @@
 .popup-wrap.option-guide.is-open .popup-head {padding-bottom: 1.971rem;}
 .popup-wrap.option-guide .popup-content .section:last-child {padding-bottom: calc(2.4rem + constant(safe-area-inset-bottom)); padding-bottom: calc(2.4rem + env(safe-area-inset-bottom));}
 
-.popup-wrap.option-guide .popup-inner {opacity: 1; border-top-left-radius: var(--radius-xl); border-top-right-radius: var(--radius-xl); box-shadow: 0 -.4rem 1.6rem 0 rgba(18, 25, 43, 0.08);}
-.popup-wrap.option-guide .popup-content {overflow-y: hidden; max-height: 0; transition: max-height config.variable(animation, speed, base) var(--animation-timing-ease);}
+.popup-wrap.option-guide .popup-inner {opacity: 1; border-top-left-radius: config.variable(radius, 2.4rem); border-top-right-radius: config.variable(radius, 2.4rem); box-shadow: 0 -.4rem 1.6rem 0 rgba(18, 25, 43, 0.08);}
+.popup-wrap.option-guide .popup-content {overflow-y: hidden; max-height: 0; transition: max-height config.variable(animation, speed, base) ease;}
 .popup-wrap.option-guide.is-open .popup-content {max-height: calc(var(--vh, 1vh) * 80);}
 
 .btn-popup-fold {position: absolute; overflow: hidden; z-index: 1; top: config.variable(space, 1.6rem); right: config.variable(space, 1.6rem); width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); background: var(--bg-url-md) no-repeat calc(var(--#{config.$prefix}icon-md) * -3) calc(var(--#{config.$prefix}icon-md) * -1); background-size: var(--bg-size-md); transform: rotate(-180deg); transition: transform config.variable(animation, speed, base) config.variable(animation, timing, base);}

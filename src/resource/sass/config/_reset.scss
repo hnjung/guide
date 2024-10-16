@@ -62,7 +62,7 @@
 	&:-webkit-autofill:hover,
 	&:-webkit-autofill:focus,
 	&:-webkit-autofill:active {
-		@extend %form-autofill;
+		@extend %autofill;
 	}
 }
 :where(textarea[class]) {
@@ -70,7 +70,7 @@
 	&:-webkit-autofill:hover,
 	&:-webkit-autofill:focus,
 	&:-webkit-autofill:active {
-		@extend %form-autofill;
+		@extend %autofill;
 	}
 }
 :where(select[class]) {
@@ -78,10 +78,10 @@
 	&:-webkit-autofill:hover,
 	&:-webkit-autofill:focus,
 	&:-webkit-autofill:active {
-		@extend %form-autofill;
+		@extend %autofill;
 	}
 }
-%form-autofill {
+%autofill {
 	box-shadow: 0 0 0 1000px func.variable(color, #fff) inset !important;
 	transition: background-color 5000s ease 0s;
 }

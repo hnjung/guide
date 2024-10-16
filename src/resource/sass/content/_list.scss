@@ -54,17 +54,17 @@
 .list-head > [class*="title"] {flex-shrink: 0;}
 .list-head:not(.option-row) > div:last-child:not(.unit) {flex-shrink: 1; width: 100%;}
 
-.list-title {max-width: 100%; line-height: 1.35; font-weight: config.variable(font, 600); font-size: var(--font-title-sm); color: config.variable(color, #000);}
+.list-title {max-width: 100%; line-height: 1.35; font-weight: config.variable(font, 600); font-size: config.variable(font, title, 1.8rem); color: config.variable(color, #000);}
 .list-title > span {font-weight: config.variable(font, 400);}
 
 .list-total {text-align: left;}
-.list-total > span {display: inline-block; vertical-align: middle; line-height: 1.5; font-weight: var(--#{config.$prefix}font-medium); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #000);}
-.list-total > span > strong {font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #0d6efd);}
+.list-total > span {display: inline-block; vertical-align: middle; line-height: 1.5; font-weight: config.variable(font, 500); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #000);}
+.list-total > span > strong {font-weight: config.variable(font, 500); color: config.variable(color, #0d6efd);}
 
 .list-info > span {display: inline-block; vertical-align: middle; line-height: 1.5; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #6c757d);}
 .list-head .list-title ~ .list-info {margin-top: config.variable(space, .4rem);}
 
-.list-btn {display: flex; padding-top: var(--space-lg);}
+.list-btn {display: flex; padding-top: config.variable(space, 2.4rem);}
 .list-btn > .btn {width: 100%;}
 .list-btn > .btn.option-sm + .btn.option-sm {margin-left: config.variable(space, .8rem);}
 
@@ -88,7 +88,7 @@
 .list-head .list-label > span.warning::before {content: '● '; color: #F35C06;}
 .list-head .list-label > span.highlight::before {content: '● '; color: #DF0707;}
 
-.list-foot {margin-top: var(--space-lg);}
+.list-foot {margin-top: config.variable(space, 2.4rem);}
 .list-paging {text-align: center; font-size: config.variable(font, body, 1.4rem);}
 .list-paging [class^="btn-list-"] {position: relative; overflow: hidden; display: inline-block; vertical-align: middle; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); background: var(--bg-url-md) no-repeat 0 calc(var(--#{config.$prefix}icon-md) * -1); background-size: var(--bg-size-md);}
 .list-paging .btn-list-prev {margin-right: config.variable(space, 1.6rem);}
@@ -96,7 +96,7 @@
 .page-current {display: inline-block; vertical-align: middle; font-size: 0;}
 .page-current > strong,
 .page-current > a {display: inline-block; min-width: 3.2rem; padding: .5rem .8rem .45rem; margin: 0 .4rem; background-color: config.variable(color, #f8f9fa); border-radius: config.variable(radius, .8rem); vertical-align: middle; text-align: center; font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #6c757d);}
-.page-current > strong {background-color: #1A57FF; font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #fff);}
+.page-current > strong {background-color: #1A57FF; font-weight: config.variable(font, 500); color: config.variable(color, #fff);}
 
 .list-foot.option-more {margin-top: config.variable(space, 1.6rem);}
 .btn-list-more {display: block; width: 100%; padding: config.variable(space, .8rem) 0;}
@@ -105,7 +105,7 @@
 .btn-list-more:disabled > span {color: config.variable(color, #ced4da);}
 .btn-list-more:disabled::after {background-position: calc(var(--icon-sm) * -7) calc(var(--icon-sm) * -2);}
 
-.list-nodata {padding: var(--space-xxl); text-align: center; color: config.variable(color, #495057);}
+.list-nodata {padding: config.variable(space, 4.0rem); text-align: center; color: config.variable(color, #495057);}
 .list-nodata::before {content: ''; display: block; width: var(--icon-xl); height: var(--icon-xl); margin: 0 auto config.variable(space, .8rem); background: var(--bg-url-xl) no-repeat 0 0; background-size: var(--bg-size-xl);}
 .list-nodata.option-search::before {background-position: calc(var(--icon-xl) * -1) 0;}
 .list-nodata.option-info::before {background-position: calc(var(--icon-xl) * -2) 0;}

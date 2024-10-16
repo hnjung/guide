@@ -1,0 +1,262 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'component',
+	gnb2nd: 'buttonlink',
+	title: '버튼/링크'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section - 컴포넌트 - 링크 -->
+	<section class="section" id="element-link">
+		<h2 class="title-h2"><span class="txt">@링크</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">기본</span></h3>
+			<!-- .link* -->
+			<a href="javascript:;" class="text-link">폰트사이즈와 컬러 부모에게서 상속됨</a>
+			<!--// .link* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">아이콘형</span></h3>
+			<!-- .link* -->
+			<a href="javascript:;" class="btn-ico-link"><span class="sr-only">보기</span></a>
+			<!--// .link* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">밑줄형</span></h3>
+			<!-- .link* -->
+			<a href="javascript:;" class="btn-txt-link"><span>텍스트링크</span></a>
+			<a href="javascript:;" class="btn-txt-link primary"><span>텍스트링크</span></a>
+			<!--// .link* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">불릿형</span></h3>
+			<!-- .link* -->
+			<a href="javascript:;" class="btn-bullet-link"><span>텍스트링크</span></a>
+			<a href="javascript:;" class="btn-bullet-link primary"><span>텍스트링크</span></a>
+			<!--// .link* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">메뉴형</span></h3>
+			<!-- .link* -->
+			<a href="javascript:;" class="btn-menu-link"><span>메뉴형링크</span></a>
+			<a href="javascript:;" class="btn-menu-link"><span>메뉴형링크</span></a>
+			<!--// .link* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 컴포넌트 - 링크 -->
+
+	<!-- .section - 컴포넌트 - 버튼 -->
+	<section class="section" id="form-button">
+		<h2 class="title-h2"><span class="txt">@버튼</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">유형별</span></h3>
+			<!-- .btn -->
+			<button type="button" class="btn primary"><span>확인(.primary)</span></button>
+			<button type="button" class="btn primary" disabled><span>확인(비활성화)</span></button>
+
+			<button type="button" class="btn filled"><span>취소(.filled)</span></button>
+			<button type="button" class="btn filled" disabled><span>취소(비활성화)</span></button>
+			<button type="button" class="btn contained"><span>버튼(.contained)</span></button>
+			<button type="button" class="btn contained" disabled><span>버튼(비활성화)</span></button>
+			<br>
+			<button type="button" class="btn outlined"><span>버튼(.outlined)</span></button>
+			<button type="button" class="btn outlined" disabled><span>버튼(비활성화)</span></button>
+			<button type="button" class="btn pointed"><span>버튼(.pointed)</span></button>
+			<button type="button" class="btn pointed" disabled><span>버튼(비활성화)</span></button>
+			<!--// .btn -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">크기별</span></h3>
+			<!-- .btn -->
+			<button type="button" class="btn primary option-cta"><span>버튼56(.option-cta)</span></button><!-- @set: option-cta -->
+			<button type="button" class="btn primary"><span>버튼48(기본)</span></button>
+			<button type="button" class="btn primary option-md"><span>버튼40(.option-md)</span></button><!-- @set: option-md -->
+			<button type="button" class="btn primary option-sm"><span>버튼32(.option-sm)</span></button><!-- @set: option-sm -->
+
+			<button type="button" class="btn filled option-cta"><span>버튼</span></button>
+			<button type="button" class="btn filled"><span>버튼</span></button>
+			<button type="button" class="btn filled option-md"><span>버튼</span></button>
+			<button type="button" class="btn filled option-sm"><span>버튼</span></button>
+
+			<button type="button" class="btn contained option-cta"><span>버튼</span></button>
+			<button type="button" class="btn contained"><span>버튼</span></button>
+			<button type="button" class="btn contained option-md"><span>버튼</span></button>
+			<button type="button" class="btn contained option-sm"><span>버튼</span></button>
+
+			<button type="button" class="btn outlined option-cta"><span>버튼</span></button>
+			<button type="button" class="btn outlined"><span>버튼</span></button>
+			<button type="button" class="btn outlined option-md"><span>버튼</span></button>
+			<button type="button" class="btn outlined option-sm"><span>버튼</span></button>
+
+			<button type="button" class="btn pointed option-cta"><span>버튼</span></button>
+			<button type="button" class="btn pointed"><span>버튼</span></button>
+			<button type="button" class="btn pointed option-md"><span>버튼</span></button>
+			<button type="button" class="btn pointed option-sm"><span>버튼</span></button>
+			<!--// .btn -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">밑줄형</span></h3>
+			<!-- .btn -->
+			<button type="button" class="btn texted"><span>텍스트버튼(.texted)</span></button>
+			<button type="button" class="btn texted" disabled><span>텍스트버튼(비활성화)</span></button>
+			<button type="button" class="btn texted primary"><span>텍스트버튼(.texted)</span></button>
+			<button type="button" class="btn texted primary" disabled><span>텍스트버튼(비활성화)</span></button>
+			<!--// .btn -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">불릿형</span></h3>
+			<!-- .btn -->
+			<button type="button" class="btn bulleted"><span>텍스트버튼(.bulleted)</span></button>
+			<button type="button" class="btn bulleted" disabled><span>텍스트버튼(비활성화)</span></button>
+			<button type="button" class="btn bulleted primary"><span>텍스트버튼(.bulleted)</span></button>
+			<button type="button" class="btn bulleted primary" disabled><span>텍스트버튼(비활성화)</span></button>
+			<!--// .btn -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">아이콘형</span></h3>
+			<!-- .btn -->
+			<button type="button" class="btn outlined option-md icon more"><span>아이콘버튼(.icon)</span></button>
+			<button type="button" class="btn outlined option-md icon more" disabled><span>아이콘버튼(비활성화)</span></button>
+
+			<button type="button" class="btn outlined option-sm icon download"><span>아이콘버튼(.icon)</span></button>
+
+			<button type="button" class="btn ico-download"><span class="sr-only">가입제안서 다운로드</span></button>
+			<button type="button" class="btn ico-download" disabled><span class="sr-only">가입제안서 다운로드</span></button>
+			<button type="button" class="btn ico-send"><span class="sr-only">상품별 상세 보험료 계산 결과 발송</span></button>
+			<button type="button" class="btn ico-send" disabled><span class="sr-only">상품별 상세 보험료 계산 결과 발송</span></button>
+
+			<button type="button" class="btn ico-filter"><span class="sr-only">상세조건 변경</span></button>
+			<!--// .btn -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">값 선택형</span></h3>
+			<!-- .note* -->
+			<div class="note space-mb-xxs">
+				<ul class="note-list depth-root">
+					<li>📌커스텀 셀렉트박스 사용 시 아래 클래스 추가</li>
+					<li>팝업 호출하는 버튼 요소 : .fn-select-btn</li>
+					<li>팝업에서 데이터 선택 시 선택한 텍스트 출력 : .fn-select-value</li>
+					<li>팝업에서 데이터 선택 시 선택한 값 저장 : data-select-value=""</li>
+					<li>팝업 부모 요소 : .fn-select-wrap</li>
+					<li>팝업 목록 아이템 요소 : .fn-select-item</li>
+					<li>팝업 목록 아이템의 인풋 요소 : .fn-select-input</li>
+					<li>팝업 목록 아이템의 인풋 값 : data-select-value=""</li>
+					<li>팝업 목록 아이템의 텍스트 요소 : .fn-select-title</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+
+			<!-- .btn -->
+			<button type="button" class="btn selected fn-select-btn fn-popup-open" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="popupDataSelect" data-popup-id="#popupDataSelect">
+				<span class="txt is-placeholder fn-select-value" data-select-value="">선택해 주세요</span><!-- [D]DB에 저장되는 값 (data-select-value="") -->
+			</button>
+			<!--// .btn -->
+			<!-- .btn -->
+			<button type="button" class="btn selected w-fix-md fn-select-btn fn-popup-open" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="popupDataSelect" data-popup-id="#popupDataSelect">
+				<span class="txt fn-select-value" data-select-value="">선택한 값 출력</span>
+			</button>
+			<!--// .btn -->
+			<!-- .btn -->
+			<button type="button" class="btn selected is-error w-fix-md fn-select-btn fn-popup-open" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="popupDataSelect" data-popup-id="#popupDataSelect">
+				<span class="txt fn-select-value" data-select-value="">is-error</span>
+			</button>
+			<!--// .btn -->
+			<!-- .btn -->
+			<button type="button" class="btn selected w-fix-md fn-select-btn fn-popup-open" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="popupDataSelect" data-popup-id="#popupDataSelect" disabled>
+				<span class="txt fn-select-value" data-select-value="">Disabled</span>
+			</button>
+			<!--// .btn -->
+			<!-- .btn -->
+			<button type="button" class="btn selected is-readonly w-fix-md fn-select-btn fn-popup-open" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="popupDataSelect" data-popup-id="#popupDataSelect">
+				<span class="txt fn-select-value" data-select-value="">Readonly</span>
+			</button>
+			<!--// .btn -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">버튼 그룹</span></h3>
+			<!-- .btn-group* -->
+			<div class="btn-group">
+				<button type="button" class="btn primary"><span>저장</span></button>
+			</div>
+			<!--// .btn-group* -->
+			<!-- .btn-group* -->
+			<div class="btn-group space-mt-xxs">
+				<button type="button" class="btn filled fixed"><span>초기화</span></button>
+				<button type="button" class="btn primary"><span>검색</span></button>
+			</div>
+			<!--// .btn-group* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">버튼 그룹 - 폭전체 (.option-full)</span></h3>
+			<!-- .btn-group* -->
+			<div class="btn-group option-full">
+				<button type="button" class="btn filled"><span>초기화</span></button>
+				<button type="button" class="btn primary"><span>검색</span></button>
+			</div>
+			<!--// .btn-group* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">버튼 그룹 - 풀팝업 태블릿용 최소 사이즈 (.option-min)</span></h3>
+			<!-- .btn-group* -->
+			<div class="btn-group option-min">
+				<button type="button" class="btn filled"><span>버튼명</span></button>
+				<button type="button" class="btn filled"><span>버튼명</span></button>
+				<button type="button" class="btn primary"><span>버튼명</span></button>
+			</div>
+			<!--// .btn-group* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">페이지 메인 버튼 그룹 (.option-main)</span></h3>
+			<!-- .btn -->
+			<div class="btn-group option-main">
+				<button type="button" class="btn filled fixed"><span>취소</span></button>
+				<button type="button" class="btn primary"><span>저장</span></button>
+			</div>
+			<!--// .btn -->
+			<!-- .btn -->
+			<div class="btn-group option-main">
+				<button type="button" class="btn contained fixed"><span>목록</span></button>
+				<button type="button" class="btn primary"><span>저장</span></button>
+			</div>
+			<!--// .btn -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 컴포넌트 - 버튼 -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

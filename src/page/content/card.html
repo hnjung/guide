@@ -1,0 +1,742 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'content',
+	gnb2nd: 'card',
+	title: '카드'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section - 컴포넌트 - 카드형목록(선택용) -->
+	<section class="section" id="module-card-select">
+		<h2 class="title-h2"><span class="txt">@카드형목록(선택용)</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .note* -->
+			<div class="note space-mb-xxs">
+				<ul class="note-list">
+					<li>📌제목만 있는 유형은 상하 여백이 다르므로 옵션 추가 <code>(.card-list.option-single)</code></li>
+					<li>📌더보기 아이콘이 버튼으로 포함된 경우 제목의 오른쪽 여백을 위해 옵션 추가 <code>(.card-item.option-more)</code></li>
+				</ul>
+			</div>
+			<!--// .note* -->
+
+			<h3 class="title-h3"><span class="txt">제목 단독형</span></h3>
+			<!-- .card -->
+			<div class="card">
+				<!-- .card-list -->
+				<ul class="card-list option-single"><!-- @set: option-single -->
+					<!-- 아이콘 버튼형 -->
+					<li class="card-item option-more"><!-- @set: option-more -->
+						<div class="card-title">
+							<strong class="key"><em>아이콘 버튼형</em></strong>
+						</div>
+						<button class="btn-card-detail"><span class="sr-only">상세보기</span></button>
+					</li>
+
+					<!-- 아이콘 링크형 -->
+					<li class="card-item option-more">
+						<div class="card-title">
+							<strong class="key"><em>아이콘 링크형</em></strong>
+						</div>
+						<a href="javascript:;" class="btn-card-detail"><span class="sr-only">상세보기</span></a>
+					</li>
+
+					<!-- 전체영역 링크형 -->
+					<li class="card-item">
+						<a href="javascript:;" class="card-link" title="상세보기">
+							<div class="card-title">
+								<strong class="key"><em>전체영역 링크형</em></strong>
+							</div>
+						</a>
+					</li>
+
+					<!-- 카드 활성화 -->
+					<li class="card-item option-more is-active"><!-- @set: is-active -->
+						<div class="card-title">
+							<strong class="key"><em>카드 활성화</em></strong>
+						</div>
+						<button class="btn-card-detail"><span class="sr-only">상세보기</span></button>
+					</li>
+				</ul>
+				<!-- .card-list -->
+			</div>
+			<!-- .card -->
+		</div>
+		<!-- //.group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">제목 아이콘형</span></h3>
+			<!-- .card -->
+			<div class="card">
+				<!-- .card-list -->
+				<ul class="card-list option-icon">
+					<li class="card-item">
+						<a href="javascript:;" class="card-link" title="상세보기">
+							<div class="card-title">
+								<strong class="key type1"><em>전체영역 링크형</em></strong>
+							</div>
+						</a>
+					</li>
+					<!-- 보조 문구가 있는 경우, .key.option-top 옵션 추가 -->
+					<li class="card-item">
+						<a href="javascript:;" class="card-link" title="상세보기">
+							<div class="card-title">
+								<strong class="key option-top type1">
+									<em>전체영역 링크형
+										<span class="sub">화재보험에서 목적물이 되는 소재지를 변경하는 경우</span>
+									</em>
+								</strong>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<!-- .card-list -->
+			</div>
+			<!-- .card -->
+		</div>
+		<!-- //.group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">제목, 내용</span></h3>
+			<!-- .card -->
+			<div class="card">
+				<!-- .card-list -->
+				<ul class="card-list">
+					<!-- 아이콘 버튼형 -->
+					<li class="card-item option-more">
+						<div class="card-title">
+							<strong class="key"><em>제목</em></strong>
+						</div>
+						<div class="card-main">
+							<span class="txt">내용</span>
+						</div>
+						<button class="btn-card-detail"><span class="sr-only">상세보기</span></button>
+					</li>
+
+					<!-- 전체영역 링크형 -->
+					<li class="card-item">
+						<a href="javascript:;" class="card-link" title="상세보기">
+							<div class="card-title">
+								<span class="txt">
+									<span class="badge option-base type1">해지</span>
+								</span>
+								<strong class="key"><em>제목</em></strong>
+							</div>
+							<div class="card-main">
+								<span class="txt"><em>내용</em><em>내용</em><em>내용</em></span>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<!-- .card-list -->
+			</div>
+			<!-- .card -->
+		</div>
+		<!-- //.group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">제목, 내용, 버튼</span></h3>
+			<!-- .card -->
+			<div class="card">
+				<!-- .card-list -->
+				<ul class="card-list">
+					<li class="card-item option-more">
+						<div class="card-title">
+							<span class="txt"><em>남</em><em>1990.01.01</em></span>
+							<strong class="key"><em>제목</em></strong>
+							<button class="btn-card-detail"><span class="sr-only">상세보기</span></button>
+						</div>
+						<div class="card-main">
+							<span class="txt"><em>내용</em><em>내용</em><em>내용</em></span>
+						</div>
+						<div class="card-func">
+							<button type="button" class="btn outlined option-md"><span>버튼</span></button>
+							<button type="button" class="btn filled option-md"><span>버튼</span></button>
+							<button type="button" class="btn contained option-md"><span>버튼</span></button>
+						</div>
+					</li>
+				</ul>
+				<!-- .card-list -->
+			</div>
+			<!-- .card -->
+		</div>
+		<!-- //.group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">제목, 항목명+값</span></h3>
+			<!-- .card -->
+			<div class="card">
+				<!-- .card-list -->
+				<ul class="card-list">
+					<li class="card-item">
+						<div class="card-title">
+							<span class="txt"><em>남</em><em>1990.01.01</em></span>
+							<strong class="key"><em>제목</em> 
+								<!-- .helper -->
+								<div class="helper">
+									<button type="button" class="helper-btn fn-popover-open" data-popover-id="#popover21Example" aria-describedby="popover21Example"><span class="sr-only">추가설명</span></button>
+									<!-- .popover -->
+									<div class="popover" id="popover21Example" role="tooltip" aria-hidden="true" tabindex="0">
+										<h5 class="popover-title"><span>제목</span></h5>
+										<!-- .popover-content -->
+										<div class="popover-content">
+											<p class="text">내용</p>
+											<!-- .note* -->
+											<ul class="note-list space-mt-xxs">
+												<li>내용</li>
+											</ul>
+											<!--// .note* -->
+										</div>
+										<!--// .popover-content -->
+										<button type="button" class="btn-popover-close fn-popover-close" data-popover-id="#popover21Example">
+											<span class="sr-only">팝업 닫기</span>
+										</button>
+									</div>
+									<!--// .popover -->
+								</div>
+								<!--// .helper -->
+							</strong>
+							<a href="javascript:;" class="btn-card-detail"><span class="sr-only">상세보기</span></a>
+						</div>
+						<div class="card-info">
+							<div class="item-row option-top">
+								<div class="unit"><span class="txt">항목명</span></div>
+								<div class="unit">
+									<span class="txt option-value">데이터</span>
+									<!-- .helper -->
+									<div class="helper">
+										<button type="button" class="helper-btn fn-popover-open" data-popover-id="#popover22Example" aria-describedby="popover22Example"><span class="sr-only">추가설명</span></button>
+										<!-- .popover -->
+										<div class="popover" id="popover22Example" role="tooltip" aria-hidden="true" tabindex="0">
+											<h5 class="popover-title"><span>제목</span></h5>
+											<!-- .popover-content -->
+											<div class="popover-content">
+												<p class="text">내용</p>
+												<!-- .note* -->
+												<ul class="note-list space-mt-xxs">
+													<li>내용</li>
+												</ul>
+												<!--// .note* -->
+											</div>
+											<!--// .popover-content -->
+											<button type="button" class="btn-popover-close fn-popover-close" data-popover-id="#popover22Example">
+												<span class="sr-only">팝업 닫기</span>
+											</button>
+										</div>
+										<!--// .popover -->
+									</div>
+									<!--// .helper -->
+									<br>
+									<span class="txt option-value">데이터</span>
+								</div>
+							</div>
+							<div class="item-row">
+								<div class="unit"><span class="txt">항목명항목명항목명</span></div>
+								<div class="unit"><span class="txt option-value">데이터데이터데이터</span></div>
+							</div>
+							<div class="item-row option-left">
+								<div class="unit"><span class="txt">항목명</span></div>
+								<div class="unit"><span class="txt option-value">데이터</span></div>
+							</div>
+							<div class="item-row">
+								<div class="unit"><span class="txt">항목명</span></div>
+								<div class="unit"><a href="javascript:;" class="link">데이터</a></div>
+							</div>
+							<div class="item-row">
+								<div class="unit"><span class="txt">항목명</span></div>
+								<div class="unit"><a href="javascript:;" class="link fc-dark">데이터</a></div>
+							</div>
+							<div class="item-row">
+								<div class="unit"><span class="txt">항목명</span></div>
+								<div class="unit">
+									<!-- .select -->
+									<div class="select option-sm">
+										<select name="" id="selectT" class="select-data" aria-label="옵션제목A" aria-hidden="true" tabindex="-1">
+											<option value="" disabled selected>옵션을 선택해 주세요</option>
+											<option value="">넓이가변</option>
+											<option value="">옵션길이만큼</option>
+											<option value="">자동세팅됨</option>
+										</select>
+									</div>
+									<!--// .select -->
+								</div>
+							</div>
+							<div class="item-row">
+								<div class="unit"><span class="txt">항목명</span></div>
+								<div class="unit">
+									<!-- .switch* -->
+									<label for="switchP1" class="switch-item">
+										<input type="checkbox" name="" id="switchP1" class="control">
+										<span class="label"><span class="sr-only">항목명 선택</span></span>
+									</label>
+									<!--// .switch* -->
+								</div>
+							</div>
+							<div class="item-row">
+								<div class="unit"><span class="txt">항목명</span></div>
+								<div class="unit">
+									<!-- .btn -->
+									<button type="button" class="btn contained option-sm"><span>버튼</span></button>
+									<!--// .btn -->
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<!-- 비활성화 -->
+					<li class="card-item is-disabled">
+						<label for="cardB1" class="card-select item-row option-top option-left">
+							<input type="checkbox" name="cardB" id="cardB1" class="checkbox-control" disabled>
+							<div class="label unit filled">
+								<div class="card-title">
+									<span class="txt"><em>남</em><em>1990.01.01</em></span>
+									<strong class="key"><em>제목</em></strong>
+									<a href="javascript:;" class="btn-card-detail"><span class="sr-only">상세보기</span></a>
+								</div>
+								<div class="card-info">
+									<div class="item-row option-top">
+										<div class="unit"><span class="txt">항목명</span></div>
+										<div class="unit"><span class="txt option-value">데이터</span></div>
+									</div>
+									<div class="item-row">
+										<div class="unit"><span class="txt">항목명</span></div>
+										<div class="unit">
+											<!-- .select -->
+											<div class="select option-sm">
+												<select name="" id="selectU" class="select-data" aria-label="옵션제목A" aria-hidden="true" tabindex="-1" disabled>
+													<option value="">선택값1</option>
+													<option value="">선택값2</option>
+												</select>
+											</div>
+											<!--// .select -->
+										</div>
+									</div>
+									<div class="item-row">
+										<div class="unit"><span class="txt">항목명</span></div>
+										<div class="unit">
+											<!-- .switch* -->
+											<label for="switchP2" class="switch-item">
+												<input type="checkbox" name="" id="switchP2" class="control" disabled>
+												<span class="label"><span class="sr-only">항목명 선택</span></span>
+											</label>
+											<!--// .switch* -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</label>
+					</li>
+
+					<!-- 전체영역 링크형 -->
+					<li class="card-item">
+						<a href="javascript:;" class="card-link" title="상세보기">
+							<div class="card-title">
+								<span class="txt">
+									<span class="badge option-base type1">해지</span>
+									<em>EZ1234000000</em>
+								</span>
+								<strong class="key"><em>제목</em></strong>
+							</div>
+							<div class="card-info">
+								<div class="item-row">
+									<div class="unit"><span class="txt">항목명</span></div>
+									<div class="unit"><span class="txt option-value">데이터</span></div>
+								</div>
+								<div class="item-row">
+									<div class="unit"><span class="txt">항목명</span></div>
+									<div class="unit"><span class="txt option-value">데이터</span></div>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<!-- .card-list -->
+			</div>
+			<!-- .card -->
+		</div>
+		<!-- //.group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">접고펼치기</span></h3>
+			<!-- .note* -->
+			<div class="note space-mb-xxs">
+				<ul class="note-list">
+					<li>📌접고 펼치기 동작을 위한 아래 클래스 추가</li>
+					<li>부모 요소 : <code>.option-more.fn-fold-wrap</code></li>
+					<li>버튼 요소 : <code>.fn-fold-btn</code></li>
+					<li>접고 펼칠 요소들 : <code>.detail.fn-fold-item[]</code></li>
+				</ul>
+			</div>
+			<!--// .note* -->
+			<!-- .card -->
+			<div class="card">
+				<!-- .card-list -->
+				<ul class="card-list">
+					<li class="card-item option-more fn-fold-wrap"><!-- @set: option-more, fn-fold-wrap -->
+						<div class="card-title">
+							<strong class="key"><em>제목</em></strong>
+							<a href="javascript:;" class="btn-card-detail"><span class="sr-only">상세보기</span></a>
+						</div>
+						<div class="card-info">
+							<div class="item-row">
+								<div class="unit"><span class="txt">항목명</span></div>
+								<div class="unit"><span class="txt option-value">데이터</span></div>
+							</div>
+							<div class="item-row">
+								<div class="unit"><span class="txt">항목명</span></div>
+								<div class="unit"><span class="txt option-value">데이터</span></div>
+							</div>
+							<div class="item-row detail fn-fold-item"><!-- @set: detail, fn-fold-item -->
+								<div class="unit"><span class="txt">상세항목명</span></div>
+								<div class="unit"><span class="txt option-value">상세데이터</span></div>
+							</div>
+							<div class="item-row detail fn-fold-item">
+								<div class="unit"><span class="txt">상세항목명</span></div>
+								<div class="unit"><span class="txt option-value">상세데이터</span></div>
+							</div>
+						</div>
+						<!-- .btn -->
+						<button type="button" class="btn-card-more fn-fold-btn" aria-expanded="false"><span class="sr-only">열기</span><span class="txt"></span></button><!-- @set: fn-fold-btn -->
+						<!--// .btn -->
+					</li>
+				</ul>
+				<!-- .card-list -->
+			</div>
+			<!-- .card -->
+		</div>
+		<!-- //.group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">체크박스</span></h3>
+			<!-- .card -->
+			<div class="card">
+				<!-- .card-list -->
+				<ul class="card-list">
+					<li class="card-item item-row option-top option-left">
+						<div class="unit fixed">
+							<!-- .checkbox* -->
+							<label for="cardCheck" class="checkbox-item">
+								<input type="checkbox" name="dataCheck" id="cardCheck" class="control">
+								<span class="label sr-only">제목 선택</span>
+							</label>
+							<!--// .checkbox* -->
+						</div>
+						<div class="unit filled">
+							<div class="card-title">
+								<strong class="key"><em>제목</em></strong>
+							</div>
+							<div class="card-main">
+								<span class="txt">내용</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<!--// .card-list -->
+			</div>
+			<!--// .card -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">선택 - 라디오버튼</span></h3>
+			<!-- .card -->
+			<div class="card">
+				<!-- .card-list -->
+				<ul class="card-list">
+					<li class="card-item option-more fn-fold-wrap">
+						<label for="cardA1" class="card-select">
+							<input type="radio" name="cardA" id="cardA1" class="control sr-only" checked>
+							<div class="label">
+								<div class="card-title">
+									<strong class="key"><em>제목</em></strong>
+								</div>
+								<div class="card-info">
+									<div class="item-row">
+										<div class="unit"><span class="txt">항목명</span></div>
+										<div class="unit"><span class="txt option-value">데이터</span></div>
+									</div>
+									<div class="item-row detail fn-fold-item">
+										<div class="unit"><span class="txt">상세항목명</span></div>
+										<div class="unit"><span class="txt option-value">상세데이터</span></div>
+									</div>
+								</div>
+							</div>
+						</label>
+						<!-- .btn -->
+						<button type="button" class="btn-card-more fn-fold-btn" aria-expanded="false"><span class="sr-only">열기</span><span class="txt"></span></button>
+						<!--// .btn -->
+					</li>
+					<li class="card-item option-more fn-fold-wrap">
+						<label for="cardA2" class="card-select card-link"><!-- @set: card-link - 추가 시 화살표 아이콘 보임 -->
+							<input type="radio" name="cardA" id="cardA2" class="control sr-only">
+							<div class="label">
+								<div class="card-title">
+									<strong class="key"><em>제목</em></strong>
+								</div>
+								<div class="card-info">
+									<div class="item-row">
+										<div class="unit"><span class="txt">항목명</span></div>
+										<div class="unit"><span class="txt option-value">데이터</span></div>
+									</div>
+									<div class="item-row detail fn-fold-item">
+										<div class="unit"><span class="txt">상세항목명</span></div>
+										<div class="unit"><span class="txt option-value">상세데이터</span></div>
+									</div>
+								</div>
+							</div>
+						</label>
+						<!-- .btn -->
+						<button type="button" class="btn-card-more fn-fold-btn" aria-expanded="false"><span class="sr-only">열기</span><span class="txt"></span></button>
+						<!--// .btn -->
+					</li>
+				</ul>
+				<!--// .card-list -->
+			</div>
+			<!--// .card -->
+		</div>
+		<!-- //.group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">선택 - 체크박스</span></h3>
+			<!-- .card -->
+			<div class="card">
+				<!-- .card-list -->
+				<ul class="card-list">
+					<li class="card-item option-more fn-fold-wrap">
+						<label for="cardB11" class="card-select item-row option-top option-left">
+							<input type="checkbox" name="cardB" id="cardB11" class="checkbox-control" checked>
+							<div class="label unit filled">
+								<div class="card-title">
+									<strong class="key"><em>제목</em></strong>
+								</div>
+								<div class="card-info">
+									<div class="item-row">
+										<div class="unit"><span class="txt">항목명</span></div>
+										<div class="unit"><span class="txt option-value">데이터</span></div>
+									</div>
+									<div class="item-row detail fn-fold-item">
+										<div class="unit"><span class="txt">상세항목명</span></div>
+										<div class="unit"><span class="txt option-value">상세데이터</span></div>
+									</div>
+								</div>
+							</div>
+						</label>
+						<!-- .btn -->
+						<button type="button" class="btn-card-more fn-fold-btn" aria-expanded="false"><span class="sr-only">열기</span><span class="txt"></span></button>
+						<!--// .btn -->
+					</li>
+				</ul>
+				<!--// .card-list -->
+			</div>
+			<!--// .card -->
+		</div>
+		<!-- //.group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">합계 (.option-bg)</span></h3>
+			<!-- .card -->
+			<div class="card">
+				<!-- .card-list -->
+				<ul class="card-list">
+					<li class="card-item option-bg">
+						<div class="card-title">
+							<strong class="key"><em>합계</em></strong>
+						</div>
+						<div class="card-info">
+							<div class="item-row">
+								<div class="unit"><span class="txt">상세항목명</span></div>
+								<div class="unit"><span class="txt option-value text-price2"><em>23,900</em>원</span></div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<!--// .card-list -->
+			</div>
+			<!--// .card -->
+		</div>
+		<!-- //.group -->
+	</section>
+	<!--// .section - 컴포넌트 - 카드형목록(선택용) -->
+
+	<!-- .section - 컴포넌트 - 카드형목록(출력용) -->
+	<section class="section" id="module-card-data">
+		<h2 class="title-h2"><span class="txt">@카드형목록(출력용)</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">제목 + 데이터 (.option-data)</span></h3>
+
+			<!-- .title* -->
+			<h4 class="title-h4"><span class="txt">제목</span></h4>
+			<!--// .title* -->
+			<!-- .card -->
+			<div class="card option-data">
+				<!-- .card-list -->
+				<ul class="card-list">
+					<li class="card-item">
+						<div class="card-info">
+							<div class="item-row">
+								<div class="unit"><span class="txt">항목명</span></div>
+								<div class="unit"><span class="txt option-value">데이터</span></div>
+							</div>
+							<div class="item-row">
+								<div class="unit"><span class="txt">항목명</span></div>
+								<div class="unit"><span class="txt option-value">데이터</span></div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<!--// .card-list -->
+			</div>
+			<!--// .card -->
+		</div>
+		<!-- //.group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">목록1 - 박스 내 목록 (.option-data)</span></h3>
+
+			<!-- .card -->
+			<div class="card option-data">
+				<!-- .card-list -->
+				<ul class="card-list">
+					<li class="card-item">
+						<div class="card-title">
+							<strong class="key"><em>제목</em></strong>
+						</div>
+						<div class="card-main">
+							<span class="txt">내용만 들어가는 경우</span>
+						</div>
+					</li>
+					<li class="card-item">
+						<div class="card-title">
+							<strong class="key"><em>제목</em></strong>
+						</div>
+						<div class="card-info">
+							<div class="item-row">
+								<div class="unit"><span class="txt">항목명</span></div>
+								<div class="unit"><span class="txt option-value">데이터</span></div>
+							</div>
+							<div class="item-row">
+								<div class="unit"><span class="txt">항목명</span></div>
+								<div class="unit"><span class="txt option-value">데이터</span></div>
+							</div>
+						</div>
+					</li>
+					<li class="card-item">
+						<div class="card-title">
+							<strong class="key"><em>제목</em></strong>
+						</div>
+						<div class="card-info">
+							<div class="item-row">
+								<div class="unit"><span class="txt">항목명</span></div>
+								<div class="unit"><span class="txt option-value">데이터</span></div>
+							</div>
+							<div class="item-row">
+								<div class="unit"><span class="txt">항목명</span></div>
+								<div class="unit"><span class="txt option-value">데이터</span></div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<!--// .card-list -->
+			</div>
+			<!--// .card -->
+		</div>
+		<!-- //.group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">목록2 - 아이템 박스 (.option-flat)</span></h3>
+
+			<!-- .card -->
+			<div class="card option-flat">
+				<!-- .card-list -->
+				<ul class="card-list">
+					<li class="card-item">
+						<div class="card-title">
+							<strong class="key"><em>제목</em></strong>
+						</div>
+						<div class="card-info">
+							<div class="item-row">
+								<div class="unit"><span class="txt">항목명</span></div>
+								<div class="unit"><span class="txt option-value">데이터</span></div>
+							</div>
+							<div class="item-row">
+								<div class="unit"><span class="txt">항목명</span></div>
+								<div class="unit"><span class="txt option-value">데이터</span></div>
+							</div>
+						</div>
+					</li>
+					<li class="card-item option-more fn-fold-wrap">
+						<div class="card-title">
+							<strong class="key"><em>제목</em></strong>
+						</div>
+						<div class="card-info">
+							<div class="item-row">
+								<div class="unit"><span class="txt">항목명</span></div>
+								<div class="unit"><span class="txt option-value">데이터</span></div>
+							</div>
+							<div class="item-row">
+								<div class="unit"><span class="txt">항목명</span></div>
+								<div class="unit"><span class="txt option-value">데이터</span></div>
+							</div>
+						</div>
+						<div class="detail fn-fold-item">
+							<!-- .note* -->
+							<div class="note space-mt-sm">
+								<p class="note-txt">
+									<span>찾는 직업이 없는 경우, 가장 비슷한 직업으로 선택해주세요. 상담 시 직군에 맞는 직업으로 변경해드립니다. 찾는 직업이 없는 경우, 가장 비슷한 직업으로 선택해주세요. 상담 시 직군에 맞는 직업으로 변경해드립니다.</span>
+								</p>
+							</div>
+							<!--// .note* -->
+						</div>
+						<!-- .btn -->
+						<button type="button" class="btn-card-more fn-fold-btn" aria-expanded="false"><span class="sr-only">열기</span><span class="txt"></span></button>
+						<!--// .btn -->
+					</li>
+				</ul>
+				<!--// .card-list -->
+			</div>
+			<!--// .card -->
+		</div>
+		<!-- //.group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">목록3 - 스텝 (.option-step)</span></h3>
+
+			<!-- .card -->
+			<div class="card option-data option-step">
+				<!-- .card-list -->
+				<ul class="card-list">
+					<li class="card-item step-type1">
+						<div class="card-title">
+							<span class="txt"><em>STEP 01</em></span>
+							<strong class="key"><em>본인인증</em></strong>
+						</div>
+					</li>
+					<li class="card-item step-type2">
+						<div class="card-title">
+							<span class="txt"><em>STEP 02</em></span>
+							<strong class="key"><em>담당자 지정</em></strong>
+						</div>
+					</li>
+					<li class="card-item step-type3">
+						<div class="card-title">
+							<span class="txt"><em>STEP 03</em></span>
+							<strong class="key"><em>사고조사 또는 심사</em></strong>
+						</div>
+					</li>
+				</ul>
+				<!--// .card-list -->
+			</div>
+			<!--// .card -->
+		</div>
+		<!-- //.group -->
+	</section>
+	<!--// .section - 컴포넌트 - 카드형목록(출력용) -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

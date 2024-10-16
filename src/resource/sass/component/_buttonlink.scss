@@ -129,7 +129,7 @@
 #popup > .popup-wrap.option-full .popup-foot .btn-group > .btn.primary,
 #popup > .popup-wrap.option-full .popup-foot .btn-group > .btn.primary:hover,
 #popup > .popup-wrap.option-bottom-sheet .popup-foot .btn-group > .btn.primary,
-#popup > .popup-wrap.option-bottom-sheet .popup-foot .btn-group > .btn.primary:hover {box-shadow: var(--shadow-primary-lg);}
+#popup > .popup-wrap.option-bottom-sheet .popup-foot .btn-group > .btn.primary:hover {box-shadow: config.variable(shadow, primary, lg);}
 
 .btn.primary.option-cta:active,
 .btn.primary.option-cta:disabled,

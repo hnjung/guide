@@ -1,0 +1,136 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'utility',
+	gnb2nd: 'display',
+	title: '디스플레이'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section - 컴포넌트 - 요소분할 -->
+	<section class="section" id="module-item">
+		<h2 class="title-h2"><span class="txt">@요소분할</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">상하</span></h3>
+			<!-- .box -->
+			<div class="box option-line">
+				<!-- .item* -->
+				<div class="item-col">
+					<div class="unit"><span class="fs-md">내용1</span></div>
+					<div class="unit"><span class="fs-md">내용2</span></div>
+					<div class="unit"><span class="fs-md">내용3</span></div>
+				</div>
+				<!--// .item* -->
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">좌우</span></h3>
+			<!-- .box -->
+			<div class="box option-line">
+				<!-- .item* -->
+				<div class="item-row">
+					<div class="unit filled"><span class="fs-md">콘텐츠와 무관하게 폭을 채울 경우 .filled 클래스 사용</span></div>
+					<div class="unit fixed"><span class="fs-md">콘텐츠 폭만큼 넓이 고정할 경우 .fixed 클래스 사용</span></div>
+					<div class="unit"><span class="fs-md">기본 상대적 가변 넓이</span></div>
+				</div>
+				<!--// .item* -->
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">혼합(모바일:상하 / 태블릿:좌우 - 여백 8)</span></h3>
+			<!-- .box -->
+			<div class="box option-line">
+				<!-- .item* -->
+				<div class="item-react">
+					<div class="unit fixed"><span class="fs-md">내용1</span></div>
+					<div class="unit filled"><span class="fs-md">내용2</span></div>
+					<div class="unit fixed"><span class="fs-md">내용3</span></div>
+				</div>
+				<!--// .item* -->
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">혼합 1:1(모바일:상하 / 태블릿:좌우-1:1 - 여백 16)</span></h3>
+			<!-- .box -->
+			<div class="box option-line">
+				<!-- .item* -->
+				<div class="item-half">
+					<div class="unit"><span class="fs-md">모바일에서는 상하로 보이고</span></div>
+					<div class="unit"><span class="fs-md">태블릿 이상에서는 좌우로 보이는데, 1:1로 보이고 좌우 여백은 16px로 고정되는 스타일</span></div>
+				</div>
+				<!--// .item* -->
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 컴포넌트 - 요소분할 -->
+
+	<!-- .section - 컴포넌트 - 사이즈 -->
+	<section class="section" id="element-size">
+		<h2 class="title-h2"><span class="txt">@사이즈</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">넓이</span></h3>
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li><code>common.element.css</code> 파일의 사이즈 참고</li>
+					<li>최소 % 넓이 : <code>.min-w-xx</code></li>
+					<li>최대 % 넓이 : <code>.max-w-xx</code></li>
+					<li>% 넓이 : <code>.w-xx</code></li>
+					<li>고정 넓이 : <code>.w-fix-xx</code></li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">높이</span></h3>
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li><code>common.element.css</code> 파일의 사이즈 참고</li>
+					<li>최소 % 높이 : <code>.min-h-xx</code></li>
+					<li>최대 % 높이 : <code>.max-h-xx</code></li>
+					<li>% 높이 : <code>.h-xx</code></li>
+					<li>고정 높이 : <code>.h-fix-xx</code></li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">여백</span></h3>
+			<!-- .note* -->
+			<div class="note">
+				<ul class="note-list">
+					<li><code>common.element.css</code> 파일의 여백 참고</li>
+					<li><code>margin</code> : <code>.space-reset-mx .space-mt-xx .space-mb-xx .space-ml-xx .space-mr-xx</code></li>
+					<li><code>padding</code> : <code>.space-reset-px .space-pt-xx .space-pb-xx .space-pl-xx .space-pr-xx</code></li>
+				</ul>
+			</div>
+			<!--// .note* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 컴포넌트 - 사이즈 -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

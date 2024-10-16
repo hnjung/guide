@@ -1,0 +1,69 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'content',
+	gnb2nd: 'list',
+	title: '목록'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section -->
+	<section class="section" id="element-typography">
+		<h2 class="title-h2"><span class="txt">@타이포그래피</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">목록</span></h3>
+			<!-- .box -->
+			<div class="box option-line">
+				<!-- .list -->
+				<ul class="list depth-u1">
+					<li>블릿이 있는 목록 - 1뎁스 블릿이 있는 목록 - 1뎁스 블릿이 있는 목록 - 1뎁스 블릿이 있는 목록 - 1뎁스 블릿이 있는 목록 - 1뎁스 블릿이 있는 목록 - 1뎁스</li>
+					<li class="highlight">블릿이 있는 목록 - 1뎁스
+						<ul class="list depth-u2">
+							<li>블릿이 있는 목록 - 2뎁스 블릿이 있는 목록 - 2뎁스 블릿이 있는 목록 - 2뎁스 블릿이 있는 목록 - 2뎁스 블릿이 있는 목록 - 2뎁스 블릿이 있는 목록 - 2뎁스</li>
+							<li class="primary">블릿이 있는 목록 - 2뎁스
+								<ul class="list depth-u3">
+									<li>블릿이 있는 목록 - 3뎁스 블릿이 있는 목록 - 3뎁스 블릿이 있는 목록 - 3뎁스 블릿이 있는 목록 - 3뎁스 블릿이 있는 목록 - 3뎁스 블릿이 있는 목록 - 3뎁스</li>
+									<li class="primary">블릿이 있는 목록 - 3뎁스</li>
+									<li class="highlight">블릿이 있는 목록 - 3뎁스</li>
+								</ul>
+								<ul class="list depth-u4">
+									<li>블릿이 있는 목록 - 4뎁스</li>
+									<li class="highlight">블릿이 있는 목록 - 4뎁스</li>
+									<li class="primary">블릿이 있는 목록 - 4뎁스 블릿이 있는 목록 - 4뎁스 블릿이 있는 목록 - 4뎁스 블릿이 있는 목록 - 4뎁스 블릿이 있는 목록 - 4뎁스 블릿이 있는 목록 - 4뎁스 블릿이 있는 목록 - 4뎁스</li>
+								</ul>
+							</li>
+							<li class="highlight">블릿이 있는 목록 - 2뎁스</li>
+						</ul>
+					</li>
+					<li class="primary">블릿이 <button type="button" class="btn-list-text is-ready">입력 전 텍스트</button> 있는 목록 - 1뎁스</li>
+					<li class="primary">블릿이 <button type="button" class="btn-list-text is-confirm" disabled>입력 후 텍스트</button> 있는 목록 - 1뎁스</li>
+				</ul>
+				<ol class="list depth-o1">
+					<li>1. 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록</li>
+					<li>2. 순서 있는 목록
+						<ol class="list depth-o2">
+							<li>① 순서 있는 목록</li>
+							<li>② 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록
+								<ol class="list depth-o3">
+									<li>가. 순서 있는 목록</li>
+									<li>나. 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록 순서 있는 목록</li>
+								</ol>
+							</li>
+						</ol>
+					</li>
+				</ol>
+				<!--// .list -->
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

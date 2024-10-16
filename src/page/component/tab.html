@@ -1,0 +1,288 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'component',
+	gnb2nd: 'tab',
+	title: '탭'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section -->
+	<section class="section" id="module-tab">
+		<h2 class="title-h2"><span class="txt">@탭</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">기본</span></h3>
+			<!-- .tab* -->
+			<div class="tab">
+				<ul class="tab-head" role="tablist">
+					<li class="tab-menu is-active" role="tab" id="tabAMenu1" aria-controls="tabAPanel1" aria-selected="true"><a href="javascript:;" tabindex="0">탭이름1</a></li>
+					<li class="tab-menu" role="tab" id="tabAMenu2" aria-controls="tabAPanel2" aria-selected="false"><a href="javascript:;" tabindex="-1">탭이름2</a></li>
+					<li class="tab-menu" role="tab" id="tabAMenu3" aria-controls="tabAPanel3" aria-selected="false"><a href="javascript:;" tabindex="-1">탭이름3</a></li>
+				</ul>
+				<div class="tab-list">
+					<div class="tab-item is-active" id="tabAPanel1" role="tabpanel" aria-labelledby="tabAMenu1" aria-hidden="false" tabindex="0">
+						<h2 class="blind">탭이름1</h2><!-- @접근성 태그 추가 -->
+						<!-- .box -->
+						<div class="box option-bg" style="border-radius: 0;">
+							탭내용1
+						</div>
+						<!--// .box -->
+					</div>
+					<div class="tab-item" id="tabAPanel2" role="tabpanel" aria-labelledby="tabAMenu2" aria-hidden="true" tabindex="-1">
+						<h2 class="blind">탭이름2</h2><!-- @접근성 태그 추가 -->
+						<!-- .box -->
+						<div class="box option-bg" style="border-radius: 0;">
+							탭내용2
+						</div>
+						<!--// .box -->
+					</div>
+					<div class="tab-item" id="tabAPanel3" role="tabpanel" aria-labelledby="tabAMenu3" aria-hidden="true" tabindex="-1">
+						<h2 class="blind">탭이름3</h2><!-- @접근성 태그 추가 -->
+						<!-- .box -->
+						<div class="box option-bg" style="border-radius: 0;">
+							탭내용3
+						</div>
+						<!--// .box -->
+					</div>
+				</div>
+			</div>
+			<!--// .tab* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">폭전체 (.option-full)</span></h3>
+			<!-- .tab* -->
+			<div class="tab">
+				<ul class="tab-head option-full" role="tablist"><!-- @set: option-full -->
+					<li class="tab-menu is-active" role="tab" id="tabBMenu1" aria-controls="tabBPanel1" aria-selected="true"><a href="javascript:;" tabindex="0">탭이름1</a></li>
+					<li class="tab-menu" role="tab" id="tabBMenu2" aria-controls="tabBPanel2" aria-selected="false"><a href="javascript:;" tabindex="-1">탭이름2</a></li>
+					<li class="tab-menu" role="tab" id="tabBMenu3" aria-controls="tabBPanel3" aria-selected="false"><a href="javascript:;" tabindex="-1">탭이름3</a></li>
+				</ul>
+				<div class="tab-list">
+					<div class="tab-item is-active" id="tabBPanel1" role="tabpanel" aria-labelledby="tabBMenu1" aria-hidden="false" tabindex="0">
+						<h2 class="blind">탭이름1</h2><!-- @접근성 태그 추가 -->
+						<!-- .box -->
+						<div class="box option-bg" style="border-radius: 0;">
+							탭내용1
+						</div>
+						<!--// .box -->
+					</div>
+					<div class="tab-item" id="tabBPanel2" role="tabpanel" aria-labelledby="tabBMenu2" aria-hidden="true" tabindex="-1">
+						<h2 class="blind">탭이름2</h2><!-- @접근성 태그 추가 -->
+						<!-- .box -->
+						<div class="box option-bg" style="border-radius: 0;">
+							탭내용2
+						</div>
+						<!--// .box -->
+					</div>
+					<div class="tab-item" id="tabBPanel3" role="tabpanel" aria-labelledby="tabBMenu3" aria-hidden="true" tabindex="-1">
+						<h2 class="blind">탭이름3</h2><!-- @접근성 태그 추가 -->
+						<!-- .box -->
+						<div class="box option-bg" style="border-radius: 0;">
+							탭내용3
+						</div>
+						<!--// .box -->
+					</div>
+				</div>
+			</div>
+			<!--// .tab* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">가로 스크롤 유형</span></h3>
+			<!-- .tab* -->
+			<div class="tab">
+				<div class="tab-scroll">
+					<ul class="tab-head" role="tablist">
+						<li class="tab-menu is-active" role="tab" id="tabCMenu1" aria-controls="tabCPanel1" aria-selected="true"><a href="javascript:;" tabindex="0">탭이름탭이름탭이름탭이름탭이름탭이름탭이름탭이름1</a></li>
+						<li class="tab-menu" role="tab" id="tabCMenu2" aria-controls="tabCPanel2" aria-selected="false"><a href="javascript:;" tabindex="-1">탭이름탭이름탭이름탭이름탭이름탭이름탭이름탭이름2</a></li>
+						<li class="tab-menu" role="tab" id="tabCMenu3" aria-controls="tabCPanel3" aria-selected="false"><a href="javascript:;" tabindex="-1">탭이름탭이름탭이름탭이름탭이름탭이름탭이름탭이름3</a></li>
+					</ul>
+				</div>
+				<div class="tab-list">
+					<div class="tab-item is-active" id="tabCPanel1" role="tabpanel" aria-labelledby="tabCMenu1" aria-hidden="false" tabindex="0">
+						<h2 class="blind">탭이름1</h2><!-- @접근성 태그 추가 -->
+						<!-- .box -->
+						<div class="box option-bg" style="border-radius: 0;">
+							탭내용1
+						</div>
+						<!--// .box -->
+					</div>
+					<div class="tab-item" id="tabCPanel2" role="tabpanel" aria-labelledby="tabCMenu2" aria-hidden="true" tabindex="-1">
+						<h2 class="blind">탭이름2</h2><!-- @접근성 태그 추가 -->
+						<!-- .box -->
+						<div class="box option-bg" style="border-radius: 0;">
+							탭내용2
+						</div>
+						<!--// .box -->
+					</div>
+					<div class="tab-item" id="tabCPanel3" role="tabpanel" aria-labelledby="tabCMenu3" aria-hidden="true" tabindex="-1">
+						<h2 class="blind">탭이름3</h2><!-- @접근성 태그 추가 -->
+						<!-- .box -->
+						<div class="box option-bg" style="border-radius: 0;">
+							탭내용3
+						</div>
+						<!--// .box -->
+					</div>
+				</div>
+			</div>
+			<!--// .tab* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">칩형 (.option-chip)</span></h3>
+			<!-- .tab* -->
+			<div class="tab">
+				<div class="tab-scroll">
+					<ul class="tab-head option-chip" role="tablist">
+						<li class="tab-menu is-active" role="tab" id="tabFMenu1" aria-controls="tabFPanel1" aria-selected="true"><a href="javascript:;" tabindex="0">탭이름탭이름탭이름탭이름탭이름탭이름탭이름탭이름1</a></li>
+						<li class="tab-menu" role="tab" id="tabFMenu2" aria-controls="tabFPanel2" aria-selected="false"><a href="javascript:;" tabindex="-1">탭이름탭이름탭이름탭이름탭이름탭이름탭이름탭이름2</a></li>
+						<li class="tab-menu" role="tab" id="tabFMenu3" aria-controls="tabFPanel3" aria-selected="false"><a href="javascript:;" tabindex="-1">탭이름탭이름탭이름탭이름탭이름탭이름탭이름탭이름3</a></li>
+					</ul>
+				</div>
+				<div class="tab-list">
+					<div class="tab-item is-active" id="tabFPanel1" role="tabpanel" aria-labelledby="tabFMenu1" aria-hidden="false" tabindex="0">
+						<h2 class="blind">탭이름1</h2><!-- @접근성 태그 추가 -->
+						<!-- .box -->
+						<div class="box option-bg" style="border-radius: 0;">
+							탭내용1
+						</div>
+						<!--// .box -->
+					</div>
+					<div class="tab-item" id="tabFPanel2" role="tabpanel" aria-labelledby="tabFMenu2" aria-hidden="true" tabindex="-1">
+						<h2 class="blind">탭이름2</h2><!-- @접근성 태그 추가 -->
+						<!-- .box -->
+						<div class="box option-bg" style="border-radius: 0;">
+							탭내용2
+						</div>
+						<!--// .box -->
+					</div>
+					<div class="tab-item" id="tabFPanel3" role="tabpanel" aria-labelledby="tabFMenu3" aria-hidden="true" tabindex="-1">
+						<h2 class="blind">탭이름3</h2><!-- @접근성 태그 추가 -->
+						<!-- .box -->
+						<div class="box option-bg" style="border-radius: 0;">
+							탭내용3
+						</div>
+						<!--// .box -->
+					</div>
+				</div>
+			</div>
+			<!--// .tab* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">박스형 (.option-box)</span></h3>
+			<!-- .tab* -->
+			<div class="tab">
+				<ul class="tab-head option-box" role="tablist">
+					<li class="tab-menu is-active" role="tab" id="tabDMenu1" aria-controls="tabDPanel1" aria-selected="true"><a href="javascript:;" tabindex="0">탭이름1</a></li>
+					<li class="tab-menu" role="tab" id="tabDMenu2" aria-controls="tabDPanel2" aria-selected="false"><a href="javascript:;" tabindex="-1">탭이름2</a></li>
+					<li class="tab-menu" role="tab" id="tabDMenu3" aria-controls="tabDPanel3" aria-selected="false"><a href="javascript:;" tabindex="-1">탭이름3</a></li>
+				</ul>
+				<div class="tab-list">
+					<div class="tab-item is-active" id="tabDPanel1" role="tabpanel" aria-labelledby="tabDMenu1" aria-hidden="false" tabindex="0">
+						<h2 class="blind">탭이름1</h2><!-- @접근성 태그 추가 -->
+						<!-- .box -->
+						<div class="box option-bg" style="border-radius: 0;">
+							탭내용1
+						</div>
+						<!--// .box -->
+					</div>
+					<div class="tab-item" id="tabDPanel2" role="tabpanel" aria-labelledby="tabDMenu2" aria-hidden="true" tabindex="-1">
+						<h2 class="blind">탭이름2</h2><!-- @접근성 태그 추가 -->
+						<!-- .box -->
+						<div class="box option-bg" style="border-radius: 0;">
+							탭내용2
+						</div>
+						<!--// .box -->
+					</div>
+					<div class="tab-item" id="tabDPanel3" role="tabpanel" aria-labelledby="tabDMenu3" aria-hidden="true" tabindex="-1">
+						<h2 class="blind">탭이름3</h2><!-- @접근성 태그 추가 -->
+						<!-- .box -->
+						<div class="box option-bg" style="border-radius: 0;">
+							탭내용3
+						</div>
+						<!--// .box -->
+					</div>
+				</div>
+			</div>
+			<!--// .tab* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">텍스트형 (.option-txt)</span></h3>
+			<!-- .tab* -->
+			<div class="tab">
+				<ul class="tab-head option-txt" role="tablist">
+					<li class="tab-menu is-active" role="tab" id="tabEMenu1" aria-controls="tabEPanel1" aria-selected="true"><a href="javascript:;" tabindex="0">탭이름1</a></li>
+					<li class="tab-menu" role="tab" id="tabEMenu2" aria-controls="tabEPanel2" aria-selected="false"><a href="javascript:;" tabindex="-1">탭이름2</a></li>
+					<li class="tab-menu" role="tab" id="tabEMenu3" aria-controls="tabEPanel3" aria-selected="false"><a href="javascript:;" tabindex="-1">탭이름3</a></li>
+				</ul>
+				<div class="tab-list">
+					<div class="tab-item is-active" id="tabEPanel1" role="tabpanel" aria-labelledby="tabEMenu1" aria-hidden="false" tabindex="0">
+						<h2 class="blind">탭이름1</h2><!-- @접근성 태그 추가 -->
+						<!-- .box -->
+						<div class="box option-bg" style="border-radius: 0;">
+							탭내용1
+						</div>
+						<!--// .box -->
+					</div>
+					<div class="tab-item" id="tabEPanel2" role="tabpanel" aria-labelledby="tabEMenu2" aria-hidden="true" tabindex="-1">
+						<h2 class="blind">탭이름2</h2><!-- @접근성 태그 추가 -->
+						<!-- .box -->
+						<div class="box option-bg" style="border-radius: 0;">
+							탭내용2
+						</div>
+						<!--// .box -->
+					</div>
+					<div class="tab-item" id="tabEPanel3" role="tabpanel" aria-labelledby="tabEMenu3" aria-hidden="true" tabindex="-1">
+						<h2 class="blind">탭이름3</h2><!-- @접근성 태그 추가 -->
+						<!-- .box -->
+						<div class="box option-bg" style="border-radius: 0;">
+							탭내용3
+						</div>
+						<!--// .box -->
+					</div>
+				</div>
+			</div>
+			<!--// .tab* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">스크립트 예외형 (.option-manual)</span></h3>
+			<!-- .tab* -->
+			<div class="tab option-manual">
+				<ul class="tab-head">
+					<li class="tab-menu is-active"><a href="javascript:;" aria-current="page">탭이름1</a></li>
+					<li class="tab-menu"><a href="javascript:;">탭이름2</a></li>
+				</ul>
+				<div class="tab-list">
+					<div class="tab-item is-active">
+						<h2 class="blind">탭이름1</h2><!-- @접근성 태그 추가 -->
+						<!-- .box -->
+						<div class="box option-bg" style="border-radius: 0;">
+							탭내용1
+						</div>
+						<!--// .box -->
+					</div>
+				</div>
+			</div>
+			<!--// .tab* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

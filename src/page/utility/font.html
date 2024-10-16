@@ -1,0 +1,53 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'utility',
+	gnb2nd: 'font',
+	title: '폰트'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section -->
+	<section class="section" id="element-font">
+		<h2 class="title-h2"><span class="txt">@폰트</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">크기</span></h3>
+			<!-- .box -->
+			<div class="box option-line">
+				<span class="fs-lg">Large</span>
+				<span class="fs-md">Medium</span>
+				<span class="fs-sm">Small</span>
+				<span class="fs-xs">XSmall</span>
+				<span class="fs-caption">Caption</span>
+				<span class="fs-tiny">Tiny</span>
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">색상</span></h3>
+			<!-- .box -->
+			<div class="box option-line">
+				<span class="fc-primary">Primary</span>
+				<span class="fc-secondary">Secondary</span>
+				<span class="fc-highlight">Highlight</span>
+				<span class="fc-warning">Warning</span>
+				<span class="fc-info">Information</span>
+				<span class="fc-success">Success</span>
+				<span class="fc-disabled">Disabled</span>
+				<span class="fc-base">Base</span>
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

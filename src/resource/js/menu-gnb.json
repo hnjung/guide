@@ -86,12 +86,12 @@
 			] },
 			{ "code": "radio", "name": "라디오버튼", "path": "/page/form/radio.html", "gnb3rd": [
 					{ "code": "default", "name": "기본", "path": "" },
-					{ "code": "switch", "name": "스위치", "path": "" },
 					{ "code": "chip", "name": "칩", "path": "" },
 					{ "code": "segment", "name": "세그먼트", "path": "" }
 			] },
 			{ "code": "check", "name": "체크박스", "path": "/page/form/check.html", "gnb3rd": [
 					{ "code": "default", "name": "기본", "path": "" },
+					{ "code": "switch", "name": "스위치", "path": "" },
 					{ "code": "chip", "name": "칩", "path": "" },
 					{ "code": "segment", "name": "세그먼트", "path": "" }
 			] },

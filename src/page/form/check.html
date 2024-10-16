@@ -1,0 +1,425 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'form',
+	gnb2nd: 'check',
+	title: '체크박스'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section -->
+	<section class="section" id="form-checkBox">
+		<h2 class="title-h2"><span class="txt">@체크박스</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">다중</span></h3>
+			<!-- .box -->
+			<div class="box option-line">
+				<!-- .checkbox* -->
+				<fieldset class="checkbox-group">
+					<label for="checkA1" class="checkbox-item">
+						<input type="checkbox" name="" id="checkA1" class="control" checked>
+						<span class="label">선택A1</span>
+					</label>
+					<label for="checkA2" class="checkbox-item">
+						<input type="checkbox" name="" id="checkA2" class="control">
+						<span class="label">선택A2</span>
+					</label>
+					<label for="checkA3" class="checkbox-item">
+						<input type="checkbox" name="" id="checkA3" class="control" disabled>
+						<span class="label">선택A3</span>
+					</label>
+					<label for="checkA4" class="checkbox-item">
+						<input type="checkbox" name="" id="checkA4" class="control" checked disabled>
+						<span class="label">선택A4</span>
+					</label>
+				</fieldset>
+				<!--// .checkbox* -->
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">오른쪽 정렬 (.option-right)</span></h3>
+			<!-- .box -->
+			<div class="box option-line">
+				<!-- .checkbox* -->
+				<fieldset class="checkbox-group option-right"><!-- @set: option-right -->
+					<label for="checkB1" class="checkbox-item">
+						<input type="checkbox" name="" id="checkB1" class="control" checked>
+						<span class="label">선택B1</span>
+					</label>
+					<label for="checkB2" class="checkbox-item">
+						<input type="checkbox" name="" id="checkB2" class="control">
+						<span class="label">선택B2</span>
+					</label>
+					<label for="checkB3" class="checkbox-item">
+						<input type="checkbox" name="" id="checkB3" class="control" disabled>
+						<span class="label">선택B3</span>
+					</label>
+					<label for="checkB4" class="checkbox-item">
+						<input type="checkbox" name="" id="checkB4" class="control" checked disabled>
+						<span class="label">선택B4</span>
+					</label>
+				</fieldset>
+				<!--// .checkbox* -->
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">텍스트 혼합</span></h3>
+			<!-- .box -->
+			<div class="box option-line">
+				<!-- .checkbox* -->
+				<fieldset class="checkbox-group">
+					<span class="txt-subject">항목명 :</span>
+					<label for="checkC1" class="checkbox-item">
+						<input type="checkbox" name="checkC" id="checkC1" class="control">
+						<span class="label">옵션C1</span>
+					</label>
+				</fieldset>
+				<!--// .checkbox* -->
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">단일</span></h3>
+			<!-- .box -->
+			<div class="box option-line">
+				<!-- .checkbox* -->
+				<label for="checkD1" class="checkbox-item">
+					<input type="checkbox" name="checkD" id="checkD1" class="control">
+					<span class="label">옵션D1</span>
+				</label>
+				<!--// .checkbox* -->
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">정보동의 (.option-agree)</span></h3>
+			<!-- .box -->
+			<div class="box option-line">
+				<!-- .checkbox* -->
+				<fieldset class="checkbox-group">
+					<label for="checkH1" class="checkbox-item option-agree"><!-- @set: option-agree -->
+						<input type="checkbox" name="" id="checkH1" class="control" checked>
+						<span class="label">선택H1</span>
+					</label>
+					<label for="checkH2" class="checkbox-item option-agree">
+						<input type="checkbox" name="" id="checkH2" class="control">
+						<span class="label">선택H2</span>
+					</label>
+					<label for="checkH3" class="checkbox-item option-agree">
+						<input type="checkbox" name="" id="checkH3" class="control" disabled>
+						<span class="label">선택H3</span>
+					</label>
+					<label for="checkH4" class="checkbox-item option-agree">
+						<input type="checkbox" name="" id="checkH4" class="control" checked disabled>
+						<span class="label">선택H3</span>
+					</label>
+				</fieldset>
+				<!--// .checkbox* -->
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">정보동의 자식 (.option-single)</span></h3>
+			<!-- .box -->
+			<div class="box option-line">
+				<!-- .checkbox* -->
+				<fieldset class="checkbox-group">
+					<label for="checkJ1" class="checkbox-item option-single"><!-- @set: option-single -->
+						<input type="checkbox" name="" id="checkJ1" class="control" checked>
+						<span class="label">선택J1</span>
+					</label>
+					<label for="checkJ2" class="checkbox-item option-single">
+						<input type="checkbox" name="" id="checkJ2" class="control">
+						<span class="label">선택J2</span>
+					</label>
+					<label for="checkJ3" class="checkbox-item option-single">
+						<input type="checkbox" name="" id="checkJ3" class="control" disabled>
+						<span class="label">선택J3</span>
+					</label>
+					<label for="checkJ4" class="checkbox-item option-single">
+						<input type="checkbox" name="" id="checkJ4" class="control" checked disabled>
+						<span class="label">선택J3</span>
+					</label>
+				</fieldset>
+				<!--// .checkbox* -->
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">박스형 - 다중 (.option-boxed)</span></h3>
+			<!-- .checkbox* -->
+			<fieldset class="checkbox-group option-boxed"><!-- @set: option-boxed -->
+				<label for="checkBoxA1" class="checkbox-item">
+					<input type="checkbox" name="checkBoxA" id="checkBoxA1" class="control" checked>
+					<span class="label"><em class="txt">박스형 라디오버튼 옵션1</em></span>
+				</label>
+				<label for="checkBoxA2" class="checkbox-item">
+					<input type="checkbox" name="checkBoxA" id="checkBoxA2" class="control">
+					<span class="label"><em class="txt">박스형 라디오버튼 옵션2 내용이 길어질 경우 두 줄 처리 상단 정렬됨 내용이 길어질 경우 두 줄 처리 상단 정렬됨 내용이 길어질 경우 두 줄 처리 상단 정렬됨</em></span>
+				</label>
+				<label for="checkBoxA3" class="checkbox-item">
+					<input type="checkbox" name="checkBoxA" id="checkBoxA3" class="control" disabled>
+					<span class="label"><em class="txt">박스형 라디오버튼 옵션3</em></span>
+				</label>
+				<label for="checkBoxA4" class="checkbox-item">
+					<input type="checkbox" name="checkBoxA" id="checkBoxA4" class="control" checked disabled>
+					<span class="label"><em class="txt">박스형 라디오버튼 옵션4</em></span>
+				</label>
+			</fieldset>
+			<!--// .checkbox* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">박스형 - 단일 (.boxed)</span></h3>
+			<!-- .checkbox* -->
+			<label for="checkBoxC1" class="checkbox-item boxed"><!-- @set: boxed -->
+				<input type="checkbox" name="checkBoxC" id="checkBoxC1" class="control" checked>
+				<span class="label"><em class="txt">박스형 라디오버튼 하나만 쓰일 경우</em></span>
+			</label>
+			<!--// .checkbox* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">박스형 - 단일 - 라디오버튼형 (.option-radio.boxed)</span></h3>
+			<!-- .checkbox* -->
+			<label for="checkBoxD1" class="checkbox-item option-radio boxed"><!-- @set: option-radio -->
+				<input type="checkbox" name="checkBoxD" id="checkBoxD1" class="control" checked>
+				<span class="label"><em class="txt">박스형 라디오버튼 하나만 쓰일 경우</em></span>
+			</label>
+			<!--// .checkbox* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">세그먼트 + 체크박스 (.option-segment)</span></h3>
+			<!-- .form -->
+			<div class="form">
+				<div class="form-wrap">
+					<!-- .form-list -->
+					<ul class="form-list">
+						<li class="form-item">
+							<div class="form-name"><strong>항목명</strong></div>
+							<div class="form-value">
+								<!-- .segment* -->
+								<fieldset class="segment-group">
+									<label for="formItem3a" class="segment-item">
+										<input type="radio" name="formItem3" id="formItem3a" class="control" checked>
+										<span class="label"><em class="txt">옵션A</em></span>
+									</label>
+									<label for="formItem3b" class="segment-item">
+										<input type="radio" name="formItem3" id="formItem3b" class="control">
+										<span class="label"><em class="txt">옵션B</em></span>
+									</label>
+								</fieldset>
+								<!--// .segment* -->
+								<!-- .box -->
+								<div class="box option-bg space-mt-xxs">
+									<!-- .checkbox* -->
+									<fieldset class="checkbox-group option-segment">
+										<label for="formItem4a" class="checkbox-item">
+											<input type="checkbox" name="" id="formItem4a" class="control" checked>
+											<span class="label">선택A1</span>
+										</label>
+										<label for="formItem4b" class="checkbox-item">
+											<input type="checkbox" name="" id="formItem4b" class="control">
+											<span class="label">선택A2</span>
+										</label>
+										<label for="formItem4c" class="checkbox-item">
+											<input type="checkbox" name="" id="formItem4c" class="control">
+											<span class="label">선택A3</span>
+										</label>
+										<label for="formItem4d" class="checkbox-item">
+											<input type="checkbox" name="" id="formItem4d" class="control">
+											<span class="label">선택A4</span>
+										</label>
+									</fieldset>
+									<!--// .checkbox* -->
+								</div>
+								<!--// .box -->
+							</div>
+						</li>
+					</ul>
+					<!--// .form-list -->
+				</div>
+			</div>
+			<!--// .form -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section -->
+
+	<!-- .section - 컴포넌트 - 칩 -->
+	<section class="section" id="form-chip">
+		<h2 class="title-h2"><span class="txt">@칩</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">체크박스형(단일선택)</span></h3>
+			<!-- .chip* -->
+			<label for="chipC1" class="chip-item">
+				<input type="checkbox" name="" id="chipC1" class="control" checked>
+				<span class="label">선택</span>
+			</label>
+			<!--// .chip* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">체크박스형(다중선택)</span></h3>
+			<!-- .chip* -->
+			<fieldset class="chip-group w-fix-lg">
+				<label for="chipA1" class="chip-item">
+					<input type="checkbox" name="" id="chipA1" class="control">
+					<span class="label">선택</span>
+				</label>
+				<label for="chipA2" class="chip-item">
+					<input type="checkbox" name="" id="chipA2" class="control">
+					<span class="label">선택</span>
+				</label>
+			</fieldset>
+			<!--// .chip* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">선택 데이터</span></h3>
+			<!-- .chip* -->
+			<div class="chip-group">
+				<span class="chip-data">
+					<span class="txt">선택값</span>
+					<button type="button" class="delete">
+						<span class="icon"></span>
+						<span class="sr-only">삭제</span>
+					</button>
+				</span>
+				<span class="chip-data">
+					<span class="txt">선택값</span>
+					<button type="button" class="delete">
+						<span class="icon"></span>
+						<span class="sr-only">삭제</span>
+					</button>
+				</span>
+			</div>
+			<!--// .chip* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 컴포넌트 - 칩 -->
+
+	<!-- .section - 컴포넌트 - 스위치 -->
+	<section class="section" id="form-switch">
+		<h2 class="title-h2"><span class="txt">@스위치</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">기본</span></h3>
+			<!-- .switch* -->
+			<label for="switchA1" class="switch-item">
+				<input type="checkbox" name="" id="switchA1" class="control">
+				<span class="label">선택</span>
+			</label>
+			<!--// .switch* -->
+			<!-- .switch* -->
+			<label for="switchB1" class="switch-item">
+				<span class="label">비활성화</span>
+				<input type="checkbox" name="" id="switchB1" class="control" disabled>
+			</label>
+			<!--// .switch* -->
+			<!-- .switch* -->
+			<label for="switchC1" class="switch-item">
+				<span class="label">체크된 비활성화</span>
+				<input type="checkbox" name="" id="switchC1" class="control" checked disabled>
+			</label>
+			<!--// .switch* -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">항목명 변경</span></h3>
+			<!-- .switch* -->
+			<label for="switchD1" class="switch-item include">
+				<input type="checkbox" name="" id="switchD1" class="control">
+				<span class="label"></span>
+			</label>
+			<!--// .switch* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 컴포넌트 - 스위치 -->
+
+	<!-- .section - 컴포넌트 - 세그먼트 -->
+	<section class="section" id="form-segment">
+		<h2 class="title-h2"><span class="txt">@세그먼트</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">체크박스형</span></h3>
+			<!-- .segment* -->
+			<fieldset class="segment-group">
+				<label for="checkT1" class="segment-item">
+					<input type="checkbox" name="checkT" id="checkT1" class="control" checked>
+					<span class="label"><em class="txt">선택T1</em></span>
+				</label>
+				<label for="checkT2" class="segment-item">
+					<input type="checkbox" name="checkT" id="checkT2" class="control">
+					<span class="label"><em class="txt">선택T2</em></span>
+				</label>
+			</fieldset>
+			<!--// .segment* -->
+			<!-- .segment* -->
+			<fieldset class="segment-group space-mt-xxs">
+				<label for="checkV1" class="segment-item">
+					<input type="checkbox" name="checkV" id="checkV1" class="control" checked>
+					<span class="label"><em class="txt">선택V1</em></span>
+				</label>
+				<label for="checkV2" class="segment-item">
+					<input type="checkbox" name="checkV" id="checkV2" class="control">
+					<span class="label"><em class="txt">선택V2</em></span>
+				</label>
+				<label for="checkV3" class="segment-item">
+					<input type="checkbox" name="checkV" id="checkV3" class="control" disabled>
+					<span class="label"><em class="txt">비활성화</em></span>
+				</label>
+				<label for="checkV4" class="segment-item">
+					<input type="checkbox" name="checkV" id="checkV4" class="control" checked disabled>
+					<span class="label"><em class="txt">체크된비활성화</em></span>
+				</label>
+			</fieldset>
+			<!--// .segment* -->
+			<!-- .segment* -->
+			<fieldset class="segment-group w-fix-lg space-mt-xxs">
+				<label for="checkU1" class="segment-item">
+					<input type="checkbox" name="checkU" id="checkU1" class="control" checked>
+					<span class="label"><em class="txt">텍스트가 여러줄일 경우 예시</em></span>
+				</label>
+				<label for="checkU2" class="segment-item">
+					<input type="checkbox" name="checkU" id="checkU2" class="control">
+					<span class="label"><em class="txt">선택T2</em></span>
+				</label>
+			</fieldset>
+			<!--// .segment* -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 컴포넌트 - 세그먼트 -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

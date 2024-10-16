@@ -1,0 +1,79 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'content',
+	gnb2nd: 'box',
+	title: '박스'
+}); %>
+
+<!-- #content -->
+<div id="content">
+
+	<!-- .section -->
+	<section class="section" id="module-box">
+		<h2 class="title-h2"><span class="txt">@박스</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">기본</span></h3>
+			<!-- .box -->
+			<div class="box">
+				콘텐츠1
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">배경색 (.option-bg)</span></h3>
+			<!-- .box -->
+			<div class="box option-bg"><!-- @set: option-bg -->
+				<h4 class="note-title">제목</h4>
+				<ul class="note-list">
+					<li>내용</li>
+				</ul>
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">배경색 (.option-bg)</span></h3>
+			<!-- .box -->
+			<div class="box option-bg"><!-- @set: option-bg -->
+				<h4 class="note-title2">제목</h4>
+				<p class="text2">내용입니다</p>
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">라인 (.option-line)</span></h3>
+			<!-- .box -->
+			<div class="box item-row option-line"><!-- @set: option-line -->
+				<div class="unit"><span class="fs-md">콘텐츠1</span></div>
+				<div class="unit"><span class="fs-md">콘텐츠2</span></div>
+				<div class="unit"><span class="fs-md">콘텐츠3</span></div>
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">강조형 (.primary)</span></h3>
+			<!-- .box -->
+			<div class="box option-bg primary"><!-- @set: option-bg, primary -->
+				콘텐츠1
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section -->
+
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

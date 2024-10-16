@@ -7,11 +7,11 @@
 
 /* 체크박스 */
 .checkbox-item .control[type='checkbox'],
-.checkbox-control[type='checkbox'] {-webkit-appearance: none; appearance: none; position: relative; width: 2.0rem; height: 2.0rem; margin: .2rem; border: var(--#{config.$prefix}border-md) solid config.variable(color, #6c757d); background-color: config.variable(color, #fff); border-radius: var(--radius-sm); vertical-align: middle;}
+.checkbox-control[type='checkbox'] {-webkit-appearance: none; appearance: none; position: relative; width: 2.0rem; height: 2.0rem; margin: .2rem; border: var(--#{config.$prefix}border-md) solid config.variable(color, #6c757d); background-color: config.variable(color, #fff); border-radius: config.variable(radius, .4rem); vertical-align: middle;}
 .checkbox-item .control[type='checkbox']::after,
 .checkbox-control[type='checkbox']::after {content: ''; position: absolute; top: 50%; left: 50%; width: var(--#{config.$prefix}icon-md); height: var(--#{config.$prefix}icon-md); background: var(--bg-url-md) no-repeat 0 calc(var(--#{config.$prefix}icon-md) * -2); background-size: var(--bg-size-md); transform: scale3d(0, 0, 1) translate3d(-50%, -50%, 0); transform-origin: 0 0; transition: transform config.variable(animation, speed, base) config.variable(animation, timing, base) .1s;}
 .checkbox-item .control[type='checkbox']:checked,
-.checkbox-control[type='checkbox']:checked {animation: animation-radio config.variable(animation, speed, base) var(--animation-timing-outback) forwards;}
+.checkbox-control[type='checkbox']:checked {animation: animation-radio config.variable(animation, speed, base) config.variable(animation, timing, outback) forwards;}
 .checkbox-item .control[type='checkbox']:checked::after,
 .checkbox-control[type='checkbox']:checked::after {transform: scale3d(1, 1, 1) translate3d(-50%, -50%, 0);}
 .checkbox-item .control[type='checkbox']:disabled,
@@ -25,14 +25,14 @@
 .checkbox-item.option-agree .control[type='checkbox'] {width: 2.2rem; height: 2.2rem; margin: .1rem; background-color: config.variable(color, #fff); border-width: config.variable(border, .1rem); border-color: config.variable(color, #6c757d); border-radius: config.variable(radius, 1.6rem);}
 .checkbox-item.option-agree .control[type='checkbox']::after {background-position: calc(var(--#{config.$prefix}icon-md) * -6) calc(var(--#{config.$prefix}icon-md) * -2); transform: scale3d(1, 1, 1) translate3d(-50%, -50%, 0); transition: none;}
 .checkbox-item.option-agree .control[type='checkbox']:checked::after {background-position: calc(var(--#{config.$prefix}icon-md) * -5) calc(var(--#{config.$prefix}icon-md) * -2);}
-.checkbox-item.option-agree .control[type='checkbox']:checked ~ .label {font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #000);}
+.checkbox-item.option-agree .control[type='checkbox']:checked ~ .label {font-weight: config.variable(font, 500); color: config.variable(color, #000);}
 
 .checkbox-item.option-agree .control[type='checkbox']:disabled {animation: none; background-color: config.variable(color, #f8f9fa); border-color: config.variable(color, #e9ecef);}
 .checkbox-item.option-agree .control[type='checkbox']:disabled:checked {background-color: config.variable(color, #6ea8fe); border-color: config.variable(color, #6ea8fe);}
 .checkbox-item.option-agree .control[type='checkbox']:disabled:checked::after {transform: scale3d(1, 1, 1) translate3d(-50%, -50%, 0);}
 
 /** 체크박스 - 정보동의 - 자식있는 부모 */
-.agree-total.option-parent .checkbox-item.option-agree .control[type='checkbox']:checked ~ .label {font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #000);}
+.agree-total.option-parent .checkbox-item.option-agree .control[type='checkbox']:checked ~ .label {font-weight: config.variable(font, 500); color: config.variable(color, #000);}
 
 /** 체크박스 - 정보동의 - 자식 */
 .checkbox-item.option-single {align-items: flex-start;}
@@ -41,7 +41,7 @@
 .checkbox-item.option-single .control[type='checkbox']::after {background-position: calc(var(--#{config.$prefix}icon-md) * -2) calc(var(--#{config.$prefix}icon-md) * -2); transform: scale3d(1, 1, 1) translate3d(-50%, -50%, 0); transform-origin: 0 0; transition: none;}
 .checkbox-item.option-single .control[type='checkbox']:checked {background-color: transparent; animation: animation-checkbox-single config.variable(animation, speed, base) config.variable(animation, timing, base) forwards;}
 .checkbox-item.option-single .control[type='checkbox']:checked::after {background-position: calc(var(--#{config.$prefix}icon-md) * -1) calc(var(--#{config.$prefix}icon-md) * -2);}
-.checkbox-item.option-single .control[type='checkbox']:checked ~ .label {font-weight: var(--#{config.$prefix}font-medium); color: config.variable(color, #000);}
+.checkbox-item.option-single .control[type='checkbox']:checked ~ .label {font-weight: config.variable(font, 500); color: config.variable(color, #000);}
 
 .checkbox-item.option-single .control[type='checkbox']:disabled::after {background-position: calc(var(--#{config.$prefix}icon-md) * -3) calc(var(--#{config.$prefix}icon-md) * -2);}
 .checkbox-item.option-single .control[type='checkbox']:disabled:checked::after {background-position: calc(var(--#{config.$prefix}icon-md) * -4) calc(var(--#{config.$prefix}icon-md) * -2);}
@@ -56,7 +56,7 @@
 }
 
 /** 칩 - 체크박스형 */
-.chip-item .control[type='checkbox'] {-webkit-appearance: none; appearance: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: config.variable(color, #f8f9fa); border-radius: var(--radius-xl);}
+.chip-item .control[type='checkbox'] {-webkit-appearance: none; appearance: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: config.variable(color, #f8f9fa); border-radius: config.variable(radius, 2.4rem);}
 .chip-item .control[type='checkbox'] ~ .label {position: relative; display: inline-block; padding: .7rem 1.2rem .612rem .8rem; line-height: 1.35; font-weight: config.variable(font, 400); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #495057);}
 .chip-item .control[type='checkbox'] ~ .label::before {content: ''; display: inline-block; position: relative; width: var(--icon-sm); height: var(--icon-sm); margin-right: .2rem; margin-top: -.2rem; background: var(--bg-url-sm) no-repeat calc(var(--icon-sm) * -2) calc(var(--icon-sm) * -3); background-size: var(--bg-size-sm); vertical-align: middle;}
 .chip-item .control[type='checkbox']:checked {background-color: config.variable(color, #0d6efd); transition: all config.variable(animation, speed, base) config.variable(animation, timing, base);}

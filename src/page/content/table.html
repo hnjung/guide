@@ -1,0 +1,1431 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'content',
+	gnb2nd: 'table',
+	title: '테이블'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section - 컴포넌트 - 게시판형목록 -->
+	<section class="section" id="module-board">
+		<h2 class="title-h2"><span class="txt">@게시판형목록</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .board -->
+			<div class="board">
+				<!-- .board-wrap -->
+				<div class="board-wrap">
+					<!-- .board-list -->
+					<ul class="board-list">
+						<li class="board-item">
+							<a href="javascript:;" class="board-link" title="상세보기">
+								<!-- .item* -->
+								<div class="item-row board-option-post">
+									<div class="unit fixed">
+										<span class="cell-postcode">04522</span>
+									</div>
+									<div class="unit">
+										<span class="cell-address">서울특별시 중구 다동길 46 (다동,다동빌딩)</span>
+										<span class="cell-old-address">[지번] 서울특별시 중구 다동 92</span>
+									</div>
+								</div>
+								<!--// .item* -->
+							</a>
+						</li>
+						<li class="board-item">
+							<a href="javascript:;" class="board-link" title="상세보기">
+								<!-- .item* -->
+								<div class="item-row board-option-post">
+									<div class="unit fixed">
+										<span class="cell-postcode">04522</span>
+									</div>
+									<div class="unit">
+										<span class="cell-address">서울특별시 중구 다동길 46 (다동,다동빌딩)</span>
+										<span class="cell-old-address">[지번] 서울특별시 중구 다동 92</span>
+									</div>
+								</div>
+								<!--// .item* -->
+							</a>
+						</li>
+						<li class="board-item">
+							<a href="javascript:;" class="board-link" title="상세보기">
+								<!-- .item* -->
+								<div class="item-row board-option-post">
+									<div class="unit fixed">
+										<span class="cell-postcode">04522</span>
+									</div>
+									<div class="unit">
+										<span class="cell-address">서울특별시 중구 다동길 46 (다동,다동빌딩)</span>
+										<span class="cell-old-address">[지번] 서울특별시 중구 다동 92</span>
+									</div>
+								</div>
+								<!--// .item* -->
+							</a>
+						</li>
+					</ul>
+					<!--// .board-list -->
+				</div>
+				<!--// .board-wrap -->
+			</div>
+			<!--// .board -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section - 컴포넌트 - 게시판형목록 -->
+
+	<!-- .section -->
+	<section class="section" id="module-table">
+		<h2 class="title-h2"><span class="txt">@테이블</span></h2>
+		<!-- .note* -->
+		<div class="note space-mb-xxs">
+			<ul class="note-list">
+				<li>📌데이터형 고정은 상단 또는 왼쪽 1개의 <code>&lt;th&gt;</code>에 적용해 두었음. 1개 이상 고정하거나 <code>&lt;th&gt;</code> 스타일이 아닌 항목을 고정해야 할 경우 수정 필요함.</li>
+			</ul>
+		</div>
+		<!--// .note* -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">데이터형</span></h3>
+			<!-- .data -->
+			<div class="data">
+				<div class="data-body">
+					<table class="data-list">
+						<caption class="sr-only">
+							<!-- 표제목 -->
+							<strong>고객정보 표</strong>
+							<!-- 표내용순서 -->
+							<span>구분, 이름, 생년월일, 성별, 휴대폰번호, 마케팅동의, 전화수신여부, 대면여부, 등록일자 정보</span>
+						</caption>
+						<colgroup>
+							<col>
+							<col>
+							<col>
+							<col>
+							<col>
+							<col>
+							<col>
+							<col>
+							<col>
+							<col>
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="data-select">
+									<!-- .checkbox* -->
+									<label for="dataCheckAll" class="checkbox-item">
+										<input type="checkbox" name="dataCheck" id="dataCheckAll" class="control">
+										<span class="label">전체 행 선택</span>
+									</label>
+									<!--// .checkbox* -->
+								</th>
+								<th scope="col">구분</th>
+								<th scope="col">이름</th>
+								<th scope="col">생년월일</th>
+								<th scope="col">성별</th>
+								<th scope="col">휴대폰번호</th>
+								<th scope="col">마케팅동의</th>
+								<th scope="col">전화수신</th>
+								<th scope="col">대면여부</th>
+								<th scope="col">등록일자</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="data-select">
+									<!-- .checkbox* -->
+									<label for="dataCheck1" class="checkbox-item">
+										<input type="checkbox" name="dataCheck" id="dataCheck1" class="control" checked>
+										<span class="label">행 선택</span>
+									</label>
+									<!--// .checkbox* -->
+								</td>
+								<td>추천</td>
+								<td>김신한</td>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+								<td>아니요</td>
+								<td>아니요</td>
+								<td>미정</td>
+								<td>2023.01.01</td>
+							</tr>
+							<tr class="is-active">
+								<td class="data-select">
+									<!-- .checkbox* -->
+									<label for="dataCheck2" class="checkbox-item">
+										<input type="checkbox" name="dataCheck" id="dataCheck2" class="control">
+										<span class="label">행 선택</span>
+									</label>
+									<!--// .checkbox* -->
+								</td>
+								<td>추천</td>
+								<td>김신한</td>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+								<td>아니요</td>
+								<td>아니요</td>
+								<td>미정</td>
+								<td>2023.01.01</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--// .data -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">데이터형 - 가로형 (.option-row)</span></h3>
+			<!-- .data -->
+			<div class="data">
+				<div class="data-body option-row">
+					<table class="data-list">
+						<caption class="sr-only">
+							<!-- 표제목 -->
+							<strong>고객정보 표</strong>
+							<!-- 표내용순서 -->
+							<span>이름, 생년월일, 성별, 휴대폰번호 정보</span>
+						</caption>
+						<colgroup>
+							<col>
+							<col>
+							<col>
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td rowspan="2">010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td class="line">남</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--// .data -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">데이터형 - 내용이 넘칠 때 가로 스크롤 자동 생성 (.option-x-scroll)</span></h3>
+			<!-- .data -->
+			<div class="data">
+				<div class="data-body option-x-scroll">
+					<table class="data-list">
+						<caption class="sr-only">
+							<!-- 표제목 -->
+							<strong>고객정보 표</strong>
+							<!-- 표내용순서 -->
+							<span>구분, 이름, 생년월일, 성별, 휴대폰번호, 마케팅동의, 전화수신여부, 대면여부, 등록일자 정보</span>
+						</caption>
+						<colgroup>
+							<col>
+							<col>
+							<col>
+							<col>
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">경과기간</th>
+								<th scope="col">납입보험료</th>
+								<th scope="col">해약환급금</th>
+								<th scope="col">환급률</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>99년</td>
+								<td>20,000원</td>
+								<td>20,000원</td>
+								<td>999%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--// .data -->
+			<!-- .data -->
+			<div class="data">
+				<div class="data-body option-x-scroll">
+					<table class="data-list">
+						<caption class="sr-only">
+							<!-- 표제목 -->
+							<strong>고객정보 표</strong>
+							<!-- 표내용순서 -->
+							<span>구분, 이름, 생년월일, 성별, 휴대폰번호, 마케팅동의, 전화수신여부, 대면여부, 등록일자 정보</span>
+						</caption>
+						<colgroup>
+							<col>
+							<col>
+							<col>
+							<col>
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">경과기간</th>
+								<th scope="col">납입보험료</th>
+								<th scope="col">해약환급금</th>
+								<th scope="col">환급률</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>9,000,000,000,000,000,000년</td>
+								<td>2,000,000,000,000,000,000,000원</td>
+								<td>2,000,000,000,000,000,000,000원</td>
+								<td>9.00000000000000000000000000%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--// .data -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">데이터형 - 상단 고정 (.option-fixed-head)</span></h3>
+			<!-- .data -->
+			<div class="data">
+				<div class="data-body option-fixed-head" tabindex="0">
+					<table class="data-list">
+						<caption class="sr-only">
+							<!-- 표제목 -->
+							<strong>고객정보 표</strong>
+							<!-- 표내용순서 -->
+							<span>이름, 생년월일, 성별, 휴대폰번호 정보</span>
+						</caption>
+						<colgroup>
+							<col>
+							<col>
+							<col>
+							<col>
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">이름</th>
+								<th scope="col">생년월일</th>
+								<th scope="col">성별</th>
+								<th scope="col">휴대폰번호</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>김신한</td>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<td>김신한</td>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<td>김신한</td>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<td>김신한</td>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<td>김신한</td>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<td>김신한</td>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<td>김신한</td>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<td>김신한</td>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<td>김신한</td>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<td>김신한</td>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--// .data -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">데이터형 - 왼쪽 고정 (.option-fixed-side)</span></h3>
+			<!-- .data -->
+			<div class="data">
+				<div class="data-body option-fixed-side" tabindex="0">
+					<table class="data-list">
+						<caption class="sr-only">
+							<!-- 표제목 -->
+							<strong>고객정보 표</strong>
+							<!-- 표내용순서 -->
+							<span>이름, 생년월일, 성별, 휴대폰번호 정보</span>
+						</caption>
+						<colgroup>
+							<col style="width: 100px;">
+							<col style="width: 400px;">
+							<col style="width: 400px;">
+							<col style="width: 400px;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--// .data -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">데이터형 - 상단 + 왼쪽 고정 (.option-fixed-mix)</span></h3>
+			<!-- .data -->
+			<div class="data">
+				<div class="data-body option-fixed-mix" tabindex="0">
+					<table class="data-list">
+						<caption class="sr-only">
+							<!-- 표제목 -->
+							<strong>고객정보 표</strong>
+							<!-- 표내용순서 -->
+							<span>이름, 생년월일, 성별, 휴대폰번호 정보</span>
+						</caption>
+						<colgroup>
+							<col style="width: 100px;">
+							<col style="width: 400px;">
+							<col style="width: 400px;">
+							<col style="width: 400px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">이름</th>
+								<th scope="col">생년월일</th>
+								<th scope="col">성별</th>
+								<th scope="col">휴대폰번호</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--// .data -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">데이터형 - 상단 + 왼쪽 + 하단 고정 (.option-fixed-total)</span></h3>
+			<!-- .data -->
+			<div class="data">
+				<div class="data-body option-fixed-total" tabindex="0">
+					<table class="data-list">
+						<caption class="sr-only">
+							<!-- 표제목 -->
+							<strong>고객정보 표</strong>
+							<!-- 표내용순서 -->
+							<span>이름, 생년월일, 성별, 휴대폰번호 정보</span>
+						</caption>
+						<colgroup>
+							<col style="width: 100px;">
+							<col style="width: 400px;">
+							<col style="width: 400px;">
+							<col style="width: 400px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">이름</th>
+								<th scope="col">생년월일</th>
+								<th scope="col">성별</th>
+								<th scope="col">휴대폰번호</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td>010-****-1234</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<th>합계</th>
+								<td>1,234,567원</td>
+								<td>1,234,567원</td>
+								<td>1,234,567원</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+			<!--// .data -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">데이터형 - 반응형 (.option-react)</span></h3>
+			<!-- .data -->
+			<div class="data">
+				<div class="data-body option-react">
+					<table class="data-list">
+						<caption class="sr-only">
+							<!-- 표제목 -->
+							<strong>표제목</strong>
+							<!-- 표내용순서 -->
+							<span>항목명, 항목명 정보</span>
+						</caption>
+						<colgroup>
+							<col>
+							<col>
+							<col>
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>항목명</th>
+								<td>내용</td>
+								<th>항목명</th>
+								<td>내용</td>
+							</tr>
+							<tr>
+								<th>항목명</th>
+								<td>내용</td>
+								<th>항목명항목명항목명항목명</th>
+								<td>내용</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--// .data -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">데이터형 - 전체 접고펼치기 (.option-fold)</span></h3>
+			<!-- .data -->
+			<div class="data option-fold fn-fold-wrap" data-fold-slide="true">
+				<!-- .list-head -->
+				<div class="list-head">
+					<h3 class="list-title fn-fold-link">고객정보조회</h3>
+					<button type="button" class="btn-fold fn-fold-btn"><span class="sr-only">열기</span></button>
+				</div>
+				<!--// .list-head -->
+				<div class="inner fn-fold-item">
+					<div class="data-body option-row">
+						<table class="data-list">
+							<caption class="sr-only">
+								<!-- 표제목 -->
+								<strong>고객정보 표</strong>
+								<!-- 표내용순서 -->
+								<span>이름, 생년월일, 성별, 휴대폰번호 정보</span>
+							</caption>
+							<colgroup>
+								<col>
+								<col>
+								<col>
+								<col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>김신한</th>
+									<td>90.01.01</td>
+									<td>남</td>
+									<td>010-****-1234</td>
+								</tr>
+								<tr>
+									<th>김신한</th>
+									<td>90.01.01</td>
+									<td>남</td>
+									<td>010-****-1234</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!--// .data -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">데이터형 - 행 접고펼치기 (.option-fold)</span></h3>
+			<!-- .data -->
+			<div class="data option-fold fn-fold-wrap" data-fold-slide="false">
+				<div class="data-body option-row">
+					<table class="data-list">
+						<caption class="sr-only">
+							<!-- 표제목 -->
+							<strong>고객정보 표</strong>
+							<!-- 표내용순서 -->
+							<span>이름, 생년월일 정보</span>
+						</caption>
+						<colgroup>
+							<col>
+							<col>
+							<col>
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+							</tr>
+							<tr>
+								<th>김신한</th>
+								<td>90.01.01</td>
+							</tr>
+							<tr class="detail fn-fold-item">
+								<th>김신한</th>
+								<td>90.01.01</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- .btn -->
+					<button type="button" class="btn-data-more fn-fold-btn" aria-expanded="false"><span class="sr-only">열기</span><span class="txt"></span></button>
+					<!--// .btn -->
+				</div>
+			</div>
+			<!--// .data -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">데이터형 - 열선택 + 이동(모바일) (.option-move.rounded)</span></h3>
+			<!-- .data -->
+			<div class="data">
+				<div class="data-body option-fixed-head option-move rounded" tabindex="0" id="dataTableMobile">
+					<table class="data-list">
+						<caption class="sr-only">
+							<!-- 표제목 -->
+							<strong>고객정보 표</strong>
+							<!-- 표내용순서 -->
+							<span>이름, 생년월일, 성별, 휴대폰번호 정보</span>
+						</caption>
+						<colgroup>
+							<col style="width: 106px;">
+							<col style="width: 106px;">
+							<col style="width: 106px;">
+							<col style="width: 106px;">
+							<col style="width: 106px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="data-radio">
+									<label for="dataRadioA1" class="radio-item">
+										<input type="radio" name="dataRadioA" id="dataRadioA1" class="control">
+										<span class="label">드라이빙케어</span>
+										<p class="txt">예상납입료<strong>월납 21,109원</strong></p>
+									</label>
+								</th>
+								<th scope="col" class="data-radio">
+									<label for="dataRadioA2" class="radio-item">
+										<input type="radio" name="dataRadioA" id="dataRadioA2" class="control">
+										<span class="label">옵션명B</span>
+										<span class="is-selected"></span>
+										<p class="txt">예상납입료<strong>월납 21,109원</strong></p>
+									</label>
+								</th>
+								<th scope="col" class="data-radio">
+									<label for="dataRadioA3" class="radio-item">
+										<input type="radio" name="dataRadioA" id="dataRadioA3" class="control">
+										<span class="label">옵션명C</span>
+										<span class="is-selected"></span>
+										<p class="txt">예상납입료<strong>월납 21,109원</strong></p>
+									</label>
+								</th>
+								<th scope="col" class="data-radio">
+									<label for="dataRadioA4" class="radio-item">
+										<input type="radio" name="dataRadioA" id="dataRadioA4" class="control">
+										<span class="label">옵션명D</span>
+										<span class="is-selected"></span>
+										<p class="txt">예상납입료<strong>월납 21,109원</strong></p>
+									</label>
+								</th>
+								<th scope="col" class="data-radio">
+									<label for="dataRadioA5" class="radio-item">
+										<input type="radio" name="dataRadioA" id="dataRadioA5" class="control">
+										<span class="label">옵션명E</span>
+										<span class="is-selected"></span>
+										<p class="txt">예상납입료<strong>월납 21,109원</strong></p>
+									</label>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="5" class="detail">통합내용A
+									<!-- .helper -->
+									<div class="helper">
+										<button type="button" class="helper-btn fn-popup-open" data-popup-id="#popupItemExplain" aria-haspopup="dialog" aria-controls="popupItemExplain"><span class="sr-only">추가설명</span></button>
+									</div>
+									<!--// .helper -->
+								</td>
+							</tr>
+							<tr>
+								<td>내용A</td>
+								<td>내용B</td>
+								<td>내용C</td>
+								<td>내용D</td>
+								<td>내용E</td>
+							</tr>
+							<tr>
+								<td colspan="5" class="detail">통합내용A</td>
+							</tr>
+							<tr>
+								<td>내용A</td>
+								<td>내용B</td>
+								<td>내용C</td>
+								<td>내용D</td>
+								<td>내용E</td>
+							</tr>
+							<tr>
+								<td colspan="5" class="detail">통합내용A</td>
+							</tr>
+							<tr>
+								<td>내용A</td>
+								<td>내용B</td>
+								<td>내용C</td>
+								<td>내용D</td>
+								<td>내용E</td>
+							</tr>
+							<tr>
+								<td colspan="5" class="detail">통합내용A</td>
+							</tr>
+							<tr>
+								<td>내용A</td>
+								<td>내용B</td>
+								<td>내용C</td>
+								<td>내용D</td>
+								<td>내용E</td>
+							</tr>
+							<tr>
+								<td colspan="5" class="detail">통합내용A</td>
+							</tr>
+							<tr>
+								<td>내용A</td>
+								<td>내용B</td>
+								<td>내용C</td>
+								<td>내용D</td>
+								<td>내용E</td>
+							</tr>
+							<tr>
+								<td colspan="5" class="detail">통합내용A</td>
+							</tr>
+							<tr>
+								<td>내용A</td>
+								<td>내용B</td>
+								<td>내용C</td>
+								<td>내용D</td>
+								<td>내용E</td>
+							</tr>
+							<tr>
+								<td colspan="5" class="detail">통합내용A</td>
+							</tr>
+							<tr>
+								<td>내용A</td>
+								<td>내용B</td>
+								<td>내용C</td>
+								<td>내용D</td>
+								<td>내용E</td>
+							</tr>
+							<tr>
+								<td colspan="5" class="detail">통합내용A</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--// .data -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">데이터형 - 열선택(태블릿) (.rounded)</span></h3>
+			<!-- .data -->
+			<div class="data">
+				<div class="data-body option-fixed-head rounded" tabindex="0" id="dataTableTablet">
+					<table class="data-list">
+						<caption class="sr-only">
+							<!-- 표제목 -->
+							<strong>고객정보 표</strong>
+							<!-- 표내용순서 -->
+							<span>이름, 생년월일, 성별, 휴대폰번호 정보</span>
+						</caption>
+						<colgroup>
+							<col style="width: 74px;">
+							<col>
+							<col style="width: 128px;">
+							<col style="width: 128px;">
+							<col style="width: 128px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">보장분류</th>
+								<th scope="col">보장상세</th>
+								<th scope="col" class="data-radio">
+									<label for="dataRadioB1" class="radio-item">
+										<input type="radio" name="dataRadioB" id="dataRadioB1" class="control">
+										<span class="label">드라이빙케어</span>
+										<p class="txt">예상납입료<strong>월납 21,109원</strong></p>
+									</label>
+								</th>
+								<th scope="col" class="data-radio">
+									<label for="dataRadioB2" class="radio-item">
+										<input type="radio" name="dataRadioB" id="dataRadioB2" class="control">
+										<span class="label">옵션명B</span>
+										<span class="is-selected"></span>
+										<p class="txt">예상납입료<strong>월납 21,109원</strong></p>
+									</label>
+								</th>
+								<th scope="col" class="data-radio">
+									<label for="dataRadioB3" class="radio-item">
+										<input type="radio" name="dataRadioB" id="dataRadioB3" class="control">
+										<span class="label">옵션명C</span>
+										<span class="is-selected"></span>
+										<p class="txt">예상납입료<strong>월납 21,109원</strong></p>
+									</label>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>기본</td>
+								<td class="detail">
+									<div class="item-row">
+										<div class="unit filled">
+											<strong>상해 후유장해(3-100%)</strong>
+										</div>
+										<div class="unit fixed">
+											<!-- .helper -->
+											<div class="helper">
+												<button type="button" class="helper-btn fn-popup-open" data-popup-id="#popupItemExplain" aria-haspopup="dialog" aria-controls="popupItemExplain"><span class="sr-only">추가설명</span></button>
+											</div>
+											<!--// .helper -->
+										</div>
+									</div>
+								</td>
+								<td>내용A</td>
+								<td>내용B</td>
+								<td>내용C</td>
+							</tr>
+							<tr>
+								<td>기본</td>
+								<td class="detail">
+									<div class="item-row">
+										<div class="unit filled">
+											<strong>상해 후유장해(3-100%)</strong>
+										</div>
+										<div class="unit fixed">
+											<!-- .helper -->
+											<div class="helper">
+												<button type="button" class="helper-btn fn-popup-open" data-popup-id="#popupItemExplain" aria-haspopup="dialog" aria-controls="popupItemExplain"><span class="sr-only">추가설명</span></button>
+											</div>
+											<!--// .helper -->
+										</div>
+									</div>
+								</td>
+								<td>내용A</td>
+								<td>내용B</td>
+								<td>내용C</td>
+							</tr>
+							<tr>
+								<td>기본</td>
+								<td class="detail">
+									<div class="item-row">
+										<div class="unit filled">
+											<strong>상해 후유장해(3-100%)</strong>
+										</div>
+										<div class="unit fixed">
+											<!-- .helper -->
+											<div class="helper">
+												<button type="button" class="helper-btn fn-popup-open" data-popup-id="#popupItemExplain" aria-haspopup="dialog" aria-controls="popupItemExplain"><span class="sr-only">추가설명</span></button>
+											</div>
+											<!--// .helper -->
+										</div>
+									</div>
+								</td>
+								<td>내용A</td>
+								<td>내용B</td>
+								<td>내용C</td>
+							</tr>
+							<tr>
+								<td>기본</td>
+								<td class="detail">
+									<div class="item-row">
+										<div class="unit filled">
+											<strong>상해 후유장해(3-100%)</strong>
+										</div>
+										<div class="unit fixed">
+											<!-- .helper -->
+											<div class="helper">
+												<button type="button" class="helper-btn fn-popup-open" data-popup-id="#popupItemExplain" aria-haspopup="dialog" aria-controls="popupItemExplain"><span class="sr-only">추가설명</span></button>
+											</div>
+											<!--// .helper -->
+										</div>
+									</div>
+								</td>
+								<td>내용A</td>
+								<td>내용B</td>
+								<td>내용C</td>
+							</tr>
+							<tr>
+								<td>기본</td>
+								<td class="detail">
+									<div class="item-row">
+										<div class="unit filled">
+											<strong>상해 후유장해(3-100%)</strong>
+										</div>
+										<div class="unit fixed">
+											<!-- .helper -->
+											<div class="helper">
+												<button type="button" class="helper-btn fn-popup-open" data-popup-id="#popupItemExplain" aria-haspopup="dialog" aria-controls="popupItemExplain"><span class="sr-only">추가설명</span></button>
+											</div>
+											<!--// .helper -->
+										</div>
+									</div>
+								</td>
+								<td>내용A</td>
+								<td>내용B</td>
+								<td>내용C</td>
+							</tr>
+							<tr>
+								<td>기본</td>
+								<td class="detail">
+									<div class="item-row">
+										<div class="unit filled">
+											<strong>상해 후유장해(3-100%)</strong>
+										</div>
+										<div class="unit fixed">
+											<!-- .helper -->
+											<div class="helper">
+												<button type="button" class="helper-btn fn-popup-open" data-popup-id="#popupItemExplain" aria-haspopup="dialog" aria-controls="popupItemExplain"><span class="sr-only">추가설명</span></button>
+											</div>
+											<!--// .helper -->
+										</div>
+									</div>
+								</td>
+								<td>내용A</td>
+								<td>내용B</td>
+								<td>내용C</td>
+							</tr>
+							<tr>
+								<td>기본</td>
+								<td class="detail">
+									<div class="item-row">
+										<div class="unit filled">
+											<strong>상해 후유장해(3-100%)</strong>
+										</div>
+										<div class="unit fixed">
+											<!-- .helper -->
+											<div class="helper">
+												<button type="button" class="helper-btn fn-popup-open" data-popup-id="#popupItemExplain" aria-haspopup="dialog" aria-controls="popupItemExplain"><span class="sr-only">추가설명</span></button>
+											</div>
+											<!--// .helper -->
+										</div>
+									</div>
+								</td>
+								<td>내용A</td>
+								<td>내용B</td>
+								<td>내용C</td>
+							</tr>
+							<tr>
+								<td>기본</td>
+								<td class="detail">
+									<div class="item-row">
+										<div class="unit filled">
+											<strong>상해 후유장해(3-100%)</strong>
+										</div>
+										<div class="unit fixed">
+											<!-- .helper -->
+											<div class="helper">
+												<button type="button" class="helper-btn fn-popup-open" data-popup-id="#popupItemExplain" aria-haspopup="dialog" aria-controls="popupItemExplain"><span class="sr-only">추가설명</span></button>
+											</div>
+											<!--// .helper -->
+										</div>
+									</div>
+								</td>
+								<td>내용A</td>
+								<td>내용B</td>
+								<td>내용C</td>
+							</tr>
+							<tr>
+								<td>기본</td>
+								<td class="detail">
+									<div class="item-row">
+										<div class="unit filled">
+											<strong>상해 후유장해(3-100%)</strong>
+										</div>
+										<div class="unit fixed">
+											<!-- .helper -->
+											<div class="helper">
+												<button type="button" class="helper-btn fn-popup-open" data-popup-id="#popupItemExplain" aria-haspopup="dialog" aria-controls="popupItemExplain"><span class="sr-only">추가설명</span></button>
+											</div>
+											<!--// .helper -->
+										</div>
+									</div>
+								</td>
+								<td>내용A</td>
+								<td>내용B</td>
+								<td>내용C</td>
+							</tr>
+							<tr>
+								<td>기본</td>
+								<td class="detail">
+									<div class="item-row">
+										<div class="unit filled">
+											<strong>상해 후유장해(3-100%)</strong>
+										</div>
+										<div class="unit fixed">
+											<!-- .helper -->
+											<div class="helper">
+												<button type="button" class="helper-btn fn-popup-open" data-popup-id="#popupItemExplain" aria-haspopup="dialog" aria-controls="popupItemExplain"><span class="sr-only">추가설명</span></button>
+											</div>
+											<!--// .helper -->
+										</div>
+									</div>
+								</td>
+								<td>내용A</td>
+								<td>내용B</td>
+								<td>내용C</td>
+							</tr>
+							<tr>
+								<td>기본</td>
+								<td class="detail">
+									<div class="item-row">
+										<div class="unit filled">
+											<strong>상해 후유장해(3-100%)</strong>
+										</div>
+										<div class="unit fixed">
+											<!-- .helper -->
+											<div class="helper">
+												<button type="button" class="helper-btn fn-popup-open" data-popup-id="#popupItemExplain" aria-haspopup="dialog" aria-controls="popupItemExplain"><span class="sr-only">추가설명</span></button>
+											</div>
+											<!--// .helper -->
+										</div>
+									</div>
+								</td>
+								<td>내용A</td>
+								<td>내용B</td>
+								<td>내용C</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--// .data -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">데이터형 - 이중 - 접고펼치기</span></h3>
+			<!-- .data -->
+			<div class="data">
+				<div class="data-body">
+					<table class="data-list">
+						<caption class="sr-only">
+							<!-- 표제목 -->
+							<strong>고객정보 표</strong>
+							<!-- 표내용순서 -->
+							<span>이름, 생년월일, 성별, 휴대폰번호 정보</span>
+						</caption>
+						<colgroup>
+							<col>
+							<col>
+							<col>
+							<col style="width: 62px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">이름</th>
+								<th scope="col">생년월일</th>
+								<th scope="col">성별</th>
+								<th scope="col">더보기</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>김신한</td>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td class="data-control"><button class="btn-row-fold fn-fold-id" aria-expanded="false" data-fold-target="dataSub1"><span class="sr-only">열기</span></button></td>
+							</tr>
+							<tr class="table-inner" id="dataSub1" aria-hidden="true">
+								<td colspan="4">
+									<table class="data-sub-list">
+										<caption class="sr-only">
+											<!-- 표제목 -->
+											<strong>고객정보 표</strong>
+											<!-- 표내용순서 -->
+											<span>이름, 생년월일, 성별, 휴대폰번호 정보</span>
+										</caption>
+										<colgroup>
+											<col>
+											<col>
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>
+													<strong class="name">항목명</strong>
+													<span class="value">항목값</span>
+												</th>
+												<td>
+													<strong class="name">항목명</strong>
+													<span class="value">항목값</span>
+												</td>
+											</tr>
+											<tr>
+												<th>
+													<strong class="name">항목명</strong>
+													<span class="value">항목값</span>
+												</th>
+												<td>
+													<strong class="name">항목명</strong>
+													<span class="value">항목값</span>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr class="is-active">
+								<td>김신한</td>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td class="data-control"><button class="btn-row-fold fn-fold-id" aria-expanded="true" data-fold-target="dataSub2"><span class="sr-only">닫기</span></button></td>
+							</tr>
+							<tr class="table-inner is-open" id="dataSub2" aria-hidden="false">
+								<td colspan="4">
+									<table class="data-sub-list">
+										<caption class="sr-only">
+											<!-- 표제목 -->
+											<strong>고객정보 표</strong>
+											<!-- 표내용순서 -->
+											<span>이름, 생년월일, 성별, 휴대폰번호 정보</span>
+										</caption>
+										<colgroup>
+											<col>
+											<col>
+											<col>
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>
+													<strong class="name">항목명</strong>
+													<span class="value">항목값</span>
+												</th>
+												<td>
+													<strong class="name">항목명</strong>
+													<span class="value">항목값</span>
+												</td>
+											</tr>
+											<tr>
+												<th>
+													<strong class="name">항목명</strong>
+													<span class="value">항목값</span>
+												</th>
+												<td>
+													<strong class="name">항목명</strong>
+													<span class="value">항목값</span>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>김신한</td>
+								<td>90.01.01</td>
+								<td>남</td>
+								<td class="data-control"><button class="btn-row-fold fn-fold-id" aria-expanded="false" data-fold-target="dataSub3"><span class="sr-only">열기</span></button></td>
+							</tr>
+							<tr class="table-inner" id="dataSub3" aria-hidden="true">
+								<td colspan="4">
+									<table class="data-sub-list">
+										<caption class="sr-only">
+											<!-- 표제목 -->
+											<strong>고객정보 표</strong>
+											<!-- 표내용순서 -->
+											<span>이름, 생년월일, 성별, 휴대폰번호 정보</span>
+										</caption>
+										<colgroup>
+											<col>
+											<col>
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>
+													<strong class="name">항목명</strong>
+													<span class="value">항목값</span>
+												</th>
+												<td>
+													<strong class="name">항목명</strong>
+													<span class="value">항목값</span>
+												</td>
+											</tr>
+											<tr>
+												<th>
+													<strong class="name">항목명</strong>
+													<span class="value">항목값</span>
+												</th>
+												<td>
+													<strong class="name">항목명</strong>
+													<span class="value">항목값</span>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--// .data -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">일반형</span></h3>
+			<!-- .table -->
+			<div class="table">
+				<table class="table-list">
+					<caption class="sr-only">
+						<!-- 표제목 -->
+						<strong>보장내역 표</strong>
+						<!-- 표내용순서 -->
+						<span>휴대폰손해, 분실여권 재발급 보장내역에 따른 필요서류, 양식 다운로드 정보</span>
+					</caption>
+					<colgroup>
+						<col>
+						<col>
+						<col style="width: 184px;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">보장내역</th>
+							<th scope="col">필요서류</th>
+							<th scope="col">양식 다운로드</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">휴대품손해</th>
+							<td>
+								<!-- .note* -->
+								<ul class="note-list">
+									<li>파손사진</li>
+									<li>피해품 내역서</li>
+									<li>항공 수화물 손해의 경우: 항공사 확인서</li>
+								</ul>
+								<!--// .note* -->
+							</td>
+							<td>
+								<!-- .item* -->
+								<div class="item-col space-mr-sm space-ml-sm">
+									<div class="unit">
+										<button type="button" class="btn icon more w-100"><span>피해품 내역서 샘플</span></button>
+									</div>
+									<div class="unit">
+										<button type="button" class="btn icon more w-100"><span>피해품 내역서</span></button>
+									</div>
+								</div>
+								<!--// .item* -->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">분실여권 재발급(해외여행)</th>
+							<td>
+								<!-- .note* -->
+								<ul class="note-list">
+									<li>재발급비용 증빙서류(영수증 등)</li>
+									<li>여행증명서(T/C: Travel Certification)</li>
+									<li>재발급한 여권 사본(여권번호 표기 면)</li>
+								</ul>
+								<!--// .note* -->
+							</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- .table -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

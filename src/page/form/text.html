@@ -1,0 +1,368 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'form',
+	gnb2nd: 'text',
+	title: '텍스트필드'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section -->
+	<section class="section" id="form-textField">
+		<h2 class="title-h2"><span class="txt">@텍스트 필드</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">기본</span></h3>
+			<!-- .input -->
+			<div class="input w-fix-md">
+				<input type="text" name="" id="textfield10" class="input-data" placeholder="입력해 주세요" required>
+				<!--
+				<button type="button" class="btn-clear">
+					<span class="icon"></span>
+					<span class="sr-only">입력 내용 삭제</span>
+				</button>
+				-->
+			</div>
+			<!--// .input -->
+			<!-- .input -->
+			<div class="input w-fix-md">
+				<input type="text" name="" id="textfield11" class="input-data is-error" placeholder="입력해 주세요" value="is-error">
+			</div>
+			<!--// .input -->
+			<!-- .input -->
+			<div class="input w-fix-md">
+				<input type="text" name="" id="textfield12" class="input-data" placeholder="입력해 주세요" value="Disabled" disabled>
+			</div>
+			<!--// .input -->
+			<!-- .input -->
+			<div class="input w-fix-md">
+				<input type="text" name="" id="textfield13" class="input-data" placeholder="입력해 주세요" value="Readonly" readonly>
+			</div>
+			<!--// .input -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">검색어 자동입력 (.option-search)</span></h3>
+			<!-- .input -->
+			<div class="input option-search w-fix-md"><!-- @set: option-search -->
+				<input type="text" name="" id="textfield14" class="input-data" placeholder="placeholder">
+				<ul class="words">
+					<li class="word-item"><a href="javascript:;" tabindex="-1"><strong>검색</strong>어1</a></li>
+					<li class="word-item"><a href="javascript:;" tabindex="-1">검색어2</a></li>
+					<li class="word-item"><a href="javascript:;" tabindex="-1">검색어3</a></li>
+					<li class="word-item"><a href="javascript:;" tabindex="-1">검색어4</a></li>
+				</ul>
+				<button type="button" class="btn-search"><span class="sr-only">검색</span></button>
+			</div>
+			<!--// .input -->
+			<!-- .input -->
+			<div class="input option-search w-fix-md">
+				<input type="text" name="" id="textfield15" class="input-data is-error" placeholder="placeholder" value="is-error">
+				<ul class="words">
+					<li class="word-item"><a href="javascript:;" tabindex="-1">검색어221</a></li>
+					<li class="word-item"><a href="javascript:;" tabindex="-1">검색어222</a></li>
+					<li class="word-item"><a href="javascript:;" tabindex="-1">검색어223</a></li>
+					<li class="word-item"><a href="javascript:;" tabindex="-1">검색어224</a></li>
+				</ul>
+				<button type="button" class="btn-search"><span class="sr-only">검색</span></button>
+			</div>
+			<!--// .input -->
+			<!-- .input -->
+			<div class="input option-search w-fix-md">
+				<input type="text" name="" id="textfield16" class="input-data" placeholder="placeholder" value="Disabled" disabled>
+				<button type="button" class="btn-search"><span class="sr-only">검색</span></button>
+			</div>
+			<!--// .input -->
+			<!-- .input -->
+			<div class="input option-search w-fix-md">
+				<input type="text" name="" id="textfield17" class="input-data" placeholder="placeholder" value="Readonly" readonly>
+				<button type="button" class="btn-search"><span class="sr-only">검색</span></button>
+			</div>
+			<!--// .input -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">이메일 (.option-search.option-email)</span></h3>
+			<!-- .input -->
+			<div class="input option-search option-email w-fix-md">
+				<input type="text" name="" id="textfield54" class="input-data" placeholder="입력해 주세요">
+				<ul class="words">
+					<li class="word-item"><a href="javascript:;" tabindex="-1">@naver.com</a></li>
+					<li class="word-item"><a href="javascript:;" tabindex="-1">@nate.com</a></li>
+					<li class="word-item"><a href="javascript:;" tabindex="-1">@kakao.com</a></li>
+					<li class="word-item"><a href="javascript:;" tabindex="-1">@daum.net</a></li>
+					<li class="word-item"><a href="javascript:;" tabindex="-1">@hanmail.net</a></li>
+					<li class="word-item"><a href="javascript:;" tabindex="-1">@gmail.com</a></li>
+					<li class="word-item"><a href="javascript:;" tabindex="-1">@hotmail.com</a></li>
+					<li class="word-item"><a href="javascript:;" tabindex="-1">@korea.com</a></li>
+					<li class="word-item"><a href="javascript:;" tabindex="-1">@outlook.com</a></li>
+				</ul>
+			</div>
+			<!--// .input -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">검색창 호출 (.option-popup)</span></h3>
+			<!-- .input -->
+			<div class="input option-popup w-fix-md"><!-- @set: option-popup -->
+				<input type="text" name="" id="textfield30" class="input-data" placeholder="placeholder">
+				<button type="button" class="btn-search"><span class="sr-only">검색</span></button>
+			</div>
+			<!--// .input -->
+			<!-- .input -->
+			<div class="input option-popup w-fix-md">
+				<input type="text" name="" id="textfield31" class="input-data is-error" placeholder="placeholder" value="is-error">
+				<button type="button" class="btn-search"><span class="sr-only">검색</span></button>
+			</div>
+			<!--// .input -->
+			<!-- .input -->
+			<div class="input option-popup w-fix-md">
+				<input type="text" name="" id="textfield32" class="input-data" placeholder="placeholder" value="Disabled" disabled>
+				<button type="button" class="btn-search"><span class="sr-only">검색</span></button>
+			</div>
+			<!--// .input -->
+			<!-- .input -->
+			<div class="input option-popup w-fix-md">
+				<input type="text" name="" id="textfield33" class="input-data" placeholder="placeholder" value="Readonly" readonly>
+				<button type="button" class="btn-search"><span class="sr-only">검색</span></button>
+			</div>
+			<!--// .input -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">날짜 (.option-date)</span></h3>
+			<!-- .input -->
+			<div class="input option-date w-fix-md"><!-- @set: option-date -->
+				<input type="text" name="" id="textfield18" class="input-data" placeholder="YYYY.MM.DD">
+				<button type="button" class="btn-calendar" aria-label="달력제목A" aria-expanded="false" aria-haspopup="dialog"><span class="sr-only">달력 선택</span></button>
+			</div>
+			<!--// .input -->
+			<!-- .input -->
+			<div class="input option-date w-fix-md">
+				<input type="text" name="" id="textfield19" class="input-data is-error" placeholder="YYYY.MM.DD" value="is-error">
+				<button type="button" class="btn-calendar" aria-label="달력제목B" aria-expanded="false" aria-haspopup="dialog"><span class="sr-only">달력 선택</span></button>
+			</div>
+			<!--// .input -->
+			<!-- .input -->
+			<div class="input option-date w-fix-md">
+				<input type="text" name="" id="textfield20" class="input-data" placeholder="YYYY.MM.DD" value="Disabled" disabled>
+				<button type="button" class="btn-calendar" aria-label="달력제목C" aria-expanded="false" aria-haspopup="dialog"><span class="sr-only">달력 선택</span></button>
+			</div>
+			<!--// .input -->
+			<!-- .input -->
+			<div class="input option-date w-fix-md">
+				<input type="text" name="" id="textfield21" class="input-data" placeholder="YYYY.MM.DD" value="Readonly" readonly>
+				<button type="button" class="btn-calendar" aria-label="달력제목D" aria-expanded="false" aria-haspopup="dialog" disabled><span class="sr-only">달력 선택</span></button>
+			</div>
+			<!--// .input -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">버튼형</span></h3>
+			<!-- .note* -->
+			<div class="note space-mb-xxs">
+				<ul class="note-list">
+					<li>📌버튼이 마지막 <code>.unit</code>에 있는 유형으로, 마지막 <code>.unit</code>에 다른 요소를 넣을 경우 혼합 컴포넌트 사용.</li>
+				</ul>
+			</div>
+			<!--// .note* -->
+
+			<!-- .input-button -->
+			<div class="input-button w-fix-md">
+				<div class="unit filled">
+					<!-- .input -->
+					<div class="input w-100">
+						<input type="text" name="" id="textfield26" class="input-data" placeholder="placeholder">
+					</div>
+					<!--// .input -->
+				</div>
+				<div class="unit fixed">
+					<!-- .btn -->
+					<button type="button" class="btn contained option-md"><span>버튼</span></button>
+					<!--// .btn -->
+				</div>
+			</div>
+			<!--// .input-button -->
+			<!-- .input-button -->
+			<div class="input-button is-error w-fix-md">
+				<div class="unit filled">
+					<!-- .input -->
+					<div class="input w-100">
+						<input type="text" name="" id="textfield27" class="input-data" placeholder="placeholder" value="is-error">
+					</div>
+					<!--// .input -->
+				</div>
+				<div class="unit fixed">
+					<!-- .btn -->
+					<button type="button" class="btn contained option-md"><span>주소 검색</span></button>
+					<!--// .btn -->
+				</div>
+			</div>
+			<!--// .input-button -->
+			<!-- .input-button -->
+			<div class="input-button is-disabled w-fix-md">
+				<div class="unit filled">
+					<!-- .input -->
+					<div class="input w-100">
+						<input type="text" name="" id="textfield28" class="input-data" placeholder="placeholder" value="Disabled" disabled>
+					</div>
+					<!--// .input -->
+				</div>
+				<div class="unit fixed">
+					<!-- .btn -->
+					<button type="button" class="btn contained option-md" disabled><span>버튼</span></button>
+					<!--// .btn -->
+				</div>
+			</div>
+			<!--// .input-button -->
+			<!-- .input-button -->
+			<div class="input-button is-readonly w-fix-md">
+				<div class="unit filled">
+					<!-- .input -->
+					<div class="input w-100">
+						<input type="text" name="" id="textfield29" class="input-data" placeholder="placeholder" value="Readonly" readonly>
+					</div>
+					<!--// .input -->
+				</div>
+				<div class="unit fixed">
+					<!-- .btn -->
+					<button type="button" class="btn contained option-md" readonly><span>버튼</span></button>
+					<!--// .btn -->
+				</div>
+			</div>
+			<!--// .input-button -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">버튼 + 데이터형 (.option-read)</span></h3>
+			<!-- .input-button -->
+			<div class="input-button option-read"><!-- @set: option-read -->
+				<div class="unit filled">
+					<!-- .input -->
+					<div class="input w-100">
+						<div class="read-data">데이터 출력 시 버튼과 함께 노출될 경우</div>
+					</div>
+					<!--// .input -->
+				</div>
+				<div class="unit fixed">
+					<!-- .btn -->
+					<button type="button" class="btn outlined option-sm"><span>버튼명</span></button>
+					<!--// .btn -->
+				</div>
+			</div>
+			<!--// .input-button -->
+			<!-- .input-button -->
+			<div class="input-button option-read w-fix-lg">
+				<div class="unit filled">
+					<!-- .input -->
+					<div class="input w-100">
+						<div class="read-data">자택 <span class="txt-line">|</span> 04522 서울특별시 중구 다동길 46 (다동, 다동빌딩) 4층</div>
+					</div>
+					<!--// .input -->
+				</div>
+				<div class="unit fixed">
+					<!-- .btn -->
+					<button type="button" class="btn outlined option-sm"><span>수정</span></button>
+					<!--// .btn -->
+				</div>
+			</div>
+			<!--// .input-button -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<h3 class="title-h3"><span class="txt">혼합</span></h3>
+			<!-- .input-mixed -->
+			<div class="input-mixed w-fix-md">
+				<div class="unit filled">
+					<!-- .input -->
+					<div class="input w-100">
+						<input type="text" name="" id="textfield261" class="input-data" placeholder="placeholder">
+					</div>
+					<!--// .input -->
+				</div>
+				<div class="unit fixed">
+					<span class="dash"><span class="sr-only">-</span></span>
+				</div>
+				<div class="unit filled">
+					<!-- .input -->
+					<div class="input w-100">
+						<input type="text" name="" id="textfield262" class="input-data" placeholder="placeholder">
+					</div>
+					<!--// .input -->
+				</div>
+			</div>
+			<!--// .input-mixed -->
+			<!-- .input-mixed -->
+			<div class="input-mixed is-error w-fix-md">
+				<div class="unit filled">
+					<!-- .input -->
+					<div class="input w-100">
+						<input type="text" name="" id="textfield271" class="input-data" placeholder="placeholder" value="is-error">
+					</div>
+					<!--// .input -->
+				</div>
+				<div class="unit fixed">
+					<span class="txt">텍스트</span>
+				</div>
+			</div>
+			<!--// .input-mixed -->
+			<!-- .input-mixed -->
+			<div class="input-mixed is-disabled w-fix-md">
+				<div class="unit filled">
+					<!-- .input -->
+					<div class="input w-100">
+						<input type="text" name="" id="textfield281" class="input-data" placeholder="placeholder" value="Disabled" disabled>
+					</div>
+					<!--// .input -->
+				</div>
+				<div class="unit fixed">
+					<span class="dash"><span class="sr-only">-</span></span>
+				</div>
+				<div class="unit filled">
+					<!-- .input -->
+					<div class="input w-100">
+						<input type="text" name="" id="textfield282" class="input-data" placeholder="placeholder" value="Disabled" disabled>
+					</div>
+					<!--// .input -->
+				</div>
+			</div>
+			<!--// .input-mixed -->
+			<!-- .input-mixed -->
+			<div class="input-mixed is-readonly w-fix-md">
+				<div class="unit filled">
+					<!-- .input -->
+					<div class="input w-100">
+						<input type="text" name="" id="textfield291" class="input-data" placeholder="placeholder" value="Readonly" readonly>
+					</div>
+					<!--// .input -->
+				</div>
+				<div class="unit fixed">
+					<span class="dash"><span class="sr-only">-</span></span>
+				</div>
+				<div class="unit filled">
+					<!-- .input -->
+					<div class="input w-100">
+						<input type="text" name="" id="textfield292" class="input-data" placeholder="placeholder" value="Readonly" readonly>
+					</div>
+					<!--// .input -->
+				</div>
+			</div>
+			<!--// .input-mixed -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

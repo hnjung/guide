@@ -45,7 +45,7 @@
 
 	&-title {
 		display: block;
-		font-weight: var(--#{config.$prefix}font-medium);
+		font-weight: config.variable(font, 500);
 		font-size: config.variable(font, body, 1.4rem);
 		color: config.variable(color, #495057);
 	}
@@ -79,7 +79,7 @@
 			}
 
 			& > strong {
-				font-weight: var(--#{config.$prefix}font-medium);
+				font-weight: config.variable(font, 500);
 				color: config.variable(color, #343a40);
 			}
 		}
@@ -98,7 +98,7 @@
 .note-list .list.depth-u2 > li.highlight {color: config.variable(color, #dc3545);}
 .note-list .list.depth-u2 > li.highlight::before {background-color: config.variable(color, #dc3545);}
 
-.note-sub-title {display: block; font-weight: var(--#{config.$prefix}font-medium); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #495057);}
+.note-sub-title {display: block; font-weight: config.variable(font, 500); font-size: config.variable(font, body, 1.4rem); color: config.variable(color, #495057);}
 
 .note .note-txt,
 .note .note-list {padding: config.variable(space, 1.6rem);}

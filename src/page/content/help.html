@@ -1,0 +1,131 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'content',
+	gnb2nd: 'help',
+	title: '도움말'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section -->
+	<section class="section" id="module-helper">
+		<h2 class="title-h2"><span class="txt">@폼도움말</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .form -->
+			<div class="form">
+				<div class="form-wrap">
+					<!-- .form-list -->
+					<ul class="form-list">
+						<li class="form-item item-half">
+							<div class="unit">
+								<div class="form-name"><strong><label for="textfield50">필드명</label></strong><strong class="must"><span class="sr-only">필수입력</span></strong></div>
+								<div class="form-value">
+									<!-- .input -->
+									<div class="input w-100">
+										<input type="text" name="" id="textfield50" class="input-data" placeholder="입력해 주세요" maxlength="20" value="김신한" aria-required="true">
+									</div>
+									<!--// .input -->
+									<div class="data-helper option-note" role="tooltip">
+										<span class="helper-txt">안내 문구 (.option-note)</span>
+									</div>
+								</div>
+							</div>
+							<div class="unit">
+								<div class="form-name"><strong><label for="textfield51">필드명</label></strong><strong class="must"><span class="sr-only">필수입력</span></strong></div>
+								<div class="form-value">
+									<!-- .input -->
+									<div class="input w-100">
+										<input type="text" name="" id="textfield51" class="input-data" placeholder="입력해 주세요" maxlength="20" value="김신한" aria-required="true">
+									</div>
+									<!--// .input -->
+									<div class="data-helper option-caption" role="tooltip">
+										<span class="helper-txt">안내 문구2 (.option-caption)</span>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="form-item item-half">
+							<div class="unit">
+								<div class="form-name"><strong><label for="textfield52">필드명</label></strong></div>
+								<div class="form-value">
+									<!-- .input -->
+									<div class="input w-100">
+										<input type="text" name="" id="textfield52" class="input-data" placeholder="입력해 주세요" maxlength="20" value="모바일은 상하 태블릿은 좌우 1:1로 배치할 경우"> 
+									</div>
+									<!--// .input -->
+									<div class="data-helper option-error" role="alert">
+										<span class="helper-txt">오류 메시지 (.option-error)</span>
+									</div>
+								</div>
+							</div>
+							<div class="unit">
+								<div class="form-name"><strong><label for="textfield53">필드명</label></strong></div>
+								<div class="form-value">
+									<!-- .input -->
+									<div class="input w-100">
+										<input type="text" name="" id="textfield53" class="input-data" placeholder="입력해 주세요" maxlength="20" value="모바일은 상하 태블릿은 좌우 1:1로 배치할 경우">
+									</div>
+									<!--// .input -->
+									<div class="data-helper option-note" role="tooltip">
+										<span class="helper-txt">두줄 예시) 다음 단계로 가려면 옵션을 필수로 선택해야 합니다. 두줄 예시) 다음 단계로 가려면 옵션을 필수로 선택해야 합니다.</span>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="form-item">
+							<div class="form-name"><strong><label for="textfield6">필드명</label></strong></div>
+							<div class="form-value">
+								<!-- .item* -->
+								<div class="item-row">
+									<div class="unit filled">
+										<!-- .input -->
+										<div class="input w-100">
+											<input type="text" name="" id="textfield6" class="input-data" placeholder="입력해 주세요" maxlength="50" value=""> 
+										</div>
+										<!--// .input -->
+									</div>
+									<div class="unit">
+										<span class="fix-data">@</span>
+									</div>
+									<div class="unit w-40">
+										<!-- .select -->
+										<div class="select w-100">
+											<select name="" id="selectG" class="select-data" aria-label="옵션제목G" aria-hidden="true" tabindex="-1">
+												<option value="">선택해주세요</option>
+												<option value="">직접입력</option>
+												<option value="">naver.com</option>
+												<option value="">nate.com</option>
+												<option value="">daum.net</option>
+												<option value="" selected>hanmail.net</option>
+												<option value="">kakao.com</option>
+												<option value="">gmail.com</option>
+												<option value="">outlook.kr</option>
+												<option value="">icloud.com</option>
+											</select>
+										</div>
+										<!--// .select -->
+									</div>
+								</div>
+								<!--// .item* -->
+								<div class="data-helper option-caption primary" role="status">
+									<span class="helper-txt">정상 입력</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<!--// .form-list -->
+				</div>
+			</div>
+			<!--// .form -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>

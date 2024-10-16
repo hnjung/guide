@@ -1,0 +1,84 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'form',
+	gnb2nd: 'textarea',
+	title: '텍스트에어리어'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section -->
+	<section class="section" id="form-textarea">
+		<h2 class="title-h2"><span class="txt">@텍스트에어리어</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .textarea -->
+			<div class="textarea w-fix-md">
+				<div class="textarea-count">
+					<span><em class="count-char">0</em> / <span class="count-max">20</span>Byte</span>
+				</div>
+				<textarea name="" id="textarea1" class="textarea-data" maxlength="20" placeholder="입력해 주세요"></textarea>
+			</div>
+			<!--// .textarea -->
+			<!-- .textarea -->
+			<div class="textarea w-fix-md">
+				<div class="textarea-count">
+					<span><em class="count-char">0</em> / <span class="count-max">100</span>Byte</span>
+				</div>
+				<textarea name="" id="textarea2" class="textarea-data is-error" maxlength="100" placeholder="입력해 주세요">내용 입력 중 + %</textarea>
+			</div>
+			<!--// .textarea -->
+			<!-- .textarea -->
+			<div class="textarea w-fix-md">
+				<div class="textarea-count">
+					<span><em class="count-char">0</em> / <span class="count-max">100</span>Byte</span>
+				</div>
+				<textarea name="" id="textarea3" class="textarea-data" maxlength="100" placeholder="입력해 주세요" disabled>Disabled</textarea>
+			</div>
+			<!--// .textarea -->
+			<!-- .textarea -->
+			<div class="textarea w-fix-md">
+				<div class="textarea-count">
+					<span><em class="count-char">0</em> / <span class="count-max">100</span>Byte</span>
+				</div>
+				<textarea name="" id="textarea4" class="textarea-data" maxlength="100" placeholder="입력해 주세요" readonly>Readonly</textarea>
+			</div>
+			<!--// .textarea -->
+		</div>
+		<!--// .group -->
+		<!-- .group -->
+		<div class="group">
+			<!-- .form -->
+			<div class="form">
+				<div class="form-wrap">
+					<!-- .form-list -->
+					<ul class="form-list">
+						<li class="form-item">
+							<div class="form-name"><strong><label for="textfield1">항목명</label></strong><strong class="must"><span class="sr-only">필수입력</span></strong></div>
+							<div class="form-value">
+								<!-- .textarea -->
+								<div class="textarea w-100">
+									<div class="textarea-count">
+										<span><em class="count-char">0</em> / <span class="count-max">100</span>Byte</span>
+									</div>
+									<textarea name="" id="textarea5" class="textarea-data" maxlength="100" placeholder="입력해 주세요"></textarea>
+								</div>
+								<!--// .textarea -->
+							</div>
+						</li>
+					</ul>
+					<!--// .form-list -->
+				</div>
+			</div>
+			<!--// .form -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>
