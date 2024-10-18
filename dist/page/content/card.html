@@ -25,10 +25,7 @@
 			<!-- #header-->
 			<header id="header">
 				<h1 class="header-title">
-					<span class="logo"
-						><a href="javascript:;" title="Main Page"><span class="sr-only">Logo</span></a></span
-					>
-					<span class="txt">카드</span>
+					<span class="txt">콘텐츠</span>
 				</h1>
 				<a href="javascript: history.back();" class="btn-page-back">
 					<span class="sr-only">Back</span>
@@ -495,9 +492,187 @@
 
 				<!-- #content -->
 				<div id="content">
-					<!-- .section - 컴포넌트 - 카드형목록(선택용) -->
-					<section class="section" id="module-card-select">
-						<h2 class="title-h2"><span class="txt">@카드형목록(선택용)</span></h2>
+					<!-- .section -->
+					<section class="section" id="print">
+						<h2 class="title-h2"><span class="txt">출력형</span></h2>
+						<!-- .group -->
+						<div class="group">
+							<h3 class="title-h3"><span class="txt">제목 + 데이터 (.option-data)</span></h3>
+
+							<!-- .title* -->
+							<h4 class="title-h4"><span class="txt">제목</span></h4>
+							<!--// .title* -->
+							<!-- .card -->
+							<div class="card option-data">
+								<!-- .card-list -->
+								<ul class="card-list">
+									<li class="card-item">
+										<div class="card-info">
+											<div class="item-row">
+												<div class="unit"><span class="txt">항목명</span></div>
+												<div class="unit"><span class="txt option-value">데이터</span></div>
+											</div>
+											<div class="item-row">
+												<div class="unit"><span class="txt">항목명</span></div>
+												<div class="unit"><span class="txt option-value">데이터</span></div>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<!--// .card-list -->
+							</div>
+							<!--// .card -->
+						</div>
+						<!-- //.group -->
+						<!-- .group -->
+						<div class="group">
+							<h3 class="title-h3"><span class="txt">목록1 - 박스 내 목록 (.option-data)</span></h3>
+
+							<!-- .card -->
+							<div class="card option-data">
+								<!-- .card-list -->
+								<ul class="card-list">
+									<li class="card-item">
+										<div class="card-title">
+											<strong class="key"><em>제목</em></strong>
+										</div>
+										<div class="card-main">
+											<span class="txt">내용만 들어가는 경우</span>
+										</div>
+									</li>
+									<li class="card-item">
+										<div class="card-title">
+											<strong class="key"><em>제목</em></strong>
+										</div>
+										<div class="card-info">
+											<div class="item-row">
+												<div class="unit"><span class="txt">항목명</span></div>
+												<div class="unit"><span class="txt option-value">데이터</span></div>
+											</div>
+											<div class="item-row">
+												<div class="unit"><span class="txt">항목명</span></div>
+												<div class="unit"><span class="txt option-value">데이터</span></div>
+											</div>
+										</div>
+									</li>
+									<li class="card-item">
+										<div class="card-title">
+											<strong class="key"><em>제목</em></strong>
+										</div>
+										<div class="card-info">
+											<div class="item-row">
+												<div class="unit"><span class="txt">항목명</span></div>
+												<div class="unit"><span class="txt option-value">데이터</span></div>
+											</div>
+											<div class="item-row">
+												<div class="unit"><span class="txt">항목명</span></div>
+												<div class="unit"><span class="txt option-value">데이터</span></div>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<!--// .card-list -->
+							</div>
+							<!--// .card -->
+						</div>
+						<!-- //.group -->
+						<!-- .group -->
+						<div class="group">
+							<h3 class="title-h3"><span class="txt">목록2 - 아이템 박스 (.option-flat)</span></h3>
+
+							<!-- .card -->
+							<div class="card option-flat">
+								<!-- .card-list -->
+								<ul class="card-list">
+									<li class="card-item">
+										<div class="card-title">
+											<strong class="key"><em>제목</em></strong>
+										</div>
+										<div class="card-info">
+											<div class="item-row">
+												<div class="unit"><span class="txt">항목명</span></div>
+												<div class="unit"><span class="txt option-value">데이터</span></div>
+											</div>
+											<div class="item-row">
+												<div class="unit"><span class="txt">항목명</span></div>
+												<div class="unit"><span class="txt option-value">데이터</span></div>
+											</div>
+										</div>
+									</li>
+									<li class="card-item option-more fn-fold-wrap">
+										<div class="card-title">
+											<strong class="key"><em>제목</em></strong>
+										</div>
+										<div class="card-info">
+											<div class="item-row">
+												<div class="unit"><span class="txt">항목명</span></div>
+												<div class="unit"><span class="txt option-value">데이터</span></div>
+											</div>
+											<div class="item-row">
+												<div class="unit"><span class="txt">항목명</span></div>
+												<div class="unit"><span class="txt option-value">데이터</span></div>
+											</div>
+										</div>
+										<div class="detail fn-fold-item">
+											<!-- .note* -->
+											<div class="note space-mt-sm">
+												<p class="note-txt">
+													<span
+														>찾는 직업이 없는 경우, 가장 비슷한 직업으로 선택해주세요. 상담 시 직군에 맞는 직업으로 변경해드립니다. 찾는 직업이 없는 경우, 가장 비슷한
+														직업으로 선택해주세요. 상담 시 직군에 맞는 직업으로 변경해드립니다.</span
+													>
+												</p>
+											</div>
+											<!--// .note* -->
+										</div>
+										<!-- .btn -->
+										<button type="button" class="btn-card-more fn-fold-btn" aria-expanded="false"><span class="sr-only">열기</span><span class="txt"></span></button>
+										<!--// .btn -->
+									</li>
+								</ul>
+								<!--// .card-list -->
+							</div>
+							<!--// .card -->
+						</div>
+						<!-- //.group -->
+						<!-- .group -->
+						<div class="group">
+							<h3 class="title-h3"><span class="txt">목록3 - 스텝 (.option-step)</span></h3>
+
+							<!-- .card -->
+							<div class="card option-data option-step">
+								<!-- .card-list -->
+								<ul class="card-list">
+									<li class="card-item step-type1">
+										<div class="card-title">
+											<span class="txt"><em>STEP 01</em></span>
+											<strong class="key"><em>본인인증</em></strong>
+										</div>
+									</li>
+									<li class="card-item step-type2">
+										<div class="card-title">
+											<span class="txt"><em>STEP 02</em></span>
+											<strong class="key"><em>담당자 지정</em></strong>
+										</div>
+									</li>
+									<li class="card-item step-type3">
+										<div class="card-title">
+											<span class="txt"><em>STEP 03</em></span>
+											<strong class="key"><em>사고조사 또는 심사</em></strong>
+										</div>
+									</li>
+								</ul>
+								<!--// .card-list -->
+							</div>
+							<!--// .card -->
+						</div>
+						<!-- //.group -->
+					</section>
+					<!--// .section -->
+
+					<!-- .section -->
+					<section class="section" id="select">
+						<h2 class="title-h2"><span class="txt">선택형</span></h2>
 						<!-- .group -->
 						<div class="group">
 							<!-- .note* -->
@@ -1060,185 +1235,7 @@
 						</div>
 						<!-- //.group -->
 					</section>
-					<!--// .section - 컴포넌트 - 카드형목록(선택용) -->
-
-					<!-- .section - 컴포넌트 - 카드형목록(출력용) -->
-					<section class="section" id="module-card-data">
-						<h2 class="title-h2"><span class="txt">@카드형목록(출력용)</span></h2>
-						<!-- .group -->
-						<div class="group">
-							<h3 class="title-h3"><span class="txt">제목 + 데이터 (.option-data)</span></h3>
-
-							<!-- .title* -->
-							<h4 class="title-h4"><span class="txt">제목</span></h4>
-							<!--// .title* -->
-							<!-- .card -->
-							<div class="card option-data">
-								<!-- .card-list -->
-								<ul class="card-list">
-									<li class="card-item">
-										<div class="card-info">
-											<div class="item-row">
-												<div class="unit"><span class="txt">항목명</span></div>
-												<div class="unit"><span class="txt option-value">데이터</span></div>
-											</div>
-											<div class="item-row">
-												<div class="unit"><span class="txt">항목명</span></div>
-												<div class="unit"><span class="txt option-value">데이터</span></div>
-											</div>
-										</div>
-									</li>
-								</ul>
-								<!--// .card-list -->
-							</div>
-							<!--// .card -->
-						</div>
-						<!-- //.group -->
-						<!-- .group -->
-						<div class="group">
-							<h3 class="title-h3"><span class="txt">목록1 - 박스 내 목록 (.option-data)</span></h3>
-
-							<!-- .card -->
-							<div class="card option-data">
-								<!-- .card-list -->
-								<ul class="card-list">
-									<li class="card-item">
-										<div class="card-title">
-											<strong class="key"><em>제목</em></strong>
-										</div>
-										<div class="card-main">
-											<span class="txt">내용만 들어가는 경우</span>
-										</div>
-									</li>
-									<li class="card-item">
-										<div class="card-title">
-											<strong class="key"><em>제목</em></strong>
-										</div>
-										<div class="card-info">
-											<div class="item-row">
-												<div class="unit"><span class="txt">항목명</span></div>
-												<div class="unit"><span class="txt option-value">데이터</span></div>
-											</div>
-											<div class="item-row">
-												<div class="unit"><span class="txt">항목명</span></div>
-												<div class="unit"><span class="txt option-value">데이터</span></div>
-											</div>
-										</div>
-									</li>
-									<li class="card-item">
-										<div class="card-title">
-											<strong class="key"><em>제목</em></strong>
-										</div>
-										<div class="card-info">
-											<div class="item-row">
-												<div class="unit"><span class="txt">항목명</span></div>
-												<div class="unit"><span class="txt option-value">데이터</span></div>
-											</div>
-											<div class="item-row">
-												<div class="unit"><span class="txt">항목명</span></div>
-												<div class="unit"><span class="txt option-value">데이터</span></div>
-											</div>
-										</div>
-									</li>
-								</ul>
-								<!--// .card-list -->
-							</div>
-							<!--// .card -->
-						</div>
-						<!-- //.group -->
-						<!-- .group -->
-						<div class="group">
-							<h3 class="title-h3"><span class="txt">목록2 - 아이템 박스 (.option-flat)</span></h3>
-
-							<!-- .card -->
-							<div class="card option-flat">
-								<!-- .card-list -->
-								<ul class="card-list">
-									<li class="card-item">
-										<div class="card-title">
-											<strong class="key"><em>제목</em></strong>
-										</div>
-										<div class="card-info">
-											<div class="item-row">
-												<div class="unit"><span class="txt">항목명</span></div>
-												<div class="unit"><span class="txt option-value">데이터</span></div>
-											</div>
-											<div class="item-row">
-												<div class="unit"><span class="txt">항목명</span></div>
-												<div class="unit"><span class="txt option-value">데이터</span></div>
-											</div>
-										</div>
-									</li>
-									<li class="card-item option-more fn-fold-wrap">
-										<div class="card-title">
-											<strong class="key"><em>제목</em></strong>
-										</div>
-										<div class="card-info">
-											<div class="item-row">
-												<div class="unit"><span class="txt">항목명</span></div>
-												<div class="unit"><span class="txt option-value">데이터</span></div>
-											</div>
-											<div class="item-row">
-												<div class="unit"><span class="txt">항목명</span></div>
-												<div class="unit"><span class="txt option-value">데이터</span></div>
-											</div>
-										</div>
-										<div class="detail fn-fold-item">
-											<!-- .note* -->
-											<div class="note space-mt-sm">
-												<p class="note-txt">
-													<span
-														>찾는 직업이 없는 경우, 가장 비슷한 직업으로 선택해주세요. 상담 시 직군에 맞는 직업으로 변경해드립니다. 찾는 직업이 없는 경우, 가장 비슷한
-														직업으로 선택해주세요. 상담 시 직군에 맞는 직업으로 변경해드립니다.</span
-													>
-												</p>
-											</div>
-											<!--// .note* -->
-										</div>
-										<!-- .btn -->
-										<button type="button" class="btn-card-more fn-fold-btn" aria-expanded="false"><span class="sr-only">열기</span><span class="txt"></span></button>
-										<!--// .btn -->
-									</li>
-								</ul>
-								<!--// .card-list -->
-							</div>
-							<!--// .card -->
-						</div>
-						<!-- //.group -->
-						<!-- .group -->
-						<div class="group">
-							<h3 class="title-h3"><span class="txt">목록3 - 스텝 (.option-step)</span></h3>
-
-							<!-- .card -->
-							<div class="card option-data option-step">
-								<!-- .card-list -->
-								<ul class="card-list">
-									<li class="card-item step-type1">
-										<div class="card-title">
-											<span class="txt"><em>STEP 01</em></span>
-											<strong class="key"><em>본인인증</em></strong>
-										</div>
-									</li>
-									<li class="card-item step-type2">
-										<div class="card-title">
-											<span class="txt"><em>STEP 02</em></span>
-											<strong class="key"><em>담당자 지정</em></strong>
-										</div>
-									</li>
-									<li class="card-item step-type3">
-										<div class="card-title">
-											<span class="txt"><em>STEP 03</em></span>
-											<strong class="key"><em>사고조사 또는 심사</em></strong>
-										</div>
-									</li>
-								</ul>
-								<!--// .card-list -->
-							</div>
-							<!--// .card -->
-						</div>
-						<!-- //.group -->
-					</section>
-					<!--// .section - 컴포넌트 - 카드형목록(출력용) -->
+					<!--// .section -->
 				</div>
 				<!--// #content -->
 			</main>

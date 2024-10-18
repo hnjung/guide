@@ -1,11 +1,28 @@
 <%
 	let projectName = '가이드 v1.0';
-	let setPageName = (typeof title === 'undefined') ? projectName : title + ' · ' + projectName;
+	let setGnbTitle = undefined;
+	let setGnb2ndTitle = undefined;
+
 	let setHeader = (typeof header === 'undefined') ? false : header;
 	let setAside = (typeof aside === 'undefined') ? false : aside;
+
 	let setGnb = (typeof gnb === 'undefined') ? false : gnb;
 	let setGnb2nd = (typeof gnb2nd === 'undefined') ? false : gnb2nd;
-	let setHeaderTitle = (typeof title === 'undefined') ? projectName : title;
+
+	menu.gnb.forEach(function(_this) {
+		if (setGnb === _this.code) {
+			setGnbTitle = _this.name;
+		}
+		if (_this.gnb2nd) {
+			_this.gnb2nd.forEach(function(_this2nd) {
+				if (setGnb === _this.code && setGnb2nd === _this2nd.code) {
+					setGnb2ndTitle = _this2nd.name;
+				}
+			});
+		}
+	});
+
+	let setPageName = (typeof setGnb2ndTitle === 'undefined') ? projectName : setGnb2ndTitle + ' · ' + projectName;
 %>
 <!DOCTYPE html>
 <html lang="ko" data-gd-thema="light">
@@ -38,7 +55,8 @@
 	<!-- #header-->
 	<header id="header">
 		<%- include('./body-header.html', {
-			headertitle: setHeaderTitle
+			gnb: setGnb,
+			gnb2nd: setGnb2nd
 		}); %>
 	</header>
 	<!--// #header-->

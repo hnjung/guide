@@ -1,9 +1,29 @@
 <%
-	let setHeaderTitle = headertitle;
+	let setGnb = (typeof gnb === 'undefined') ? false : gnb;
+	let setGnb2nd = (typeof gnb2nd === 'undefined') ? false : gnb2nd;
+
+	let setGnbTitle = undefined;
+	let setGnb2ndTitle = undefined;
+
+	menu.gnb.forEach(function(_this) {
+		if (setGnb === _this.code) {
+			setGnbTitle = _this.name;
+		}
+		if (_this.gnb2nd) {
+			_this.gnb2nd.forEach(function(_this2nd) {
+				if (setGnb === _this.code && setGnb2nd === _this2nd.code) {
+					setGnb2ndTitle = _this2nd.name;
+				}
+			});
+		}
+	});
 %>
 <h1 class="header-title">
+	<% if (setGnbTitle === undefined) { %>
 	<span class="logo"><a href="javascript:;" title="Main Page"><span class="sr-only">Logo</span></a></span>
-	<span class="txt"><%= setHeaderTitle %></span>
+	<% } else { %>
+	<span class="txt"><%= setGnbTitle %></span>
+	<% } %>
 </h1>
 <a href="javascript: history.back();" class="btn-page-back">
 	<span class="sr-only">Back</span>

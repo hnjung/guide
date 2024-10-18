@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no" />
 		<meta name="format-detection" content="telephone=no, address=no, email=no" />
 		<meta name="theme-color" content="#0046FF" />
-		<title>정보동의 · 가이드 v1.0</title>
+		<title>성능 최적화 · 가이드 v1.0</title>
 		<link rel="shortcut icon" type="image/x-icon" href="../../resource/image/favicon.ico" />
 		<link rel="stylesheet" href="../../resource/css/main.css" />
 		<script src="../../resource/js/main.js"></script>
@@ -25,7 +25,7 @@
 			<!-- #header-->
 			<header id="header">
 				<h1 class="header-title">
-					<span class="txt">폼</span>
+					<span class="txt">가이드</span>
 				</h1>
 				<a href="javascript: history.back();" class="btn-page-back">
 					<span class="sr-only">Back</span>
@@ -51,7 +51,7 @@
 						</div>
 
 						<!-- .accordion -->
-						<div class="accordion fn-fold-wrap" data-fold-slide="true">
+						<div class="accordion fn-fold-wrap is-open" data-fold-slide="true">
 							<div class="accordion-head">
 								<div class="inner fn-fold-link">
 									<span>가이드</span>
@@ -94,7 +94,7 @@
 										</li>
 
 										<li>
-											<a class="fn-guide-link" href="../../page/guide/performance.html">성능 최적화</a>
+											<a class="fn-guide-link is-active" href="../../page/guide/performance.html">성능 최적화</a>
 
 											<ul class="list depth-u2">
 												<li><a class="fn-guide-link" href="../../page/guide/performance.html#minify">파일 압축</a></li>
@@ -250,7 +250,7 @@
 						<!--// .accordion -->
 
 						<!-- .accordion -->
-						<div class="accordion fn-fold-wrap is-open" data-fold-slide="true">
+						<div class="accordion fn-fold-wrap" data-fold-slide="true">
 							<div class="accordion-head">
 								<div class="inner fn-fold-link">
 									<span>폼</span>
@@ -328,7 +328,7 @@
 
 										<li><a class="fn-guide-link" href="../../page/form/group.html">폼그룹</a></li>
 
-										<li><a class="fn-guide-link is-active" href="../../page/form/agreement.html">정보동의</a></li>
+										<li><a class="fn-guide-link" href="../../page/form/agreement.html">정보동의</a></li>
 									</ul>
 									<!--// .list -->
 								</div>
@@ -494,306 +494,9 @@
 				<div id="content">
 					<!-- .section -->
 					<section class="section">
-						<h2 class="title-h2"><span class="txt">정보동의</span></h2>
+						<h2 class="title-h2"><span class="txt">성능 최적화</span></h2>
 						<!-- .group -->
-						<div class="group">
-							<h3 class="title-h3"><span class="txt">개별동의</span></h3>
-							<!-- .agreement -->
-							<div class="agreement">
-								<div class="agree-total">
-									<div class="unit">
-										<!-- .checkbox* -->
-										<label for="agreeItem1" class="checkbox-item option-agree">
-											<input type="checkbox" name="" id="agreeItem1" class="control" />
-											<span class="label">정보 동의 제목</span>
-										</label>
-										<!--// .checkbox* -->
-									</div>
-									<div class="unit">
-										<a href="javascript:;" class="btn-ico-link"><span class="sr-only">약관 전체보기</span></a>
-									</div>
-								</div>
-							</div>
-							<!--// .agreement -->
-						</div>
-						<!--// .group -->
-
-						<!-- .group -->
-						<div class="group">
-							<h3 class="title-h3"><span class="txt">전체동의</span></h3>
-							<!-- .agreement -->
-							<div class="agreement">
-								<div class="agree-total option-parent">
-									<div class="unit">
-										<!-- .checkbox* -->
-										<label for="agreeItem2" class="checkbox-item option-agree">
-											<input type="checkbox" name="" id="agreeItem2" class="control" />
-											<span class="label"><span class="fc-primary">[필수]</span>1뎁스 정보 동의 제목</span>
-										</label>
-										<!--// .checkbox* -->
-									</div>
-									<div class="unit">
-										<a href="javascript:;" class="btn-ico-link"><span class="sr-only">약관 전체보기</span></a>
-									</div>
-								</div>
-
-								<div class="agree-group">
-									<div class="agree-title">
-										<div class="unit">
-											<span class="txt"><span class="fc-primary">[필수]</span>2뎁스 정보 동의 제목</span>
-										</div>
-										<div class="unit">
-											<a href="javascript:;" class="btn-ico-link"><span class="sr-only">보기</span></a>
-										</div>
-									</div>
-									<div class="agree-select">
-										<!-- .radio* -->
-										<fieldset class="radio-group">
-											<label for="agreeItem3a" class="radio-item">
-												<input type="radio" name="agreeItem3" id="agreeItem3a" class="control" />
-												<span class="label">동의안함</span>
-											</label>
-											<label for="agreeItem3b" class="radio-item">
-												<input type="radio" name="agreeItem3" id="agreeItem3b" class="control" />
-												<span class="label">동의함</span>
-											</label>
-										</fieldset>
-										<!--// .radio* -->
-									</div>
-
-									<div class="agree-title">
-										<div class="unit">
-											<span class="txt">2뎁스 정보 동의 제목</span>
-										</div>
-										<div class="unit">
-											<a href="javascript:;" class="btn-ico-link"><span class="sr-only">보기</span></a>
-										</div>
-									</div>
-									<div class="agree-sub-title">
-										<span class="txt">3뎁스 정보 동의 제목</span>
-									</div>
-									<div class="agree-select">
-										<!-- .radio* -->
-										<fieldset class="radio-group">
-											<label for="agreeItem4a" class="radio-item">
-												<input type="radio" name="agreeItem4" id="agreeItem4a" class="control" />
-												<span class="label">동의안함</span>
-											</label>
-											<label for="agreeItem4b" class="radio-item">
-												<input type="radio" name="agreeItem4" id="agreeItem4b" class="control" />
-												<span class="label">동의함</span>
-											</label>
-										</fieldset>
-										<!--// .radio* -->
-									</div>
-
-									<div class="agree-sub-title">
-										<span class="txt">3뎁스 정보 동의 제목</span>
-										<p class="sub-txt">보조 텍스트 영역 보조 텍스트 영역 보조 텍스트 영역 보조 텍스트 영역 보조 텍스트 영역</p>
-									</div>
-									<div class="agree-select">
-										<!-- .radio* -->
-										<fieldset class="radio-group">
-											<label for="agreeItem5a" class="radio-item">
-												<input type="radio" name="agreeItem5" id="agreeItem5a" class="control" />
-												<span class="label">동의안함</span>
-											</label>
-											<label for="agreeItem5b" class="radio-item">
-												<input type="radio" name="agreeItem5" id="agreeItem5b" class="control" />
-												<span class="label">동의함</span>
-											</label>
-										</fieldset>
-										<!--// .radio* -->
-									</div>
-
-									<div class="agree-title">
-										<div class="unit">
-											<!-- .checkbox* -->
-											<label for="agreeItem6" class="checkbox-item option-single">
-												<input type="checkbox" name="" id="agreeItem6" class="control" />
-												<span class="label">2뎁스 정보 동의 제목</span>
-											</label>
-											<!--// .checkbox* -->
-										</div>
-										<div class="unit">
-											<a href="javascript:;" class="btn-ico-link"><span class="sr-only">보기</span></a>
-										</div>
-									</div>
-									<div class="agree-title">
-										<div class="unit">
-											<!-- .checkbox* -->
-											<label for="agreeItem7" class="checkbox-item option-single">
-												<input type="checkbox" name="" id="agreeItem7" class="control" />
-												<span class="label">2뎁스 정보 동의 제목</span>
-											</label>
-											<!--// .checkbox* -->
-										</div>
-										<div class="unit">
-											<a href="javascript:;" class="btn-ico-link"><span class="sr-only">보기</span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!--// .agreement -->
-						</div>
-						<!--// .group -->
-
-						<!-- .group -->
-						<div class="group">
-							<h3 class="title-h3"><span class="txt">전체동의-그래프</span></h3>
-							<!-- .agreement -->
-							<div class="agreement">
-								<div class="agree-total option-parent">
-									<div class="unit">
-										<!-- .checkbox* -->
-										<label for="agreeItem8" class="checkbox-item option-agree">
-											<input type="checkbox" name="" id="agreeItem8" class="control" />
-											<span class="label"><span class="fc-primary">[필수]</span>1뎁스 정보 동의 제목</span>
-										</label>
-										<!--// .checkbox* -->
-									</div>
-									<div class="unit">
-										<a href="javascript:;" class="btn-ico-link"><span class="sr-only">약관 전체보기</span></a>
-									</div>
-								</div>
-
-								<div class="agree-group">
-									<p class="agree-lead">설명문구 영역 설명문구 영역 설명문구 영역 설명문구 영역 설명문구 영역 설명문구 영역 설명문구 영역</p>
-
-									<div class="agree-title">
-										<div class="unit">
-											<span class="txt">2뎁스 정보 동의 제목</span>
-										</div>
-										<div class="unit">
-											<a href="javascript:;" class="btn-ico-link"><span class="sr-only">보기</span></a>
-										</div>
-									</div>
-									<div class="agree-graph">
-										<div class="agree-graph-wrap" aria-label="동의 내용의 평가 등급으로 안심, 다소안심, 보통, 신중, 주의 등급으로 구분">
-											<ul class="agree-step-list">
-												<li class="agree-step-item" aria-hidden="false" aria-label="해당 등급">
-													<span class="txt">안심</span>
-													<span class="bar"></span>
-												</li>
-												<li class="agree-step-item" aria-hidden="true">
-													<span class="txt">다소안심</span>
-													<span class="bar"></span>
-												</li>
-												<li class="agree-step-item" aria-hidden="true">
-													<span class="txt">보통</span>
-													<span class="bar"></span>
-												</li>
-												<li class="agree-step-item" aria-hidden="true">
-													<span class="txt">신중</span>
-													<span class="bar"></span>
-												</li>
-												<li class="agree-step-item" aria-hidden="true">
-													<span class="txt">주의</span>
-													<span class="bar"></span>
-												</li>
-											</ul>
-										</div>
-										<p class="sub-txt">위의 등급은 사생활 침해 위험, 혜택, 명확성 등을 종합적으로 고려하여 동의 내용의 평가등급을 제공하는 제도입니다.</p>
-									</div>
-
-									<div class="agree-sub-title">
-										<span class="txt">3뎁스 정보 동의 제목</span>
-									</div>
-									<div class="agree-select">
-										<!-- .radio* -->
-										<fieldset class="radio-group">
-											<label for="agreeItem9a" class="radio-item">
-												<input type="radio" name="agreeItem9" id="agreeItem9a" class="control" />
-												<span class="label">동의안함</span>
-											</label>
-											<label for="agreeItem9b" class="radio-item">
-												<input type="radio" name="agreeItem9" id="agreeItem9b" class="control" />
-												<span class="label">동의함</span>
-											</label>
-										</fieldset>
-										<!--// .radio* -->
-									</div>
-									<div class="agree-btn">
-										<!-- .chip* -->
-										<fieldset class="chip-group">
-											<label for="agreeChannel1a" class="chip-item">
-												<input type="checkbox" name="" id="agreeChannel1a" class="control" />
-												<span class="label">전체</span>
-											</label>
-											<label for="agreeChannel1b" class="chip-item">
-												<input type="checkbox" name="" id="agreeChannel1b" class="control" />
-												<span class="label">전화(ARS포함)</span>
-											</label>
-											<label for="agreeChannel1c" class="chip-item">
-												<input type="checkbox" name="" id="agreeChannel1c" class="control" />
-												<span class="label">문자</span>
-											</label>
-											<label for="agreeChannel1d" class="chip-item">
-												<input type="checkbox" name="" id="agreeChannel1d" class="control" />
-												<span class="label">이메일</span>
-											</label>
-											<label for="agreeChannel1e" class="chip-item">
-												<input type="checkbox" name="" id="agreeChannel1e" class="control" />
-												<span class="label">우편(DM)</span>
-											</label>
-										</fieldset>
-										<!--// .chip* -->
-									</div>
-
-									<div class="agree-title">
-										<div class="unit">
-											<span class="txt">2뎁스 정보 동의 제목</span>
-										</div>
-										<div class="unit">
-											<a href="javascript:;" class="btn-ico-link"><span class="sr-only">보기</span></a>
-										</div>
-									</div>
-									<div class="agree-graph">
-										<div class="agree-graph-wrap" aria-label="동의 내용의 평가 등급으로 안심, 다소안심, 보통, 신중, 주의 등급으로 구분">
-											<ul class="agree-step-list">
-												<li class="agree-step-item" aria-hidden="true">
-													<span class="txt">안심</span>
-													<span class="bar"></span>
-												</li>
-												<li class="agree-step-item" aria-hidden="false" aria-label="해당 등급">
-													<span class="txt">다소안심</span>
-													<span class="bar"></span>
-												</li>
-												<li class="agree-step-item" aria-hidden="true">
-													<span class="txt">보통</span>
-													<span class="bar"></span>
-												</li>
-												<li class="agree-step-item" aria-hidden="true">
-													<span class="txt">신중</span>
-													<span class="bar"></span>
-												</li>
-												<li class="agree-step-item" aria-hidden="true">
-													<span class="txt">주의</span>
-													<span class="bar"></span>
-												</li>
-											</ul>
-										</div>
-										<p class="sub-txt">위의 등급은 사생활 침해 위험, 혜택, 명확성 등을 종합적으로 고려하여 동의 내용의 평가등급을 제공하는 제도입니다.</p>
-									</div>
-
-									<div class="agree-select">
-										<!-- .radio* -->
-										<fieldset class="radio-group">
-											<label for="agreeItem10a" class="radio-item">
-												<input type="radio" name="agreeItem10" id="agreeItem10a" class="control" />
-												<span class="label">동의안함</span>
-											</label>
-											<label for="agreeItem10b" class="radio-item">
-												<input type="radio" name="agreeItem10" id="agreeItem10b" class="control" />
-												<span class="label">동의함</span>
-											</label>
-										</fieldset>
-										<!--// .radio* -->
-									</div>
-								</div>
-							</div>
-							<!--// .agreement -->
-						</div>
+						<div class="group"></div>
 						<!--// .group -->
 					</section>
 					<!--// .section -->

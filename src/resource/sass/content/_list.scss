@@ -11,6 +11,7 @@
 [class^="title-h"] ~ .list {margin-top: config.variable(space, 1.6rem);}
 .list li {color: config.variable(color, #343a40);}
 .list li > a {color: config.variable(color, #343a40);}
+.list li > .is-active {font-weight: config.variable(font, 500); color: config.variable(color, #000);}
 .list li.primary {color: config.variable(color, #0d6efd);}
 .list > li + li {margin-top: config.variable(space, .8rem);}
 .list > li > .list {margin-top: config.variable(space, .8rem);}
