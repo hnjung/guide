@@ -144,6 +144,6 @@
 		{ "code": "aria", "name": "ARIA 속성", "path": "../../page/a11y/aria.html" },
 		{ "code": "reader", "name": "리더기", "path": "../../page/a11y/reader.html" },
 		{ "code": "focus", "name": "초점", "path": "../../page/a11y/focus.html" },
-		{ "code": "animation", "name": "숨기기/보이기 애니메이션", "path": "../../page/a11y/animation.html" }
+		{ "code": "animation", "name": "애니메이션", "path": "../../page/a11y/animation.html" }
 	] }
 ] }

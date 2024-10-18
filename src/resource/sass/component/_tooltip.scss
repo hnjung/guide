@@ -7,6 +7,7 @@
 
 /* 툴팁 */
 .tooltip {
+	$parent: & !default;
 	position: relative;
 	display: inline-flex;
 	width: config.variable(icon, 1.6rem);
@@ -39,36 +40,29 @@
 		transition-duration: 0s;
 		transition-delay: 0s;
 
-		/* display: block;
-			animation: animation-tooltip config.variable(animation, speed, base) config.variable(animation, timing, outback) forwards; */
-
 		&::before {
 			content: '';
 			position: absolute;
-			/* width: .5rem;
+			width: .5rem;
 			height: .8rem;
-			background: var(--bg-url-etc) no-repeat 0 0;
-			background-size: var(--bg-size-etc); */
-			width: 0;
-			height: 0;
-			border: {
-				right: .5rem solid config.variable(color, #495057);
-				top: .5rem solid transparent;
-				bottom: .5rem solid transparent;
-			}
+			@include config.icon-bg(1.6rem, all, 0, 9);
 		}
 	}
+
+	/* 활성화 시 */
 	&.is-open {
-		.tooltip-body {
+		#{$parent}-body {
 			display: block;
 			animation: animation-tooltip config.variable(animation, speed, base) config.variable(animation, timing, outback) forwards;
 		}
 	}
+
+	/* 출력 위치 */
 	&.bottom {
 		align-items: end;
 
 		&.left {
-			.tooltip-body {
+			#{$parent}-body {
 				margin-bottom: config.variable(space, 2.4rem);
 				margin-left: -1.0rem;
 				margin-right: config.variable(space, 1.6rem);
@@ -83,7 +77,7 @@
 		&.right {
 			justify-content: flex-end;
 
-			.tooltip-body {
+			#{$parent}-body {
 				margin-bottom: config.variable(space, 2.4rem);
 				margin-right: -1.0rem;
 				margin-left: config.variable(space, 1.6rem);
@@ -100,13 +94,13 @@
 		align-items: start;
 
 		&.left {
-			.tooltip-body {
+			#{$parent}-body {
 				margin-top: config.variable(space, 2.4rem);
 				margin-left: -1.0rem;
 				margin-right: config.variable(space, 1.6rem);
 
 				&::before {
-					top: -.7rem;
+					top: -.5rem;
 					left: config.variable(space, 1.6rem);
 					transform: rotate3d(0, 0, 1, 90deg);
 				}
@@ -115,13 +109,13 @@
 		&.right {
 			justify-content: flex-end;
 
-			.tooltip-body {
+			#{$parent}-body {
 				margin-top: config.variable(space, 2.4rem);
 				margin-right: -1.0rem;
 				margin-left: config.variable(space, 1.6rem);
 
 				&::before {
-					top: -.7rem;
+					top: -.5rem;
 					right: config.variable(space, 1.6rem);
 					transform: rotate3d(0, 0, 1, 90deg);
 				}

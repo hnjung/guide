@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no" />
 		<meta name="format-detection" content="telephone=no, address=no, email=no" />
 		<meta name="theme-color" content="#0046FF" />
-		<title>기기별 해상도 기준 · 가이드 v1.0</title>
+		<title>초점 · 가이드 v1.0</title>
 		<link rel="shortcut icon" type="image/x-icon" href="../../resource/image/favicon.ico" />
 		<link rel="stylesheet" href="../../resource/css/main.css" />
 		<script src="../../resource/js/main.js"></script>
@@ -25,7 +25,7 @@
 			<!-- #header-->
 			<header id="header">
 				<h1 class="header-title">
-					<span class="txt">가이드</span>
+					<span class="txt">접근성</span>
 				</h1>
 				<a href="javascript: history.back();" class="btn-page-back">
 					<span class="sr-only">Back</span>
@@ -51,7 +51,7 @@
 						</div>
 
 						<!-- .accordion -->
-						<div class="accordion fn-fold-wrap is-open" data-fold-slide="true">
+						<div class="accordion fn-fold-wrap" data-fold-slide="true">
 							<div class="accordion-head">
 								<div class="inner fn-fold-link">
 									<span>가이드</span>
@@ -65,7 +65,7 @@
 									<ul class="list depth-u1">
 										<li><a class="fn-guide-link" href="../../page/guide/project.html">프로젝트 환경</a></li>
 
-										<li><a class="fn-guide-link is-active" href="../../page/guide/device.html">기기별 해상도 기준</a></li>
+										<li><a class="fn-guide-link" href="../../page/guide/device.html">기기별 해상도 기준</a></li>
 
 										<li><a class="fn-guide-link" href="../../page/guide/folder.html">폴더 및 파일명</a></li>
 
@@ -461,7 +461,7 @@
 						<!--// .accordion -->
 
 						<!-- .accordion -->
-						<div class="accordion fn-fold-wrap" data-fold-slide="true">
+						<div class="accordion fn-fold-wrap is-open" data-fold-slide="true">
 							<div class="accordion-head">
 								<div class="inner fn-fold-link">
 									<span>접근성</span>
@@ -477,9 +477,9 @@
 
 										<li><a class="fn-guide-link" href="../../page/a11y/reader.html">리더기</a></li>
 
-										<li><a class="fn-guide-link" href="../../page/a11y/focus.html">초점</a></li>
+										<li><a class="fn-guide-link is-active" href="../../page/a11y/focus.html">초점</a></li>
 
-										<li><a class="fn-guide-link" href="../../page/a11y/animation.html">애니메이션</a></li>
+										<li><a class="fn-guide-link" href="../../page/a11y/animation.html">숨기기/보이기 애니메이션</a></li>
 									</ul>
 									<!--// .list -->
 								</div>
@@ -494,45 +494,28 @@
 				<div id="content">
 					<!-- .section -->
 					<section class="section">
-						<h2 class="title-h2"><span class="txt">기기별 해상도 기준</span></h2>
+						<h2 class="title-h2"><span class="txt">초점</span></h2>
 						<!-- .group -->
 						<div class="group">
 							<!-- .note* -->
 							<div class="note">
 								<ul class="note-list">
-									<li>모바일 : 미디어 쿼리 없이 디폴트로 작성(모바일 퍼스트)</li>
-									<li>태블릿 : <code>@media screen and (min-width: 768px) and (max-width: 1024px) {}</code></li>
-									<li>태블릿 ~ PC : <code>@media screen and (min-width: 768px) {}</code></li>
-									<li>PC : <code>@media screen and (min-width: 1025px) {}</code></li>
+									<li>초점 연결/해제 제어가 필요한 경우 해당 함수 사용 : <code>commUiFnFocus();</code></li>
+									<li>
+										스크립트 공통 전역변수의 초점 요소
+										<code
+											>commUiVar.focusElements : 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]),
+											[tabindex="0"], [data-focus-on="true"]'</code
+										>
+									</li>
+
+									<li>
+										초점 요소가 아니고 숨기기/보이기 처리를 해야하는 항목의 경우 <code>tabindex="0" data-focus-on="true"</code> 코드 추가하여 제어 (예시 : 팝업 콘텐츠 DIV 요소 /
+										iOS는 초점 하위의 첫번째 초점 요소에 초점이 잡힘)
+									</li>
 								</ul>
 							</div>
 							<!--// .note* -->
-							<pre><code>
-'mobile':  0px, /* 0 ~ 599 : 4columns(designLayout) */
-'tablet':  600px, /* 600 ~ 1023 : 8columns */
-'laptop':  1024px, /* 1024 ~ 1443 : 12columns */
-'desktop': 1440px /* 1440 ~ : 12columns */
-
-&::after {
-	content: '기본 : 모바일 퍼스트 스타일 작성';
-
-	@include config.media-down(mobile) {
-		content: '모바일 이하(media-down) 반영';
-	}
-
-	@include config.media-only(tablet) {
-		content: '태블릿 에만(media-only) 반영';
-	}
-
-	@include config.media-up(desktop) {
-		content: 'PC 이상(media-up) 반영';
-	}
-
-	@include config.media-between(tablet, laptop) {
-		content: '태블릿 과(media-between) 노트북에 반영';
-	}
-}
-			</code></pre>
 						</div>
 						<!--// .group -->
 					</section>

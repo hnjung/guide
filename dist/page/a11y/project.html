@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no" />
 		<meta name="format-detection" content="telephone=no, address=no, email=no" />
 		<meta name="theme-color" content="#0046FF" />
-		<title>기기별 해상도 기준 · 가이드 v1.0</title>
+		<title>프로젝트 환경 · 가이드 v1.0</title>
 		<link rel="shortcut icon" type="image/x-icon" href="../../resource/image/favicon.ico" />
 		<link rel="stylesheet" href="../../resource/css/main.css" />
 		<script src="../../resource/js/main.js"></script>
@@ -63,9 +63,9 @@
 								<div class="inner">
 									<!-- .list -->
 									<ul class="list depth-u1">
-										<li><a class="fn-guide-link" href="../../page/guide/project.html">프로젝트 환경</a></li>
+										<li><a class="fn-guide-link is-active" href="../../page/guide/project.html">프로젝트 환경</a></li>
 
-										<li><a class="fn-guide-link is-active" href="../../page/guide/device.html">기기별 해상도 기준</a></li>
+										<li><a class="fn-guide-link" href="../../page/guide/device.html">기기별 해상도 기준</a></li>
 
 										<li><a class="fn-guide-link" href="../../page/guide/folder.html">폴더 및 파일명</a></li>
 
@@ -479,7 +479,7 @@
 
 										<li><a class="fn-guide-link" href="../../page/a11y/focus.html">초점</a></li>
 
-										<li><a class="fn-guide-link" href="../../page/a11y/animation.html">애니메이션</a></li>
+										<li><a class="fn-guide-link" href="../../page/a11y/animation.html">숨기기/보이기 애니메이션</a></li>
 									</ul>
 									<!--// .list -->
 								</div>
@@ -494,45 +494,82 @@
 				<div id="content">
 					<!-- .section -->
 					<section class="section">
-						<h2 class="title-h2"><span class="txt">기기별 해상도 기준</span></h2>
+						<h2 class="title-h2"><span class="txt">프로젝트 환경</span></h2>
 						<!-- .group -->
 						<div class="group">
 							<!-- .note* -->
 							<div class="note">
 								<ul class="note-list">
-									<li>모바일 : 미디어 쿼리 없이 디폴트로 작성(모바일 퍼스트)</li>
-									<li>태블릿 : <code>@media screen and (min-width: 768px) and (max-width: 1024px) {}</code></li>
-									<li>태블릿 ~ PC : <code>@media screen and (min-width: 768px) {}</code></li>
-									<li>PC : <code>@media screen and (min-width: 1025px) {}</code></li>
+									<li>사용 언어 : HTML5, CSS3, Javascript(ES6), JQuery</li>
+									<li>인코딩 : UTF-8</li>
+									<li>서비스 기기 : 태블릿, 모바일 (반응형 + 적응형)</li>
+									<li>크로스 브라우징 : Chrome, Edge, Firefox, Safari</li>
 								</ul>
 							</div>
 							<!--// .note* -->
-							<pre><code>
-'mobile':  0px, /* 0 ~ 599 : 4columns(designLayout) */
-'tablet':  600px, /* 600 ~ 1023 : 8columns */
-'laptop':  1024px, /* 1024 ~ 1443 : 12columns */
-'desktop': 1440px /* 1440 ~ : 12columns */
+						</div>
+						<!--// .group -->
+					</section>
+					<!--// .section -->
 
-&::after {
-	content: '기본 : 모바일 퍼스트 스타일 작성';
+					<!-- .section -->
+					<section class="section">
+						<h2 class="title-h2"><span class="txt">웹접근성</span></h2>
+						<!-- .group -->
+						<div class="group">
+							<h3 class="title-h3"><span class="txt">리더기</span></h3>
+							<!-- .note* -->
+							<div class="note">
+								<ul class="note-list">
+									<li>리더기에서 연결/해제 제어가 필요한 경우 해당 함수 사용 : <code>commUiFnAriaHide();</code></li>
+								</ul>
+							</div>
+							<!--// .note* -->
+						</div>
+						<!--// .group -->
+						<!-- .group -->
+						<div class="group">
+							<h3 class="title-h3"><span class="txt">초점</span></h3>
+							<!-- .note* -->
+							<div class="note">
+								<ul class="note-list">
+									<li>초점 연결/해제 제어가 필요한 경우 해당 함수 사용 : <code>commUiFnFocus();</code></li>
+									<li>
+										스크립트 공통 전역변수의 초점 요소
+										<code
+											>commUiVar.focusElements : 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]),
+											[tabindex="0"], [data-focus-on="true"]'</code
+										>
+									</li>
 
-	@include config.media-down(mobile) {
-		content: '모바일 이하(media-down) 반영';
-	}
-
-	@include config.media-only(tablet) {
-		content: '태블릿 에만(media-only) 반영';
-	}
-
-	@include config.media-up(desktop) {
-		content: 'PC 이상(media-up) 반영';
-	}
-
-	@include config.media-between(tablet, laptop) {
-		content: '태블릿 과(media-between) 노트북에 반영';
-	}
-}
-			</code></pre>
+									<li>
+										초점 요소가 아니고 숨기기/보이기 처리를 해야하는 항목의 경우 <code>tabindex="0" data-focus-on="true"</code> 코드 추가하여 제어 (예시 : 팝업 콘텐츠 DIV 요소 /
+										iOS는 초점 하위의 첫번째 초점 요소에 초점이 잡힘)
+									</li>
+								</ul>
+							</div>
+							<!--// .note* -->
+						</div>
+						<!--// .group -->
+						<!-- .group -->
+						<div class="group">
+							<h3 class="title-h3"><span class="txt">숨기기/보이기 애니메이션</span></h3>
+							<!-- .note* -->
+							<div class="note">
+								<ul class="note-list">
+									<li>
+										<code>transition</code>으로 처리 시 요소의 <code>display:none;</code>이 있는 경우 애니메이션 되지 않음<br />
+										<code>display:none;</code>을 사용하지 않고 <code>height, overflow, visibility</code> 등으로 처리할 경우 리더기와 초점 이동 관련 코드를 추가하여 액션 시 컨트롤
+										해야 하고, iOS의 경우 초점 대상이 아닌 요소의 제어가 어려움 (현재 가이드의 아코디언이 transition을 활용한 방법)
+									</li>
+									<li>
+										<code>animation</code>을 사용하면 <code>display:none;</code>이 있어도 동작 가능. 단, 숨기기 애니메이션은 동작하지 않음 (현재 가이드의 파벙ㅂ이 animation을
+										활용한 방법)
+									</li>
+									<li>위 두 가지 방법 중 요건에 따라 선택하여 작업이 필요</li>
+								</ul>
+							</div>
+							<!--// .note* -->
 						</div>
 						<!--// .group -->
 					</section>
