@@ -1,5 +1,3 @@
 /node_modules
-/dist/page
-/dist/resource
 package-lock.json
 test.txt

@@ -1,0 +1,67 @@
+<%- include('../include/header.html', {
+	header: true,
+	aside: true,
+	gnb : 'component',
+	gnb2nd: 'tooltip',
+	title: '툴팁'
+}); %>
+
+<!-- #content -->
+<div id="content">
+	<!-- .section -->
+	<section class="section" id="popup-toolTip">
+		<h2 class="title-h2"><span class="txt">@툴팁</span></h2>
+		<!-- .group -->
+		<div class="group">
+			<!-- .box -->
+			<div class="box option-line item-react">
+				<div class="unit filled">
+					툴팁 i 버튼 포커스
+					<!-- .tooltip -->
+					<span class="tooltip">
+						<button type="button" class="tooltip-btn" aria-labelledby="tooltipExample"><span aria-hidden="true">툴팁</span></button>
+						<span class="tooltip-body" id="tooltipExample" role="tooltip">툴팁내용</span>
+					</span>
+					<!--// .tooltip -->
+				</div>
+				<div class="unit filled align-right">
+					위치 자동 세팅
+					<!-- .tooltip -->
+					<span class="tooltip">
+						<button type="button" class="tooltip-btn" aria-labelledby="tooltip1Example"><span aria-hidden="true">툴팁</span></button>
+						<span class="tooltip-body" id="tooltip1Example" role="tooltip">툴팁내용</span>
+					</span>
+					<!--// .tooltip -->
+				</div>
+			</div>
+			<div class="box option-line item-react space-mt-xs">
+				<div class="unit filled">
+					툴팁 표시
+					<!-- .tooltip -->
+					<span class="tooltip">
+						<button type="button" class="tooltip-btn" aria-labelledby="tooltip2Example"><span aria-hidden="true">툴팁</span></button>
+						<span class="tooltip-body" id="tooltip2Example" role="tooltip">툴팁내용툴팁내용툴팁내용툴팁<br>내용툴팁내용툴팁내용툴팁<br>내용툴팁내용</span>
+					</span>
+					<!--// .tooltip -->
+				</div>
+				<div class="unit filled align-right">
+					툴팁 표시
+					<!-- .tooltip -->
+					<span class="tooltip">
+						<button type="button" class="tooltip-btn" aria-labelledby="tooltip3Example"><span aria-hidden="true">툴팁</span></button>
+						<span class="tooltip-body" id="tooltip3Example" role="tooltip">툴팁내용툴팁내용툴팁내용툴팁내용툴팁내용툴팁내용툴팁내용툴팁내용</span>
+					</span>
+					<!--// .tooltip -->
+				</div>
+			</div>
+			<!--// .box -->
+		</div>
+		<!--// .group -->
+	</section>
+	<!--// .section -->
+</div>
+<!--// #content -->
+
+<%- include('../include/footer.html', {
+	footer: false
+}); %>
