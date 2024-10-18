@@ -157,9 +157,9 @@ export function copyFont() {
 // 브라우저 동기화를 위한 서버 시작 함수
 export function serve(done) {
 	bs.init({
-		startPath: 'page/main/index.html',
+		startPath: 'dist/page/main/index.html',
 		server: {
-			baseDir: paths.dist.root
+			baseDir: './'
 		},
 		notify: false
 	});
