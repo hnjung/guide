@@ -8,7 +8,9 @@
 		<meta name="theme-color" content="#0046FF" />
 		<title>기기별 해상도 기준 · 가이드 v1.0</title>
 		<link rel="shortcut icon" type="image/x-icon" href="../../resource/image/favicon.ico" />
+		<link rel="stylesheet" href="../../resource/plugin/prism/prism.css" />
 		<link rel="stylesheet" href="../../resource/css/main.css" />
+		<script src="../../resource/plugin/prism/prism.js"></script>
 		<script src="../../resource/js/main.js"></script>
 	</head>
 	<body>
@@ -507,32 +509,7 @@
 								</ul>
 							</div>
 							<!--// .note* -->
-							<pre><code>
-'mobile':  0px, /* 0 ~ 599 : 4columns(designLayout) */
-'tablet':  600px, /* 600 ~ 1023 : 8columns */
-'laptop':  1024px, /* 1024 ~ 1443 : 12columns */
-'desktop': 1440px /* 1440 ~ : 12columns */
-
-&::after {
-	content: '기본 : 모바일 퍼스트 스타일 작성';
-
-	@include config.media-down(mobile) {
-		content: '모바일 이하(media-down) 반영';
-	}
-
-	@include config.media-only(tablet) {
-		content: '태블릿 에만(media-only) 반영';
-	}
-
-	@include config.media-up(desktop) {
-		content: 'PC 이상(media-up) 반영';
-	}
-
-	@include config.media-between(tablet, laptop) {
-		content: '태블릿 과(media-between) 노트북에 반영';
-	}
-}
-			</code></pre>
+							<pre data-src="./code/device.html"></pre>
 						</div>
 						<!--// .group -->
 					</section>

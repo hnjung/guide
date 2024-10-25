@@ -1,0 +1,48 @@
+<!-- .radio* -->
+<fieldset class="radio-group">
+	<label for="radioA1" class="radio-item">
+		<input type="radio" name="radioA" id="radioA1" class="control" checked>
+		<span class="label">옵션A1</span>
+	</label>
+	<label for="radioA2" class="radio-item">
+		<input type="radio" name="radioA" id="radioA2" class="control">
+		<span class="label">옵션A2</span>
+	</label>
+	<label for="radioA5" class="radio-item is-error">
+		<input type="radio" name="radioA11" id="radioA5" class="control" checked>
+		<span class="label">옵션A5</span>
+	</label>
+	<label for="radioA3" class="radio-item">
+		<input type="radio" name="radioA" id="radioA3" class="control" disabled>
+		<span class="label">옵션A3</span>
+	</label>
+	<label for="radioA4" class="radio-item">
+		<input type="radio" name="radioA1" id="radioA4" class="control" checked disabled>
+		<span class="label">옵션A3</span>
+	</label>
+</fieldset>
+<!--// .radio* -->
+'mobile':  0px, /* 0 ~ 599 : 4columns(designLayout) */
+'tablet':  600px, /* 600 ~ 1023 : 8columns */
+'laptop':  1024px, /* 1024 ~ 1443 : 12columns */
+'desktop': 1440px /* 1440 ~ : 12columns */
+
+&::after {
+	content: '기본 : 모바일 퍼스트 스타일 작성';
+
+	@include config.media-down(mobile) {
+		content: '모바일 이하(media-down) 반영';
+	}
+
+	@include config.media-only(tablet) {
+		content: '태블릿 에만(media-only) 반영';
+	}
+
+	@include config.media-up(desktop) {
+		content: 'PC 이상(media-up) 반영';
+	}
+
+	@include config.media-between(tablet, laptop) {
+		content: '태블릿 과(media-between) 노트북에 반영';
+	}
+}

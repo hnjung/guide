@@ -35,7 +35,8 @@ const paths = {
 		js: `${pathSRCResource}js/**/*.js`,
 		css: `${pathSRCResource}sass/**/*.scss`,
 		image: `${pathSRCResource}image/**/*`,
-		font: `${pathSRCResource}font/**/*`
+		font: `${pathSRCResource}font/**/*`,
+		plugin: `${pathSRCResource}plugin/**/*`
 	},
 	dist: {
 		root: pathDIST,
@@ -44,7 +45,8 @@ const paths = {
 		css: `${pathDISTResource}css`,
 		sass: `${pathDISTResource}sass`,
 		image: `${pathDISTResource}image`,
-		font: `${pathDISTResource}font`
+		font: `${pathDISTResource}font`,
+		plugin: `${pathDISTResource}plugin`
 	}
 };
 
@@ -154,6 +156,15 @@ export function copyFont() {
 		.pipe(bs.stream());
 }
 
+// 플러그인 파일을 초기화하고 복사하는 함수
+export function copyPlugin() {
+	deleteSync(paths.dist.plugin);
+	return gulp.src(paths.src.plugin, { buffer: true, encoding: false })
+		.pipe(newer(paths.dist.plugin))
+		.pipe(gulp.dest(paths.dist.plugin))
+		.pipe(bs.stream());
+}
+
 // 브라우저 동기화를 위한 서버 시작 함수
 export function serve(done) {
 	bs.init({
@@ -174,12 +185,13 @@ export function watchFiles() {
 	gulp.watch(paths.src.js, buildJS);
 	gulp.watch(paths.src.image, optimizeImage);
 	gulp.watch(paths.src.font, copyFont);
+	gulp.watch(paths.src.plugin, copyPlugin);
 }
 
 // 기본 작업으로 'clean' 작업 후 'buildJS', 'compileSass', 'buildHtml', 'optimizeImage' 작업을 실행
 export default gulp.series(
 	clean,
-	gulp.parallel(buildJS, compileSass, buildHtml, optimizeImage, copyFont),
+	gulp.parallel(buildJS, compileSass, buildHtml, optimizeImage, copyFont, copyPlugin),
 	serve,
 	watchFiles
 );

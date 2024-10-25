@@ -22,32 +22,7 @@
 				</ul>
 			</div>
 			<!--// .note* -->
-			<pre><code>
-'mobile':  0px, /* 0 ~ 599 : 4columns(designLayout) */
-'tablet':  600px, /* 600 ~ 1023 : 8columns */
-'laptop':  1024px, /* 1024 ~ 1443 : 12columns */
-'desktop': 1440px /* 1440 ~ : 12columns */
-
-&::after {
-	content: '기본 : 모바일 퍼스트 스타일 작성';
-
-	@include config.media-down(mobile) {
-		content: '모바일 이하(media-down) 반영';
-	}
-
-	@include config.media-only(tablet) {
-		content: '태블릿 에만(media-only) 반영';
-	}
-
-	@include config.media-up(desktop) {
-		content: 'PC 이상(media-up) 반영';
-	}
-
-	@include config.media-between(tablet, laptop) {
-		content: '태블릿 과(media-between) 노트북에 반영';
-	}
-}
-			</code></pre>
+			<pre data-src="./code/device.html"></pre>
 		</div>
 		<!--// .group -->
 	</section>
