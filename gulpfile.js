@@ -30,7 +30,7 @@ const pathDISTResource = `${pathDIST}resource/`;
 
 const paths = {
 	src: {
-		html: [`${pathSRC}page/**/*.html`, `!${pathSRC}page/include/**`],
+		html: [`${pathSRC}page/**`, `!${pathSRC}page/include/**`],
 		include: `${pathSRC}page/include`,
 		js: `${pathSRCResource}js/**/*.js`,
 		css: `${pathSRCResource}sass/**/*.scss`,

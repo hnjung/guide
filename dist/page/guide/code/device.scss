@@ -1,0 +1,72 @@
+/* 사용방법 */
+.class {
+	content: "기본 : 모바일 퍼스트 스타일 작성";
+
+	@include config.media-down(mobile) {
+		content: "모바일 이하(media-down) 반영";
+	}
+
+	@include config.media-only(tablet) {
+		content: "태블릿 에만(media-only) 반영";
+	}
+
+	@include config.media-up(desktop) {
+		content: "PC 이상(media-up) 반영";
+	}
+
+	@include config.media-between(tablet, laptop) {
+		content: "태블릿 과(media-between) 노트북에 반영";
+	}
+}
+
+/* 선언된 변수 : _variable.scss */
+$breakpoint: (
+	"mobile": 0px,
+	"tablet": 600px,
+	"laptop": 1024px,
+	"desktop": 1440px,
+) !default;
+
+/* 선언된 함수 : _function.scss */
+/** 특정 분기점의 최소 너비 */
+@function breakpoint-min($name) {
+	$min: map-get(config.$breakpoint, $name);
+	@return if($min != 0, $min, null);
+}
+/** 특정 분기점의 최대 너비 */
+@function breakpoint-max($name) {
+	$breakpoint-name: map-keys(config.$breakpoint);
+	$index: index($breakpoint-name, $name);
+	$next-breakpoint: nth($breakpoint-name, $index + 1);
+
+	/* 다음 분기점의 최소값에서 0.02px을 뺀 값을 최대값으로 반환 */
+	$max: map-get(config.$breakpoint, $next-breakpoint) - 0.02;
+	@return if($max > 0, $max, null);
+}
+/** 특정 분기점 이상 적용 */
+@mixin media-up($name) {
+	@media screen and (min-width: breakpoint-min($name)) {
+		@content;
+	}
+}
+/** 특정 분기점 이하 적용 */
+@mixin media-down($name) {
+	@media screen and (max-width: breakpoint-max($name)) {
+		@content;
+	}
+}
+/** 분기점과 분기점 내에서 적용 */
+@mixin media-between($name-min, $name-max) {
+	@media screen and (min-width: breakpoint-min($name-min)) and (max-width: breakpoint-max($name-max)) {
+		@content;
+	}
+}
+/** 특정 분기점 에서만 적용 */
+@mixin media-only($name) {
+	$min: breakpoint-min($name);
+	$max: breakpoint-max($name);
+
+	@media screen and (min-width: $min) and (max-width: $max) {
+		@content;
+	}
+}

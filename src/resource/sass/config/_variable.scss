@@ -29,7 +29,7 @@ $prefix: 'gd-' !default;
 $breakpoint: (
 	'mobile':  0px, /* 0 ~ 599 : 4columns(designLayout) */
 	'tablet':  600px, /* 600 ~ 1023 : 8columns */
-	'laptop':  1024px, /* 1024 ~ 1443 : 12columns */
+	'laptop':  1024px, /* 1024 ~ 1439 : 12columns */
 	'desktop': 1440px /* 1440 ~ : 12columns */
 ) !default;
 
